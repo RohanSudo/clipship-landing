@@ -724,7 +724,7 @@ export default function Home() {
                   </thead>
                   <tbody className="text-zinc-400">
                     {[
-                      ["Price", "$18-50/mo", "$24-50/mo", "Free / $79 once"],
+                      ["Price", "$18-50/mo", "$24-50/mo", "Free / one-time"],
                       ["Processing", "Cloud only", "Cloud only", "Your PC (offline)"],
                       ["Privacy", "Videos uploaded to cloud", "Videos uploaded to cloud", "Never leaves your machine"],
                       ["Editing styles", "One algorithm", "Basic templates", "Multiple named styles"],
