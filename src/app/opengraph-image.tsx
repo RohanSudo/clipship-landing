@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "ClipShip - Auto-edit talking-head videos. Ship to every platform.";
+export const alt = "ClipShip - Record once. Get everything. Edit + clips for every platform.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -76,7 +76,7 @@ export default async function Image() {
             letterSpacing: "-0.02em",
           }}
         >
-          Stop editing. Start shipping.
+          One recording. Edited video + clips.
         </div>
 
         {/* Subtitle */}
@@ -89,7 +89,7 @@ export default async function Image() {
             lineHeight: 1.4,
           }}
         >
-          Auto-edit your talking-head videos. Ship to YouTube, TikTok, Instagram.
+          Drop your talking-head video in. Get an edited YouTube video + clips for Reels, Shorts, TikTok.
         </div>
 
         {/* Bottom bar */}

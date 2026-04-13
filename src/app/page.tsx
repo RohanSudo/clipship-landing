@@ -84,17 +84,22 @@ const staggerItem = {
 function AnimatedCounter({ target, prefix = "", suffix = "" }: { target: number; prefix?: string; suffix?: string }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const count = useMotionValue(0);
-  const rounded = useTransform(count, (v) => `${prefix}${Math.round(v)}${suffix}`);
   const [display, setDisplay] = useState(`${prefix}0${suffix}`);
 
   useEffect(() => {
     if (isInView) {
-      const controls = animate(count, target, { duration: 2, ease: "easeOut" });
-      const unsub = rounded.on("change", (v) => setDisplay(v));
-      return () => { controls.stop(); unsub(); };
+      const duration = 2000;
+      const start = performance.now();
+      const step = (now: number) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = Math.round(eased * target);
+        setDisplay(`${prefix}${value}${suffix}`);
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
     }
-  }, [isInView, count, target, rounded]);
+  }, [isInView, target, prefix, suffix]);
 
   return <span ref={ref}>{display}</span>;
 }
@@ -531,22 +536,22 @@ export default function Home() {
 
           <FadeIn delay={0.1}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
-              Stop editing.
+              Record once.
               <br />
-              <span className="gradient-text">Start shipping.</span>
+              <span className="gradient-text">Get everything.</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <div className="max-w-lg mx-auto mb-12 space-y-3">
               <p className="text-lg text-zinc-400 leading-relaxed">
-                Drop your raw talking-head footage in.
+                Drop your talking-head recording in.
               </p>
               <p className="text-lg text-zinc-400 leading-relaxed">
-                Pick a style. Get platform-ready videos out.
+                AI edits your full video and finds the best clips for Reels, Shorts, and TikTok.
               </p>
               <p className="text-lg text-zinc-200 font-medium mt-4">
-                No timeline. No cloud. No subscription.
+                No cloud. No subscription. Runs on your PC.
               </p>
             </div>
           </FadeIn>
