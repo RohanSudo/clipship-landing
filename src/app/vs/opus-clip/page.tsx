@@ -12,11 +12,9 @@ const data: ComparisonData = {
   competitorTagline:
     "OpusClip is the most popular cloud clip generator. ClipShip does the same thing locally on your PC\u2014and also edits the full video.",
   verdict:
-    "OpusClip is a cloud-based clip generator. ClipShip runs locally, also edits the full video, and costs a one-time fee instead of a monthly subscription.",
+    "OpusClip is a cloud-based clip generator. ClipShip runs locally and also edits the full video\u2014not just clips.",
   verdictDetail:
     "If you only need clips from existing YouTube videos, OpusClip is convenient. If you want full edit + clips from raw footage with total privacy, ClipShip is the better deal.",
-  clipshipPrice: "$79\u201399",
-  competitorPrice: "$29/mo",
   features: [
     { feature: "AI clip extraction", clipship: "yes", competitor: "yes" },
     { feature: "Full video edit", clipship: "yes", competitor: "no" },
@@ -25,9 +23,8 @@ const data: ComparisonData = {
     { feature: "Auto captions", clipship: "yes", competitor: "yes" },
     { feature: "Social scheduling", clipship: "partial", competitor: "yes" },
     { feature: "Paste YouTube link", clipship: "no", competitor: "yes" },
-    { feature: "One-time pricing", clipship: "yes", competitor: "no" },
     { feature: "Clips never expire", clipship: "yes", competitor: "no" },
-    { feature: "Free tier", clipship: "Unlimited, 720p", competitor: "60 credits/mo" },
+    { feature: "Unlimited processing", clipship: "yes", competitor: "no" },
   ],
   clipshipWins: [
     {
@@ -44,7 +41,7 @@ const data: ComparisonData = {
     },
     {
       title: "No usage limits",
-      detail: "OpusClip caps you at credits per month. ClipShip processes unlimited videos with no caps.",
+      detail: "OpusClip caps you at credits. ClipShip processes unlimited videos with no caps.",
     },
   ],
   competitorWins: [
@@ -59,12 +56,12 @@ const data: ComparisonData = {
   ],
   whoShouldUse: {
     clipship:
-      "You record your own talking-head videos and want both the full edit and clips from raw footage. You value privacy and don\u2019t want monthly fees.",
+      "You record your own talking-head videos and want both the full edit and clips from raw footage. You value privacy and local processing.",
     competitor:
-      "You want to repurpose existing YouTube videos into clips without downloading source files. You\u2019re OK with cloud processing and a monthly subscription.",
+      "You want to repurpose existing YouTube videos into clips without downloading source files. You\u2019re OK with cloud processing.",
   },
   bottomLine:
-    "OpusClip is a solid cloud clip generator. ClipShip is a full local editing pipeline that also extracts clips. If you create original content and want everything from one tool at a one-time cost, ClipShip is the more complete and cost-effective choice.",
+    "OpusClip is a solid cloud clip generator. ClipShip is a full local editing pipeline that also extracts clips. If you create original content and want everything from one tool with total privacy, ClipShip is the more complete choice.",
 };
 
 export default function VsOpusClip() {

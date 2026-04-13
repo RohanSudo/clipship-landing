@@ -21,23 +21,12 @@ export default function Terms() {
         It helps creators edit talking-head videos and extract clips for short-form platforms.
       </p>
 
-      <h2>Free tier</h2>
-      <ul>
-        <li>Available to everyone at no cost</li>
-        <li>Unlimited video processing</li>
-        <li>720p maximum export resolution</li>
-        <li>Includes a "Edited with ClipShip" watermark on exports</li>
-        <li>YouTube upload via your own OAuth account</li>
-      </ul>
-
-      <h2>Pro tier</h2>
-      <ul>
-        <li>One-time purchase, no recurring subscription</li>
-        <li>License is tied to your account and can be activated on up to 3 devices</li>
-        <li>Includes all future updates</li>
-        <li>1080p and 4K export, no watermark</li>
-        <li>All platform uploads (YouTube, Instagram, TikTok, LinkedIn)</li>
-      </ul>
+      <h2>Plans</h2>
+      <p>
+        ClipShip offers a free tier and a paid Pro tier. Specific features, export quality,
+        and pricing for each tier will be announced at launch. The free tier will always be
+        available at no cost with unlimited video processing.
+      </p>
 
       <h2>Your content</h2>
       <p>

@@ -83,8 +83,6 @@ export type ComparisonData = {
   competitorTagline: string;
   verdict: string;
   verdictDetail: string;
-  clipshipPrice: string;
-  competitorPrice: string;
   features: FeatureRow[];
   clipshipWins: { title: string; detail: string }[];
   competitorWins: { title: string; detail: string }[];
@@ -163,29 +161,6 @@ export default function ComparisonPage({
                 <p className="text-zinc-300 leading-relaxed">{data.verdict}</p>
                 <p className="text-zinc-400 leading-relaxed mt-3">{data.verdictDetail}</p>
               </div>
-            </div>
-          </div>
-        </FadeIn>
-      </section>
-
-      {/* Pricing side by side */}
-      <section className="relative z-10 px-6 pb-16">
-        <FadeIn>
-          <div className="max-w-4xl mx-auto grid sm:grid-cols-2 gap-5">
-            {/* ClipShip card */}
-            <div className="relative p-7 rounded-2xl border border-violet-500/25 bg-violet-500/[0.05] overflow-hidden">
-              <div className="absolute top-0 right-0 px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-violet-600 text-white rounded-bl-lg">
-                One-time
-              </div>
-              <p className="text-sm font-semibold text-violet-400 mb-1">ClipShip Pro</p>
-              <p className="text-3xl font-extrabold text-white mb-3">{data.clipshipPrice}</p>
-              <p className="text-sm text-zinc-400">One-time payment. No recurring fees. Runs on your PC.</p>
-            </div>
-            {/* Competitor card */}
-            <div className="p-7 rounded-2xl border border-zinc-800 bg-white/[0.02]">
-              <p className="text-sm font-semibold text-zinc-400 mb-1">{data.competitor}</p>
-              <p className="text-3xl font-extrabold text-white mb-3">{data.competitorPrice}</p>
-              <p className="text-sm text-zinc-400">Monthly subscription. Cloud processing.</p>
             </div>
           </div>
         </FadeIn>

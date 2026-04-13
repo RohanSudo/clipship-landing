@@ -37,7 +37,7 @@ export default function BestClipGenerators() {
             tagline: "Desktop app that runs on your PC. Edits your full talking-head video AND extracts the best clips. Everything runs locally\u2014your footage never uploads to anyone\u2019s servers.",
             highlight: true,
             details: [
-              { label: "Pricing", value: "Free (unlimited, 720p) / Pro $79\u201399 once" },
+              { label: "Pricing", value: "Free tier available / Pro coming soon" },
               { label: "Processing", value: "Local (your PC)" },
               { label: "Best for", value: "Full edit + clips, total privacy" },
               { label: "Languages", value: "99 languages" },
@@ -107,7 +107,6 @@ export default function BestClipGenerators() {
             { feature: "Full video edit", values: ["Yes", "No", "Yes (manual)", "Partial", "Yes (manual)"] },
             { feature: "Local processing", values: ["Yes", "No", "No", "No", "Partial"] },
             { feature: "Free tier", values: ["Unlimited", "60 credits", "60 min", "1 hr", "Unlimited"] },
-            { feature: "Paid", values: ["$79\u201399 once", "$29/mo", "$24\u2013$65/mo", "$20\u2013$100/mo", "$20/mo"] },
             { feature: "Languages", values: ["99", "20+", "20+", "English", "Multi"] },
           ]}
         />
@@ -117,12 +116,12 @@ export default function BestClipGenerators() {
         <div className="grid sm:grid-cols-2 gap-4">
           <RecommendationCard
             condition="Full automation + privacy"
-            recommendation="ClipShip. Everything runs on your PC, one-time cost, both full edit and clips from one recording."
+            recommendation="ClipShip. Everything runs on your PC, both full edit and clips from one recording."
             highlighted
           />
           <RecommendationCard
             condition="Cloud clips + social scheduling"
-            recommendation="OpusClip. Convenient paste-a-link workflow, but ongoing subscription cost."
+            recommendation="OpusClip. Convenient paste-a-link workflow with built-in social scheduling."
           />
           <RecommendationCard
             condition="Full manual editor + AI assists"

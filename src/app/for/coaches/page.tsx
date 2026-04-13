@@ -62,8 +62,6 @@ const data: AudienceData = {
     detail:
       "Coaches handle sensitive client conversations. Business strategies, personal challenges, financial details. Uploading these recordings to a cloud editing service is a risk. ClipShip runs entirely on your computer. Your recordings, transcripts, and clips never leave your machine. Of course, only repurpose content you have permission to share publicly. ClipShip gives you the tool\u2014the judgment of what to post is yours.",
   },
-  pricing:
-    "Coaches charge per session, not per month. Your tools should work the same way. ClipShip Free processes unlimited recordings at 720p. ClipShip Pro is a one-time $79\u201399 purchase. No monthly drain on your business expenses.",
   builtFor:
     "Most coaches know they should post on social media. Few have time to edit and repurpose content consistently. ClipShip changes the equation\u2014drop in your session recording, get clips out, post them throughout the week. Your expertise is already there. ClipShip just helps people see it.",
 };

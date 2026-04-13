@@ -59,7 +59,6 @@ export type AudienceData = {
   features: AudienceFeature[];
   output: { label: string; formats: string[] };
   whyLocal: { title: string; detail: string };
-  pricing: string;
   builtFor: string;
 };
 
@@ -191,16 +190,6 @@ export default function AudiencePage({ data }: { data: AudienceData }) {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-5">{data.whyLocal.title}</h2>
             <p className="text-zinc-300 leading-[1.8] text-[16px]">{data.whyLocal.detail}</p>
-          </div>
-        </FadeIn>
-      </section>
-
-      {/* Pricing */}
-      <section className="relative z-10 px-6 pb-16">
-        <FadeIn>
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-5">Pricing that makes sense</h2>
-            <p className="text-zinc-300 leading-[1.8] text-[16px]">{data.pricing}</p>
           </div>
         </FadeIn>
       </section>

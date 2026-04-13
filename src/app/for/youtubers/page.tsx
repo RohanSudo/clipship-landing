@@ -62,8 +62,6 @@ const data: AudienceData = {
     detail:
       "Cloud tools upload your footage to their servers. That means waiting for uploads, hoping their servers are fast, and trusting them with your unreleased content. ClipShip runs on your PC. Processing starts instantly. No upload wait. No one else touches your footage. And it works offline\u2014edit on a plane, in a cafe, or anywhere without reliable internet.",
   },
-  pricing:
-    "Most AI editing tools charge $20\u201350 per month. That\u2019s $240\u2013600 per year, every year. ClipShip Free lets you process unlimited videos at 720p. ClipShip Pro is a one-time $79\u201399 purchase for 4K exports, no watermark, and all platform uploads. No recurring fees.",
   builtFor:
     "ClipShip is not a general-purpose editor. It\u2019s built specifically for the format YouTubers use most: one person talking to camera. The AI understands speech patterns, knows where emphasis lands, and picks zoom and cut points that feel natural. If your content is you sharing knowledge, telling stories, or teaching your audience, ClipShip is built for you.",
 };

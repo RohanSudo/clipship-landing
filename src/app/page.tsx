@@ -591,7 +591,7 @@ export default function Home() {
             {[
               { target: 6, prefix: "", suffix: "+ hrs", label: "spent editing each video" },
               { target: 200, prefix: "$", suffix: "", label: "per video if you hire an editor" },
-              { target: 50, prefix: "$", suffix: "/mo", label: "for cloud AI tools with generic output" },
+              { target: 50, prefix: "$", suffix: "/mo", label: "for cloud AI tools that own your footage" },
             ].map((item, i) => (
               <FadeIn key={i} delay={0.1 + i * 0.1}>
                 <div className="rounded-2xl bg-[#18181b]/60 border border-white/5 p-8 text-center h-full flex flex-col items-center justify-center">
@@ -729,7 +729,7 @@ export default function Home() {
                   </thead>
                   <tbody className="text-zinc-400">
                     {[
-                      ["Price", "$18-50/mo", "$24-50/mo", "Free / one-time"],
+                      ["Pricing model", "Monthly subscription", "Monthly subscription", "Free + Pro"],
                       ["Processing", "Cloud only", "Cloud only", "Your PC (offline)"],
                       ["Privacy", "Videos uploaded to cloud", "Videos uploaded to cloud", "Never leaves your machine"],
                       ["Editing styles", "One algorithm", "Basic templates", "Multiple named styles"],
@@ -760,7 +760,7 @@ export default function Home() {
               Get early access.
             </h2>
             <p className="text-zinc-400 mb-8">
-              Be the first to try ClipShip when it launches. Early users get special pricing.
+              Be the first to try ClipShip when it launches. Early users get exclusive access.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>

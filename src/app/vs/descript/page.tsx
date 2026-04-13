@@ -4,7 +4,7 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs Descript (2026): Automated Pipeline vs Full Editor",
   description:
-    "ClipShip vs Descript compared. One automates your edit, the other gives you a text-based editor. Features, pricing, and which approach is right for you.",
+    "ClipShip vs Descript compared. One automates your edit, the other gives you a text-based editor. Features and which approach is right for you.",
 };
 
 const data: ComparisonData = {
@@ -15,8 +15,6 @@ const data: ComparisonData = {
     "Descript gives you a full editing suite with AI assists. ClipShip automates the entire edit so you don\u2019t have to touch a timeline.",
   verdictDetail:
     "If you want creative control over every cut, Descript is the better choice. If you want to drop in a recording and get finished videos out, ClipShip saves you hours.",
-  clipshipPrice: "$79\u201399",
-  competitorPrice: "$24\u2013$65/mo",
   features: [
     { feature: "Automated full edit", clipship: "yes", competitor: "no" },
     { feature: "Text-based editing", clipship: "no", competitor: "yes" },
@@ -27,8 +25,7 @@ const data: ComparisonData = {
     { feature: "Team collaboration", clipship: "no", competitor: "yes" },
     { feature: "Screen recording", clipship: "no", competitor: "yes" },
     { feature: "Eye contact AI", clipship: "no", competitor: "yes" },
-    { feature: "One-time pricing", clipship: "yes", competitor: "no" },
-    { feature: "Free tier", clipship: "Unlimited, 720p", competitor: "60 min/month" },
+    { feature: "Unlimited processing", clipship: "yes", competitor: "no" },
   ],
   clipshipWins: [
     {
@@ -42,10 +39,6 @@ const data: ComparisonData = {
     {
       title: "Privacy",
       detail: "Everything runs on your PC. Descript processes through their cloud servers.",
-    },
-    {
-      title: "Pricing",
-      detail: "Descript costs $192\u2013$600/year. ClipShip is $79\u201399 once. The math isn\u2019t close.",
     },
   ],
   competitorWins: [
@@ -69,7 +62,7 @@ const data: ComparisonData = {
       "You\u2019re part of a team that needs collaborative editing with full creative control. You enjoy the editing process and want fine-grained decisions.",
   },
   bottomLine:
-    "Descript is a powerful editor for people who want control. ClipShip is for creators who want to skip the editing entirely. Different tools for different workflows\u2014but if your bottleneck is time spent editing, ClipShip eliminates it at a fraction of the cost.",
+    "Descript is a powerful editor for people who want control. ClipShip is for creators who want to skip the editing entirely. Different tools for different workflows\u2014but if your bottleneck is time spent editing, ClipShip eliminates it.",
 };
 
 export default function VsDescript() {

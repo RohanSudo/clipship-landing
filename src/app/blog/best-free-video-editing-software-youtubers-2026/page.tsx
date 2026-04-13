@@ -19,7 +19,7 @@ export default function BestFreeEditors() {
   return (
     <BlogArticlePage
       title="Best Free Video Editing Software for YouTubers (2026)"
-      description="You shouldn't need to pay $50/month to edit YouTube videos. Here are the best free options in 2026."
+      description="You shouldn't need to pay a fortune to edit YouTube videos. Here are the best free options in 2026."
       badge="Blog"
     >
       <Section title="What YouTubers actually need">
@@ -47,9 +47,9 @@ export default function BestFreeEditors() {
             tagline: "Automates the entire editing process for talking-head videos. Drop your recording in, AI removes dead air, adds zoom cuts, generates captions, and finds your best clips for Shorts.",
             highlight: true,
             details: [
-              { label: "Free tier", value: "Unlimited videos, 720p, watermark" },
+              { label: "Free tier", value: "Unlimited videos, watermark" },
               { label: "Best feature", value: "Full AI automation, no timeline" },
-              { label: "Limitation", value: "720p on free. Talking-head only." },
+              { label: "Limitation", value: "Talking-head videos only" },
               { label: "Platform", value: "Windows desktop (local)" },
             ],
           }}
@@ -88,7 +88,7 @@ export default function BestFreeEditors() {
             details: [
               { label: "Free tier", value: "1 hr/month, watermark" },
               { label: "Best feature", value: "Fast silence detection + NLE export" },
-              { label: "Limitation", value: "English only. Very limited free tier." },
+              { label: "Limitation", value: "English only. Limited free tier." },
               { label: "Platform", value: "Cloud (web-based)" },
             ],
           }}
@@ -113,7 +113,7 @@ export default function BestFreeEditors() {
           headers={["Tool", "AI Automation", "Free Limit", "Best For"]}
           highlightCol={1}
           rows={[
-            { feature: "ClipShip", values: ["Full", "Unlimited (720p)", "Talking-head creators who hate editing"] },
+            { feature: "ClipShip", values: ["Full", "Unlimited", "Talking-head creators who hate editing"] },
             { feature: "DaVinci Resolve", values: ["None", "Nearly everything", "Full manual control"] },
             { feature: "CapCut", values: ["Partial", "1080p + watermarks", "Beginners and mobile editors"] },
             { feature: "Gling", values: ["Silence only", "1 hr/month", "Premiere/Resolve cleanup"] },

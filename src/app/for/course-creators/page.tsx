@@ -62,8 +62,6 @@ const data: AudienceData = {
     detail:
       "Your course content is your intellectual property. It\u2019s what you sell. Uploading unreleased lessons to a cloud editing tool means trusting a third party with your revenue source. ClipShip processes everything on your computer. Your lessons never leave your machine. No cloud uploads, no third-party access, no risk of leaks. Edit with confidence.",
   },
-  pricing:
-    "Hiring an editor for 30 lessons costs $1,500\u20136,000. Cloud AI tools charge $20\u201350 per month forever. ClipShip Free handles unlimited lessons at 720p. ClipShip Pro is $79\u201399 once for 4K and all features. The math is simple.",
   builtFor:
     "Your course sells itself when people see your best moments on social media. ClipShip finds those moments automatically and formats them for every platform. Stop spending weeks editing and start spending that time creating your next course.",
 };

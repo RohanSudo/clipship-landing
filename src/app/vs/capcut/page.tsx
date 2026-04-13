@@ -4,7 +4,7 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs CapCut (2026): Purpose-Built AI vs General Editor",
   description:
-    "ClipShip vs CapCut compared. One is built for talking-head creators, the other is a general-purpose editor. Features, pricing, privacy concerns, and honest recommendations.",
+    "ClipShip vs CapCut compared. One is built for talking-head creators, the other is a general-purpose editor. Features, privacy concerns, and honest recommendations.",
 };
 
 const data: ComparisonData = {
@@ -15,8 +15,6 @@ const data: ComparisonData = {
     "CapCut is versatile and popular. ClipShip is specialized and automatic. If you make talking-head content, ClipShip gets you from raw recording to finished videos with zero editing skills.",
   verdictDetail:
     "Worth noting: CapCut is owned by ByteDance (TikTok\u2019s parent company). Your footage is processed through their servers. ClipShip runs entirely on your PC.",
-  clipshipPrice: "$79\u201399",
-  competitorPrice: "$15\u2013$20/mo",
   features: [
     { feature: "Automated full edit", clipship: "yes", competitor: "no" },
     { feature: "AI clip extraction", clipship: "yes", competitor: "no" },
@@ -26,9 +24,8 @@ const data: ComparisonData = {
     { feature: "Auto captions", clipship: "yes", competitor: "yes" },
     { feature: "Silence removal", clipship: "yes", competitor: "partial" },
     { feature: "Templates library", clipship: "partial", competitor: "yes" },
-    { feature: "One-time pricing", clipship: "yes", competitor: "no" },
     { feature: "Data privacy", clipship: "yes", competitor: "no" },
-    { feature: "Free tier", clipship: "Unlimited, 720p", competitor: "Limited, watermark" },
+    { feature: "Unlimited processing", clipship: "yes", competitor: "no" },
   ],
   clipshipWins: [
     {
@@ -42,10 +39,6 @@ const data: ComparisonData = {
     {
       title: "Privacy",
       detail: "Everything stays on your PC. CapCut is owned by ByteDance\u2014your footage goes through their cloud. For sensitive content, this matters.",
-    },
-    {
-      title: "Pricing",
-      detail: "CapCut Pro is now $180/year. ClipShip Pro is $79\u201399 once. You save money from month one.",
     },
   ],
   competitorWins: [
@@ -64,7 +57,7 @@ const data: ComparisonData = {
   ],
   whoShouldUse: {
     clipship:
-      "You make talking-head content (YouTube, courses, coaching) and want the edit automated. You value privacy and want to pay once instead of monthly.",
+      "You make talking-head content (YouTube, courses, coaching) and want the edit automated. You value privacy and local processing.",
     competitor:
       "You create diverse content types and enjoy the creative editing process. You want effects, transitions, and full creative control over your videos.",
   },
