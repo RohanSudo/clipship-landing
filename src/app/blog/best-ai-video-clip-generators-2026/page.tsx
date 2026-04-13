@@ -12,6 +12,7 @@ export default function BestClipGenerators() {
     <ContentPage
       title="Best AI Video Clip Generators in 2026 (Free and Paid)"
       description="Finding the best moments from long recordings and turning them into short-form clips. Here are the tools that actually do it well."
+      badge="Blog"
     >
       <h2>What is an AI clip generator?</h2>
       <p>

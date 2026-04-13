@@ -12,6 +12,7 @@ export default function BestFreeEditors() {
     <ContentPage
       title="Best Free Video Editing Software for YouTubers (2026)"
       description="You should not need to pay $50/month to edit YouTube videos. Here are the best free options in 2026."
+      badge="Blog"
     >
       <h2>What YouTubers actually need</h2>
       <p>

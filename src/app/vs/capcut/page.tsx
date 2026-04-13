@@ -1,99 +1,77 @@
 import type { Metadata } from "next";
-import ContentPage from "../../components/ContentPage";
+import ComparisonPage, { type ComparisonData } from "../../components/ComparisonPage";
 
 export const metadata: Metadata = {
-  title: "ClipShip vs CapCut (2026): AI Automation vs Manual Editor",
+  title: "ClipShip vs CapCut (2026): Purpose-Built AI vs General Editor",
   description:
-    "Honest comparison of ClipShip and CapCut for talking-head video creators. Automated AI editing vs manual timeline. Pricing, privacy, and which fits your workflow.",
+    "ClipShip vs CapCut compared. One is built for talking-head creators, the other is a general-purpose editor. Features, pricing, privacy concerns, and honest recommendations.",
+};
+
+const data: ComparisonData = {
+  competitor: "CapCut",
+  competitorTagline:
+    "CapCut is a full timeline editor with AI features bolted on. ClipShip is purpose-built for talking-head creators who don\u2019t want to touch a timeline.",
+  verdict:
+    "CapCut is versatile and popular. ClipShip is specialized and automatic. If you make talking-head content, ClipShip gets you from raw recording to finished videos with zero editing skills.",
+  verdictDetail:
+    "Worth noting: CapCut is owned by ByteDance (TikTok\u2019s parent company). Your footage is processed through their servers. ClipShip runs entirely on your PC.",
+  clipshipPrice: "$79\u201399",
+  competitorPrice: "$15\u2013$20/mo",
+  features: [
+    { feature: "Automated full edit", clipship: "yes", competitor: "no" },
+    { feature: "AI clip extraction", clipship: "yes", competitor: "no" },
+    { feature: "Local processing", clipship: "yes", competitor: "partial" },
+    { feature: "Timeline editor", clipship: "no", competitor: "yes" },
+    { feature: "Creative effects/filters", clipship: "no", competitor: "yes" },
+    { feature: "Auto captions", clipship: "yes", competitor: "yes" },
+    { feature: "Silence removal", clipship: "yes", competitor: "partial" },
+    { feature: "Templates library", clipship: "partial", competitor: "yes" },
+    { feature: "One-time pricing", clipship: "yes", competitor: "no" },
+    { feature: "Data privacy", clipship: "yes", competitor: "no" },
+    { feature: "Free tier", clipship: "Unlimited, 720p", competitor: "Limited, watermark" },
+  ],
+  clipshipWins: [
+    {
+      title: "Zero learning curve",
+      detail: "Drop in a recording, get finished videos. No timeline, no learning CapCut\u2019s interface, no manual editing decisions.",
+    },
+    {
+      title: "Automatic clip extraction",
+      detail: "AI finds your best 30\u201390 second moments and formats them for every platform. CapCut has no clip extraction.",
+    },
+    {
+      title: "Privacy",
+      detail: "Everything stays on your PC. CapCut is owned by ByteDance\u2014your footage goes through their cloud. For sensitive content, this matters.",
+    },
+    {
+      title: "Pricing",
+      detail: "CapCut Pro is now $180/year. ClipShip Pro is $79\u201399 once. You save money from month one.",
+    },
+  ],
+  competitorWins: [
+    {
+      title: "Creative versatility",
+      detail: "Full timeline editor with effects, transitions, filters, text animations, and a massive template library. Great for creative short-form content.",
+    },
+    {
+      title: "Music and sound effects",
+      detail: "Large built-in library of royalty-free music, sound effects, and audio tools.",
+    },
+    {
+      title: "Multi-format editing",
+      detail: "Works for any video type\u2014vlogs, montages, music videos, not just talking-head. ClipShip is specialized.",
+    },
+  ],
+  whoShouldUse: {
+    clipship:
+      "You make talking-head content (YouTube, courses, coaching) and want the edit automated. You value privacy and want to pay once instead of monthly.",
+    competitor:
+      "You create diverse content types and enjoy the creative editing process. You want effects, transitions, and full creative control over your videos.",
+  },
+  bottomLine:
+    "CapCut is a great general editor. ClipShip is a specialized pipeline for talking-head creators. If you spend hours cutting dead air and reformatting for multiple platforms, ClipShip eliminates that work entirely. If you enjoy the creative editing process, CapCut gives you more tools to play with.",
 };
 
 export default function VsCapCut() {
-  return (
-    <ContentPage
-      title="ClipShip vs CapCut (2026): AI Automation vs Manual Editor"
-      description="CapCut is a general-purpose video editor. ClipShip automates talking-head editing with AI. Different approaches for different creators."
-    >
-      <h2>Quick Verdict</h2>
-      <p>
-        CapCut is a full timeline editor with AI features bolted on. You still drag clips on a timeline
-        and make editing decisions. ClipShip is purpose-built for talking-head creators. Drop your
-        recording in, AI handles everything, get an edited video + clips out. No timeline needed.
-      </p>
-
-      <h2>Pricing Comparison</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>CapCut</th>
-            <th>ClipShip</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Free tier</td><td>Yes (1080p, watermark on some features)</td><td>Unlimited videos, 720p, watermark</td></tr>
-          <tr><td>Paid</td><td>$10-20/mo</td><td>$79-99 one-time</td></tr>
-          <tr><td>Annual cost</td><td>$180/yr (recently doubled)</td><td>$79-99 total, forever</td></tr>
-          <tr><td>Editing approach</td><td>Manual timeline with AI assists</td><td>Fully AI-automated</td></tr>
-          <tr><td>Processing</td><td>Local + cloud hybrid</td><td>Fully local</td></tr>
-          <tr><td>Short-form clips</td><td>Manual (you cut them yourself)</td><td>AI finds best moments automatically</td></tr>
-          <tr><td>Talking-head focused</td><td>No (general purpose)</td><td>Yes (built specifically for it)</td></tr>
-          <tr><td>Privacy</td><td>ByteDance/TikTok owned (data concerns)</td><td>Everything stays on your PC</td></tr>
-        </tbody>
-      </table>
-
-      <h2>Where CapCut Wins</h2>
-      <p>
-        CapCut is a versatile editor. Effects, transitions, templates, music library, green screen,
-        motion tracking, keyframe animations. If you edit vlogs, montages, music videos, or anything
-        beyond talking-head content, CapCut handles it all. The free tier is also generous for basic
-        editing.
-      </p>
-
-      <h2>Where ClipShip Wins</h2>
-      <p>
-        <strong>Zero learning curve:</strong> CapCut still requires learning a timeline editor.
-        ClipShip has no timeline. You drop a video in and get results out.
-      </p>
-      <p>
-        <strong>Purpose-built for talking heads:</strong> CapCut is a generic editor. ClipShip is
-        designed specifically for talking-head videos. The AI understands speech patterns, knows
-        where to zoom, when to cut, and what makes a good clip.
-      </p>
-      <p>
-        <strong>Automatic clip extraction:</strong> In CapCut, you manually watch your video and
-        cut clips yourself. ClipShip AI analyzes the transcript and finds the best moments for you.
-      </p>
-      <p>
-        <strong>Privacy:</strong> CapCut is owned by ByteDance (TikTok's parent company). There are
-        ongoing concerns about data handling. ClipShip runs 100% on your PC. Nothing is transmitted
-        anywhere.
-      </p>
-      <p>
-        <strong>Pricing:</strong> CapCut Pro recently nearly doubled its annual price to $180/year.
-        ClipShip Pro is $79-99 once with no recurring cost.
-      </p>
-
-      <h2>Who Should Use CapCut</h2>
-      <p>
-        Creators who make diverse content types (vlogs, montages, short films, music videos) and want
-        a free, powerful timeline editor. If you enjoy the editing process and want creative control
-        over effects and transitions, CapCut is a solid tool.
-      </p>
-
-      <h2>Who Should Use ClipShip</h2>
-      <p>
-        Talking-head creators who see editing as a chore, not a creative outlet. If your videos are
-        you talking to camera and you want the fastest path from recording to published content across
-        all platforms, ClipShip automates the parts you do not want to do manually.
-      </p>
-
-      <h2>Bottom Line</h2>
-      <p>
-        CapCut is a Swiss army knife. ClipShip is a scalpel built for one thing: turning talking-head
-        recordings into edited videos and clips. If talking-head content is your primary format,
-        ClipShip saves you hours every week. If you need a general-purpose editor, CapCut is more
-        versatile but requires more of your time.
-      </p>
-    </ContentPage>
-  );
+  return <ComparisonPage data={data} />;
 }

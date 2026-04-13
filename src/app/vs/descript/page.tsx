@@ -1,99 +1,77 @@
 import type { Metadata } from "next";
-import ContentPage from "../../components/ContentPage";
+import ComparisonPage, { type ComparisonData } from "../../components/ComparisonPage";
 
 export const metadata: Metadata = {
-  title: "ClipShip vs Descript (2026): AI Video Editor Comparison",
+  title: "ClipShip vs Descript (2026): Automated Pipeline vs Full Editor",
   description:
-    "Honest comparison of ClipShip and Descript for editing talking-head videos. Text-based editing vs AI automation. Pricing, features, and which one fits your workflow.",
+    "ClipShip vs Descript compared. One automates your edit, the other gives you a text-based editor. Features, pricing, and which approach is right for you.",
+};
+
+const data: ComparisonData = {
+  competitor: "Descript",
+  competitorTagline:
+    "Descript is a powerful text-based editor where you control every cut. ClipShip is an automated pipeline where AI makes the decisions for you.",
+  verdict:
+    "Descript gives you a full editing suite with AI assists. ClipShip automates the entire edit so you don\u2019t have to touch a timeline.",
+  verdictDetail:
+    "If you want creative control over every cut, Descript is the better choice. If you want to drop in a recording and get finished videos out, ClipShip saves you hours.",
+  clipshipPrice: "$79\u201399",
+  competitorPrice: "$24\u2013$65/mo",
+  features: [
+    { feature: "Automated full edit", clipship: "yes", competitor: "no" },
+    { feature: "Text-based editing", clipship: "no", competitor: "yes" },
+    { feature: "AI clip extraction", clipship: "yes", competitor: "no" },
+    { feature: "Silence removal", clipship: "yes", competitor: "yes" },
+    { feature: "Filler word removal", clipship: "yes", competitor: "yes" },
+    { feature: "Local processing", clipship: "yes", competitor: "no" },
+    { feature: "Team collaboration", clipship: "no", competitor: "yes" },
+    { feature: "Screen recording", clipship: "no", competitor: "yes" },
+    { feature: "Eye contact AI", clipship: "no", competitor: "yes" },
+    { feature: "One-time pricing", clipship: "yes", competitor: "no" },
+    { feature: "Free tier", clipship: "Unlimited, 720p", competitor: "60 min/month" },
+  ],
+  clipshipWins: [
+    {
+      title: "Zero editing required",
+      detail: "Drop in your recording, ClipShip handles everything. No timeline, no decisions, no learning curve. Descript still requires you to make every edit.",
+    },
+    {
+      title: "Clip extraction",
+      detail: "ClipShip finds the best 30\u201390 second moments for short-form. Descript has no automatic clip generation.",
+    },
+    {
+      title: "Privacy",
+      detail: "Everything runs on your PC. Descript processes through their cloud servers.",
+    },
+    {
+      title: "Pricing",
+      detail: "Descript costs $192\u2013$600/year. ClipShip is $79\u201399 once. The math isn\u2019t close.",
+    },
+  ],
+  competitorWins: [
+    {
+      title: "Creative control",
+      detail: "Full text-based editing with timeline, transitions, effects, and granular control over every aspect of your video.",
+    },
+    {
+      title: "Team collaboration",
+      detail: "Multiple editors can work on the same project. Comments, version history, shared workspaces.",
+    },
+    {
+      title: "Screen recording + eye contact",
+      detail: "Built-in screen recording and AI eye contact correction\u2014features ClipShip doesn\u2019t have.",
+    },
+  ],
+  whoShouldUse: {
+    clipship:
+      "You\u2019re a solo creator who records talking-head videos and wants the edit done for you automatically. You don\u2019t want to learn an editor or spend time on a timeline.",
+    competitor:
+      "You\u2019re part of a team that needs collaborative editing with full creative control. You enjoy the editing process and want fine-grained decisions.",
+  },
+  bottomLine:
+    "Descript is a powerful editor for people who want control. ClipShip is for creators who want to skip the editing entirely. Different tools for different workflows\u2014but if your bottleneck is time spent editing, ClipShip eliminates it at a fraction of the cost.",
 };
 
 export default function VsDescript() {
-  return (
-    <ContentPage
-      title="ClipShip vs Descript (2026): AI Video Editor Comparison"
-      description="Descript is a full video editor with AI features. ClipShip automates the entire editing process. Different tools for different workflows."
-    >
-      <h2>Quick Verdict</h2>
-      <p>
-        Descript is a powerful editor where you edit video by editing text. You still make the editing
-        decisions. ClipShip is an automated pipeline where AI makes the decisions for you. If you want
-        control over every cut, Descript. If you want to drop footage in and get results out, ClipShip.
-      </p>
-
-      <h2>Pricing Comparison</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>Descript</th>
-            <th>ClipShip</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Free tier</td><td>60 min/month, 100 AI credits (one-time)</td><td>Unlimited videos, 720p, watermark</td></tr>
-          <tr><td>Paid (monthly)</td><td>$24-65/mo depending on tier</td><td>$79-99 one-time</td></tr>
-          <tr><td>Annual cost</td><td>$192-600/yr</td><td>$79-99 total, forever</td></tr>
-          <tr><td>Editing approach</td><td>Text-based (manual decisions)</td><td>AI-automated (hands-off)</td></tr>
-          <tr><td>Processing</td><td>Cloud (heavy server-side)</td><td>Local (runs on your PC)</td></tr>
-          <tr><td>Short-form clips</td><td>Limited (no auto-extraction)</td><td>Yes (AI finds best moments)</td></tr>
-          <tr><td>Team collaboration</td><td>Yes (paid tiers)</td><td>No (solo creator focused)</td></tr>
-          <tr><td>Screen recording</td><td>Yes</td><td>No</td></tr>
-          <tr><td>AI voice cloning</td><td>Yes</td><td>No</td></tr>
-        </tbody>
-      </table>
-
-      <h2>Where Descript Wins</h2>
-      <p>
-        Descript is a full-featured editor. Screen recording, AI voices, team collaboration,
-        podcast editing, eye contact correction, green screen removal. It is a professional tool
-        with deep capabilities. If you need a general-purpose editor, Descript has far more features.
-      </p>
-
-      <h2>Where ClipShip Wins</h2>
-      <p>
-        <strong>Zero editing required:</strong> With Descript, you still make every cut decision
-        by editing the transcript. With ClipShip, AI handles the entire edit. Drop footage in,
-        get edited video + clips out. No timeline, no transcript editing, no decisions.
-      </p>
-      <p>
-        <strong>Privacy:</strong> Descript processes everything on their cloud. Your footage, voice,
-        and content live on their servers. ClipShip runs entirely on your PC.
-      </p>
-      <p>
-        <strong>Short-form clips:</strong> Descript does not automatically extract clips for
-        Reels/Shorts/TikTok. ClipShip finds the best moments and formats them for every short-form
-        platform.
-      </p>
-      <p>
-        <strong>Pricing:</strong> Descript Creator costs $288/year. Business is $600/year. ClipShip
-        Pro is $79-99 once. The savings are significant for solo creators.
-      </p>
-      <p>
-        <strong>No credit system:</strong> Descript limits AI features to credits that run out monthly.
-        ClipShip has no usage limits on local processing.
-      </p>
-
-      <h2>Who Should Use Descript</h2>
-      <p>
-        Teams and professional editors who need a full video editing suite. If you edit podcasts,
-        do screen recordings, need AI voice features, or want granular control over every edit,
-        Descript is the right tool.
-      </p>
-
-      <h2>Who Should Use ClipShip</h2>
-      <p>
-        Solo creators who record talking-head videos and want the editing done automatically.
-        If your workflow is "record, upload, forget," ClipShip handles everything. Especially useful
-        if you make content for multiple platforms (YouTube + Reels + TikTok) from one recording.
-      </p>
-
-      <h2>Bottom Line</h2>
-      <p>
-        These are different tools for different needs. Descript gives you control and flexibility.
-        ClipShip gives you speed and automation. If you spend 4-8 hours editing each video and wish
-        you could just press a button, ClipShip is built for you. If you enjoy the editing process
-        and want fine-grained control, Descript is more your style.
-      </p>
-    </ContentPage>
-  );
+  return <ComparisonPage data={data} />;
 }

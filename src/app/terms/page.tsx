@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Terms() {
   return (
-    <ContentPage title="Terms of Service" description="Last updated: April 2026">
+    <ContentPage title="Terms of Service" description="Last updated: April 2026" badge="Legal">
       <h2>Agreement</h2>
       <p>
         By downloading, installing, or using ClipShip, you agree to these terms. If you do not agree,

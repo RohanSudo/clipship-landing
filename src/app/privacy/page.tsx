@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <ContentPage title="Privacy Policy" description="Last updated: April 2026">
+    <ContentPage title="Privacy Policy" description="Last updated: April 2026" badge="Legal">
       <h2>The short version</h2>
       <p>
         ClipShip processes your videos entirely on your computer. Your footage, audio, and transcripts

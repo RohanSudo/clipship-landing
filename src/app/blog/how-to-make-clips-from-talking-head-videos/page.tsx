@@ -12,6 +12,7 @@ export default function HowToMakeClips() {
     <ContentPage
       title="How to Make Clips from Talking-Head Videos (2026 Guide)"
       description="You recorded a 20-minute video. Now you need 3-5 clips for social media. Here is how to find and create them."
+      badge="Guide"
     >
       <h2>Why clips matter more than long-form</h2>
       <p>
