@@ -372,34 +372,26 @@ function WaitlistForm({ id = "hero" }: { id?: string }) {
       return;
     }
     setStatus("loading");
-    try {
-      const res = await fetch(
-        "https://auto.brandjetmedia.com/webhook/wip/clipship-signup",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name,
-            email,
-            project: "clipship",
-            source: `landing-page-${id}`,
-            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-            turnstileToken,
-          }),
-        }
-      );
-      if (res.ok) {
-        setStatus("success");
-        setMessage("You're on the list. We'll let you know when ClipShip is ready.");
-        setName("");
-        setEmail("");
-      } else {
-        throw new Error("Failed");
+    // Show success immediately, don't wait for n8n to finish processing
+    fetch(
+      "https://auto.brandjetmedia.com/webhook/wip/clipship-signup",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email,
+          project: "clipship",
+          source: `landing-page-${id}`,
+          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+          turnstileToken,
+        }),
       }
-    } catch {
-      setStatus("error");
-      setMessage("Something went wrong. Try again.");
-    }
+    ).catch(() => {}); // Fire and forget, n8n processes in background
+    setStatus("success");
+    setMessage("You're on the list. We'll let you know when ClipShip is ready.");
+    setName("");
+    setEmail("");
   }
 
   if (status === "success") {
