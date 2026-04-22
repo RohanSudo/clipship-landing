@@ -34,13 +34,13 @@ export default function BestClipGenerators() {
           tool={{
             rank: 1,
             name: "ClipShip",
-            tagline: "Desktop app that runs locally on your PC. Same clip-extraction flow as OpusClip and HeyGen—prompt-based search, face tracking, multi-speaker handling, word-level captions—without the subscription or the cloud upload.",
+            tagline: "Desktop app that runs locally on your PC. Same clip-extraction flow as OpusClip and HeyGen—paste a YouTube link or import your own file, prompt-based search, face tracking, multi-speaker handling, word-level captions—without the subscription or the cloud upload.",
             highlight: true,
             details: [
               { label: "Pricing", value: "Free tier / one-time Pro" },
               { label: "Processing", value: "Local (your PC)" },
               { label: "Best for", value: "Privacy + unlimited usage" },
-              { label: "Languages", value: "99 languages" },
+              { label: "Import", value: "YouTube link or file" },
             ],
           }}
         />

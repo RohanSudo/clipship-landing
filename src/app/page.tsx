@@ -806,6 +806,7 @@ export default function Home() {
                       ["Processing", "Cloud upload", "Cloud upload", "Your PC (offline)"],
                       ["Privacy", "Your footage on their servers", "Your footage on their servers", "Never leaves your machine"],
                       ["Clip extraction", "Virality score", "Prompt-based", "Prompt-based + score"],
+                      ["Paste YouTube link", "Yes", "Yes", "Yes"],
                       ["Face tracking", "Yes", "Yes", "Yes"],
                       ["Multi-speaker", "Partial", "Yes", "Yes"],
                       ["Caption styles", "Preset library", "Preset library", "4 word-level styles"],

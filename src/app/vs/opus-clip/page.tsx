@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 const data: ComparisonData = {
   competitor: "OpusClip",
   competitorTagline:
-    "OpusClip is the most popular cloud clip generator. ClipShip does the same job locally on your PC—same clip extraction, same captions, same vertical output, without the subscription.",
+    "OpusClip is the most popular cloud clip generator. ClipShip does the same job locally on your PC—same clip extraction, same YouTube-link import, same captions, same vertical output, without the subscription.",
   verdict:
     "OpusClip is a cloud clip generator with a subscription. ClipShip runs locally with a one-time price. Same core flow, opposite trust model.",
   verdictDetail:
-    "If you only need a handful of clips per month and like the paste-a-YouTube-link workflow, OpusClip is convenient. If you record your own footage, care about privacy, or want unlimited clips without monthly fees, ClipShip is the better deal.",
+    "If you want cloud convenience and integrated social scheduling, OpusClip is a mature option. If you want the same clip-extraction flow on your PC with unlimited usage and a one-time price, ClipShip is the better deal.",
   features: [
     { feature: "AI clip extraction", clipship: "yes", competitor: "yes" },
     { feature: "Virality score", clipship: "yes", competitor: "yes" },
@@ -22,9 +22,9 @@ const data: ComparisonData = {
     { feature: "Face tracking", clipship: "yes", competitor: "yes" },
     { feature: "Multi-speaker handling", clipship: "yes", competitor: "partial" },
     { feature: "Word-level captions", clipship: "yes", competitor: "yes" },
+    { feature: "Paste YouTube link", clipship: "yes", competitor: "yes" },
     { feature: "Local processing", clipship: "yes", competitor: "no" },
     { feature: "One-time price", clipship: "yes", competitor: "no" },
-    { feature: "Paste YouTube link", clipship: "no", competitor: "yes" },
     { feature: "Social scheduling", clipship: "partial", competitor: "yes" },
     { feature: "Clips never expire", clipship: "yes", competitor: "no" },
     { feature: "Unlimited processing", clipship: "yes", competitor: "no" },
@@ -53,29 +53,24 @@ const data: ComparisonData = {
   ],
   competitorWins: [
     {
-      title: "Paste-a-YouTube-link workflow",
-      detail:
-        "OpusClip can pull clips from any public YouTube video by URL. No source file needed. ClipShip works with files you already have on disk.",
-    },
-    {
       title: "Social scheduling built in",
       detail:
-        "OpusClip has integrated scheduling for TikTok, Reels, and Shorts. ClipShip’s scheduling integration is still in development.",
+        "OpusClip has integrated scheduling for TikTok, Reels, and Shorts. ClipShip’s scheduling integration is in development and will ship via Postiz.",
     },
     {
       title: "Polished web UX",
       detail:
-        "OpusClip has had years of cloud-product refinement. Fast onboarding, familiar dashboard. ClipShip is a desktop app in early-access.",
+        "OpusClip has had years of cloud-product refinement. Familiar dashboard, frictionless onboarding. ClipShip is a desktop app in early-access.",
     },
   ],
   whoShouldUse: {
     clipship:
-      "You record your own talking-head recordings, want unlimited clips, care about privacy, and don’t want another monthly subscription. Especially if your content is sensitive (coaching, consulting, course material).",
+      "You want unlimited clips, care about privacy, and don’t want another monthly subscription. Especially if your content is sensitive (coaching, consulting, course material), or you batch-process a lot of recordings.",
     competitor:
-      "You want to repurpose existing public YouTube videos into clips without downloading source files, you like integrated social scheduling, and the monthly fee is not a concern.",
+      "You want a polished cloud dashboard with integrated social scheduling, and the monthly fee plus credit caps aren’t a concern.",
   },
   bottomLine:
-    "OpusClip is a solid cloud clip generator. ClipShip is the local alternative with the same core flow and no subscription. If you create original content and want everything on your own machine with a one-time price, ClipShip is the cleaner buy.",
+    "OpusClip is a solid cloud clip generator. ClipShip is the local alternative with the same core flow—same YouTube-link import, same clip extraction, same captions—and no subscription. If you want everything on your own machine with a one-time price, ClipShip is the cleaner buy.",
 };
 
 export default function VsOpusClip() {
