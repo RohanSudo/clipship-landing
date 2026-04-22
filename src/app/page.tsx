@@ -10,6 +10,7 @@ declare global {
 }
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 
 /* ────────────────────────────────────────────────
@@ -633,16 +634,16 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-              You&apos;re sitting on clips you&apos;ll never post.
+              The cloud-clip-tool tax.
             </h2>
             <p className="text-zinc-400 text-center mb-16 max-w-lg mx-auto">
-              Every long recording has 10-15 clip-worthy moments. Finding them manually takes hours. Cloud tools solve it by charging monthly and uploading your footage.
+              OpusClip, HeyGen, and similar solved clip extraction — by charging a subscription, capping your usage, and holding your footage on their servers.
             </p>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { target: 15, prefix: "", suffix: " clips", label: "hiding in every 90-min recording" },
+              { target: 3, prefix: "", suffix: " days", label: "until free OpusClip clips expire and vanish" },
               { target: 29, prefix: "$", suffix: "/mo", label: "for OpusClip, HeyGen, and similar" },
               { target: 100, prefix: "", suffix: "%", label: "of your footage uploaded to their servers" },
             ].map((item, i) => (
@@ -776,8 +777,24 @@ export default function Home() {
                   <thead>
                     <tr className="border-b border-white/5">
                       <th className="text-left py-4 px-6 text-zinc-500 font-medium" />
-                      <th className="text-center py-4 px-4 text-zinc-500 font-medium">OpusClip</th>
-                      <th className="text-center py-4 px-4 text-zinc-500 font-medium">HeyGen Highlights</th>
+                      <th className="text-center py-4 px-4 text-zinc-500 font-medium">
+                        <Link
+                          href="/vs/opus-clip"
+                          className="inline-flex items-center gap-1 hover:text-violet-300 transition-colors group"
+                        >
+                          OpusClip
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-xs">→</span>
+                        </Link>
+                      </th>
+                      <th className="text-center py-4 px-4 text-zinc-500 font-medium">
+                        <Link
+                          href="/vs/heygen"
+                          className="inline-flex items-center gap-1 hover:text-violet-300 transition-colors group"
+                        >
+                          HeyGen Highlights
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-xs">→</span>
+                        </Link>
+                      </th>
                       <th className="text-center py-4 px-4">
                         <span className="gradient-text font-bold">ClipShip</span>
                       </th>
@@ -810,6 +827,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Dig deeper (internal links for SEO + navigation) ── */}
+      <section className="py-24 px-6 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
+              Dig deeper.
+            </h2>
+            <p className="text-zinc-400 text-center mb-14 max-w-lg mx-auto">
+              Honest comparisons, audience breakdowns, and guides.
+            </p>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <FadeIn delay={0.05}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-violet-400 mb-4">Compare</h3>
+              <ul className="space-y-2.5">
+                <li><Link href="/vs/opus-clip" className="text-sm text-zinc-300 hover:text-white transition-colors">ClipShip vs OpusClip →</Link></li>
+                <li><Link href="/vs/heygen" className="text-sm text-zinc-300 hover:text-white transition-colors">ClipShip vs HeyGen Highlights →</Link></li>
+                <li><Link href="/vs/descript" className="text-sm text-zinc-300 hover:text-white transition-colors">ClipShip vs Descript →</Link></li>
+                <li><Link href="/vs/gling" className="text-sm text-zinc-300 hover:text-white transition-colors">ClipShip vs Gling →</Link></li>
+                <li><Link href="/vs/capcut" className="text-sm text-zinc-300 hover:text-white transition-colors">ClipShip vs CapCut →</Link></li>
+              </ul>
+            </FadeIn>
+
+            <FadeIn delay={0.1}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-cyan-400 mb-4">Built for</h3>
+              <ul className="space-y-2.5">
+                <li><Link href="/for/youtubers" className="text-sm text-zinc-300 hover:text-white transition-colors">YouTubers →</Link></li>
+                <li><Link href="/for/course-creators" className="text-sm text-zinc-300 hover:text-white transition-colors">Course creators →</Link></li>
+                <li><Link href="/for/coaches" className="text-sm text-zinc-300 hover:text-white transition-colors">Coaches &amp; consultants →</Link></li>
+              </ul>
+            </FadeIn>
+
+            <FadeIn delay={0.15}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Read</h3>
+              <ul className="space-y-2.5">
+                <li><Link href="/blog/best-ai-video-clip-generators-2026" className="text-sm text-zinc-300 hover:text-white transition-colors">Best AI video clip generators 2026 →</Link></li>
+                <li><Link href="/blog/how-to-make-clips-from-talking-head-videos" className="text-sm text-zinc-300 hover:text-white transition-colors">How to make clips from talking-head videos →</Link></li>
+                <li><Link href="/blog/best-free-video-editing-software-youtubers-2026" className="text-sm text-zinc-300 hover:text-white transition-colors">Best free video editing software 2026 →</Link></li>
+              </ul>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* ── Bottom CTA ── */}
       <section className="py-32 px-6 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
@@ -830,23 +892,70 @@ export default function Home() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-white/5 py-8 px-6 relative z-10">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <LogoIcon className="w-5 h-5" />
-            <span className="text-sm text-zinc-500">ClipShip</span>
+      <footer className="border-t border-white/5 pt-16 pb-8 px-6 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          {/* Link grid */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+            {/* Brand column */}
+            <div className="col-span-2 md:col-span-2">
+              <div className="flex items-center gap-2 mb-3">
+                <LogoIcon className="w-6 h-6" />
+                <span className="font-semibold text-white text-sm">ClipShip</span>
+              </div>
+              <p className="text-sm text-zinc-500 leading-relaxed max-w-xs">
+                Local AI clip generator. Long videos in, viral clips out. Runs on your PC, one-time price.
+              </p>
+              <div className="flex items-center gap-3 mt-5">
+                <a href="https://x.com/ClipShipApp" target="_blank" rel="noopener noreferrer" aria-label="Follow ClipShip on X" className="text-zinc-600 hover:text-zinc-300 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://instagram.com/ClipShipApp" target="_blank" rel="noopener noreferrer" aria-label="Follow ClipShip on Instagram" className="text-zinc-600 hover:text-zinc-300 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Compare column */}
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4">Compare</h4>
+              <ul className="space-y-2.5">
+                <li><Link href="/vs/opus-clip" className="text-sm text-zinc-500 hover:text-white transition-colors">vs OpusClip</Link></li>
+                <li><Link href="/vs/heygen" className="text-sm text-zinc-500 hover:text-white transition-colors">vs HeyGen Highlights</Link></li>
+                <li><Link href="/vs/descript" className="text-sm text-zinc-500 hover:text-white transition-colors">vs Descript</Link></li>
+                <li><Link href="/vs/gling" className="text-sm text-zinc-500 hover:text-white transition-colors">vs Gling</Link></li>
+                <li><Link href="/vs/capcut" className="text-sm text-zinc-500 hover:text-white transition-colors">vs CapCut</Link></li>
+              </ul>
+            </div>
+
+            {/* Built for column */}
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4">Built for</h4>
+              <ul className="space-y-2.5">
+                <li><Link href="/for/youtubers" className="text-sm text-zinc-500 hover:text-white transition-colors">YouTubers</Link></li>
+                <li><Link href="/for/course-creators" className="text-sm text-zinc-500 hover:text-white transition-colors">Course creators</Link></li>
+                <li><Link href="/for/coaches" className="text-sm text-zinc-500 hover:text-white transition-colors">Coaches</Link></li>
+              </ul>
+            </div>
+
+            {/* Read column */}
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4">Read</h4>
+              <ul className="space-y-2.5">
+                <li><Link href="/blog/best-ai-video-clip-generators-2026" className="text-sm text-zinc-500 hover:text-white transition-colors">Best AI clip generators</Link></li>
+                <li><Link href="/blog/how-to-make-clips-from-talking-head-videos" className="text-sm text-zinc-500 hover:text-white transition-colors">How to make clips</Link></li>
+                <li><Link href="/blog/best-free-video-editing-software-youtubers-2026" className="text-sm text-zinc-500 hover:text-white transition-colors">Best free editors</Link></li>
+              </ul>
+            </div>
           </div>
-          <div className="flex items-center gap-4">
-            <a href="https://x.com/ClipShipApp" target="_blank" rel="noopener noreferrer" className="text-zinc-600 hover:text-zinc-400 transition-colors">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="https://instagram.com/ClipShipApp" target="_blank" rel="noopener noreferrer" className="text-zinc-600 hover:text-zinc-400 transition-colors">
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
+
+          {/* Bottom bar */}
+          <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600">
+            <p>&copy; {new Date().getFullYear()} ClipShip. All rights reserved.</p>
+            <div className="flex items-center gap-5">
+              <Link href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-zinc-400 transition-colors">Terms</Link>
+            </div>
           </div>
-          <p className="text-xs text-zinc-600">
-            &copy; {new Date().getFullYear()} ClipShip. All rights reserved.
-          </p>
         </div>
       </footer>
     </main>
