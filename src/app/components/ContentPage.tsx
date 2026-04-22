@@ -144,7 +144,7 @@ export default function ContentPage({
                   Try ClipShip for free
                 </h2>
                 <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
-                  Record once. Get an edited video + clips for every platform. Runs on your PC. No cloud. No subscription.
+                  Turn long videos into viral clips. Local AI, no cloud, no subscription. A one-time price for unlimited clips.
                 </p>
                 <Link
                   href="/#waitlist"

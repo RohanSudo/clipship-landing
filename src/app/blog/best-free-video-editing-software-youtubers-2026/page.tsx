@@ -6,36 +6,32 @@ import BlogArticlePage, {
   ToolCard,
   ComparisonTable,
   RecommendationCard,
-  Callout,
 } from "../../components/BlogArticlePage";
 
 export const metadata: Metadata = {
   title: "Best Free Video Editing Software for YouTubers (2026)",
   description:
-    "The best free video editing tools for YouTube creators in 2026. From full editors to AI automation. Honest reviews with pricing and limitations.",
+    "The best free video tools for YouTube creators in 2026. From full timeline editors to AI clip generators. Honest reviews with pricing and limitations.",
 };
 
 export default function BestFreeEditors() {
   return (
     <BlogArticlePage
       title="Best Free Video Editing Software for YouTubers (2026)"
-      description="You shouldn't need to pay a fortune to edit YouTube videos. Here are the best free options in 2026."
+      description="You shouldn't need to pay a fortune to edit YouTube videos—or to clip them. Here are the best free options in 2026."
       badge="Blog"
     >
-      <Section title="What YouTubers actually need">
+      <Section title="Two different jobs">
         <Paragraph>
-          Most YouTube creators don&apos;t need Hollywood-grade visual effects. They need:
+          Most YouTube creators actually have two jobs:
         </Paragraph>
         <BulletList items={[
-          "Dead air and mistakes removed",
-          "Clean cuts between sections",
-          "Captions (increasingly required for engagement)",
-          "Simple zoom cuts for visual variety",
-          "Export in the right format for YouTube",
+          <><strong className="text-white">Editing</strong>: turning raw footage into a finished long-form video (cuts, captions, B-roll, sound).</>,
+          <><strong className="text-white">Clipping</strong>: turning that finished video into short-form clips for Shorts, Reels, and TikTok.</>,
         ]} />
         <Paragraph>
-          Many free tools handle this. Here are the best ones, ranked by how well they serve
-          talking-head YouTubers specifically.
+          Most &ldquo;video editor&rdquo; lists only cover job one. This list covers both—so you can pick the
+          right free tool for the job you actually have.
         </Paragraph>
       </Section>
 
@@ -44,12 +40,12 @@ export default function BestFreeEditors() {
           tool={{
             rank: 1,
             name: "ClipShip (Free tier)",
-            tagline: "Automates the entire editing process for talking-head videos. Drop your recording in, AI removes dead air, adds zoom cuts, generates captions, and finds your best clips for Shorts.",
+            tagline: "Not a general editor—a clip generator. Drop a long recording in, AI finds the 10–15 best moments, formats them as vertical clips with captions baked in. Runs locally on your PC, no cloud upload.",
             highlight: true,
             details: [
-              { label: "Free tier", value: "Unlimited videos, watermark" },
-              { label: "Best feature", value: "Full AI automation, no timeline" },
-              { label: "Limitation", value: "Talking-head videos only" },
+              { label: "Free tier", value: "Unlimited clips, watermark" },
+              { label: "Best feature", value: "Prompt-based clip search, face tracking" },
+              { label: "Limitation", value: "Clip extraction only, not a full editor" },
               { label: "Platform", value: "Windows desktop (local)" },
             ],
           }}
@@ -58,7 +54,7 @@ export default function BestFreeEditors() {
           tool={{
             rank: 2,
             name: "DaVinci Resolve (Free)",
-            tagline: "Professional editor used in Hollywood. The free version has nearly every feature most YouTubers need. Steep learning curve but unmatched capability.",
+            tagline: "Professional editor used in Hollywood. The free version has nearly every feature most YouTubers need for full edits. Steep learning curve but unmatched capability.",
             details: [
               { label: "Free tier", value: "Full editor, color grading, up to 4K" },
               { label: "Best feature", value: "Professional color correction" },
@@ -84,11 +80,11 @@ export default function BestFreeEditors() {
           tool={{
             rank: 4,
             name: "Gling (Free tier)",
-            tagline: "Does one thing: removes silences and mistakes from talking-head videos. If that\u2019s your main pain point and you edit in Premiere or Resolve, Gling saves hours.",
+            tagline: "Does one thing well: removes silences and mistakes from talking-head videos and exports a timeline for Premiere or Resolve. Not a clip generator—a cleanup tool for full edits.",
             details: [
               { label: "Free tier", value: "1 hr/month, watermark" },
-              { label: "Best feature", value: "Fast silence detection + NLE export" },
-              { label: "Limitation", value: "English only. Limited free tier." },
+              { label: "Best feature", value: "Silence detection + NLE export" },
+              { label: "Limitation", value: "English only. No clip extraction." },
               { label: "Platform", value: "Cloud (web-based)" },
             ],
           }}
@@ -110,14 +106,14 @@ export default function BestFreeEditors() {
 
       <Section title="Quick comparison">
         <ComparisonTable
-          headers={["Tool", "AI Automation", "Free Limit", "Best For"]}
+          headers={["Tool", "Job", "AI automation", "Free limit"]}
           highlightCol={1}
           rows={[
-            { feature: "ClipShip", values: ["Full", "Unlimited", "Talking-head creators who hate editing"] },
-            { feature: "DaVinci Resolve", values: ["None", "Nearly everything", "Full manual control"] },
-            { feature: "CapCut", values: ["Partial", "1080p + watermarks", "Beginners and mobile editors"] },
-            { feature: "Gling", values: ["Silence only", "1 hr/month", "Premiere/Resolve cleanup"] },
-            { feature: "Shotcut", values: ["None", "Everything", "Zero-cost editing"] },
+            { feature: "ClipShip", values: ["Clip extraction", "Full", "Unlimited (watermark)"] },
+            { feature: "DaVinci Resolve", values: ["Full editing", "None", "Nearly everything"] },
+            { feature: "CapCut", values: ["Full editing", "Partial", "1080p + watermark"] },
+            { feature: "Gling", values: ["Silence removal", "Silence only", "1 hr/month"] },
+            { feature: "Shotcut", values: ["Full editing", "None", "Everything"] },
           ]}
         />
       </Section>
@@ -125,23 +121,38 @@ export default function BestFreeEditors() {
       <Section title="Which should you pick?">
         <div className="grid sm:grid-cols-2 gap-4">
           <RecommendationCard
-            condition="Talking-head videos, fastest workflow"
-            recommendation="Start with ClipShip Free. It automates the boring parts. If you need creative control for specific videos, use DaVinci Resolve (also free) for those."
+            condition="You want short-form clips from long uploads"
+            recommendation="ClipShip Free. It doesn’t edit full videos—it finds the best 30–90 second moments inside them and formats them as vertical clips with captions. No cloud upload, unlimited usage."
             highlighted
           />
           <RecommendationCard
-            condition="Diverse content types (vlogs, montages)"
-            recommendation="DaVinci Resolve or CapCut. You need a general-purpose timeline editor."
+            condition="You want a full long-form editor"
+            recommendation="DaVinci Resolve. Professional-grade, free, and covers everything—but you do the work. Best for YouTubers who enjoy editing."
           />
           <RecommendationCard
-            condition="Just need silence removal"
-            recommendation="Gling\u2019s free tier or ClipShip\u2019s free tier both handle this. ClipShip does more but Gling integrates with Premiere/Resolve."
+            condition="Beginner doing mixed content"
+            recommendation="CapCut. Versatile with templates and effects. Accept that ByteDance processes your footage through cloud features."
           />
           <RecommendationCard
-            condition="Absolute zero cost, no compromises"
-            recommendation="Shotcut. Completely free, open source, no account needed. But you\u2019re doing everything manually."
+            condition="Just need silence removal for Premiere/Resolve"
+            recommendation="Gling. Exports a clean timeline to your NLE. Doesn’t do short-form clips."
           />
         </div>
+        <div className="mt-4">
+          <RecommendationCard
+            condition="Absolute zero-cost full editor, no compromises"
+            recommendation="Shotcut. Completely free, open source, no account needed. Dated UI and no AI—but every feature is unlocked."
+          />
+        </div>
+      </Section>
+
+      <Section title="The honest take">
+        <Paragraph>
+          If you only post long-form YouTube videos, you want a traditional editor like DaVinci Resolve.
+          If you also need short-form clips for Shorts, Reels, and TikTok (and you should—that&apos;s where
+          new audiences find you), you need a separate tool for that job. ClipShip does that job on
+          your PC with no subscription and no upload wait.
+        </Paragraph>
       </Section>
     </BlogArticlePage>
   );

@@ -2,56 +2,56 @@ import type { Metadata } from "next";
 import AudiencePage, { type AudienceData } from "../../components/AudiencePage";
 
 export const metadata: Metadata = {
-  title: "ClipShip for Coaches and Consultants - Content from Every Call",
+  title: "ClipShip for Coaches: Clips From Every Coaching Call",
   description:
-    "Turn your coaching sessions and webinars into edited content and social media clips. Private, local processing. Your client content stays on your machine.",
+    "Turn coaching sessions, webinars, and keynotes into social clips without uploading client recordings. Local AI clip generator, prompt-based search, 99 languages.",
 };
 
 const data: AudienceData = {
   audience: "Coaches & Consultants",
   headline: "Every call is content. Stop wasting it.",
   subheadline:
-    "You talk for a living. Every coaching call, webinar, and presentation is a goldmine of content waiting to be repurposed. ClipShip does the extraction for you.",
-  painPoint: { stat: "6hrs", label: "to manually edit and clip each recording" },
+    "You talk for a living. Every coaching call, webinar, and keynote holds 10+ clip-worthy moments. ClipShip extracts them automatically—on your machine, never in the cloud.",
+  painPoint: { stat: "10+", label: "clip-worthy moments in every 60-min call" },
   problem: "You already have the content",
   problemDetail:
-    "As a coach or consultant, you talk for a living. Group calls, webinars, Q&A sessions, presentations. Every one of these is a goldmine of content. The problem isn\u2019t creating content\u2014it\u2019s extracting and editing it. You don\u2019t have 6 hours to edit each recording. You have clients to serve.",
+    "Group calls, webinars, Q&A sessions, keynotes, podcast appearances. Every one of these is a goldmine of teachable moments. The problem isn’t creating content—it’s extracting it. You don’t have 3 hours to scrub through recordings. And you definitely don’t want to upload client conversations to a cloud clip generator. So the content just piles up.",
   features: [
     {
       icon: "clips",
       title: "Automatic clip extraction",
-      detail: "AI finds your best teaching moments, sharpest insights, and most quotable statements from any recording.",
+      detail: "AI finds your sharpest insights, most quotable statements, and strongest teaching moments from any recording.",
+    },
+    {
+      icon: "zoom",
+      title: "Prompt-based clip search",
+      detail: "Type what you want: “the hot takes,” “the frameworks,” “when I push back on something.” The AI pulls those moments out.",
     },
     {
       icon: "shield",
       title: "Client confidentiality",
-      detail: "Recordings never leave your machine. No cloud uploads. No third-party access. Use it with full confidence.",
+      detail: "Recordings never leave your machine. No cloud uploads. No third-party access. Use it with full confidence—even for recordings you can’t post.",
+    },
+    {
+      icon: "users",
+      title: "Multi-speaker handling",
+      detail: "1-on-1 calls, group sessions, interview podcasts, panels. AI detects each speaker and tracks whoever is talking so the frame never feels wrong.",
     },
     {
       icon: "captions",
       title: "Captions in 99 languages",
-      detail: "Coach clients internationally? Transcription and captions in 99 languages. Most tools only do English.",
-    },
-    {
-      icon: "format",
-      title: "Every platform covered",
-      detail: "Clips formatted for LinkedIn, Instagram Reels, TikTok, and YouTube Shorts. Post one per day for a week of content.",
-    },
-    {
-      icon: "users",
-      title: "Works for every format",
-      detail: "1-on-1 calls, group sessions, webinars, keynotes, podcasts, Q&A sessions. If you\u2019re talking, ClipShip can clip it.",
+      detail: "Coach clients internationally? Word-level captions in 99 languages. Most tools only do English.",
     },
     {
       icon: "clock",
-      title: "Content strategy on autopilot",
-      detail: "One 60-minute webinar gives you 3\u20135 social clips. Each with title, hook, and captions ready to post.",
+      title: "A week of content from one session",
+      detail: "One 60-minute call gives you 5+ vertical clips, each with title, hook, and captions—enough to post daily for a week.",
     },
   ],
   output: {
     label: "One coaching session gives you",
     formats: [
-      "3\u20135 social media clips with titles and hooks",
+      "5–10 vertical clips with title and hook suggestions",
       "Captioned clips for LinkedIn, Instagram, TikTok",
       "YouTube Shorts from your best moments",
       "A week of content from a single session",
@@ -60,10 +60,10 @@ const data: AudienceData = {
   whyLocal: {
     title: "Client confidentiality is non-negotiable",
     detail:
-      "Coaches handle sensitive client conversations. Business strategies, personal challenges, financial details. Uploading these recordings to a cloud editing service is a risk. ClipShip runs entirely on your computer. Your recordings, transcripts, and clips never leave your machine. Of course, only repurpose content you have permission to share publicly. ClipShip gives you the tool\u2014the judgment of what to post is yours.",
+      "Coaches and consultants handle sensitive conversations—business strategies, personal challenges, financial details. Uploading these recordings to a cloud clip generator is a risk. ClipShip runs entirely on your computer. Recordings, transcripts, and clips never leave your machine. Of course, only post content you have permission to share—ClipShip gives you the tool; the judgment of what to post stays with you.",
   },
   builtFor:
-    "Most coaches know they should post on social media. Few have time to edit and repurpose content consistently. ClipShip changes the equation\u2014drop in your session recording, get clips out, post them throughout the week. Your expertise is already there. ClipShip just helps people see it.",
+    "Most coaches know they should post on social media. Few have time to extract and repurpose content consistently. ClipShip changes the equation—drop in your session recording, get clips out, post them throughout the week. Your expertise is already there. ClipShip just helps people see it.",
 };
 
 export default function ForCoaches() {

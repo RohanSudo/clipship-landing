@@ -105,50 +105,111 @@ function AnimatedCounter({ target, prefix = "", suffix = "" }: { target: number;
 }
 
 /* ────────────────────────────────────────────────
-   WAVEFORM ANIMATION (shows silence removal)
+   CLIP FINDER ANIMATION (AI scans long recording, highlights clips)
    ──────────────────────────────────────────────── */
 
-function WaveformAnimation() {
+function ClipFinderAnimation() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const [phase, setPhase] = useState(0); // 0=raw, 1=detected, 2=cut
+  const [phase, setPhase] = useState(0); // 0=loaded, 1=scanning, 2=clips found
 
   useEffect(() => {
     if (!isInView) return;
-    const t1 = setTimeout(() => setPhase(1), 800);
-    const t2 = setTimeout(() => setPhase(2), 2200);
+    const t1 = setTimeout(() => setPhase(1), 600);
+    const t2 = setTimeout(() => setPhase(2), 2100);
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [isInView]);
 
+  // Three clip regions within the 80-bar "long recording" timeline.
+  // Bars inside these ranges are the "viral moments" the AI finds.
+  const clipRegions = [
+    { start: 9, end: 17, label: "CLIP 1" },
+    { start: 34, end: 44, label: "CLIP 2" },
+    { start: 60, end: 69, label: "CLIP 3" },
+  ];
+  const inClip = (i: number) =>
+    clipRegions.some((r) => i >= r.start && i <= r.end);
+
   const bars = Array.from({ length: 80 }, (_, i) => {
-    const isSilent = (i >= 15 && i <= 22) || (i >= 45 && i <= 55) || (i >= 68 && i <= 73);
-    const height = isSilent ? 3 + Math.random() * 3 : 8 + Math.random() * 28;
-    return { height, isSilent };
+    // Clip-worthy moments have higher amplitude (more energy in the speech)
+    const height = inClip(i) ? 14 + Math.random() * 22 : 6 + Math.random() * 16;
+    return { height };
   });
 
   return (
-    <div ref={ref} className="flex items-center justify-center gap-[2px] h-16 overflow-hidden">
-      {bars.map((bar, i) => (
+    <div
+      ref={ref}
+      className="relative flex items-end justify-center gap-[2px] h-16"
+    >
+      {/* Scanner line that sweeps across during phase 1 */}
+      {phase >= 1 && (
         <motion.div
-          key={i}
-          className="rounded-full"
-          initial={{ height: 2, opacity: 0 }}
+          className="absolute top-0 bottom-0 w-[2px] rounded-full pointer-events-none z-10"
+          style={{
+            background:
+              "linear-gradient(to bottom, transparent, rgba(124,58,237,0.9), transparent)",
+            boxShadow: "0 0 12px rgba(124,58,237,0.6)",
+          }}
+          initial={{ left: "0%", opacity: 0 }}
           animate={{
-            height: phase >= 2 && bar.isSilent ? 0 : bar.height,
-            width: phase >= 2 && bar.isSilent ? 0 : 3,
-            opacity: isInView ? (phase >= 2 && bar.isSilent ? 0 : 1) : 0,
-            marginRight: phase >= 2 && bar.isSilent ? 0 : 1,
-            backgroundColor:
-              phase >= 1 && bar.isSilent
-                ? "rgb(239 68 68)"
-                : "rgb(124 58 237)",
+            left: phase >= 2 ? "100%" : "100%",
+            opacity: phase >= 2 ? 0 : [0, 1, 1, 0.8],
           }}
-          transition={{
-            duration: phase === 0 ? 0.3 : 0.5,
-            delay: phase === 0 ? i * 0.01 : phase >= 2 && bar.isSilent ? i * 0.005 : 0,
-          }}
+          transition={{ duration: 1.4, ease: "linear" }}
         />
-      ))}
+      )}
+
+      {/* Clip labels — float above the clip regions in phase 2 */}
+      {phase >= 2 &&
+        clipRegions.map((r, ri) => {
+          const mid = (r.start + r.end) / 2;
+          const leftPct = (mid / 80) * 100;
+          return (
+            <motion.div
+              key={ri}
+              className="absolute -top-5 text-[9px] font-bold tracking-wider text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 rounded px-1.5 py-0.5 whitespace-nowrap -translate-x-1/2 shadow-[0_0_10px_rgba(6,182,212,0.3)]"
+              initial={{ opacity: 0, y: 6, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ delay: 0.12 * ri, type: "spring" as const, damping: 14 }}
+              style={{ left: `${leftPct}%` }}
+            >
+              {r.label}
+            </motion.div>
+          );
+        })}
+
+      {bars.map((bar, i) => {
+        const isClipBar = inClip(i);
+        // Scanner position drives "scanned so far" state during phase 1
+        const scanThreshold = phase === 1 ? (i / 80) : 1;
+        const scanned = phase >= 2 || (phase === 1 && scanThreshold < 1);
+        return (
+          <motion.div
+            key={i}
+            className="rounded-full"
+            initial={{ height: 2, opacity: 0 }}
+            animate={{
+              height: phase >= 2 && isClipBar ? bar.height * 1.15 : bar.height,
+              width: 3,
+              opacity: isInView ? 1 : 0,
+              backgroundColor:
+                phase >= 2 && isClipBar
+                  ? "rgb(34 211 238)" // cyan-400 — "found clip"
+                  : scanned
+                  ? "rgb(124 58 237)" // violet-600 — "analyzed"
+                  : "rgb(113 113 122)", // zinc-500 — "unanalyzed"
+              boxShadow:
+                phase >= 2 && isClipBar
+                  ? "0 0 8px rgba(34,211,238,0.5)"
+                  : "none",
+            }}
+            transition={{
+              duration: phase === 0 ? 0.3 : 0.4,
+              delay: phase === 0 ? i * 0.01 : phase === 1 ? (i / 80) * 1.4 : 0,
+            }}
+          />
+        );
+      })}
     </div>
   );
 }
@@ -168,7 +229,7 @@ function AppMockup() {
     return () => clearInterval(interval);
   }, [isInView]);
 
-  const steps = ["Drop footage", "Removing silence...", "Applying style...", "Ready to ship"];
+  const steps = ["Drop recording", "Finding clips...", "Applying style...", "Ready to post"];
   const progress = [0, 35, 78, 100];
 
   return (
@@ -213,7 +274,7 @@ function AppMockup() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
                       </svg>
                     </motion.div>
-                    <p className="text-sm text-zinc-400">Drop your footage here</p>
+                    <p className="text-sm text-zinc-400">Drop your recording here</p>
                     <p className="text-xs text-zinc-600 mt-1">MP4, MOV, MKV up to 2 hours</p>
                   </div>
                 )}
@@ -226,7 +287,7 @@ function AppMockup() {
                         animate={{ rotate: 360 }}
                         transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
                       />
-                      <span className="text-sm text-zinc-300">Removing silence...</span>
+                      <span className="text-sm text-zinc-300">Finding your best clips...</span>
                     </div>
                     <div className="w-full h-2 bg-white/5 rounded-full overflow-hidden">
                       <motion.div
@@ -236,20 +297,20 @@ function AppMockup() {
                         transition={{ duration: 2.5, ease: "easeOut" }}
                       />
                     </div>
-                    <div className="mt-4 w-full">
-                      <WaveformAnimation />
+                    <div className="mt-4 w-full pt-5">
+                      <ClipFinderAnimation />
                     </div>
                   </div>
                 )}
 
                 {step === 2 && (
                   <div className="w-full max-w-sm flex flex-col items-center">
-                    <p className="text-sm text-zinc-300 mb-4">Choose your editing style</p>
+                    <p className="text-sm text-zinc-300 mb-4">Pick your caption style</p>
                     <div className="flex gap-3 justify-center">
                       {[
-                        { name: "Confident", desc: "Tight cuts, bold" },
-                        { name: "Clean", desc: "Professional" },
-                        { name: "High Energy", desc: "Fast-paced" },
+                        { name: "Karaoke", desc: "Word-by-word" },
+                        { name: "Beast", desc: "Bold highlights" },
+                        { name: "Clean", desc: "Minimal" },
                       ].map((style, i) => (
                         <motion.div
                           key={style.name}
@@ -290,9 +351,9 @@ function AppMockup() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                     </motion.div>
-                    <p className="text-sm text-zinc-300 mb-4">Edit complete. Ship it?</p>
+                    <p className="text-sm text-zinc-300 mb-4">12 clips ready. Post them?</p>
                     <div className="flex gap-3 justify-center flex-wrap">
-                      {["YouTube", "TikTok", "Instagram"].map((p, i) => (
+                      {["Reels", "Shorts", "TikTok"].map((p, i) => (
                         <motion.div
                           key={p}
                           initial={{ opacity: 0, scale: 0.8 }}
@@ -528,22 +589,22 @@ export default function Home() {
 
           <FadeIn delay={0.1}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
-              Record once.
+              Long videos in.
               <br />
-              <span className="gradient-text">Get everything.</span>
+              <span className="gradient-text">Viral clips out.</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.2}>
             <div className="max-w-lg mx-auto mb-12 space-y-3">
               <p className="text-lg text-zinc-400 leading-relaxed">
-                Drop your talking-head recording in.
+                Drop a 90-minute recording in. AI finds the 10-15 clips hiding inside it.
               </p>
               <p className="text-lg text-zinc-400 leading-relaxed">
-                AI edits your full video and finds the best clips for Reels, Shorts, and TikTok.
+                Vertical-formatted, captioned, face-tracked, ready for Reels, Shorts, and TikTok.
               </p>
               <p className="text-lg text-zinc-200 font-medium mt-4">
-                No cloud. No subscription. Runs on your PC.
+                Runs on your PC. No cloud. One-time price.
               </p>
             </div>
           </FadeIn>
@@ -572,18 +633,18 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-              Editing is the bottleneck.
+              You&apos;re sitting on clips you&apos;ll never post.
             </h2>
             <p className="text-zinc-400 text-center mb-16 max-w-lg mx-auto">
-              You record great content. Then spend more time editing than creating.
+              Every long recording has 10-15 clip-worthy moments. Finding them manually takes hours. Cloud tools solve it by charging monthly and uploading your footage.
             </p>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { target: 6, prefix: "", suffix: "+ hrs", label: "spent editing each video" },
-              { target: 200, prefix: "$", suffix: "", label: "per video if you hire an editor" },
-              { target: 50, prefix: "$", suffix: "/mo", label: "for cloud AI tools that own your footage" },
+              { target: 15, prefix: "", suffix: " clips", label: "hiding in every 90-min recording" },
+              { target: 29, prefix: "$", suffix: "/mo", label: "for OpusClip, HeyGen, and similar" },
+              { target: 100, prefix: "", suffix: "%", label: "of your footage uploaded to their servers" },
             ].map((item, i) => (
               <FadeIn key={i} delay={0.1 + i * 0.1}>
                 <div className="rounded-2xl bg-[#18181b]/60 border border-white/5 p-8 text-center h-full flex flex-col items-center justify-center">
@@ -606,7 +667,7 @@ export default function Home() {
               Three steps. That&apos;s it.
             </h2>
             <p className="text-zinc-400 text-center mb-16 max-w-lg mx-auto">
-              Raw footage to published video. No editing skills required.
+              Long recording to posted clips. No timeline. No editing skills required.
             </p>
           </FadeIn>
 
@@ -614,18 +675,18 @@ export default function Home() {
             {[
               {
                 num: "1",
-                title: "Drop your footage",
-                desc: "Drag and drop your raw camera files. Single camera or multi-camera setups both work.",
+                title: "Drop your recording",
+                desc: "Long-form talking-head, webinar, podcast, or interview. Up to 2 hours per file.",
               },
               {
                 num: "2",
-                title: "Pick a style",
-                desc: "Confident, Clean, High Energy, and more. AI handles cuts, zooms, captions, and audio.",
+                title: "Pick your style",
+                desc: "Karaoke, Beast, Hormozi, Clean, and more caption styles. Optionally prompt the AI for the moments you want.",
               },
               {
                 num: "3",
-                title: "Ship everywhere",
-                desc: "One click to reformat and upload to YouTube, TikTok, Instagram, and LinkedIn.",
+                title: "Post everywhere",
+                desc: "Vertical 9:16 clips with captions baked in. Save to disk or post straight to Reels, Shorts, and TikTok.",
               },
             ].map((step, i) => (
               <FadeIn key={i} delay={0.1 + i * 0.15}>
@@ -648,10 +709,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-              Everything happens on your machine.
+              Everything OpusClip does. On your PC.
             </h2>
             <p className="text-zinc-400 text-center mb-16 max-w-lg mx-auto">
-              No cloud. No upload limits. No monthly fee eating your margins.
+              Prompt-based clip search, face tracking, multi-speaker handling, word-level captions. No cloud. No upload limits. No monthly fee.
             </p>
           </FadeIn>
 
@@ -665,32 +726,32 @@ export default function Home() {
             <FeatureCard
               icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>}
               title="100% Local Processing"
-              desc="Your videos never leave your computer. AI runs on your hardware. Private by default."
+              desc="Your recordings never leave your PC. Transcription, analysis, and rendering all run on your hardware. Private by default."
             />
             <FeatureCard
-              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" /></svg>}
-              title="Style Templates"
-              desc="Confident tight cuts. Clean professional look. High energy with captions. Multiple styles included, more coming."
+              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>}
+              title="Prompt-Based Clip Search"
+              desc="Type what you want — &ldquo;find the funny moments,&rdquo; &ldquo;the parts about startups,&rdquo; &ldquo;when I get fired up&rdquo; — and the AI pulls them out for you."
             />
             <FeatureCard
-              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" /></svg>}
-              title="One-Click Upload"
-              desc="Auto-reformat for each platform. Upload to YouTube, TikTok, Instagram in one click. Your account, your quota."
+              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>}
+              title="Face Tracking"
+              desc="Vertical 9:16 clips that stay locked on the speaker&rsquo;s face. Never a half-head, never a cropped-out moment."
             />
             <FeatureCard
-              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg>}
-              title="Smart Captions"
-              desc="Auto-generated captions with word-level timing and keyword highlights. Fix typos directly, no re-processing."
+              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>}
+              title="Multi-Speaker Handling"
+              desc="Podcasts, interviews, panels. ClipShip detects each speaker and tracks whoever is talking so no one gets cropped out."
             />
             <FeatureCard
-              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" /></svg>}
-              title="Multi-Camera Sync"
-              desc="Drop two camera files, ClipShip syncs them automatically using audio matching. Cuts between angles like a pro editor."
+              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" /></svg>}
+              title="Word-Level Captions"
+              desc="Karaoke, Beast, Hormozi, Clean styles. Word-by-word highlights baked in. Fix typos directly, no re-processing."
             />
             <FeatureCard
-              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" /></svg>}
+              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
               title="99 Languages"
-              desc="Transcription and captions in 99 languages out of the box. Most competitors are English-only."
+              desc="Transcription and captions in 99 languages out of the box. Most clip generators cap at 20 languages."
             />
           </motion.div>
         </div>
@@ -700,9 +761,12 @@ export default function Home() {
       <section className="py-24 px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">
-              How ClipShip compares.
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
+              ClipShip vs OpusClip vs HeyGen.
             </h2>
+            <p className="text-zinc-400 text-center mb-16 max-w-xl mx-auto">
+              The two big cloud clip generators, side-by-side with the local alternative.
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.1}>
@@ -712,8 +776,8 @@ export default function Home() {
                   <thead>
                     <tr className="border-b border-white/5">
                       <th className="text-left py-4 px-6 text-zinc-500 font-medium" />
-                      <th className="text-center py-4 px-4 text-zinc-500 font-medium">Gling</th>
-                      <th className="text-center py-4 px-4 text-zinc-500 font-medium">Descript</th>
+                      <th className="text-center py-4 px-4 text-zinc-500 font-medium">OpusClip</th>
+                      <th className="text-center py-4 px-4 text-zinc-500 font-medium">HeyGen Highlights</th>
                       <th className="text-center py-4 px-4">
                         <span className="gradient-text font-bold">ClipShip</span>
                       </th>
@@ -721,18 +785,20 @@ export default function Home() {
                   </thead>
                   <tbody className="text-zinc-400">
                     {[
-                      ["Pricing model", "Monthly subscription", "Monthly subscription", "Free + Pro"],
-                      ["Processing", "Cloud only", "Cloud only", "Your PC (offline)"],
-                      ["Privacy", "Videos uploaded to cloud", "Videos uploaded to cloud", "Never leaves your machine"],
-                      ["Editing styles", "One algorithm", "Basic templates", "Multiple named styles"],
-                      ["Upload to platforms", "No", "No", "YouTube, TikTok, IG, LinkedIn"],
-                      ["Multi-camera", "No", "No", "Auto-sync + smart cuts"],
-                      ["Languages", "English only", "24 languages", "99 languages"],
-                    ].map(([feature, gling, descript, clipship], i) => (
+                      ["Pricing", "$29/mo subscription", "$24+/mo subscription", "One-time, lifetime"],
+                      ["Processing", "Cloud upload", "Cloud upload", "Your PC (offline)"],
+                      ["Privacy", "Your footage on their servers", "Your footage on their servers", "Never leaves your machine"],
+                      ["Clip extraction", "Virality score", "Prompt-based", "Prompt-based + score"],
+                      ["Face tracking", "Yes", "Yes", "Yes"],
+                      ["Multi-speaker", "Partial", "Yes", "Yes"],
+                      ["Caption styles", "Preset library", "Preset library", "4 word-level styles"],
+                      ["Languages", "20+", "175+ (translate)", "99 (transcribe)"],
+                      ["Usage cap", "Minutes/credits per month", "Credits per month", "Unlimited"],
+                    ].map(([feature, opus, heygen, clipship], i) => (
                       <tr key={i} className="border-b border-white/5 last:border-0">
                         <td className="py-3 px-6 text-zinc-300">{feature}</td>
-                        <td className="py-3 px-4 text-center">{gling}</td>
-                        <td className="py-3 px-4 text-center">{descript}</td>
+                        <td className="py-3 px-4 text-center">{opus}</td>
+                        <td className="py-3 px-4 text-center">{heygen}</td>
                         <td className="py-3 px-4 text-center text-white font-medium">{clipship}</td>
                       </tr>
                     ))}

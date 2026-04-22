@@ -273,7 +273,7 @@ export default function ComparisonPage({
                   Try ClipShip for free
                 </h2>
                 <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
-                  Record once. Get an edited video + clips for every platform. Runs on your PC.
+                  Turn long videos into viral clips. Local AI, no cloud, one-time price.
                 </p>
                 <Link
                   href="/#waitlist"

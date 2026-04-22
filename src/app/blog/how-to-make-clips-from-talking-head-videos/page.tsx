@@ -10,9 +10,9 @@ import BlogArticlePage, {
 } from "../../components/BlogArticlePage";
 
 export const metadata: Metadata = {
-  title: "How to Make Clips from Talking-Head Videos (2026 Guide)",
+  title: "How to Make Clips From Talking-Head Videos (2026)",
   description:
-    "Step-by-step guide to extracting short-form clips from talking-head recordings. Manual methods, AI tools, and tips for finding the best moments for Reels, Shorts, and TikTok.",
+    "Step-by-step guide to extracting viral clips from talking-head recordings. Manual methods, AI clip generators, and tips for finding the best Reels, Shorts, and TikToks.",
 };
 
 export default function HowToMakeClips() {
@@ -84,16 +84,16 @@ export default function HowToMakeClips() {
         <div className="grid sm:grid-cols-3 gap-4 mb-8">
           <RecommendationCard
             condition="ClipShip"
-            recommendation="Local, free tier. Also edits the full video. 99 languages."
+            recommendation="Local, one-time price. Prompt-based clip search, face tracking, 99 languages. Unlimited on free tier."
             highlighted
           />
           <RecommendationCard
             condition="OpusClip"
-            recommendation="Cloud, $29/mo. Paste a YouTube link, get clips. Good virality scoring."
+            recommendation="Cloud, $29/mo. Paste a YouTube link, get clips. Good virality scoring and built-in scheduling."
           />
           <RecommendationCard
-            condition="Descript"
-            recommendation="Cloud, $24+/mo. Text-based editor with good transcript tools."
+            condition="HeyGen Instant Highlights"
+            recommendation="Cloud, $24+/mo. Prompt-based clip search with the ability to translate into 175+ languages."
           />
         </div>
       </Section>

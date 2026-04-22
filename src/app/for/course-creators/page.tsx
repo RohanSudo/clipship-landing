@@ -2,68 +2,68 @@ import type { Metadata } from "next";
 import AudiencePage, { type AudienceData } from "../../components/AudiencePage";
 
 export const metadata: Metadata = {
-  title: "ClipShip for Course Creators - Edit Lessons and Promote on Social",
+  title: "ClipShip for Course Creators: Promo Clips From Lessons",
   description:
-    "Turn your course recordings into polished lessons and promotional clips. Local AI editing, no cloud uploads. Keep your course content private and secure.",
+    "Turn every course lesson into a week of promo clips. Local AI finds the best moments, formats them for social. Your unreleased lesson IP never leaves your PC.",
 };
 
 const data: AudienceData = {
   audience: "Course Creators",
-  headline: "Edit 30 lessons without losing your mind.",
+  headline: "Promo clips from every lesson. Without uploading your course.",
   subheadline:
-    "Your course content is valuable. Edit it faster without uploading to someone else\u2019s servers. One recording gives you a polished lesson + promotional clips.",
-  painPoint: { stat: "60\u2013120hrs", label: "to edit a 30-lesson course manually" },
-  problem: "The course creator\u2019s editing bottleneck",
+    "Your course sells when people see your teaching on social. ClipShip finds the best 30–90 second moments from each lesson recording, formats them for short-form, and keeps your IP on your machine.",
+  painPoint: { stat: "30+", label: "promo clips hiding in a 10-lesson course" },
+  problem: "The course creator’s social-content gap",
   problemDetail:
-    "You recorded 30 lessons for your course. Each one needs dead air removed, sections tightened, captions added. At 2\u20134 hours per lesson, that\u2019s 60\u2013120 hours of editing for one course. Then you need promotional clips for social media to actually sell the course. Another round of editing for each platform.",
+    "You recorded 10 lessons for your course. Each one is 20–40 minutes of real teaching. Inside each lesson are 3–5 moments that would sell the course on Instagram, TikTok, and YouTube Shorts—the “aha” insights, the contrarian takes, the hot examples. But extracting those moments takes hours per lesson, and you don’t want to upload unreleased course content to a cloud clip generator. So the promo clips never get made. And the course sits without the social fuel it needs.",
   features: [
     {
-      icon: "book",
-      title: "Batch process lessons",
-      detail: "Drop each lesson recording in, get polished output. Process your entire course without the editing marathon.",
-    },
-    {
-      icon: "scissors",
-      title: "Automatic silence removal",
-      detail: "Tighten your delivery without manual cutting. Dead air and false starts disappear.",
-    },
-    {
-      icon: "captions",
-      title: "Captions for accessibility",
-      detail: "99 languages supported, word-level timing. Make your course accessible to everyone.",
-    },
-    {
       icon: "clips",
-      title: "Promotional clips",
-      detail: "AI finds the most engaging 30\u201390 second moments from each lesson. Perfect for social media teasers.",
+      title: "Auto-extract teaching moments",
+      detail: "AI finds the 3–5 strongest moments from each lesson—the insights, the stories, the contrarian takes. The stuff that sells the course.",
     },
     {
-      icon: "format",
-      title: "Multi-platform formatting",
-      detail: "One lesson gives you content for your course platform, YouTube, Instagram Reels, and TikTok.",
+      icon: "zoom",
+      title: "Prompt-based search",
+      detail: "Type what you want: “the aha moments,” “the examples,” “when I break down the framework.” The AI pulls those specifically.",
     },
     {
       icon: "shield",
-      title: "Your IP stays private",
-      detail: "Your course content is your revenue source. It never leaves your machine. No cloud uploads, no third-party access.",
+      title: "Course IP stays private",
+      detail: "Your unreleased lessons never leave your machine. No cloud uploads, no third-party access. Process with confidence.",
+    },
+    {
+      icon: "captions",
+      title: "Captions in 99 languages",
+      detail: "Word-level captions with keyword highlights. Accessible clips in any language your audience speaks.",
+    },
+    {
+      icon: "format",
+      title: "Vertical 9:16 ready to post",
+      detail: "Face-tracked crop keeps you centered. Clips formatted for Instagram Reels, TikTok, YouTube Shorts, and LinkedIn.",
+    },
+    {
+      icon: "users",
+      title: "Multi-speaker support",
+      detail: "Interview or conversation format? AI tracks whoever is talking so each speaker stays in frame.",
     },
   ],
   output: {
     label: "One lesson recording gives you",
     formats: [
-      "A polished lesson video for your course platform",
-      "3\u20135 teaser clips showcasing your teaching style",
-      "Captioned clips for Instagram, TikTok, YouTube Shorts",
+      "3–5 vertical promo clips per lesson",
+      "Each clip with title, hook, and captions baked in",
+      "Ready for Instagram Reels, TikTok, YouTube Shorts, LinkedIn",
       "Works with Teachable, Kajabi, Thinkific, Udemy, Skillshare",
     ],
   },
   whyLocal: {
     title: "Why privacy matters for course content",
     detail:
-      "Your course content is your intellectual property. It\u2019s what you sell. Uploading unreleased lessons to a cloud editing tool means trusting a third party with your revenue source. ClipShip processes everything on your computer. Your lessons never leave your machine. No cloud uploads, no third-party access, no risk of leaks. Edit with confidence.",
+      "Your course content is your intellectual property. It’s what you sell. Uploading unreleased lessons to a cloud clip generator means trusting a third party with your revenue source. ClipShip processes everything on your computer. Your lessons never leave your machine. No cloud uploads, no third-party access, no risk of leaks.",
   },
   builtFor:
-    "Your course sells itself when people see your best moments on social media. ClipShip finds those moments automatically and formats them for every platform. Stop spending weeks editing and start spending that time creating your next course.",
+    "Your course sells itself when people see your best moments on social media. ClipShip finds those moments automatically and formats them for every platform—while keeping your unreleased lessons entirely on your machine. Stop stockpiling content you can’t safely clip, and start shipping promos from every lesson you record.",
 };
 
 export default function ForCourseCreators() {

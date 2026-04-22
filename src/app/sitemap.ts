@@ -8,11 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Main pages
     { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
 
-    // Comparison pages
-    { url: `${baseUrl}/vs/gling`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/vs/opus-clip`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/vs/descript`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/vs/capcut`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    // Comparison pages (primary: direct clip-generator competitors)
+    { url: `${baseUrl}/vs/opus-clip`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/vs/heygen`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    // Comparison pages (secondary: adjacent tools with search-intent overlap)
+    { url: `${baseUrl}/vs/descript`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/vs/gling`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/vs/capcut`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
 
     // Audience pages
     { url: `${baseUrl}/for/youtubers`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

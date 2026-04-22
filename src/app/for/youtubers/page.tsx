@@ -2,68 +2,68 @@ import type { Metadata } from "next";
 import AudiencePage, { type AudienceData } from "../../components/AudiencePage";
 
 export const metadata: Metadata = {
-  title: "ClipShip for YouTubers - Edit Talking-Head Videos in Minutes",
+  title: "ClipShip for YouTubers: Auto Shorts From Long Uploads",
   description:
-    "Stop spending 4-8 hours editing each YouTube video. ClipShip uses local AI to edit your talking-head recordings and find the best clips for Shorts. No cloud, no subscription.",
+    "Turn every long YouTube upload into 10–15 vertical Shorts, Reels, and TikToks automatically. Local AI clip generator, prompt-based search, runs on your PC.",
 };
 
 const data: AudienceData = {
   audience: "YouTubers",
-  headline: "Stop editing. Start uploading.",
+  headline: "Every long upload hides 10 Shorts.",
   subheadline:
-    "You record great content. Editing shouldn\u2019t take longer than recording. Drop your talking-head video in, get a full edit + Shorts out.",
-  painPoint: { stat: "4\u20138hrs", label: "spent editing each talking-head video" },
+    "You already did the hard part—recording 20 minutes of great content. ClipShip finds the 10–15 moments inside it worth posting as Shorts, Reels, and TikTok.",
+  painPoint: { stat: "10–15", label: "Shorts hiding in every long-form upload" },
   problem: "The problem every YouTuber knows",
   problemDetail:
-    "You hit record. Talk for 20 minutes. Great content, real value, solid energy. Then you open Premiere and spend the next 4\u20138 hours cutting dead air, adding zoom cuts, syncing captions, and reformatting for Shorts. The recording took 20 minutes. The edit takes a full workday. Something is broken.",
+    "You uploaded a 20-minute video. It did okay. But inside that video are 10–15 moments that would crush on Shorts, Reels, and TikTok—if only you had time to find them, cut them, reformat them, and caption them. So you post one Short a week. Maybe. The algorithm rewards consistency and you can’t keep up. Meanwhile your best content sits unused.",
   features: [
     {
-      icon: "scissors",
-      title: "Removes dead air and mistakes",
-      detail: "AI analyzes your transcript and cuts silences, filler words, and false starts automatically.",
+      icon: "clips",
+      title: "Finds your best moments",
+      detail: "AI reads your transcript and picks the 10–15 strongest 30–90 second moments—strong hooks, complete thoughts, emotional peaks.",
     },
     {
       icon: "zoom",
-      title: "Adds zoom cuts",
-      detail: "Punches in at the right moments\u2014emphasis, emotion, transitions\u2014so the video feels dynamic.",
+      title: "Prompt-based clip search",
+      detail: "Type what you want: “the stories,” “the hot takes,” “when I get fired up.” The AI pulls those moments out specifically.",
     },
     {
       icon: "captions",
-      title: "Generates captions",
-      detail: "Word-level timing with keyword highlights. Burned into the video, ready for every platform.",
+      title: "Word-level captions baked in",
+      detail: "Karaoke, Beast, Hormozi, Clean. Pick a style and captions burn into every clip with word-by-word highlights.",
     },
     {
-      icon: "clips",
-      title: "Finds your best clips",
-      detail: "AI picks the 3\u20135 most engaging 30\u201390 second moments for YouTube Shorts, with titles and hooks.",
+      icon: "users",
+      title: "Multi-speaker handling",
+      detail: "Interview, podcast, panel? AI detects each speaker and tracks whoever is talking so no one gets cropped out of the frame.",
     },
     {
       icon: "format",
-      title: "Formats for every platform",
-      detail: "One recording gives you 16:9 for YouTube, 9:16 for Shorts, Reels, and TikTok.",
+      title: "Vertical 9:16 out of the box",
+      detail: "Face-tracked crop keeps the speaker centered. Clips ready for YouTube Shorts, Reels, and TikTok with no manual reframing.",
     },
     {
       icon: "globe",
       title: "99 languages",
-      detail: "Transcription and captions in 99 languages. Create for any audience, anywhere.",
+      detail: "Transcription and captions in 99 languages. Most clip generators cap at 20.",
     },
   ],
   output: {
-    label: "One recording, all platforms",
+    label: "One long upload gives you",
     formats: [
-      "Full edited video (16:9) for YouTube",
-      "3\u20135 short clips (9:16) for YouTube Shorts",
-      "Same clips formatted for Instagram Reels",
-      "Same clips formatted for TikTok",
+      "10–15 vertical clips (9:16) with captions baked in",
+      "Each clip with a title and hook suggestion",
+      "Ready for YouTube Shorts, Instagram Reels, TikTok",
+      "Stored on your disk, yours forever",
     ],
   },
   whyLocal: {
     title: "Why local matters for YouTubers",
     detail:
-      "Cloud tools upload your footage to their servers. That means waiting for uploads, hoping their servers are fast, and trusting them with your unreleased content. ClipShip runs on your PC. Processing starts instantly. No upload wait. No one else touches your footage. And it works offline\u2014edit on a plane, in a cafe, or anywhere without reliable internet.",
+      "Cloud clip generators upload every minute of your footage to their servers. That means waiting for uploads on every recording, trusting them with unreleased content, and living with their credit caps. ClipShip runs on your PC. Processing starts instantly. No upload wait. No caps. No one else touches your footage. Works offline—batch clips on a plane, in a cafe, wherever you work.",
   },
   builtFor:
-    "ClipShip is not a general-purpose editor. It\u2019s built specifically for the format YouTubers use most: one person talking to camera. The AI understands speech patterns, knows where emphasis lands, and picks zoom and cut points that feel natural. If your content is you sharing knowledge, telling stories, or teaching your audience, ClipShip is built for you.",
+    "ClipShip is built for the format YouTubers use most: one person talking to camera. The AI understands speech patterns, knows what hooks look like, and picks moments that stand on their own as clips. If your content is you sharing knowledge, telling stories, or teaching your audience, ClipShip turns your long uploads into a month of short-form content—automatically.",
 };
 
 export default function ForYouTubers() {

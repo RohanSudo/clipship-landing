@@ -2,62 +2,74 @@ import type { Metadata } from "next";
 import ComparisonPage, { type ComparisonData } from "../../components/ComparisonPage";
 
 export const metadata: Metadata = {
-  title: "ClipShip vs Gling (2026): Which Talking-Head Video Editor Is Better?",
+  title: "ClipShip vs Gling (2026): Clip Generator vs Silence Remover",
   description:
-    "Honest comparison of ClipShip and Gling for editing talking-head videos. Pricing, features, local vs cloud, and which one is right for you.",
+    "ClipShip extracts short-form viral clips from long recordings. Gling removes silences for Premiere/Resolve. Different jobs—here’s which one you actually need.",
 };
 
 const data: ComparisonData = {
   competitor: "Gling",
   competitorTagline:
-    "Both tools help solo creators edit talking-head videos faster. But they take very different approaches. Here\u2019s an honest comparison.",
+    "Gling cleans up long videos by removing silences and mistakes for NLE editors. ClipShip extracts short-form clips from long recordings for Reels, Shorts, and TikTok. Different tools, different outputs.",
   verdict:
-    "Gling removes silences and mistakes from your videos. ClipShip does that AND finds the best clips for short-form platforms.",
+    "Gling outputs an edited long-form video (or a timeline for Premiere/Resolve). ClipShip outputs a grid of viral-ready short clips. If you need clips, you want ClipShip. If you need a clean long-form edit, you want Gling.",
   verdictDetail:
-    "The biggest difference: Gling is cloud-only (your footage uploads to their servers). ClipShip runs entirely on your PC. Your videos never leave your machine.",
+    "These aren’t really competitors—they solve different problems. But they often come up together because both are AI-assisted tools for talking-head creators. If you care about privacy, ClipShip also runs locally where Gling is cloud-only.",
   features: [
-    { feature: "Silence removal", clipship: "yes", competitor: "yes" },
-    { feature: "Full video edit", clipship: "yes", competitor: "yes" },
     { feature: "Short-form clip extraction", clipship: "yes", competitor: "no" },
-    { feature: "Captions (burned in)", clipship: "yes", competitor: "SRT export" },
-    { feature: "Local processing", clipship: "yes", competitor: "no" },
-    { feature: "Multi-language (99)", clipship: "yes", competitor: "no" },
-    { feature: "AI B-roll generation", clipship: "partial", competitor: "yes" },
+    { feature: "Silence removal", clipship: "partial", competitor: "yes" },
+    { feature: "Face tracking + vertical format", clipship: "yes", competitor: "no" },
+    { feature: "Multi-speaker handling", clipship: "yes", competitor: "no" },
+    { feature: "Word-level captions", clipship: "yes", competitor: "SRT export" },
     { feature: "Premiere/Resolve export", clipship: "no", competitor: "yes" },
+    { feature: "AI B-roll generation", clipship: "no", competitor: "yes" },
+    { feature: "Local processing", clipship: "yes", competitor: "no" },
+    { feature: "One-time price", clipship: "yes", competitor: "no" },
     { feature: "Unlimited processing", clipship: "yes", competitor: "no" },
+    { feature: "Languages", clipship: "99", competitor: "English only" },
   ],
   clipshipWins: [
     {
-      title: "Privacy",
-      detail: "Your footage stays on your machine. No uploads to anyone\u2019s servers. Essential for coaching calls, course material, and client work.",
+      title: "Output format: clips, not long edits",
+      detail:
+        "Gling gives you a cleaner version of your long video. ClipShip gives you 10-15 vertical clips with face tracking and burned-in captions, ready to post to Reels, Shorts, and TikTok. Different goal, different output.",
     },
     {
-      title: "Short-form clips",
-      detail: "Gling only gives you an edited long-form video. ClipShip also finds the best 30\u201390 second moments and formats them for Reels, Shorts, and TikTok.",
+      title: "Runs on your PC",
+      detail:
+        "Gling is cloud-only—every recording uploads to their servers. ClipShip processes everything locally. For privacy-sensitive content this is the deal-breaker.",
     },
     {
       title: "Language support",
-      detail: "Gling only works in English. ClipShip supports 99 languages for transcription and captions.",
+      detail:
+        "Gling only supports English. ClipShip transcribes and captions in 99 languages.",
+    },
+    {
+      title: "One-time price",
+      detail:
+        "Gling bills monthly with hour-based caps. ClipShip is paid once, used forever, no limits.",
     },
   ],
   competitorWins: [
     {
-      title: "Established workflow",
-      detail: "Gling has been around longer and has a polished cloud workflow with Premiere Pro and DaVinci Resolve integration.",
+      title: "Silence-removal for NLE workflows",
+      detail:
+        "If you already edit in Premiere, Final Cut, or Resolve and just want the dead-air cuts automated, Gling exports a timeline that drops straight into your editor. ClipShip doesn’t export to NLEs.",
     },
     {
       title: "AI B-roll + speech enhancement",
-      detail: "Their AI B-roll generation and speech enhancement features are genuinely useful for YouTube videos.",
+      detail:
+        "Their AI B-roll generation and speech-enhancement features are built-in. ClipShip doesn’t do B-roll insertion or audio cleanup today.",
     },
   ],
   whoShouldUse: {
     clipship:
-      "You record talking-head videos and want the full edit done for you, plus clips for short-form platforms. Especially if you care about privacy or create content in languages other than English.",
+      "You want short-form clips from your long recordings—vertical, captioned, ready to post. Especially if you care about privacy, work in languages other than English, or don’t want a monthly subscription.",
     competitor:
-      "You want silence removal as part of a Premiere/Resolve workflow. If you already edit in a traditional timeline and just want the grunt work automated.",
+      "You want silence removal as a step inside your Premiere/Resolve/Final Cut workflow. You want an AI-assisted timeline cleanup, not short clips.",
   },
   bottomLine:
-    "Gling is a good silence remover. ClipShip is a full editing pipeline that also extracts clips. If editing is your bottleneck and you want one tool that handles everything from raw footage to published content across all platforms, ClipShip is the more complete solution.",
+    "These are different tools for different jobs. Gling cleans up long-form for NLE editors. ClipShip extracts short clips from long recordings for social platforms. Some creators use both. If the bottleneck is finding and posting clips, pick ClipShip.",
 };
 
 export default function VsGling() {

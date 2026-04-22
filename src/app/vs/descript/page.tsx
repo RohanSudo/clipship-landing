@@ -2,67 +2,80 @@ import type { Metadata } from "next";
 import ComparisonPage, { type ComparisonData } from "../../components/ComparisonPage";
 
 export const metadata: Metadata = {
-  title: "ClipShip vs Descript (2026): Automated Pipeline vs Full Editor",
+  title: "ClipShip vs Descript (2026): Clip Generator vs Text Editor",
   description:
-    "ClipShip vs Descript compared. One automates your edit, the other gives you a text-based editor. Features and which approach is right for you.",
+    "ClipShip extracts vertical viral clips from long recordings. Descript is a text-based long-form editor with AI assists. Different jobs—here’s which one you need.",
 };
 
 const data: ComparisonData = {
   competitor: "Descript",
   competitorTagline:
-    "Descript is a powerful text-based editor where you control every cut. ClipShip is an automated pipeline where AI makes the decisions for you.",
+    "Descript is a text-based video and podcast editor where you control every cut. ClipShip is a clip generator that finds the best 30–90 second moments and formats them for short-form platforms.",
   verdict:
-    "Descript gives you a full editing suite with AI assists. ClipShip automates the entire edit so you don\u2019t have to touch a timeline.",
+    "Descript gives you a full editing suite. ClipShip gives you a grid of ready-to-post vertical clips. If you need clips, you want ClipShip. If you need a text-based editor for long-form or podcasts, you want Descript.",
   verdictDetail:
-    "If you want creative control over every cut, Descript is the better choice. If you want to drop in a recording and get finished videos out, ClipShip saves you hours.",
+    "These solve different problems. Descript is for editing; ClipShip is for clipping. Descript’s built-in clip-extraction (Underlord) is secondary to the editor. ClipShip is built around clip extraction from the ground up.",
   features: [
-    { feature: "Automated full edit", clipship: "yes", competitor: "no" },
+    { feature: "Short-form clip extraction", clipship: "yes", competitor: "partial" },
+    { feature: "Prompt-based clip search", clipship: "yes", competitor: "partial" },
+    { feature: "Face tracking + vertical format", clipship: "yes", competitor: "partial" },
+    { feature: "Multi-speaker handling", clipship: "yes", competitor: "yes" },
+    { feature: "Word-level captions", clipship: "yes", competitor: "yes" },
     { feature: "Text-based editing", clipship: "no", competitor: "yes" },
-    { feature: "AI clip extraction", clipship: "yes", competitor: "no" },
-    { feature: "Silence removal", clipship: "yes", competitor: "yes" },
-    { feature: "Filler word removal", clipship: "yes", competitor: "yes" },
-    { feature: "Local processing", clipship: "yes", competitor: "no" },
-    { feature: "Team collaboration", clipship: "no", competitor: "yes" },
     { feature: "Screen recording", clipship: "no", competitor: "yes" },
     { feature: "Eye contact AI", clipship: "no", competitor: "yes" },
+    { feature: "Team collaboration", clipship: "no", competitor: "yes" },
+    { feature: "Local processing", clipship: "yes", competitor: "no" },
+    { feature: "One-time price", clipship: "yes", competitor: "no" },
     { feature: "Unlimited processing", clipship: "yes", competitor: "no" },
   ],
   clipshipWins: [
     {
-      title: "Zero editing required",
-      detail: "Drop in your recording, ClipShip handles everything. No timeline, no decisions, no learning curve. Descript still requires you to make every edit.",
+      title: "Built for clips, not editing",
+      detail:
+        "Descript’s clip extraction (Underlord) is a feature inside an editor. ClipShip is purpose-built for clip extraction—face tracking, vertical output, multi-speaker detection, and prompt-based search are the core, not add-ons.",
     },
     {
-      title: "Clip extraction",
-      detail: "ClipShip finds the best 30\u201390 second moments for short-form. Descript has no automatic clip generation.",
+      title: "Your footage never uploads",
+      detail:
+        "Descript processes everything through their cloud. For sensitive content—coaching, consulting, course material—that’s a risk. ClipShip runs entirely on your PC.",
     },
     {
-      title: "Privacy",
-      detail: "Everything runs on your PC. Descript processes through their cloud servers.",
+      title: "One-time price, no subscription",
+      detail:
+        "Descript plans run $24–$65/mo with hour caps. ClipShip is paid once, used forever. Four months of Descript roughly equals a lifetime license.",
+    },
+    {
+      title: "No caps on processing",
+      detail:
+        "Descript meters by transcription hours. ClipShip has no caps—batch a full quarter of recordings in one sitting.",
     },
   ],
   competitorWins: [
     {
-      title: "Creative control",
-      detail: "Full text-based editing with timeline, transitions, effects, and granular control over every aspect of your video.",
+      title: "Full text-based editing",
+      detail:
+        "If you want to edit a long podcast or interview by editing its transcript, Descript is unmatched. ClipShip doesn’t do long-form editing.",
+    },
+    {
+      title: "Screen recording + eye contact AI",
+      detail:
+        "Built-in screen recording and AI eye-contact correction for anyone who records off-camera glances. ClipShip doesn’t have these.",
     },
     {
       title: "Team collaboration",
-      detail: "Multiple editors can work on the same project. Comments, version history, shared workspaces.",
-    },
-    {
-      title: "Screen recording + eye contact",
-      detail: "Built-in screen recording and AI eye contact correction\u2014features ClipShip doesn\u2019t have.",
+      detail:
+        "Multiple editors can work on the same project with comments and version history. ClipShip is a single-user desktop app.",
     },
   ],
   whoShouldUse: {
     clipship:
-      "You\u2019re a solo creator who records talking-head videos and wants the edit done for you automatically. You don\u2019t want to learn an editor or spend time on a timeline.",
+      "You record long-form talking-head content (podcasts, webinars, interviews) and want the best 30–90 second clips auto-extracted for short-form platforms. Especially if you care about privacy or don’t want another subscription.",
     competitor:
-      "You\u2019re part of a team that needs collaborative editing with full creative control. You enjoy the editing process and want fine-grained decisions.",
+      "You need to edit long-form content in a text-based editor, collaborate with a team, or use features like AI eye contact and built-in screen recording.",
   },
   bottomLine:
-    "Descript is a powerful editor for people who want control. ClipShip is for creators who want to skip the editing entirely. Different tools for different workflows\u2014but if your bottleneck is time spent editing, ClipShip eliminates it.",
+    "Descript is a powerful editor with clip extraction bolted on. ClipShip is a purpose-built clip generator. If your bottleneck is finding and posting clips, ClipShip is built for that job. If your bottleneck is editing, Descript is the editor.",
 };
 
 export default function VsDescript() {
