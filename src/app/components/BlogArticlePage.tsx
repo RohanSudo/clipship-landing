@@ -308,7 +308,7 @@ export default function BlogArticlePage({
                   Try ClipShip for free
                 </h2>
                 <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
-                  Turn long videos into viral clips. Local AI, no cloud, one-time price.
+                  Repurpose long videos into ready-to-post clips. Local AI, no cloud, one-time price.
                 </p>
                 <Link
                   href="/#waitlist"

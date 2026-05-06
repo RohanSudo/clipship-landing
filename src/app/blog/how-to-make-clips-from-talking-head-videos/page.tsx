@@ -12,7 +12,7 @@ import BlogArticlePage, {
 export const metadata: Metadata = {
   title: "How to Make Clips From Talking-Head Videos (2026)",
   description:
-    "Step-by-step guide to extracting viral clips from talking-head recordings. Manual methods, AI clip generators, and tips for finding the best Reels, Shorts, and TikToks.",
+    "Step-by-step guide to repurposing talking-head recordings into short-form clips. Manual methods, AI clip generators, and tips for finding the best Reels, Shorts, and TikToks.",
 };
 
 export default function HowToMakeClips() {

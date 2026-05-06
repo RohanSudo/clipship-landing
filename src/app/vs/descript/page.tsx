@@ -4,7 +4,7 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs Descript (2026): Clip Generator vs Text Editor",
   description:
-    "ClipShip extracts vertical viral clips from long recordings. Descript is a text-based long-form editor with AI assists. Different jobs—here’s which one you need.",
+    "ClipShip repurposes long recordings into vertical short-form clips. Descript is a text-based long-form editor with AI assists. Different jobs, here's which one you need.",
 };
 
 const data: ComparisonData = {

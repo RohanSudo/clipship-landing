@@ -48,7 +48,7 @@ export default function BestClipGenerators() {
           tool={{
             rank: 2,
             name: "OpusClip",
-            tagline: "The most well-known cloud clip generator. Paste a YouTube link or upload a video, it finds viral moments with a virality score. Strong auto-captioning and social scheduling.",
+            tagline: "The most well-known cloud clip generator. Paste a YouTube link or upload a video, it picks high-engagement moments and assigns a virality score. Strong auto-captioning and social scheduling.",
             details: [
               { label: "Pricing", value: "Free (60 credits/mo) / Pro $29/mo" },
               { label: "Processing", value: "Cloud (upload required)" },

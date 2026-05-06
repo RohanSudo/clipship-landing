@@ -4,13 +4,13 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs HeyGen Highlights: HeyGen Alternative (2026)",
   description:
-    "Local HeyGen Instant Highlights alternative. Both find viral clips in long videos with prompt search and face tracking. ClipShip runs on your PC, one-time price.",
+    "Local HeyGen Instant Highlights alternative. Both repurpose long videos into short-form clips with prompt search and face tracking. ClipShip runs on your PC, one-time price.",
 };
 
 const data: ComparisonData = {
   competitor: "HeyGen Highlights",
   competitorTagline:
-    "HeyGen Instant Highlights V2 finds viral clips inside long videos using prompt-based search. ClipShip does the same thing on your PC, with a one-time price.",
+    "HeyGen Instant Highlights V2 repurposes long videos into short-form clips using prompt-based search. ClipShip does the same thing on your PC, with a one-time price.",
   verdict:
     "HeyGen Instant Highlights V2 is a cloud clip generator. ClipShip is the local alternative with the same core flow—prompt-based search, face tracking, multi-speaker handling, captions.",
   verdictDetail:
@@ -20,7 +20,6 @@ const data: ComparisonData = {
     { feature: "Face tracking", clipship: "yes", competitor: "yes" },
     { feature: "Multi-speaker handling", clipship: "yes", competitor: "yes" },
     { feature: "Word-level captions", clipship: "yes", competitor: "yes" },
-    { feature: "Virality score", clipship: "yes", competitor: "partial" },
     { feature: "Local processing", clipship: "yes", competitor: "no" },
     { feature: "One-time price", clipship: "yes", competitor: "no" },
     { feature: "Translate to 175+ languages", clipship: "no", competitor: "yes" },

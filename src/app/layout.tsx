@@ -14,20 +14,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ClipShip: Local AI Clip Generator | OpusClip Alternative",
+  title: "ClipShip: Local AI Video Repurposing | OpusClip Alternative",
   description:
-    "Local AI clip generator for long talking-head recordings. Finds 10–15 viral clips per video, formats them for Reels, Shorts, TikTok. OpusClip & HeyGen alternative.",
+    "Repurpose long talking-head recordings into 10-15 ready-to-post clips for Reels, Shorts, and TikTok. Runs locally on your PC. OpusClip and HeyGen alternative.",
   openGraph: {
-    title: "ClipShip | Local AI Clip Generator. Long videos in, viral clips out.",
+    title: "ClipShip | Local AI Video Repurposing. Long videos in, clips out.",
     description:
-      "Local alternative to OpusClip and HeyGen Instant Highlights. AI finds viral clips in your long recordings, formats them for Reels, Shorts, and TikTok. One-time price.",
+      "Local alternative to OpusClip and HeyGen Instant Highlights. Repurpose long recordings into ready-to-post clips for Reels, Shorts, and TikTok. One-time price.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClipShip | Local AI Clip Generator. Long videos in, viral clips out.",
+    title: "ClipShip | Local AI Video Repurposing. Long videos in, clips out.",
     description:
-      "Local alternative to OpusClip and HeyGen Instant Highlights. AI finds viral clips in your long recordings, formats them for Reels, Shorts, and TikTok. One-time price.",
+      "Local alternative to OpusClip and HeyGen Instant Highlights. Repurpose long recordings into ready-to-post clips for Reels, Shorts, and TikTok. One-time price.",
   },
 };
 
@@ -53,7 +53,7 @@ export default function RootLayout({
           "priceCurrency": "USD",
           "description": "Free forever with local AI. Pro upgrade available."
         },
-        "description": "Desktop app that extracts the best viral clips from your long talking-head recordings and formats them for Reels, Shorts, and TikTok. Local alternative to OpusClip and HeyGen Instant Highlights. Runs on your PC with AI. No cloud, no subscription.",
+        "description": "Desktop app that repurposes long talking-head recordings into ready-to-post clips for Reels, Shorts, and TikTok. Local alternative to OpusClip and HeyGen Instant Highlights. Runs on your PC with AI. No cloud, no subscription.",
         "url": "https://clipship.co",
         "image": "https://clipship.co/opengraph-image",
         "author": {

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "ClipShip - Long videos in. Viral clips out. Runs on your PC.";
+export const alt = "ClipShip - Long videos in. Repurposed clips out. Runs on your PC.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -76,7 +76,7 @@ export default async function Image() {
             letterSpacing: "-0.02em",
           }}
         >
-          Long videos in. Viral clips out.
+          Long videos in. Repurposed clips out.
         </div>
 
         {/* Subtitle */}
@@ -89,7 +89,7 @@ export default async function Image() {
             lineHeight: 1.4,
           }}
         >
-          Local AI clip generator. Your 90-min recording holds 10-15 clips. ClipShip finds them.
+          Local AI video repurposing. Your 90-min recording holds 10-15 clips. ClipShip finds them.
         </div>
 
         {/* Bottom bar */}

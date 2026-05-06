@@ -4,7 +4,7 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs OpusClip (2026): Local OpusClip Alternative",
   description:
-    "Local OpusClip alternative. Both find viral clips in long videos with captions and face tracking. ClipShip runs on your PC, one-time price, unlimited usage.",
+    "Local OpusClip alternative for video repurposing. Both turn long videos into short-form clips with captions and face tracking. ClipShip runs on your PC, one-time price, unlimited usage.",
 };
 
 const data: ComparisonData = {
@@ -17,7 +17,6 @@ const data: ComparisonData = {
     "If you want cloud convenience and integrated social scheduling, OpusClip is a mature option. If you want the same clip-extraction flow on your PC with unlimited usage and a one-time price, ClipShip is the better deal.",
   features: [
     { feature: "AI clip extraction", clipship: "yes", competitor: "yes" },
-    { feature: "Virality score", clipship: "yes", competitor: "yes" },
     { feature: "Prompt-based clip search", clipship: "yes", competitor: "partial" },
     { feature: "Face tracking", clipship: "yes", competitor: "yes" },
     { feature: "Multi-speaker handling", clipship: "yes", competitor: "partial" },

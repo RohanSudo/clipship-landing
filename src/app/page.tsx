@@ -592,7 +592,7 @@ export default function Home() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
               Long videos in.
               <br />
-              <span className="gradient-text">Viral clips out.</span>
+              <span className="gradient-text">Repurposed clips out.</span>
             </h1>
           </FadeIn>
 
@@ -805,7 +805,7 @@ export default function Home() {
                       ["Pricing", "$29/mo subscription", "$24+/mo subscription", "One-time, lifetime"],
                       ["Processing", "Cloud upload", "Cloud upload", "Your PC (offline)"],
                       ["Privacy", "Your footage on their servers", "Your footage on their servers", "Never leaves your machine"],
-                      ["Clip extraction", "Virality score", "Prompt-based", "Prompt-based + score"],
+                      ["Clip extraction", "Auto + virality score", "Prompt-based", "Auto + prompt-based"],
                       ["Paste YouTube link", "Yes", "Yes", "Yes"],
                       ["Face tracking", "Yes", "Yes", "Yes"],
                       ["Multi-speaker", "Partial", "Yes", "Yes"],
@@ -904,7 +904,7 @@ export default function Home() {
                 <span className="font-semibold text-white text-sm">ClipShip</span>
               </div>
               <p className="text-sm text-zinc-500 leading-relaxed max-w-xs">
-                Local AI clip generator. Long videos in, viral clips out. Runs on your PC, one-time price.
+                Local AI video repurposing. Long videos in, ready-to-post clips out. Runs on your PC, one-time price.
               </p>
               <div className="flex items-center gap-3 mt-5">
                 <a href="https://x.com/ClipShipApp" target="_blank" rel="noopener noreferrer" aria-label="Follow ClipShip on X" className="text-zinc-600 hover:text-zinc-300 transition-colors">

@@ -4,7 +4,7 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs CapCut (2026): AI Clip Generator vs Editor",
   description:
-    "ClipShip auto-extracts viral clips from long recordings. CapCut is a general-purpose timeline editor. Different tools—here’s which one fits your workflow.",
+    "ClipShip auto-repurposes long recordings into ready-to-post clips. CapCut is a general-purpose timeline editor. Different tools, here's which one fits your workflow.",
 };
 
 const data: ComparisonData = {
