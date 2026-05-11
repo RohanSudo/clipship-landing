@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <ContentPage title="Privacy Policy" description="Last updated: April 2026" badge="Legal">
+    <ContentPage title="Privacy Policy" description="Last updated: May 2026" badge="Legal">
       <h2>The short version</h2>
       <p>
         ClipShip processes your videos entirely on your computer. Your footage, audio, and transcripts
@@ -87,6 +87,77 @@ export default function Privacy() {
         <li>Instagram: <a href="https://accountscenter.instagram.com/apps_and_websites/active/" target="_blank" rel="noopener noreferrer">accountscenter.instagram.com/apps_and_websites/active</a></li>
         <li>TikTok: TikTok app → Settings → Privacy → Manage Connected Apps</li>
       </ul>
+
+      <h2>How we protect your data</h2>
+      <p>
+        We implement industry-standard security measures to protect the confidentiality, integrity, and
+        availability of the data we handle on your behalf. Sensitive data &mdash; including OAuth tokens
+        for connected accounts (YouTube, Instagram, TikTok), API keys for AI providers, and account
+        credentials &mdash; is protected at every layer:
+      </p>
+      <ul>
+        <li>
+          <strong>Encryption in transit.</strong> All communication between the ClipShip desktop app,
+          our Cloudflare-hosted API, and connected platforms (Google APIs, Meta Graph API, TikTok
+          Content Posting API, AI providers) is encrypted using HTTPS with TLS 1.2 or higher. No
+          ClipShip data is ever transmitted over unencrypted channels.
+        </li>
+        <li>
+          <strong>Encryption at rest.</strong> All persistent data on our infrastructure (Cloudflare
+          D1 database for license records, Cloudflare R2 for temporary upload-bridge files) is
+          encrypted at rest with AES-256 by Cloudflare. OAuth tokens for your connected social
+          accounts and your AI provider API keys are stored on YOUR computer in your operating
+          system&apos;s secure credential store (Windows Credential Manager, macOS Keychain, or
+          Linux Secret Service), which is itself encrypted by the operating system.
+        </li>
+        <li>
+          <strong>Authentication and access control.</strong> User sign-in is handled by Firebase
+          Authentication (by Google), which manages password hashing and session lifecycles to
+          industry standards. Every authenticated request from the desktop app to our API is
+          verified using a signed Firebase JWT token; we reject any request whose signature does
+          not validate. Internal access to user records is limited to the minimum number of
+          engineers required to operate the service, audited on every access.
+        </li>
+        <li>
+          <strong>Webhook authenticity.</strong> Payment webhooks (Dodo Payments) and other
+          inbound automated events are verified using HMAC-SHA256 signatures before any
+          state-changing operation runs. Tampered or replayed events are rejected.
+        </li>
+        <li>
+          <strong>Sensitive-token isolation.</strong> Your AI provider API keys and your social
+          media OAuth tokens never leave your computer. They are stored in your operating
+          system&apos;s secure credential store and used only to make direct calls from your
+          machine to the relevant platform&apos;s API. They are never transmitted to, processed by,
+          or logged by ClipShip&apos;s servers under any circumstance.
+        </li>
+        <li>
+          <strong>Data minimization.</strong> Your videos, audio, transcripts, and editing data
+          are processed entirely on your own computer and are never uploaded to our servers. The
+          less sensitive data we collect, the less is at risk; we deliberately minimize our
+          server-side footprint.
+        </li>
+        <li>
+          <strong>Network protection.</strong> Our API endpoints sit behind Cloudflare&apos;s
+          DDoS protection and Web Application Firewall. Rate limits and abuse heuristics block
+          automated attacks before they reach application logic.
+        </li>
+        <li>
+          <strong>Operational security.</strong> Production credentials (API keys, signing keys,
+          webhook secrets) are stored as encrypted secrets in our infrastructure provider and are
+          never embedded in the source code or shipped with the desktop installer.
+        </li>
+        <li>
+          <strong>Breach notification.</strong> If we become aware of a data breach that affects
+          your personal information, we will notify affected users by email within 72 hours of
+          discovery and provide guidance on protective steps you can take.
+        </li>
+      </ul>
+      <p>
+        No method of transmission or storage on the internet is 100% secure, and we cannot guarantee
+        absolute security. We continuously evaluate and improve our security practices. If you
+        discover a vulnerability, please report it responsibly to
+        {" "}<a href="mailto:hello@clipship.co">hello@clipship.co</a>.
+      </p>
 
       <h2>How we use your data</h2>
       <ul>
