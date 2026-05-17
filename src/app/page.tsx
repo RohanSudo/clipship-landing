@@ -585,7 +585,7 @@ function ComingSoonForm({ id = "hero" }: { id?: string }) {
             onChange={(e) => setWantsGeneral(e.target.checked)}
             className="mt-0.5 w-4 h-4 rounded border-zinc-600 bg-[#18181b] text-violet-500 focus:ring-1 focus:ring-violet-500/50 cursor-pointer"
           />
-          <span>Also email me whatever Rohan builds next.</span>
+          <span>Also email me whatever Rohan builds next (no spam, I promise).</span>
         </label>
       </div>
       <div ref={turnstileRef} className="flex justify-center" />
