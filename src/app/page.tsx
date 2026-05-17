@@ -390,12 +390,58 @@ function AppMockup() {
 }
 
 /* ────────────────────────────────────────────────
-   WAITLIST FORM
+   FAQ ITEM
+   Collapsible accordion row. Uses framer-motion for height-grow on
+   expand to feel native to the rest of the page.
    ──────────────────────────────────────────────── */
 
-function WaitlistForm({ id = "hero" }: { id?: string }) {
+function FAQItem({ q, a }: { q: string; a: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="rounded-xl bg-[#0f0f12] border border-white/[0.06] overflow-hidden">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="w-full flex items-start justify-between gap-4 px-5 py-4 text-left cursor-pointer hover:bg-white/[0.02] transition-colors"
+      >
+        <span className="font-medium text-white text-sm sm:text-base">{q}</span>
+        <span
+          className={`text-zinc-500 mt-0.5 transition-transform duration-200 ${open ? "rotate-45" : ""}`}
+          aria-hidden
+        >
+          <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </span>
+      </button>
+      <motion.div
+        initial={false}
+        animate={{ height: open ? "auto" : 0, opacity: open ? 1 : 0 }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        style={{ overflow: "hidden" }}
+      >
+        <div className="px-5 pb-5 text-sm text-zinc-400 leading-relaxed">{a}</div>
+      </motion.div>
+    </div>
+  );
+}
+
+/* ────────────────────────────────────────────────
+   COMING SOON FORM
+   Replaces the old waitlist form. Subscribes directly to Beehiiv
+   via the Cloudflare Worker proxy at api.clipship.co/beehiiv/subscribe
+   so the API key stays server-side. Adds an optional "occupation"
+   field plus a checkbox for opting into Rohan's general newsletter
+   alongside the ClipShip-only updates.
+   ──────────────────────────────────────────────── */
+
+function ComingSoonForm({ id = "hero" }: { id?: string }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [occupation, setOccupation] = useState("");
+  const [interestedInGeneral, setInterestedInGeneral] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
@@ -434,26 +480,39 @@ function WaitlistForm({ id = "hero" }: { id?: string }) {
       return;
     }
     setStatus("loading");
-    // Show success immediately, don't wait for n8n to finish processing
-    fetch(
-      "https://auto.brandjetmedia.com/webhook/wip/clipship-signup",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          project: "clipship",
-          source: `landing-page-${id}`,
-          timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-          turnstileToken,
-        }),
+    try {
+      const resp = await fetch(
+        "https://api.clipship.co/beehiiv/subscribe",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            firstName: name.split(" ")[0] || "",
+            occupation,
+            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            interestedInGeneral,
+            turnstileToken,
+            source: `landing-${id}`,
+          }),
+        }
+      );
+      if (!resp.ok) {
+        const body = await resp.json().catch(() => ({}));
+        setStatus("error");
+        setMessage(body?.error || "Something went wrong. Try again or email hello@clipship.co.");
+        return;
       }
-    ).catch(() => {}); // Fire and forget, n8n processes in background
-    setStatus("success");
-    setMessage("You're on the list. We'll let you know when ClipShip is ready.");
-    setName("");
-    setEmail("");
+      setStatus("success");
+      setMessage("You're on the list. We'll email you the moment ClipShip is live.");
+      setName("");
+      setEmail("");
+      setOccupation("");
+      setInterestedInGeneral(false);
+    } catch {
+      setStatus("error");
+      setMessage("Network error. Try again or email hello@clipship.co.");
+    }
   }
 
   if (status === "success") {
@@ -490,13 +549,32 @@ function WaitlistForm({ id = "hero" }: { id?: string }) {
           className="glow-input flex-1 px-4 py-3 rounded-xl bg-[#18181b] border border-[#27272a] text-white placeholder:text-zinc-500 outline-none transition-all text-sm"
         />
       </div>
+      <input
+        type="text"
+        placeholder="What do you do? (creator, podcaster, coach...)"
+        value={occupation}
+        onChange={(e) => setOccupation(e.target.value)}
+        className="glow-input px-4 py-3 rounded-xl bg-[#18181b] border border-[#27272a] text-white placeholder:text-zinc-500 outline-none transition-all text-sm"
+      />
+      <label className="flex items-start gap-3 text-left text-xs text-zinc-400 px-1 py-1 cursor-pointer select-none">
+        <input
+          type="checkbox"
+          checked={interestedInGeneral}
+          onChange={(e) => setInterestedInGeneral(e.target.checked)}
+          className="mt-0.5 w-4 h-4 rounded border-zinc-600 bg-[#18181b] text-violet-500 focus:ring-1 focus:ring-violet-500/50 cursor-pointer"
+        />
+        <span>
+          Also subscribe me to Rohan&apos;s general newsletter about new products and what
+          he&apos;s building. You&apos;ll get ClipShip launch updates either way.
+        </span>
+      </label>
       <div ref={turnstileRef} className="flex justify-center" />
       <button
         type="submit"
         disabled={status === "loading" || !turnstileToken}
         className="w-full px-6 py-3 rounded-xl font-medium text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all disabled:opacity-50 cursor-pointer"
       >
-        {status === "loading" ? "Joining..." : "Join Waitlist"}
+        {status === "loading" ? "Subscribing..." : "Notify me when it launches"}
       </button>
       {status === "error" && <p className="text-red-400 text-xs mt-1">{message}</p>}
     </form>
@@ -548,10 +626,10 @@ export default function Home() {
             <span className="font-semibold text-white tracking-tight text-sm">ClipShip</span>
           </div>
           <a
-            href="#waitlist"
+            href="#notify"
             className="text-sm px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-violet-500/30 transition-all"
           >
-            Join Waitlist
+            Get notified
           </a>
         </div>
       </nav>
@@ -584,7 +662,7 @@ export default function Home() {
           <FadeIn>
             <div className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 mb-10">
               <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-              <span className="text-sm text-violet-300">Coming soon. Join the waitlist.</span>
+              <span className="text-sm text-violet-300">Coming soon. Get notified when it launches.</span>
             </div>
           </FadeIn>
 
@@ -611,8 +689,8 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="flex justify-center" id="waitlist">
-              <WaitlistForm id="hero" />
+            <div className="flex justify-center" id="notify">
+              <ComingSoonForm id="hero" />
             </div>
           </FadeIn>
 
@@ -828,6 +906,99 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── FAQ ── */}
+      <section id="faq" className="py-24 px-6 relative z-10">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
+              Frequently asked questions.
+            </h2>
+            <p className="text-zinc-400 text-center mb-14 max-w-lg mx-auto">
+              The stuff people email me about before buying.
+            </p>
+          </FadeIn>
+          <div className="flex flex-col gap-3">
+            <FAQItem
+              q="Will ClipShip run on my computer?"
+              a={
+                <>
+                  <p>ClipShip is Windows-only right now. Tested on Windows 10 and 11. macOS and Linux are not supported yet.</p>
+                  <p className="mt-2">We recommend at least 16 GB RAM and a NVIDIA GPU for the smoothest experience. ClipShip will run on CPU-only setups, but processing will be noticeably slower. You can run it on lower-spec machines too, but a 60-minute podcast might take 20 to 30 minutes to process instead of 5 to 10.</p>
+                </>
+              }
+            />
+            <FAQItem
+              q="Does my footage get uploaded anywhere?"
+              a={<p>No. ClipShip runs entirely on your computer. Your video files never leave your machine. Transcription, clip selection, captions, all of it happens locally. The only time anything goes online is when you choose to post a finished clip to YouTube or somewhere else, and that uses your own platform account.</p>}
+            />
+            <FAQItem
+              q="Do I need an internet connection?"
+              a={
+                <>
+                  <p>The actual video processing (transcription, clip finding, captions, face-tracking, rendering) happens entirely on your computer with zero internet calls. Your videos never leave your machine.</p>
+                  <p className="mt-3">ClipShip does need internet for these specific things:</p>
+                  <ul className="list-disc pl-5 mt-2 space-y-2 text-zinc-300">
+                    <li><strong className="text-white">First setup.</strong> Downloading the transcription engine, the local AI model, and the CUDA libraries on your first launch. After that&apos;s done, you can run everything offline.</li>
+                    <li><strong className="text-white">Signing in.</strong> First time after install, ClipShip checks that you&apos;re a real licensed user with our server. This is anti-piracy, not a video upload. The check only sends your account email, a hardware fingerprint, and your license status. No video, no transcript, no clip content, ever.</li>
+                    <li><strong className="text-white">Daily license check.</strong> Once per day in the background, ClipShip pings the same anti-piracy endpoint to confirm your license is still valid. Same minimal data, no videos. If you&apos;re offline when this fires, ClipShip keeps working with the last cached verdict for up to 7 days, so going offline for a trip is fine.</li>
+                    <li><strong className="text-white">Switching devices.</strong> Moving your license between your laptop and desktop requires internet so we can deactivate the old machine and activate the new one. Done from inside the app, no email needed.</li>
+                    <li><strong className="text-white">Posting clips.</strong> Uploads to YouTube or wherever obviously need internet, and those uploads use your own platform account.</li>
+                    <li><strong className="text-white">Using a cloud AI key instead of the local AI.</strong> If you choose OpenAI, Claude, Gemini, Groq, or OpenRouter as your AI provider, that AI call goes over the internet. The bundled local AI option needs zero internet for AI work.</li>
+                  </ul>
+                  <p className="mt-3">So in normal use you can be offline for a week at a time and clip videos without issue. The &quot;always online&quot; feel from competitors comes from cloud processing; we don&apos;t have that.</p>
+                </>
+              }
+            />
+            <FAQItem
+              q="Why does Windows show a warning when I install ClipShip?"
+              a={
+                <>
+                  <p>Because Windows SmartScreen flags any installer that hasn&apos;t been signed with an Extended Validation (EV) code-signing certificate. An EV certificate costs around $300 to $700 per year through certificate authorities like DigiCert or Sectigo, plus a hardware security token shipped to a verified business address.</p>
+                  <p className="mt-2">I&apos;m one person building ClipShip on my own. I haven&apos;t bought an EV cert yet because I&apos;d rather put the money toward keeping the app local and the price low. The installer itself is signed with my own auto-updater key, which means future updates are cryptographically verified, but Windows doesn&apos;t recognise that signature as one of the major certificate authorities.</p>
+                  <p className="mt-2">To install, click &quot;More info&quot; on the SmartScreen prompt, then &quot;Run anyway&quot;. This is the same step you&apos;d take for any indie or open-source Windows app that doesn&apos;t have an EV cert.</p>
+                  <p className="mt-2">If I get enough sales to justify the cert, I&apos;ll buy one and the warning will disappear on future installs.</p>
+                </>
+              }
+            />
+            <FAQItem
+              q="What's your refund policy?"
+              a={
+                <>
+                  <p>7-day money-back guarantee, one refund per device.</p>
+                  <p className="mt-2">Email hello@clipship.co within 7 days of purchase and we&apos;ll refund you. The refund usually hits your card in 3 to 5 business days.</p>
+                  <p className="mt-2">The &quot;one refund per device&quot; rule is strict. If you&apos;ve already been refunded on a specific computer under any email, that computer is permanently ineligible for another refund. This stops abuse of the refund window. Buying again from the same computer is still allowed, just not refunding again.</p>
+                </>
+              }
+            />
+            <FAQItem
+              q="Is ClipShip a subscription?"
+              a={<p>No. One payment, lifetime use. You get all future updates for free as long as you keep using ClipShip. There are no monthly fees, no usage caps, no per-video charges.</p>}
+            />
+            <FAQItem
+              q="Can I use ClipShip on more than one computer?"
+              a={<p>A single ClipShip Pro license activates one computer at a time. If you want to switch to another computer, you can deactivate the old one and activate the new one yourself from inside the app, no need to email support. If you need to run ClipShip on a second computer permanently (laptop and desktop, for example), you can buy an extra device slot for a one-time fee.</p>}
+            />
+            <FAQItem
+              q="Do you store my email or any personal data?"
+              a={
+                <>
+                  <p>To run the license check, ClipShip stores: your email, a Firebase user ID, a hardware fingerprint (hashed identifier for your computer), and your purchase status. That&apos;s it. We don&apos;t see your videos, your transcripts, your clip contents, or anything else.</p>
+                  <p className="mt-2">If you ever want all of this deleted, email hello@clipship.co and we&apos;ll wipe it within 24 hours.</p>
+                </>
+              }
+            />
+            <FAQItem
+              q="Why is ClipShip a desktop app and not a web app?"
+              a={<p>So your video files don&apos;t have to leave your computer. A web app would mean uploading every video to our servers, which is exactly the thing competitors do and exactly the thing I wanted to avoid. Local processing means privacy, no upload time, no monthly server costs to pass on to you, and no bandwidth limits.</p>}
+            />
+            <FAQItem
+              q="What if I have a bug or feature request?"
+              a={<p>Email hello@clipship.co. I read every message myself. Genuinely. Bug reports get prioritised, feature requests get added to the roadmap. There&apos;s no support ticket system, just my inbox.</p>}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── Dig deeper (internal links for SEO + navigation) ── */}
       <section className="py-24 px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
@@ -878,15 +1049,15 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Get early access.
+              Be the first to know.
             </h2>
             <p className="text-zinc-400 mb-8">
-              Be the first to try ClipShip when it launches. Early users get exclusive access.
+              Drop your email and I&apos;ll send you the download link the moment ClipShip is ready.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
             <div className="flex justify-center">
-              <WaitlistForm id="bottom" />
+              <ComingSoonForm id="bottom" />
             </div>
           </FadeIn>
         </div>

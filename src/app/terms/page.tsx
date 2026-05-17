@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Terms() {
   return (
-    <ContentPage title="Terms of Service" description="Last updated: April 2026" badge="Legal">
+    <ContentPage title="Terms of Service" description="Last updated: May 2026" badge="Legal">
       <h2>Agreement</h2>
       <p>
         By downloading, installing, or using ClipShip, you agree to these terms. If you do not agree,
@@ -39,6 +39,42 @@ export default function Terms() {
         Your license key is unique to your account and may not be shared, transferred, or used by
         another person. License sharing is detected automatically (devices bound to mismatched accounts)
         and may result in suspension of your license without refund.
+      </p>
+
+      <h2>Internet use and what data we collect</h2>
+      <p>
+        ClipShip does its video work entirely on your computer. Your videos, transcripts, clips,
+        captions, and edits never leave your machine and we never see them. The processing is local
+        because that&apos;s the whole point of the product.
+      </p>
+      <p>
+        ClipShip does communicate with our server in a small number of cases, all related to license
+        enforcement and the platform features you choose to use:
+      </p>
+      <ul>
+        <li><strong>Sign-in.</strong> When you first sign in, ClipShip authenticates you with our
+          license server. The request sends your email, a hashed hardware fingerprint, your installed
+          app version, and your license status. It does not send any video, audio, or transcript data.</li>
+        <li><strong>Daily license check.</strong> Once per day in the background, ClipShip re-confirms
+          your license with the same endpoint, sending the same minimal data. If your computer is
+          offline when this happens, ClipShip continues to work using a locally cached verdict for up
+          to 7 days, then prompts you to reconnect.</li>
+        <li><strong>Switching devices.</strong> When you deactivate one device and activate another
+          from inside the app, both calls go through our license server.</li>
+        <li><strong>Auto-updates.</strong> ClipShip checks for new versions and downloads them from
+          our update server.</li>
+        <li><strong>Platform posting.</strong> When you click &quot;post&quot; on a clip, that clip
+          goes directly to YouTube or wherever you chose. It does not pass through our servers. The
+          platform&apos;s own account (yours) is used.</li>
+        <li><strong>Using a third-party AI provider.</strong> If you opt to use OpenAI, Claude, Gemini,
+          Groq, or OpenRouter for clip selection instead of the bundled local model, ClipShip sends
+          the transcript text (not the video) to that provider&apos;s API using your own API key.</li>
+      </ul>
+      <p>
+        The license-related calls exist to prevent piracy and abuse. They do not constitute
+        &quot;uploading your footage.&quot; If at any point you want all of the data we hold about
+        you deleted, email <a href="mailto:hello@clipship.co">hello@clipship.co</a> and we&apos;ll
+        wipe it within 24 hours.
       </p>
 
       <h2>Your content</h2>
@@ -88,10 +124,31 @@ export default function Terms() {
 
       <h2>Refunds</h2>
       <p>
-        Pro tier purchases include a 14-day money-back guarantee. If the software does not work as
-        described, contact <a href="mailto:hello@clipship.co">hello@clipship.co</a> for a full refund.
-        Refunds are processed via Dodo Payments (our payment processor) and typically credit to your
-        original payment method within 5-10 business days.
+        ClipShip is a one-time purchase. We want you to be happy with it, so if it&apos;s not working
+        out for you, here&apos;s how refunds work.
+      </p>
+      <p>
+        <strong>Refund window.</strong> You can request a refund within 7 days of your purchase.
+        After 7 days, we don&apos;t issue refunds except in unusual circumstances. If you&apos;re
+        past the window and something genuinely went wrong, email
+        <a href="mailto:hello@clipship.co"> hello@clipship.co</a> and we&apos;ll take a look.
+      </p>
+      <p>
+        <strong>One refund per device.</strong> We only offer one refund per computer, ever. This is
+        a strict rule. If you&apos;ve already received a refund on this computer, even under a
+        different email address, you won&apos;t be eligible for another refund on the same machine.
+        We track this by hardware fingerprint, not by email or account, so creating a new account on
+        the same computer does not reset eligibility.
+      </p>
+      <p>
+        <strong>How to request a refund.</strong> Email
+        <a href="mailto:hello@clipship.co"> hello@clipship.co</a> from the address you used to buy
+        ClipShip. We process refund requests within 2-3 business days and the money usually hits
+        your card in 3 to 5 business days via Dodo Payments (our payment processor).
+      </p>
+      <p>
+        <strong>What happens after a refund.</strong> Your license downgrades to the free tier. You
+        can keep ClipShip installed and use the free features. Pro features stop working immediately.
       </p>
 
       <h2>Limitation of liability</h2>
