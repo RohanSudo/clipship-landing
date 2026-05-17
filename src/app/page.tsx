@@ -441,7 +441,12 @@ function ComingSoonForm({ id = "hero" }: { id?: string }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [occupation, setOccupation] = useState("");
-  const [interestedInGeneral, setInterestedInGeneral] = useState(false);
+  // Two independent checkboxes. ClipShip is pre-checked because that's
+  // the primary intent of someone landing on this page; the Rohan-
+  // builds-next box is opt-in only. Form refuses submit if both are
+  // unchecked - subscribing to nothing is a no-op.
+  const [wantsClipship, setWantsClipship] = useState(true);
+  const [wantsGeneral, setWantsGeneral] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
@@ -474,6 +479,11 @@ function ComingSoonForm({ id = "hero" }: { id?: string }) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
+    if (!wantsClipship && !wantsGeneral) {
+      setStatus("error");
+      setMessage("Tick at least one box so we know what to send you.");
+      return;
+    }
     if (!turnstileToken) {
       setStatus("error");
       setMessage("Please complete the verification.");
@@ -491,7 +501,8 @@ function ComingSoonForm({ id = "hero" }: { id?: string }) {
             firstName: name.split(" ")[0] || "",
             occupation,
             timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-            interestedInGeneral,
+            wantsClipship,
+            wantsGeneral,
             turnstileToken,
             source: `landing-${id}`,
           }),
@@ -508,7 +519,8 @@ function ComingSoonForm({ id = "hero" }: { id?: string }) {
       setName("");
       setEmail("");
       setOccupation("");
-      setInterestedInGeneral(false);
+      setWantsClipship(true);
+      setWantsGeneral(false);
     } catch {
       setStatus("error");
       setMessage("Network error. Try again or email hello@clipship.co.");
@@ -556,18 +568,26 @@ function ComingSoonForm({ id = "hero" }: { id?: string }) {
         onChange={(e) => setOccupation(e.target.value)}
         className="glow-input px-4 py-3 rounded-xl bg-[#18181b] border border-[#27272a] text-white placeholder:text-zinc-500 outline-none transition-all text-sm"
       />
-      <label className="flex items-start gap-3 text-left text-xs text-zinc-400 px-1 py-1 cursor-pointer select-none">
-        <input
-          type="checkbox"
-          checked={interestedInGeneral}
-          onChange={(e) => setInterestedInGeneral(e.target.checked)}
-          className="mt-0.5 w-4 h-4 rounded border-zinc-600 bg-[#18181b] text-violet-500 focus:ring-1 focus:ring-violet-500/50 cursor-pointer"
-        />
-        <span>
-          Also subscribe me to Rohan&apos;s general newsletter about new products and what
-          he&apos;s building. You&apos;ll get ClipShip launch updates either way.
-        </span>
-      </label>
+      <div className="flex flex-col gap-2 px-1 py-1">
+        <label className="flex items-start gap-3 text-left text-xs text-zinc-400 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={wantsClipship}
+            onChange={(e) => setWantsClipship(e.target.checked)}
+            className="mt-0.5 w-4 h-4 rounded border-zinc-600 bg-[#18181b] text-violet-500 focus:ring-1 focus:ring-violet-500/50 cursor-pointer"
+          />
+          <span>Email me when ClipShip launches.</span>
+        </label>
+        <label className="flex items-start gap-3 text-left text-xs text-zinc-400 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={wantsGeneral}
+            onChange={(e) => setWantsGeneral(e.target.checked)}
+            className="mt-0.5 w-4 h-4 rounded border-zinc-600 bg-[#18181b] text-violet-500 focus:ring-1 focus:ring-violet-500/50 cursor-pointer"
+          />
+          <span>Also email me whatever Rohan builds next.</span>
+        </label>
+      </div>
       <div ref={turnstileRef} className="flex justify-center" />
       <button
         type="submit"
@@ -659,15 +679,8 @@ export default function Home() {
         </div>
 
         <div className="max-w-3xl mx-auto text-center relative">
-          <FadeIn>
-            <div className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 mb-10">
-              <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-              <span className="text-sm text-violet-300">Coming soon. Get notified when it launches.</span>
-            </div>
-          </FadeIn>
-
           <FadeIn delay={0.1}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-8">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-8 mt-8">
               Long videos in.
               <br />
               <span className="gradient-text">Repurposed clips out.</span>
@@ -675,7 +688,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <div className="max-w-lg mx-auto mb-12 space-y-3">
+            <div className="max-w-lg mx-auto mb-10 space-y-3">
               <p className="text-lg text-zinc-400 leading-relaxed">
                 Drop a 90-minute recording in. AI finds the 10-15 clips hiding inside it.
               </p>
@@ -685,6 +698,13 @@ export default function Home() {
               <p className="text-lg text-zinc-200 font-medium mt-4">
                 Runs on your PC. No cloud. One-time price.
               </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.25}>
+            <div className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 mb-5">
+              <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
+              <span className="text-sm text-violet-300">Coming soon. Get notified when it launches.</span>
             </div>
           </FadeIn>
 
@@ -973,6 +993,15 @@ export default function Home() {
             <FAQItem
               q="Is ClipShip a subscription?"
               a={<p>No. One payment, lifetime use. You get all future updates for free as long as you keep using ClipShip. There are no monthly fees, no usage caps, no per-video charges.</p>}
+            />
+            <FAQItem
+              q="Is there a free trial?"
+              a={
+                <>
+                  <p>Yes. Every new install gets a 7-day free Pro trial, no credit card required. You get every Pro feature for those 7 days. After the trial, ClipShip downgrades to the free tier automatically and you can upgrade to Pro whenever you&apos;re ready.</p>
+                  <p className="mt-2"><strong className="text-white">The trial is one per computer.</strong> Just like refunds, the trial is bound to your hardware fingerprint, not your email. You can&apos;t reset it by signing up with a new email on the same machine. We do this so the free trial stays a real evaluation period instead of a free-forever loop.</p>
+                </>
+              }
             />
             <FAQItem
               q="Can I use ClipShip on more than one computer?"
