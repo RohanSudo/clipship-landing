@@ -681,10 +681,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-              Everything OpusClip does. On your PC.
+              Built for the same job. Different trade-offs.
             </h2>
             <p className="text-zinc-400 text-center mb-16 max-w-lg mx-auto">
-              Prompt-based clip search, face tracking, multi-speaker handling, word-level captions. No cloud. No upload limits. No monthly fee.
+              Automatic clip discovery, face tracking, multi-speaker handling, word-level captions. No cloud. No upload limits. No monthly fee.
             </p>
           </FadeIn>
 
@@ -702,8 +702,8 @@ export default function Home() {
             />
             <FeatureCard
               icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>}
-              title="Prompt-Based Clip Search"
-              desc="Type what you want — &ldquo;find the funny moments,&rdquo; &ldquo;the parts about startups,&rdquo; &ldquo;when I get fired up&rdquo; — and the AI pulls them out for you."
+              title="AI Clip Suggestions"
+              desc="ClipShip analyzes the transcript and highlights clip-worthy moments, so you can review a shortlist instead of scrubbing the full recording."
             />
             <FeatureCard
               icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>}
@@ -774,14 +774,15 @@ export default function Home() {
                   <tbody className="text-zinc-400">
                     {[
                       ["Pricing", "$29/mo subscription", "$24+/mo subscription", "$99 one-time"],
+                      ["Best for", "Fast cloud clipping", "Avatar + translation workflows", "Private local clipping"],
                       ["Processing", "Cloud upload", "Cloud upload", "Your PC (offline)"],
                       ["Privacy", "Your footage on their servers", "Your footage on their servers", "Never leaves your machine"],
-                      ["Clip extraction", "Auto + virality score", "Prompt-based", "Auto + prompt-based"],
+                      ["Clip extraction", "Automatic suggestions", "Automatic highlights", "Automatic suggestions"],
                       ["Paste YouTube link", "Yes", "Yes", "Yes"],
                       ["Face tracking", "Yes", "Yes", "Yes"],
                       ["Multi-speaker", "Partial", "Yes", "Yes"],
-                      ["Caption styles", "Preset library", "Preset library", "4 word-level styles"],
-                      ["Languages", "20+", "175+ (translate)", "99 (transcribe)"],
+                      ["Caption styles", "Preset library", "Preset library", "Built-in + custom Pro styles"],
+                      ["Languages", "Good coverage", "Stronger translation workflow", "99-language transcription"],
                       ["Usage cap", "Minutes/credits per month", "Credits per month", "Unlimited"],
                     ].map(([feature, opus, heygen, clipship], i) => (
                       <tr key={i} className="border-b border-white/5 last:border-0">
