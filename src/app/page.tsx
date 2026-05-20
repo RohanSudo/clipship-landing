@@ -673,34 +673,6 @@ export default function Home() {
             ))}
           </div>
 
-          <FadeIn delay={0.25}>
-            <div className="mt-14 rounded-2xl border border-white/10 bg-[#111113] p-4 sm:p-6 shadow-2xl shadow-violet-950/20">
-              <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-6 items-center">
-                <div className="rounded-xl overflow-hidden bg-black aspect-[9/16] max-w-[260px] mx-auto w-full">
-                  <video
-                    src="/demo/clipship-output-preview.mp4"
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                  />
-                </div>
-                <div className="text-center md:text-left">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-violet-400 mb-3">
-                    Example output
-                  </p>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-                    A finished vertical clip with captions baked in.
-                  </h3>
-                  <p className="text-zinc-400 leading-relaxed">
-                    Exported clips are already vertical, captioned, and ready to post. No timeline trimming, no manual keyframes, no cloud upload.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-
         </div>
       </section>
 
@@ -832,10 +804,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-              Free to try. One-time price when you are ready.
+              Start free. Upgrade once when you are ready.
             </h2>
             <p className="text-zinc-400 text-center mb-14 max-w-xl mx-auto">
-              ClipShip stays usable after the trial. Upgrade only when you want clean exports without the free-tier limits.
+              New installs get a 7-day Pro trial first. After that, the free tier stays usable, and Pro is a one-time upgrade.
             </p>
           </FadeIn>
 
@@ -865,9 +837,9 @@ export default function Home() {
                 </div>
                 <ul className="space-y-3 text-sm text-zinc-200 mb-8">
                   <li>No watermark</li>
-                  <li>1080p and 4K exports</li>
-                  <li>Lifetime access and future updates</li>
-                  <li>Add another permanent device slot for $25 one-time</li>
+                  <li>1080p exports</li>
+                  <li>Custom styled captions</li>
+                  <li>Use your own saved caption styles across projects</li>
                 </ul>
                 <DownloadButton
                   source="pricing"
