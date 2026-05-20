@@ -73,10 +73,10 @@ export default function ContentPage({
             </span>
           </Link>
           <Link
-            href="/#waitlist"
+            href="https://api.clipship.co/download/windows?utm_source=seo-page&utm_medium=website&utm_campaign=public-launch"
             className="text-sm font-semibold px-5 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_20px_rgba(124,58,237,0.3)] active:scale-95"
           >
-            Join Waitlist
+            Download
           </Link>
         </div>
       </nav>
@@ -147,10 +147,10 @@ export default function ContentPage({
                   Repurpose long videos into ready-to-post clips. Local AI, no cloud, no subscription. A one-time price for unlimited clips.
                 </p>
                 <Link
-                  href="/#waitlist"
+                  href="https://api.clipship.co/download/windows?utm_source=seo-page&utm_medium=website&utm_campaign=public-launch"
                   className="inline-block text-sm font-semibold px-8 py-3.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_24px_rgba(124,58,237,0.35)] active:scale-95"
                 >
-                  Join the early access waitlist
+                  Download for Windows
                 </Link>
               </div>
             </div>

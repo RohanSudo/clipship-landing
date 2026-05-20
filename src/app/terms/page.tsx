@@ -21,11 +21,18 @@ export default function Terms() {
         It helps creators edit talking-head videos and extract clips for short-form platforms.
       </p>
 
-      <h2>Plans</h2>
+      <h2>Plans and free trial</h2>
       <p>
-        ClipShip offers a free tier and a paid Pro tier. Specific features, export quality,
-        and pricing for each tier will be announced at launch. The free tier will always be
-        available at no cost with unlimited video processing.
+        ClipShip offers a free tier and a paid Pro tier. The free tier is always available at no
+        cost. Every new install gets a 7-day free trial of the Pro tier, no credit card required.
+        After the trial, ClipShip downgrades to the free tier automatically until you upgrade.
+      </p>
+      <p>
+        <strong>The free trial is one per computer, not one per account.</strong> Trials are bound
+        to your hardware fingerprint, so creating a new email account on the same machine does not
+        grant a fresh trial. This is the same per-device rule that applies to refunds, and exists
+        for the same reason: to keep the trial a real evaluation period rather than an
+        indefinite loop.
       </p>
 
       <h2>License terms (Pro)</h2>

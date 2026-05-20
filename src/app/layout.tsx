@@ -3,6 +3,8 @@ import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -14,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://clipship.co"),
   title: "ClipShip: Local AI Video Repurposing | OpusClip Alternative",
   description:
     "Repurpose long talking-head recordings into 10-15 ready-to-post clips for Reels, Shorts, and TikTok. Runs locally on your PC. OpusClip and HeyGen alternative.",
@@ -49,9 +52,9 @@ export default function RootLayout({
         "operatingSystem": "Windows",
         "offers": {
           "@type": "Offer",
-          "price": "0",
+          "price": "99",
           "priceCurrency": "USD",
-          "description": "Free forever with local AI. Pro upgrade available."
+          "description": "ClipShip Pro is $99 one-time for one device. Free tier available after the 7-day Pro trial."
         },
         "description": "Desktop app that repurposes long talking-head recordings into ready-to-post clips for Reels, Shorts, and TikTok. Local alternative to OpusClip and HeyGen Instant Highlights. Runs on your PC with AI. No cloud, no subscription.",
         "url": "https://clipship.co",
@@ -62,6 +65,22 @@ export default function RootLayout({
           "url": "https://clipship.co"
         }
       }` }} />
+      {gaMeasurementId && (
+        <>
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+            strategy="afterInteractive"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gaMeasurementId}');
+            `}
+          </Script>
+        </>
+      )}
       <Script id="microsoft-clarity" strategy="afterInteractive">
         {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "w2oobyx4su");`}
       </Script>

@@ -2,16 +2,50 @@
 
 declare global {
   interface Window {
-    turnstile: {
-      render: (element: HTMLElement, options: Record<string, unknown>) => void;
-      reset: (element: HTMLElement) => void;
-    };
+    gtag?: (...args: unknown[]) => void;
+    clarity?: (...args: unknown[]) => void;
   }
 }
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
+
+const DOWNLOAD_BASE_URL = "https://api.clipship.co/download/windows";
+
+function downloadHref(source: string) {
+  const params = new URLSearchParams({
+    utm_source: source,
+    utm_medium: "website",
+    utm_campaign: "public-launch",
+  });
+  return `${DOWNLOAD_BASE_URL}?${params.toString()}`;
+}
+
+function trackDownloadClick(source: string) {
+  window.gtag?.("event", "download_click", {
+    event_category: "download",
+    event_label: source,
+    source,
+  });
+  window.clarity?.("event", "download_click");
+}
+
+function DownloadButton({
+  source,
+  className,
+  children,
+}: {
+  source: string;
+  className: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <a href={downloadHref(source)} onClick={() => trackDownloadClick(source)} className={className}>
+      {children}
+    </a>
+  );
+}
 
 /* ────────────────────────────────────────────────
    LOGO
@@ -429,179 +463,6 @@ function FAQItem({ q, a }: { q: string; a: React.ReactNode }) {
 }
 
 /* ────────────────────────────────────────────────
-   COMING SOON FORM
-   Replaces the old waitlist form. Subscribes directly to Beehiiv
-   via the Cloudflare Worker proxy at api.clipship.co/beehiiv/subscribe
-   so the API key stays server-side. Adds an optional "occupation"
-   field plus a checkbox for opting into Rohan's general newsletter
-   alongside the ClipShip-only updates.
-   ──────────────────────────────────────────────── */
-
-function ComingSoonForm({ id = "hero" }: { id?: string }) {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [occupation, setOccupation] = useState("");
-  // Two independent checkboxes. ClipShip is pre-checked because that's
-  // the primary intent of someone landing on this page; the Rohan-
-  // builds-next box is opt-in only. Form refuses submit if both are
-  // unchecked - subscribing to nothing is a no-op.
-  const [wantsClipship, setWantsClipship] = useState(true);
-  const [wantsGeneral, setWantsGeneral] = useState(false);
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [message, setMessage] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState("");
-  const turnstileRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const renderWidget = () => {
-      if (turnstileRef.current && window.turnstile) {
-        window.turnstile.render(turnstileRef.current, {
-          sitekey: "0x4AAAAAACxc6UKqbS7BFgbT",
-          callback: (token: string) => setTurnstileToken(token),
-          "expired-callback": () => setTurnstileToken(""),
-          theme: "dark",
-          size: "flexible",
-        });
-      }
-    };
-
-    if (window.turnstile) {
-      renderWidget();
-    } else {
-      const script = document.createElement("script");
-      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-      script.async = true;
-      script.onload = renderWidget;
-      document.head.appendChild(script);
-    }
-  }, []);
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email) return;
-    if (!wantsClipship && !wantsGeneral) {
-      setStatus("error");
-      setMessage("Tick at least one box so we know what to send you.");
-      return;
-    }
-    if (!turnstileToken) {
-      setStatus("error");
-      setMessage("Please complete the verification.");
-      return;
-    }
-    setStatus("loading");
-    try {
-      const resp = await fetch(
-        "https://api.clipship.co/beehiiv/subscribe",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email,
-            firstName: name.split(" ")[0] || "",
-            occupation,
-            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-            wantsClipship,
-            wantsGeneral,
-            turnstileToken,
-            source: `landing-${id}`,
-          }),
-        }
-      );
-      if (!resp.ok) {
-        const body = await resp.json().catch(() => ({}));
-        setStatus("error");
-        setMessage(body?.error || "Something went wrong. Try again or email hello@clipship.co.");
-        return;
-      }
-      setStatus("success");
-      setMessage("You're on the list. We'll email you the moment ClipShip is live.");
-      setName("");
-      setEmail("");
-      setOccupation("");
-      setWantsClipship(true);
-      setWantsGeneral(false);
-    } catch {
-      setStatus("error");
-      setMessage("Network error. Try again or email hello@clipship.co.");
-    }
-  }
-
-  if (status === "success") {
-    return (
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        className="flex items-center gap-2 rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-6 py-4 text-emerald-400"
-      >
-        <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-        </svg>
-        <span className="text-sm">{message}</span>
-      </motion.div>
-    );
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-full max-w-md">
-      <div className="flex flex-col sm:flex-row gap-3">
-        <input
-          type="text"
-          placeholder="Your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="glow-input sm:w-[40%] px-4 py-3 rounded-xl bg-[#18181b] border border-[#27272a] text-white placeholder:text-zinc-500 outline-none transition-all text-sm"
-        />
-        <input
-          type="email"
-          required
-          placeholder="your@email.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="glow-input flex-1 px-4 py-3 rounded-xl bg-[#18181b] border border-[#27272a] text-white placeholder:text-zinc-500 outline-none transition-all text-sm"
-        />
-      </div>
-      <input
-        type="text"
-        placeholder="What do you do? (creator, podcaster, coach...)"
-        value={occupation}
-        onChange={(e) => setOccupation(e.target.value)}
-        className="glow-input px-4 py-3 rounded-xl bg-[#18181b] border border-[#27272a] text-white placeholder:text-zinc-500 outline-none transition-all text-sm"
-      />
-      <div className="flex flex-col gap-2 px-1 py-1">
-        <label className="flex items-start gap-3 text-left text-xs text-zinc-400 cursor-pointer select-none">
-          <input
-            type="checkbox"
-            checked={wantsClipship}
-            onChange={(e) => setWantsClipship(e.target.checked)}
-            className="mt-0.5 w-4 h-4 rounded border-zinc-600 bg-[#18181b] text-violet-500 focus:ring-1 focus:ring-violet-500/50 cursor-pointer"
-          />
-          <span>Email me when ClipShip launches.</span>
-        </label>
-        <label className="flex items-start gap-3 text-left text-xs text-zinc-400 cursor-pointer select-none">
-          <input
-            type="checkbox"
-            checked={wantsGeneral}
-            onChange={(e) => setWantsGeneral(e.target.checked)}
-            className="mt-0.5 w-4 h-4 rounded border-zinc-600 bg-[#18181b] text-violet-500 focus:ring-1 focus:ring-violet-500/50 cursor-pointer"
-          />
-          <span>Also email me whatever Rohan builds next (no spam, I promise).</span>
-        </label>
-      </div>
-      <div ref={turnstileRef} className="flex justify-center" />
-      <button
-        type="submit"
-        disabled={status === "loading" || !turnstileToken}
-        className="w-full px-6 py-3 rounded-xl font-medium text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all disabled:opacity-50 cursor-pointer"
-      >
-        {status === "loading" ? "Subscribing..." : "Notify me when it launches"}
-      </button>
-      {status === "error" && <p className="text-red-400 text-xs mt-1">{message}</p>}
-    </form>
-  );
-}
-
-/* ────────────────────────────────────────────────
    FEATURE CARD
    ──────────────────────────────────────────────── */
 
@@ -645,12 +506,20 @@ export default function Home() {
             <LogoIcon className="w-6 h-6" />
             <span className="font-semibold text-white tracking-tight text-sm">ClipShip</span>
           </div>
-          <a
-            href="#notify"
-            className="text-sm px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-violet-500/30 transition-all"
-          >
-            Get notified
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="#pricing"
+              className="hidden sm:inline text-sm px-3 py-2 text-zinc-400 hover:text-white transition-colors"
+            >
+              Pricing
+            </a>
+            <DownloadButton
+              source="nav"
+              className="text-sm px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-violet-500/30 transition-all"
+            >
+              Download
+            </DownloadButton>
+          </div>
         </div>
       </nav>
 
@@ -704,19 +573,30 @@ export default function Home() {
           <FadeIn delay={0.25}>
             <div className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 mb-5">
               <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-              <span className="text-sm text-violet-300">Coming soon. Get notified when it launches.</span>
+              <span className="text-sm text-violet-300">Available now for Windows.</span>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="flex justify-center" id="notify">
-              <ComingSoonForm id="hero" />
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <DownloadButton
+                source="hero"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all shadow-[0_0_30px_-10px_rgba(124,58,237,0.8)]"
+              >
+                Download for Windows
+              </DownloadButton>
+              <a
+                href="#pricing"
+                className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-zinc-300 bg-white/5 border border-white/10 hover:text-white hover:border-white/20 transition-all"
+              >
+                See pricing
+              </a>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.4}>
             <p className="text-sm text-zinc-500 mt-5">
-              Free forever plan available. Your data stays on your machine.
+              Free tier available. Pro is $99 one-time for one device.
             </p>
           </FadeIn>
         </div>
@@ -763,10 +643,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-              Three steps. That&apos;s it.
+              How it works.
             </h2>
-            <p className="text-zinc-400 text-center mb-16 max-w-lg mx-auto">
-              Long recording to posted clips. No timeline. No editing skills required.
+            <p className="text-zinc-400 text-center mb-16 max-w-xl mx-auto">
+              Use it like a clip generator, not a video editor. Import, review, export.
             </p>
           </FadeIn>
 
@@ -774,18 +654,18 @@ export default function Home() {
             {[
               {
                 num: "1",
-                title: "Drop your recording",
-                desc: "Long-form talking-head, webinar, podcast, or interview. Up to 2 hours per file.",
+                title: "Import your recording",
+                desc: "Drop in a talking-head video, podcast, course lesson, webinar, or interview.",
               },
               {
                 num: "2",
-                title: "Pick your style",
-                desc: "Karaoke, Beast, Hormozi, Clean, and more caption styles. Optionally prompt the AI for the moments you want.",
+                title: "Let local AI find the clips",
+                desc: "ClipShip transcribes, analyzes, reframes, and prepares vertical clips on your PC.",
               },
               {
                 num: "3",
-                title: "Post everywhere",
-                desc: "Vertical 9:16 clips with captions baked in. Save to disk or post straight to Reels, Shorts, and TikTok.",
+                title: "Review and export",
+                desc: "Pick the clips you like, choose a caption style, then export ready-to-post 9:16 videos.",
               },
             ].map((step, i) => (
               <FadeIn key={i} delay={0.1 + i * 0.15}>
@@ -799,6 +679,34 @@ export default function Home() {
               </FadeIn>
             ))}
           </div>
+
+          <FadeIn delay={0.25}>
+            <div className="mt-14 rounded-2xl border border-white/10 bg-[#111113] p-4 sm:p-6 shadow-2xl shadow-violet-950/20">
+              <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-6 items-center">
+                <div className="rounded-xl overflow-hidden bg-black aspect-[9/16] max-w-[260px] mx-auto w-full">
+                  <video
+                    src="/demo/clipship-output-preview.mp4"
+                    className="w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                </div>
+                <div className="text-center md:text-left">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-violet-400 mb-3">
+                    Example output
+                  </p>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3">
+                    A finished vertical clip with captions baked in.
+                  </h3>
+                  <p className="text-zinc-400 leading-relaxed">
+                    Exported clips are already vertical, captioned, and ready to post. No timeline trimming, no manual keyframes, no cloud upload.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
 
         </div>
       </section>
@@ -900,7 +808,7 @@ export default function Home() {
                   </thead>
                   <tbody className="text-zinc-400">
                     {[
-                      ["Pricing", "$29/mo subscription", "$24+/mo subscription", "One-time, lifetime"],
+                      ["Pricing", "$29/mo subscription", "$24+/mo subscription", "$99 one-time"],
                       ["Processing", "Cloud upload", "Cloud upload", "Your PC (offline)"],
                       ["Privacy", "Your footage on their servers", "Your footage on their servers", "Never leaves your machine"],
                       ["Clip extraction", "Auto + virality score", "Prompt-based", "Auto + prompt-based"],
@@ -927,6 +835,59 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ── */}
+      <section id="pricing" className="py-24 px-6 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
+              Free to try. One-time price when you are ready.
+            </h2>
+            <p className="text-zinc-400 text-center mb-14 max-w-xl mx-auto">
+              ClipShip stays usable after the trial. Upgrade only when you want clean exports without the free-tier limits.
+            </p>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <FadeIn delay={0.05}>
+              <div className="rounded-2xl bg-[#18181b]/60 border border-white/5 p-8 h-full">
+                <p className="text-sm font-semibold text-zinc-500 mb-3">Free</p>
+                <div className="flex items-baseline gap-2 mb-5">
+                  <span className="text-4xl font-bold text-white">$0</span>
+                  <span className="text-zinc-500">forever</span>
+                </div>
+                <ul className="space-y-3 text-sm text-zinc-300">
+                  <li>7-day Pro trial, no card required</li>
+                  <li>Unlimited local processing</li>
+                  <li>720p exports with ClipShip watermark</li>
+                  <li>All core clip generation features</li>
+                </ul>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.12}>
+              <div className="rounded-2xl bg-violet-500/[0.07] border border-violet-500/25 p-8 h-full shadow-[0_0_50px_-20px_rgba(124,58,237,0.8)]">
+                <p className="text-sm font-semibold text-violet-300 mb-3">Pro</p>
+                <div className="flex items-baseline gap-2 mb-5">
+                  <span className="text-4xl font-bold text-white">$99</span>
+                  <span className="text-zinc-400">one-time, one device</span>
+                </div>
+                <ul className="space-y-3 text-sm text-zinc-200 mb-8">
+                  <li>No watermark</li>
+                  <li>1080p and 4K exports</li>
+                  <li>Lifetime access and future updates</li>
+                  <li>Add another permanent device slot for $25 one-time</li>
+                </ul>
+                <DownloadButton
+                  source="pricing"
+                  className="inline-flex w-full justify-center px-7 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all"
+                >
+                  Download for Windows
+                </DownloadButton>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       <section id="faq" className="py-24 px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
@@ -1078,15 +1039,20 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Be the first to know.
+              Start clipping your long videos.
             </h2>
             <p className="text-zinc-400 mb-8">
-              Drop your email and I&apos;ll send you the download link the moment ClipShip is ready.
+              Download ClipShip for Windows. Try Pro for 7 days, then keep using the free tier or upgrade for $99 one-time.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
             <div className="flex justify-center">
-              <ComingSoonForm id="bottom" />
+              <DownloadButton
+                source="bottom-cta"
+                className="px-8 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all"
+              >
+                Download for Windows
+              </DownloadButton>
             </div>
           </FadeIn>
         </div>

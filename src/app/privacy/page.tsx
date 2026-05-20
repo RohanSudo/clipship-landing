@@ -27,9 +27,10 @@ export default function Privacy() {
 
       <p><strong>When using clipship.co (this website):</strong></p>
       <ul>
-        <li>If you join the waitlist, we collect your name and email address</li>
+        <li>If you download ClipShip, we record a download click with UTM/referrer data, country, browser user agent, and a daily hashed IP signal. We do not store raw IP addresses in the download table.</li>
+        <li>If you sign up for updates or email support, we collect the email address and message details you provide.</li>
         <li>We use Microsoft Clarity for anonymous website analytics (page views, scroll depth). No personal data is shared.</li>
-        <li>We use Cloudflare Turnstile for spam protection on forms</li>
+        <li>We may use Google Analytics 4 for aggregate website and download-click analytics.</li>
       </ul>
 
       <h2>Connected social media accounts (YouTube, Instagram, TikTok)</h2>
@@ -161,7 +162,7 @@ export default function Privacy() {
 
       <h2>How we use your data</h2>
       <ul>
-        <li>Email (waitlist or purchaser): to send product updates, license keys, and support replies. Never sold to third parties.</li>
+        <li>Email (account, newsletter, or purchaser): to send product updates, license keys, and support replies. Never sold to third parties.</li>
         <li>Hardware fingerprint: to enforce one license per device per the licensing terms you agreed to at purchase.</li>
         <li>Anonymous analytics (opt-in): to understand which features matter most. Aggregate only.</li>
       </ul>
@@ -174,6 +175,7 @@ export default function Privacy() {
         <li><strong>Resend</strong> (transactional email delivery)</li>
         <li><strong>Dodo Payments</strong> (payment processing)</li>
         <li><strong>Microsoft Clarity</strong> (website analytics, anonymous)</li>
+        <li><strong>Google Analytics 4</strong> (aggregate website analytics, if enabled)</li>
       </ul>
       <p>None of these services have access to your video content, editing data, or social-media OAuth tokens.</p>
 
