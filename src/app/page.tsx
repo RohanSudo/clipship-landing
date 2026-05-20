@@ -70,6 +70,14 @@ function LogoIcon({ className = "w-8 h-8" }: { className?: string }) {
   );
 }
 
+function WindowsIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M3 4.6 10.7 3.5v7.2H3V4.6Zm8.7-1.2L21 2v8.7h-9.3V3.4ZM3 12h7.7v7.3L3 18.2V12Zm8.7 0H21v9l-9.3-1.3V12Z" />
+    </svg>
+  );
+}
+
 /* ────────────────────────────────────────────────
    REUSABLE ANIMATIONS
    ──────────────────────────────────────────────── */
@@ -570,34 +578,19 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.25}>
-            <div className="inline-flex items-center gap-2 rounded-full bg-violet-500/10 border border-violet-500/20 px-4 py-1.5 mb-5">
-              <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-              <span className="text-sm text-violet-300">Available now for Windows.</span>
-            </div>
-          </FadeIn>
-
           <FadeIn delay={0.3}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="flex items-center justify-center">
               <DownloadButton
                 source="hero"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all shadow-[0_0_30px_-10px_rgba(124,58,237,0.8)]"
+                className="group inline-flex w-full max-w-[310px] sm:w-auto items-center justify-center gap-3 rounded-xl border border-white/15 bg-white px-5 py-3.5 text-left text-zinc-950 shadow-[0_18px_50px_-22px_rgba(255,255,255,0.65)] transition-all hover:-translate-y-0.5 hover:bg-zinc-100 hover:shadow-[0_24px_60px_-26px_rgba(255,255,255,0.8)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-400"
               >
-                Download for Windows
+                <WindowsIcon className="h-6 w-6 text-[#0078D4]" />
+                <span className="flex flex-col leading-none">
+                  <span className="text-base font-semibold tracking-normal">Download for Windows</span>
+                  <span className="mt-1 text-xs font-medium text-zinc-500">Windows 10 and 11</span>
+                </span>
               </DownloadButton>
-              <a
-                href="#pricing"
-                className="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-sm text-zinc-300 bg-white/5 border border-white/10 hover:text-white hover:border-white/20 transition-all"
-              >
-                See pricing
-              </a>
             </div>
-          </FadeIn>
-
-          <FadeIn delay={0.4}>
-            <p className="text-sm text-zinc-500 mt-5">
-              Free tier available. Pro is $99 one-time for one device.
-            </p>
           </FadeIn>
         </div>
       </section>
