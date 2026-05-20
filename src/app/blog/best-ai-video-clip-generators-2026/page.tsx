@@ -34,7 +34,7 @@ export default function BestClipGenerators() {
           tool={{
             rank: 1,
             name: "ClipShip",
-            tagline: "Desktop app that runs locally on your PC. Same clip-extraction flow as OpusClip and HeyGen—paste a YouTube link or import your own file, prompt-based search, face tracking, multi-speaker handling, word-level captions—without the subscription or the cloud upload.",
+            tagline: "Desktop app that runs locally on your PC. Paste a YouTube link or import your own file, get AI clip suggestions, face tracking, multi-speaker handling, and word-level captions without the subscription or the cloud upload.",
             highlight: true,
             details: [
               { label: "Pricing", value: "Free tier / one-time Pro" },
@@ -104,7 +104,7 @@ export default function BestClipGenerators() {
           highlightCol={1}
           rows={[
             { feature: "AI clip extraction", values: ["Yes", "Yes", "Yes", "Partial", "No"] },
-            { feature: "Prompt-based search", values: ["Yes", "Partial", "Yes", "Partial", "No"] },
+            { feature: "Prompt-based search", values: ["No", "Partial", "Yes", "Partial", "No"] },
             { feature: "Face tracking", values: ["Yes", "Yes", "Yes", "Partial", "Partial"] },
             { feature: "Multi-speaker", values: ["Yes", "Partial", "Yes", "Yes", "No"] },
             { feature: "Local processing", values: ["Yes", "No", "No", "No", "Partial"] },

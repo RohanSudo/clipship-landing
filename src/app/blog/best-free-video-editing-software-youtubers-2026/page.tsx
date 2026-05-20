@@ -44,7 +44,7 @@ export default function BestFreeEditors() {
             highlight: true,
             details: [
               { label: "Free tier", value: "Unlimited clips, watermark" },
-              { label: "Best feature", value: "Prompt-based clip search, face tracking" },
+              { label: "Best feature", value: "AI clip suggestions, face tracking" },
               { label: "Limitation", value: "Clip extraction only, not a full editor" },
               { label: "Platform", value: "Windows desktop (local)" },
             ],

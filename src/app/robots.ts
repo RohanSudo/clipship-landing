@@ -12,8 +12,12 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "LinkedInBot", allow: "/" },
       { userAgent: "Slackbot", allow: "/" },
       // AI/LLM bots (for AI search visibility)
+      { userAgent: "OAI-SearchBot", allow: "/" },
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "ChatGPT-User", allow: "/" },
+      { userAgent: "ClaudeBot", allow: "/" },
+      { userAgent: "Claude-User", allow: "/" },
+      { userAgent: "Claude-SearchBot", allow: "/" },
       { userAgent: "Claude-Web", allow: "/" },
       { userAgent: "anthropic-ai", allow: "/" },
       { userAgent: "PerplexityBot", allow: "/" },

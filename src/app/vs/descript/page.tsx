@@ -17,7 +17,7 @@ const data: ComparisonData = {
     "These solve different problems. Descript is for editing; ClipShip is for clipping. Descript’s built-in clip-extraction (Underlord) is secondary to the editor. ClipShip is built around clip extraction from the ground up.",
   features: [
     { feature: "Short-form clip extraction", clipship: "yes", competitor: "partial" },
-    { feature: "Prompt-based clip search", clipship: "yes", competitor: "partial" },
+    { feature: "Prompt-based clip search", clipship: "no", competitor: "partial" },
     { feature: "Face tracking + vertical format", clipship: "yes", competitor: "partial" },
     { feature: "Multi-speaker handling", clipship: "yes", competitor: "yes" },
     { feature: "Word-level captions", clipship: "yes", competitor: "yes" },
@@ -33,7 +33,7 @@ const data: ComparisonData = {
     {
       title: "Built for clips, not editing",
       detail:
-        "Descript’s clip extraction (Underlord) is a feature inside an editor. ClipShip is purpose-built for clip extraction—face tracking, vertical output, multi-speaker detection, and prompt-based search are the core, not add-ons.",
+        "Descript’s clip extraction (Underlord) is a feature inside an editor. ClipShip is purpose-built for clip extraction: AI clip suggestions, face tracking, vertical output, and multi-speaker detection are the core, not add-ons.",
     },
     {
       title: "Your footage never uploads",

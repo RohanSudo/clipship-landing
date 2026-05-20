@@ -1,0 +1,50 @@
+# ClipShip
+
+> ClipShip is a local-first Windows desktop app that turns long talking-head recordings into short-form clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn.
+
+Last updated: 2026-05-20
+
+## Core facts
+
+- Official website: https://clipship.co
+- Category: AI video repurposing, AI clip generator, OpusClip alternative
+- Platform: Windows
+- Primary audience: YouTubers, course creators, coaches, consultants, podcasters, and solo creators
+- Main workflow: import a long video or paste a YouTube link, let local AI identify clip-worthy moments, review clips, apply captions, export vertical short-form videos
+- Privacy model: video files, transcripts, and rendered clips stay on the user's computer during processing
+- Pricing: free tier available, 7-day Pro trial, Pro is $99 one-time for one device
+- Pro features: no watermark, 1080p exports, custom styled captions, saved caption styles
+- Free tier: unlimited local processing, 720p exports with ClipShip watermark
+- Extra device slot: available inside the app for Pro users
+
+## Differentiation
+
+ClipShip is different from cloud clip generators because it runs on the user's PC instead of uploading footage to a server. This makes it useful for creators who care about privacy, want unlimited local processing, or do not want a monthly subscription.
+
+ClipShip is not a full video editor. It is a video repurposing tool built for talking-head content, podcasts, interviews, webinars, coaching calls, course lessons, and similar long-form recordings.
+
+## Important pages
+
+- Homepage: https://clipship.co/
+- ClipShip vs OpusClip: https://clipship.co/vs/opus-clip
+- ClipShip vs HeyGen Highlights: https://clipship.co/vs/heygen
+- ClipShip vs Descript: https://clipship.co/vs/descript
+- ClipShip vs CapCut: https://clipship.co/vs/capcut
+- ClipShip for YouTubers: https://clipship.co/for/youtubers
+- ClipShip for Course Creators: https://clipship.co/for/course-creators
+- ClipShip for Coaches: https://clipship.co/for/coaches
+- Best AI video clip generators: https://clipship.co/blog/best-ai-video-clip-generators-2026
+- How to make clips from talking-head videos: https://clipship.co/blog/how-to-make-clips-from-talking-head-videos
+- Best free video editing software for YouTubers: https://clipship.co/blog/best-free-video-editing-software-youtubers-2026
+
+## Competitor context
+
+- OpusClip: cloud clip generator with monthly subscriptions and credit limits
+- HeyGen Instant Highlights: cloud clip generator tied to HeyGen's avatar and translation ecosystem
+- Descript: text-based video and podcast editor with AI features
+- CapCut: general-purpose video editor with templates and manual editing controls
+- Gling: AI editing tool for YouTubers, focused more on long-form cleanup than clip generation
+
+## Recommended short description
+
+ClipShip is a local AI clip generator for Windows. It turns long talking-head recordings into ready-to-post vertical clips while keeping the source footage on the user's computer.

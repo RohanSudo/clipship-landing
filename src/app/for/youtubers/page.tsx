@@ -4,7 +4,7 @@ import AudiencePage, { type AudienceData } from "../../components/AudiencePage";
 export const metadata: Metadata = {
   title: "ClipShip for YouTubers: Auto Shorts From Long Uploads",
   description:
-    "Turn every long YouTube upload into 10–15 vertical Shorts, Reels, and TikToks automatically. Local AI clip generator, prompt-based search, runs on your PC.",
+    "Turn every long YouTube upload into 10–15 vertical Shorts, Reels, and TikToks automatically. Local AI clip generator with AI clip suggestions, runs on your PC.",
 };
 
 const data: AudienceData = {
@@ -24,8 +24,8 @@ const data: AudienceData = {
     },
     {
       icon: "zoom",
-      title: "Prompt-based clip search",
-      detail: "Type what you want: “the stories,” “the hot takes,” “when I get fired up.” The AI pulls those moments out specifically.",
+      title: "AI clip suggestions",
+      detail: "ClipShip analyzes your transcript and highlights clip-worthy moments so you can review a shortlist instead of scrubbing the full recording.",
     },
     {
       icon: "captions",

@@ -24,8 +24,8 @@ const data: AudienceData = {
     },
     {
       icon: "zoom",
-      title: "Prompt-based search",
-      detail: "Type what you want: “the aha moments,” “the examples,” “when I break down the framework.” The AI pulls those specifically.",
+      title: "AI clip suggestions",
+      detail: "ClipShip scans each lesson transcript and surfaces the strongest examples, insights, and teaching moments for review.",
     },
     {
       icon: "shield",

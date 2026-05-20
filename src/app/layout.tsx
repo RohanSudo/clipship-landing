@@ -43,9 +43,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      data-scroll-behavior="smooth"
     >
       <head>
-        <script id="schema-markup" type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
+        <script id="schema-markup" type="application/ld+json" async dangerouslySetInnerHTML={{ __html: `{
           "@context": "https://schema.org",
           "@type": "SoftwareApplication",
           "name": "ClipShip",

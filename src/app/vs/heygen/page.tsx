@@ -4,19 +4,20 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs HeyGen Highlights: HeyGen Alternative (2026)",
   description:
-    "Local HeyGen Instant Highlights alternative. Both repurpose long videos into short-form clips with prompt search and face tracking. ClipShip runs on your PC, one-time price.",
+    "Local HeyGen Instant Highlights alternative. Both repurpose long videos into short-form clips. HeyGen has stronger search control and translation; ClipShip runs on your PC, one-time price.",
 };
 
 const data: ComparisonData = {
   competitor: "HeyGen Highlights",
   competitorTagline:
-    "HeyGen Instant Highlights V2 repurposes long videos into short-form clips using prompt-based search. ClipShip does the same thing on your PC, with a one-time price.",
+    "HeyGen Instant Highlights V2 repurposes long videos into short-form clips in the cloud. Its stronger extras are search control and translation. ClipShip focuses on local AI clip suggestions on your PC, with a one-time price.",
   verdict:
-    "HeyGen Instant Highlights V2 is a cloud clip generator. ClipShip is the local alternative with the same core flow—prompt-based search, face tracking, multi-speaker handling, captions.",
+    "HeyGen Instant Highlights V2 is a cloud clip generator. ClipShip is the local alternative for AI clip suggestions, face tracking, multi-speaker handling, and captions.",
   verdictDetail:
     "The split is simple: HeyGen charges per-month and processes on their servers. ClipShip is a one-time price and processes on your PC. Same job, different trust model.",
   features: [
-    { feature: "Prompt-based clip search", clipship: "yes", competitor: "yes" },
+    { feature: "AI clip suggestions", clipship: "yes", competitor: "yes" },
+    { feature: "Prompt-based clip search", clipship: "no", competitor: "yes" },
     { feature: "Face tracking", clipship: "yes", competitor: "yes" },
     { feature: "Multi-speaker handling", clipship: "yes", competitor: "yes" },
     { feature: "Word-level captions", clipship: "yes", competitor: "yes" },

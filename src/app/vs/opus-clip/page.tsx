@@ -17,7 +17,7 @@ const data: ComparisonData = {
     "If you want cloud convenience and integrated social scheduling, OpusClip is a mature option. If you want the same clip-extraction flow on your PC with unlimited usage and a one-time price, ClipShip is the better deal.",
   features: [
     { feature: "AI clip extraction", clipship: "yes", competitor: "yes" },
-    { feature: "Prompt-based clip search", clipship: "yes", competitor: "partial" },
+    { feature: "Prompt-based clip search", clipship: "no", competitor: "partial" },
     { feature: "Face tracking", clipship: "yes", competitor: "yes" },
     { feature: "Multi-speaker handling", clipship: "yes", competitor: "partial" },
     { feature: "Word-level captions", clipship: "yes", competitor: "yes" },

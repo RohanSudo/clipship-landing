@@ -4,7 +4,7 @@ import AudiencePage, { type AudienceData } from "../../components/AudiencePage";
 export const metadata: Metadata = {
   title: "ClipShip for Coaches: Clips From Every Coaching Call",
   description:
-    "Turn coaching sessions, webinars, and keynotes into social clips without uploading client recordings. Local AI clip generator, prompt-based search, 99 languages.",
+    "Turn coaching sessions, webinars, and keynotes into social clips without uploading client recordings. Local AI clip generator with AI clip suggestions and 99-language transcription.",
 };
 
 const data: AudienceData = {
@@ -24,8 +24,8 @@ const data: AudienceData = {
     },
     {
       icon: "zoom",
-      title: "Prompt-based clip search",
-      detail: "Type what you want: “the hot takes,” “the frameworks,” “when I push back on something.” The AI pulls those moments out.",
+      title: "AI clip suggestions",
+      detail: "ClipShip reads the transcript and highlights strong teaching moments, sharp insights, and quotable sections for you to review.",
     },
     {
       icon: "shield",

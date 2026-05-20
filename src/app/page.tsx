@@ -47,6 +47,93 @@ function DownloadButton({
   );
 }
 
+const homepageFaqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Will ClipShip run on my computer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ClipShip is Windows-only right now. It is tested on Windows 10 and 11. At least 16 GB RAM and an NVIDIA GPU are recommended for the smoothest experience, but CPU-only setups can run more slowly.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does my footage get uploaded anywhere?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. ClipShip runs video processing on your computer. Your video files, transcripts, clips, captions, and renders stay on your machine unless you choose to upload a finished clip to a platform yourself.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need an internet connection?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ClipShip needs internet for first setup, sign-in, license checks, switching devices, posting clips, or using a cloud AI key. The actual local processing workflow can run offline after setup.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is ClipShip a subscription?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. ClipShip Pro is a one-time $99 purchase for one device. There are no monthly fees, usage caps, or per-video charges.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is there a free trial?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Every new install gets a 7-day Pro trial with no credit card required. After the trial, ClipShip downgrades to the free tier automatically unless you upgrade.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is included in the free tier?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The free tier includes unlimited local processing, all core clip generation features, and 720p exports with a ClipShip watermark.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is included in ClipShip Pro?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ClipShip Pro removes the watermark, enables 1080p exports, and unlocks custom styled captions plus saved caption styles.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I use ClipShip on more than one computer?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A single ClipShip Pro license activates one computer at a time. You can switch devices inside the app. Pro users can also buy an extra permanent device slot from inside the app.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Why is ClipShip a desktop app instead of a web app?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ClipShip is a desktop app so your source video does not need to be uploaded to a cloud server. Local processing improves privacy, removes upload wait time, avoids bandwidth limits, and supports a one-time price.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is your refund policy?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "ClipShip has a 7-day money-back guarantee, limited to one refund per device. Email hello@clipship.co within 7 days of purchase to request a refund.",
+      },
+    },
+  ],
+};
+
 /* ────────────────────────────────────────────────
    LOGO
    ──────────────────────────────────────────────── */
@@ -503,6 +590,12 @@ function FeatureCard({
 export default function Home() {
   return (
     <main className="dot-grid relative">
+      <script
+        id="homepage-faq-schema"
+        type="application/ld+json"
+        async
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqJsonLd) }}
+      />
       {/* Ambient glow */}
       <div className="ambient-glow-violet" />
       <div className="ambient-glow-cyan" />

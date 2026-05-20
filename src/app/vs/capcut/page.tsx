@@ -17,7 +17,7 @@ const data: ComparisonData = {
     "Worth noting: CapCut is owned by ByteDance (TikTok’s parent). Cloud features route your footage through their servers. ClipShip runs entirely on your PC.",
   features: [
     { feature: "Automatic clip extraction", clipship: "yes", competitor: "no" },
-    { feature: "Prompt-based clip search", clipship: "yes", competitor: "no" },
+    { feature: "AI clip suggestions", clipship: "yes", competitor: "no" },
     { feature: "Face tracking + vertical format", clipship: "yes", competitor: "partial" },
     { feature: "Multi-speaker handling", clipship: "yes", competitor: "no" },
     { feature: "Word-level captions", clipship: "yes", competitor: "yes" },
