@@ -16,6 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/vs/gling`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${baseUrl}/vs/capcut`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
 
+    // High-intent SEO pages around ClipShip's local/no-upload differentiator
+    { url: `${baseUrl}/local-ai-video-clip-generator`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/no-upload-opusclip-alternative`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/youtube-to-shorts-clip-maker`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+
     // Audience pages
     { url: `${baseUrl}/for/youtubers`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/for/course-creators`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

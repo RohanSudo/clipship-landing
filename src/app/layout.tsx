@@ -5,6 +5,69 @@ import "./globals.css";
 
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-K0DSFVRC50";
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "ClipShip",
+    applicationCategory: "MultimediaApplication",
+    applicationSubCategory: "AI video clip generator",
+    operatingSystem: "Windows",
+    url: "https://clipship.co",
+    downloadUrl: "https://api.clipship.co/download/windows",
+    image: "https://clipship.co/opengraph-image",
+    description:
+      "ClipShip is a local AI video clip generator for Windows. It turns long talking-head recordings into ready-to-post clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn while keeping source footage on the user's computer.",
+    featureList: [
+      "Local AI clip selection",
+      "YouTube link import",
+      "Word-level captions",
+      "Custom styled captions",
+      "Face-tracking vertical reframe",
+      "1080p Pro exports",
+      "Free tier with 720p exports",
+    ],
+    offers: [
+      {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+        description: "Free tier with unlimited local processing, 720p exports, and ClipShip watermark.",
+      },
+      {
+        "@type": "Offer",
+        price: "99",
+        priceCurrency: "USD",
+        description: "ClipShip Pro is $99 one-time for one device. Includes no watermark, 1080p exports, and custom caption styles.",
+      },
+    ],
+    author: {
+      "@type": "Organization",
+      name: "ClipShip",
+      url: "https://clipship.co",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "ClipShip",
+    url: "https://clipship.co",
+    logo: "https://clipship.co/icon.svg",
+    sameAs: [
+      "https://x.com/ClipShipApp",
+      "https://instagram.com/ClipShipApp",
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "ClipShip",
+    url: "https://clipship.co",
+    description:
+      "Official website for ClipShip, a local AI video clip generator and no-upload OpusClip alternative for Windows.",
+  },
+];
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -47,27 +110,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="alternate" type="text/plain" href="/llms.txt" title="llms.txt" />
-        <script id="schema-markup" type="application/ld+json" async dangerouslySetInnerHTML={{ __html: `{
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "ClipShip",
-          "applicationCategory": "MultimediaApplication",
-          "operatingSystem": "Windows",
-          "offers": {
-            "@type": "Offer",
-            "price": "99",
-            "priceCurrency": "USD",
-            "description": "ClipShip Pro is $99 one-time for one device. Free tier available after the 7-day Pro trial."
-          },
-          "description": "Desktop app that repurposes long talking-head recordings into ready-to-post clips for Reels, Shorts, and TikTok. Local alternative to OpusClip and HeyGen Instant Highlights. Runs on your PC with AI. No cloud, no subscription.",
-          "url": "https://clipship.co",
-          "image": "https://clipship.co/opengraph-image",
-          "author": {
-            "@type": "Organization",
-            "name": "ClipShip",
-            "url": "https://clipship.co"
-          }
-        }` }} />
+        <script id="schema-markup" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
       <body className="min-h-full flex flex-col">
         {gaMeasurementId && (

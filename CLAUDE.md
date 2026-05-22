@@ -6,7 +6,33 @@
 
 - **Tech:** Next.js (App Router) + TypeScript + Tailwind. Created via `create-next-app`.
 - **Hosted at:** clipship.co (verify deployment target in Vercel dashboard)
-- **Phase:** Waitlist live, product close to launch as of 2026-05-06. Early Access version sent to first users on/around 2026-05-18.
+- **Phase:** Public v1.0.0 launch completed 2026-05-20/21. Site is in public download/pricing mode, not waitlist mode.
+- **Download entrypoint:** `https://api.clipship.co/download/windows`.
+- **Launch signal:** Weak activation so far. D1 download tracking is more reliable than GA4 download_click.
+- **SEO/AIO state:** Local SEO recovery changes were made on 2026-05-21 but intentionally not pushed yet. Rohan wants to preview them first next session.
+
+## Pending SEO/AIO changes from 2026-05-21
+
+Local-only changes in this repo:
+- Added `/local-ai-video-clip-generator`
+- Added `/no-upload-opusclip-alternative`
+- Added `/youtube-to-shorts-clip-maker`
+- Updated `src/app/sitemap.ts`
+- Updated `public/llms.txt`
+- Updated `src/app/layout.tsx` structured data
+- Updated homepage internal links in `src/app/page.tsx`
+
+Validation already done:
+- Targeted ESLint on new/modified SEO files passed.
+- `npm run build` passed.
+- Full `npm run lint` still has pre-existing unrelated lint errors in old files, so do not treat that as caused by these SEO pages.
+
+Next steps:
+1. Run/confirm local preview at `http://localhost:3000`.
+2. Let Rohan preview the three new pages.
+3. If approved, commit and push the landing changes.
+4. After deploy, submit `https://clipship.co/sitemap.xml` in Search Console and request indexing for the new URLs.
+5. Fix Cloudflare Managed robots.txt settings because live `robots.txt` currently injects Cloudflare blocks for some AI crawlers above our origin allow rules.
 
 ## What this site does
 

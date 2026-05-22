@@ -1060,7 +1060,7 @@ export default function Home() {
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid md:grid-cols-4 gap-6 mb-8">
             <FadeIn delay={0.05}>
               <h3 className="text-xs font-semibold uppercase tracking-widest text-violet-400 mb-4">Compare</h3>
               <ul className="space-y-2.5">
@@ -1082,6 +1082,15 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn delay={0.15}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-emerald-400 mb-4">Search by need</h3>
+              <ul className="space-y-2.5">
+                <li><Link href="/local-ai-video-clip-generator" className="text-sm text-zinc-300 hover:text-white transition-colors">Local AI clip generator</Link></li>
+                <li><Link href="/no-upload-opusclip-alternative" className="text-sm text-zinc-300 hover:text-white transition-colors">No-upload OpusClip alternative</Link></li>
+                <li><Link href="/youtube-to-shorts-clip-maker" className="text-sm text-zinc-300 hover:text-white transition-colors">YouTube to Shorts clip maker</Link></li>
+              </ul>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
               <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Read</h3>
               <ul className="space-y-2.5">
                 <li><Link href="/blog/best-ai-video-clip-generators-2026" className="text-sm text-zinc-300 hover:text-white transition-colors">Best AI video clip generators 2026 →</Link></li>
@@ -1121,7 +1130,7 @@ export default function Home() {
       <footer className="border-t border-white/5 pt-16 pb-8 px-6 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Link grid */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
             {/* Brand column */}
             <div className="col-span-2 md:col-span-2">
               <div className="flex items-center gap-2 mb-3">
@@ -1160,6 +1169,16 @@ export default function Home() {
                 <li><Link href="/for/youtubers" className="text-sm text-zinc-500 hover:text-white transition-colors">YouTubers</Link></li>
                 <li><Link href="/for/course-creators" className="text-sm text-zinc-500 hover:text-white transition-colors">Course creators</Link></li>
                 <li><Link href="/for/coaches" className="text-sm text-zinc-500 hover:text-white transition-colors">Coaches</Link></li>
+              </ul>
+            </div>
+
+            {/* Use cases column */}
+            <div>
+              <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4">Use cases</h4>
+              <ul className="space-y-2.5">
+                <li><Link href="/local-ai-video-clip-generator" className="text-sm text-zinc-500 hover:text-white transition-colors">Local AI clip generator</Link></li>
+                <li><Link href="/no-upload-opusclip-alternative" className="text-sm text-zinc-500 hover:text-white transition-colors">No-upload OpusClip alternative</Link></li>
+                <li><Link href="/youtube-to-shorts-clip-maker" className="text-sm text-zinc-500 hover:text-white transition-colors">YouTube to Shorts maker</Link></li>
               </ul>
             </div>
 
