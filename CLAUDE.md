@@ -34,6 +34,11 @@ Next steps:
 4. After deploy, submit `https://clipship.co/sitemap.xml` in Search Console and request indexing for the new URLs.
 5. Fix Cloudflare Managed robots.txt settings because live `robots.txt` currently injects Cloudflare blocks for some AI crawlers above our origin allow rules.
 
+IndexNow:
+- Key file: `public/b7d4d3b0cf594c4fa5e37cc4b7c0b62a.txt`
+- Key URL: `https://clipship.co/b7d4d3b0cf594c4fa5e37cc4b7c0b62a.txt`
+- Use this to submit fresh ClipShip URLs to IndexNow/Bing after deploy.
+
 ## What this site does
 
 - Communicates ClipShip's positioning (OpusClip alternative, local processing, one-time lifetime purchase)
