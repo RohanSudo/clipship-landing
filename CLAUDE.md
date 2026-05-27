@@ -9,30 +9,37 @@
 - **Phase:** Public v1.0.0 launch completed 2026-05-20/21. Site is in public download/pricing mode, not waitlist mode.
 - **Download entrypoint:** `https://api.clipship.co/download/windows`.
 - **Launch signal:** Weak activation so far. D1 download tracking is more reliable than GA4 download_click.
-- **SEO/AIO state:** Local SEO recovery changes were made on 2026-05-21 but intentionally not pushed yet. Rohan wants to preview them first next session.
+- **SEO/AIO state:** Three focused local/no-upload SEO pages are live. Cluster was strengthened and deployed on 2026-05-27 in commit `c869a30`.
 
-## Pending SEO/AIO changes from 2026-05-21
+## SEO/AIO cluster status
 
-Local-only changes in this repo:
-- Added `/local-ai-video-clip-generator`
-- Added `/no-upload-opusclip-alternative`
-- Added `/youtube-to-shorts-clip-maker`
-- Updated `src/app/sitemap.ts`
-- Updated `public/llms.txt`
-- Updated `src/app/layout.tsx` structured data
-- Updated homepage internal links in `src/app/page.tsx`
+Live high-intent pages:
+- `/no-upload-opusclip-alternative`
+- `/local-ai-video-clip-generator`
+- `/youtube-to-shorts-clip-maker`
+- `/vs/opus-clip`
 
-Validation already done:
-- Targeted ESLint on new/modified SEO files passed.
+2026-05-27 update:
+- Added proof visuals from the ClipShip promo asset set under `public/seo/`.
+- Added reusable SEO blocks in `src/app/components/SeoBlocks.tsx`.
+- Strengthened the three SEO cluster pages with direct-answer sections, proof figures, clearer local-vs-cloud explanations, pricing/proof copy, and internal links.
+- Fixed stale `/vs/opus-clip` copy that still mentioned Postiz and early access.
+- Updated `src/app/sitemap.ts` to use stable `lastmod` dates instead of `new Date()` for every URL.
+- Updated `public/llms.txt` with explicit AI-answer snippets for no-upload OpusClip alternative, local AI video clip generator, and YouTube-to-Shorts queries.
+
+Validation/deploy on 2026-05-27:
+- Targeted ESLint passed on the modified SEO files.
 - `npm run build` passed.
-- Full `npm run lint` still has pre-existing unrelated lint errors in old files, so do not treat that as caused by these SEO pages.
-
-Next steps:
-1. Run/confirm local preview at `http://localhost:3000`.
-2. Let Rohan preview the three new pages.
-3. If approved, commit and push the landing changes.
-4. After deploy, submit `https://clipship.co/sitemap.xml` in Search Console and request indexing for the new URLs.
-5. Fix Cloudflare Managed robots.txt settings because live `robots.txt` currently injects Cloudflare blocks for some AI crawlers above our origin allow rules.
+- Local preview opened at `http://127.0.0.1:3000/no-upload-opusclip-alternative`.
+- Pushed to GitHub commit `c869a30`; Vercel deployed and live pages returned updated content.
+- Submitted `https://clipship.co/sitemap.xml` to Search Console.
+- Submitted updated URLs to IndexNow, response `200 {}`.
+- Google Search Console inspection after deploy:
+  - `/no-upload-opusclip-alternative`: Submitted and indexed.
+  - `/vs/opus-clip`: Submitted and indexed.
+  - `/local-ai-video-clip-generator`: Discovered, currently not indexed.
+  - `/youtube-to-shorts-clip-maker`: Crawled, currently not indexed.
+  These are not robots/noindex/canonical failures. They are Google quality/priority indexing states.
 
 IndexNow:
 - Key file: `public/b7d4d3b0cf594c4fa5e37cc4b7c0b62a.txt`
@@ -42,8 +49,8 @@ IndexNow:
 ## What this site does
 
 - Communicates ClipShip's positioning (OpusClip alternative, local processing, one-time lifetime purchase)
-- Collects email signups for the waitlist
-- Shows demo / pricing / FAQ
+- Sends visitors to the Windows download
+- Shows product positioning / pricing / FAQ
 
 ## NOT a video editor
 
