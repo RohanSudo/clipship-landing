@@ -43,7 +43,7 @@ function FadeIn({
   );
 }
 
-/* ── Check / Cross icons ── */
+/* Check / Cross icons */
 function Check() {
   return (
     <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/15 text-emerald-400">
@@ -258,6 +258,53 @@ export default function ComparisonPage({
           <div className="max-w-4xl mx-auto p-8 rounded-2xl border border-zinc-800 bg-white/[0.02]">
             <h2 className="text-xl font-bold text-white mb-3">Bottom Line</h2>
             <p className="text-zinc-300 leading-relaxed">{data.bottomLine}</p>
+          </div>
+        </FadeIn>
+      </section>
+
+      {/* Related guides */}
+      <section className="relative z-10 px-6 pb-16">
+        <FadeIn>
+          <div className="max-w-4xl mx-auto rounded-2xl border border-zinc-800/70 bg-white/[0.025] p-6 sm:p-7">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-cyan-300">
+              Related ClipShip guides
+            </p>
+            <h2 className="mb-5 text-2xl font-bold tracking-tight text-white">
+              Learn the local clipping workflow
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  href: "/no-upload-opusclip-alternative",
+                  title: "No-upload OpusClip alternative",
+                  detail: "Why local processing matters for private footage, client work, and subscription-free clipping.",
+                },
+                {
+                  href: "/local-ai-video-clip-generator",
+                  title: "Local AI video clip generator",
+                  detail: "How ClipShip turns long talking-head recordings into short-form clips on Windows.",
+                },
+                {
+                  href: "/youtube-to-shorts-clip-maker",
+                  title: "YouTube to Shorts clip maker",
+                  detail: "A practical workflow for turning long YouTube-style videos into Shorts, Reels, and TikToks.",
+                },
+                {
+                  href: "/for/youtubers",
+                  title: "ClipShip for YouTubers",
+                  detail: "How YouTubers can repurpose recorded videos into more short-form posts.",
+                },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="rounded-xl border border-zinc-800 bg-zinc-950/60 p-4 transition-colors hover:border-violet-500/40 hover:bg-violet-500/[0.04]"
+                >
+                  <p className="font-semibold text-white">{link.title}</p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-400">{link.detail}</p>
+                </Link>
+              ))}
+            </div>
           </div>
         </FadeIn>
       </section>

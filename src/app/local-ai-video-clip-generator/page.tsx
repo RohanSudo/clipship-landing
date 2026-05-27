@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContentPage from "../components/ContentPage";
+import { AnswerBox, ClusterLinks, ProofFigure } from "../components/SeoBlocks";
 
 export const metadata: Metadata = {
   title: "Local AI Video Clip Generator for Windows | ClipShip",
@@ -34,7 +35,7 @@ const faqSchema = {
       name: "Does ClipShip upload my videos?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. ClipShip processes video files, transcripts, clip selection, captions, face tracking, and rendering locally on the user's Windows PC. Finished clips only go online if the user chooses to upload them.",
+        text: "No. For local video files, ClipShip processes video files, transcripts, clip selection, captions, face tracking, and rendering on the user's Windows PC. Finished clips only go online if the user chooses to upload them.",
       },
     },
     {
@@ -55,7 +56,7 @@ const articleSchema = {
   description:
     "A practical guide to local AI video clip generators, when they are better than cloud clip tools, and where ClipShip fits.",
   datePublished: "2026-05-21",
-  dateModified: "2026-05-21",
+  dateModified: "2026-05-27",
   author: {
     "@type": "Organization",
     name: "ClipShip",
@@ -80,51 +81,67 @@ export default function LocalAiVideoClipGeneratorPage() {
         description="Find the best short-form moments from long recordings without uploading the source video to a cloud editor."
         badge="Local AI clip generator"
       >
-        <p>
-          <strong>ClipShip is a local AI video clip generator for Windows.</strong> It turns long talking-head
-          recordings into short-form clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn while keeping
-          the source footage on your computer.
-        </p>
+        <AnswerBox title="ClipShip turns long spoken videos into clips on your PC.">
+          <p>
+            ClipShip is a Windows desktop app that analyzes talking-head recordings, finds clip-worthy moments,
+            reframes them for vertical platforms, adds captions, and exports finished clips locally.
+          </p>
+          <p>
+            It is built for creators who want the output of an AI clip generator without sending every raw recording
+            to a browser-based cloud tool.
+          </p>
+        </AnswerBox>
 
-        <p>
-          This matters if you create content from private calls, client sessions, paid courses, internal webinars,
-          long podcasts, or videos you simply do not want to upload to a third-party clip generator.
-        </p>
+        <ProofFigure
+          src="/seo/clipship-long-video-to-clips.png"
+          alt="ClipShip turning one long talking-head video into multiple short vertical clips"
+          width={1080}
+          height={1920}
+          orientation="portrait"
+          priority
+          caption="ClipShip's core job is narrow by design: long talking-head video in, multiple ready-to-review short clips out."
+        />
 
         <h2>What does a local AI clip generator do?</h2>
         <p>
-          A local AI clip generator analyzes your video on your own computer. It transcribes the audio, finds moments
-          that can work as standalone clips, reframes the video for vertical platforms, adds captions, and exports
-          finished clips without sending your raw recording to a cloud service.
+          A local AI clip generator analyzes your video on your own computer. It transcribes the audio, finds
+          moments that can work as standalone clips, reframes the video for vertical platforms, adds captions, and
+          exports finished clips without sending your raw recording to a cloud service.
         </p>
 
         <table>
           <thead>
             <tr>
               <th>Step</th>
-              <th>What ClipShip does locally</th>
+              <th>What ClipShip does</th>
+              <th>Why it matters</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Import</td>
               <td>Open a local recording or paste a YouTube link.</td>
+              <td>Start from the same long videos you already record.</td>
             </tr>
             <tr>
               <td>Transcribe</td>
-              <td>Create a timed transcript on the Windows machine.</td>
+              <td>Create a timed transcript for clip selection and captions.</td>
+              <td>The app can reason over what was said instead of only looking at cuts.</td>
             </tr>
             <tr>
               <td>Find clips</td>
-              <td>Use AI to identify complete, short-form-ready moments.</td>
+              <td>Use AI to identify complete short-form-ready moments.</td>
+              <td>You review candidates instead of manually scrubbing the whole video.</td>
             </tr>
             <tr>
               <td>Format</td>
               <td>Reframe to 9:16 vertical video with face tracking and captions.</td>
+              <td>The export is built for Shorts, Reels, TikTok, and LinkedIn.</td>
             </tr>
             <tr>
               <td>Export</td>
-              <td>Save finished clips on disk for Shorts, Reels, TikTok, or LinkedIn.</td>
+              <td>Save finished clips on disk.</td>
+              <td>You keep the files and upload them wherever you want.</td>
             </tr>
           </tbody>
         </table>
@@ -147,7 +164,7 @@ export default function LocalAiVideoClipGeneratorPage() {
           <tbody>
             <tr>
               <td>Where does processing happen?</td>
-              <td>On your Windows PC.</td>
+              <td>On your Windows PC for local files.</td>
               <td>On the vendor&apos;s servers.</td>
             </tr>
             <tr>
@@ -168,6 +185,15 @@ export default function LocalAiVideoClipGeneratorPage() {
           </tbody>
         </table>
 
+        <ProofFigure
+          src="/seo/clipship-local-ai-modes.png"
+          alt="ClipShip local AI mode and API mode interface"
+          width={1080}
+          height={1920}
+          orientation="portrait"
+          caption="Local mode is the main privacy wedge. API mode exists for users who deliberately choose an external provider."
+        />
+
         <h2>When ClipShip is the right fit</h2>
         <ul>
           <li>You make talking-head videos, podcasts, lessons, webinars, interviews, or coaching content.</li>
@@ -183,13 +209,15 @@ export default function LocalAiVideoClipGeneratorPage() {
           installing a desktop app.
         </p>
 
-        <h2>Related guides</h2>
-        <ul>
-          <li><a href="/no-upload-opusclip-alternative">No-upload OpusClip alternative</a></li>
-          <li><a href="/youtube-to-shorts-clip-maker">YouTube to Shorts clip maker</a></li>
-          <li><a href="/blog/how-to-make-clips-from-talking-head-videos">How to make clips from talking-head videos</a></li>
-          <li><a href="/vs/opus-clip">ClipShip vs OpusClip</a></li>
-        </ul>
+        <h2>What local processing does not mean</h2>
+        <p>
+          Local processing does not mean the whole product never touches the internet. ClipShip still uses internet
+          access for sign-in, license checks, first-time setup downloads, device switching, YouTube link import,
+          online posting features, and optional cloud AI providers. The important difference is that local source
+          files do not need to be uploaded for clip generation.
+        </p>
+
+        <ClusterLinks current="/local-ai-video-clip-generator" />
 
         <h2>FAQ</h2>
         <h3>Does ClipShip run fully offline?</h3>

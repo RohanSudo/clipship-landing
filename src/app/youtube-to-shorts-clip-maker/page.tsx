@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContentPage from "../components/ContentPage";
+import { AnswerBox, ClusterLinks, ProofFigure } from "../components/SeoBlocks";
 
 export const metadata: Metadata = {
   title: "YouTube to Shorts Clip Maker for Talking-Head Videos | ClipShip",
@@ -79,9 +80,29 @@ const howToSchema = {
   ],
 };
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "YouTube to Shorts Clip Maker for Talking-Head Videos",
+  description:
+    "How to repurpose YouTube videos and talking-head recordings into vertical short-form clips with ClipShip.",
+  datePublished: "2026-05-21",
+  dateModified: "2026-05-27",
+  author: {
+    "@type": "Organization",
+    name: "ClipShip",
+    url: "https://clipship.co",
+  },
+  mainEntityOfPage: "https://clipship.co/youtube-to-shorts-clip-maker",
+};
+
 export default function YouTubeToShortsClipMakerPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
@@ -95,24 +116,34 @@ export default function YouTubeToShortsClipMakerPage() {
         description="Repurpose long YouTube videos into short-form clips without manually hunting through the timeline."
         badge="YouTube to Shorts"
       >
-        <p>
-          <strong>ClipShip turns long YouTube videos and talking-head recordings into Shorts, Reels, and TikToks.</strong>
-          Paste a YouTube link or import a local file, let AI find clip-worthy moments, review the suggested clips,
-          and export vertical videos with captions.
-        </p>
+        <AnswerBox title="ClipShip helps turn long YouTube-style videos into vertical clips.">
+          <p>
+            Paste a YouTube link or import a local video, let ClipShip find candidate moments, review the clips,
+            and export vertical videos with captions for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn.
+          </p>
+          <p>
+            It works best when the original video is spoken content: podcasts, interviews, course lessons, webinars,
+            coaching videos, educational videos, or solo commentary.
+          </p>
+        </AnswerBox>
 
-        <p>
-          It is built for creators who record long videos once and want multiple short-form posts from the same
-          recording without manually scrubbing through the entire timeline.
-        </p>
+        <ProofFigure
+          src="/seo/clipship-drop-loop.gif"
+          alt="Animated ClipShip workflow showing a video being converted into multiple short clips"
+          width={960}
+          height={540}
+          priority
+          caption="Instead of scrubbing the full timeline manually, ClipShip gives you candidate clips to review."
+        />
 
         <h2>How to turn a YouTube video into Shorts</h2>
         <ol>
-          <li><strong>Paste the YouTube link.</strong> ClipShip imports the video so you can work from the full recording.</li>
+          <li><strong>Paste the YouTube link or import the file.</strong> ClipShip starts from the full recording.</li>
           <li><strong>Transcribe the recording.</strong> The app creates a timed transcript for clip selection and captions.</li>
           <li><strong>Find short-form moments.</strong> AI looks for complete points, hooks, stories, opinions, and useful segments.</li>
           <li><strong>Review and trim.</strong> Keep the clips that work on their own and adjust the cut if needed.</li>
-          <li><strong>Export vertical clips.</strong> Save the clips in 9:16 format with captions for Shorts, Reels, TikTok, or LinkedIn.</li>
+          <li><strong>Style captions.</strong> Pick or customize caption styles before export.</li>
+          <li><strong>Export vertical clips.</strong> Save 9:16 clips for Shorts, Reels, TikTok, or LinkedIn.</li>
         </ol>
 
         <h2>What kinds of YouTube videos work best?</h2>
@@ -127,31 +158,46 @@ export default function YouTubeToShortsClipMakerPage() {
             <tr>
               <th>Good fit</th>
               <th>Why it works</th>
+              <th>Example clip angle</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Podcasts</td>
-              <td>Strong opinions, questions, stories, and guest answers often work as standalone clips.</td>
+              <td>Questions, stories, and guest answers often work as standalone clips.</td>
+              <td>A strong opinion or practical advice from one answer.</td>
             </tr>
             <tr>
               <td>Course lessons</td>
               <td>Individual tips and teaching moments can become educational Shorts.</td>
+              <td>A 45-second explanation of one concept.</td>
             </tr>
             <tr>
               <td>Coaching videos</td>
               <td>Advice, objections, and problem-solving moments can be repurposed.</td>
+              <td>A client problem and the direct answer.</td>
             </tr>
             <tr>
               <td>Webinars</td>
               <td>Examples, frameworks, and answer sections can become short clips.</td>
+              <td>A short framework from the middle of the webinar.</td>
             </tr>
             <tr>
               <td>Solo commentary</td>
               <td>Opinions and concise explanations can work well on short-form platforms.</td>
+              <td>A clear take that does not need the full original video.</td>
             </tr>
           </tbody>
         </table>
+
+        <ProofFigure
+          src="/seo/clipship-caption-styles.png"
+          alt="ClipShip caption style options for short-form video exports"
+          width={1080}
+          height={1920}
+          orientation="portrait"
+          caption="Pro users can create and save custom caption styles, which matters when every clip needs to look consistent."
+        />
 
         <h2>Why use AI instead of clipping manually?</h2>
         <p>
@@ -162,17 +208,19 @@ export default function YouTubeToShortsClipMakerPage() {
 
         <h2>ClipShip is not for every video type</h2>
         <p>
-          ClipShip is not built for cinematic vlogs, dance videos, music videos, or montage-heavy footage. Those need
-          a creative editor. ClipShip is for spoken content where the value is in what the person says.
+          ClipShip is not built for cinematic vlogs, dance videos, music videos, gaming montages, or footage where
+          the value is mostly visual action. Those need a creative editor. ClipShip is for spoken content where the
+          value is in what the person says.
         </p>
 
-        <h2>Related pages</h2>
-        <ul>
-          <li><a href="/blog/how-to-make-clips-from-talking-head-videos">How to make clips from talking-head videos</a></li>
-          <li><a href="/local-ai-video-clip-generator">Local AI video clip generator</a></li>
-          <li><a href="/for/youtubers">ClipShip for YouTubers</a></li>
-          <li><a href="/blog/best-ai-video-clip-generators-2026">Best AI video clip generators</a></li>
-        </ul>
+        <h2>Local files vs YouTube links</h2>
+        <p>
+          Local file processing is the no-upload workflow. YouTube link import naturally needs internet because the
+          app has to fetch the source video first. After import, ClipShip gives you the same review, caption, and
+          export workflow inside the desktop app.
+        </p>
+
+        <ClusterLinks current="/youtube-to-shorts-clip-maker" />
 
         <h2>FAQ</h2>
         <h3>Does ClipShip make clips from any YouTube video?</h3>

@@ -2,7 +2,7 @@
 
 > ClipShip is a local-first Windows desktop app that turns long talking-head recordings into short-form clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn.
 
-Last updated: 2026-05-21
+Last updated: 2026-05-27
 
 ## Core facts
 
@@ -65,6 +65,18 @@ ClipShip is best for YouTubers, podcasters, coaches, course creators, consultant
 ### How is ClipShip different from OpusClip?
 
 ClipShip processes videos locally on a Windows PC, while OpusClip processes uploaded videos in the cloud. ClipShip is better for creators who care about privacy, no-upload workflows, unlimited local processing, and one-time pricing. OpusClip is stronger for cloud convenience and social scheduling.
+
+### What is the best no-upload OpusClip alternative?
+
+ClipShip is a no-upload OpusClip alternative for Windows creators who want AI clip generation without uploading local source videos. It finds clip-worthy moments from talking-head recordings, adds captions, formats clips vertically, and exports finished files from the desktop app.
+
+### What is a local AI video clip generator?
+
+A local AI video clip generator analyzes long recordings on the user's computer instead of requiring the full source video to be uploaded to a cloud editor. ClipShip does this on Windows for talking-head videos, podcasts, interviews, webinars, course lessons, and coaching content.
+
+### Can ClipShip turn YouTube videos into Shorts?
+
+Yes. ClipShip can import a YouTube link or a local video file, find candidate short-form moments, format clips as 9:16 vertical video, add captions, and export clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn.
 
 ### Does ClipShip upload videos?
 
