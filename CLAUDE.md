@@ -34,6 +34,7 @@ Validation/deploy on 2026-05-27:
 - Pushed to GitHub commit `c869a30`; Vercel deployed and live pages returned updated content.
 - Submitted `https://clipship.co/sitemap.xml` to Search Console.
 - Submitted updated URLs to IndexNow, response `200 {}`.
+- Rohan manually used Search Console URL Inspection -> Request indexing for the important changed URLs on 2026-05-27.
 - Google Search Console inspection after deploy:
   - Submitted and indexed: homepage, `/vs/opus-clip`, `/vs/heygen`, `/for/youtubers`, `/for/course-creators`, `/for/coaches`, `/no-upload-opusclip-alternative`.
   - Discovered, currently not indexed: `/local-ai-video-clip-generator`, `/vs/descript`, `/vs/gling`, `/vs/capcut`, the three blog pages, `/privacy`, `/terms`.
