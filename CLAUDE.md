@@ -35,10 +35,9 @@ Validation/deploy on 2026-05-27:
 - Submitted `https://clipship.co/sitemap.xml` to Search Console.
 - Submitted updated URLs to IndexNow, response `200 {}`.
 - Google Search Console inspection after deploy:
-  - `/no-upload-opusclip-alternative`: Submitted and indexed.
-  - `/vs/opus-clip`: Submitted and indexed.
-  - `/local-ai-video-clip-generator`: Discovered, currently not indexed.
-  - `/youtube-to-shorts-clip-maker`: Crawled, currently not indexed.
+  - Submitted and indexed: homepage, `/vs/opus-clip`, `/vs/heygen`, `/for/youtubers`, `/for/course-creators`, `/for/coaches`, `/no-upload-opusclip-alternative`.
+  - Discovered, currently not indexed: `/local-ai-video-clip-generator`, `/vs/descript`, `/vs/gling`, `/vs/capcut`, the three blog pages, `/privacy`, `/terms`.
+  - Crawled, currently not indexed: `/youtube-to-shorts-clip-maker`.
   These are not robots/noindex/canonical failures. They are Google quality/priority indexing states.
 
 IndexNow:
