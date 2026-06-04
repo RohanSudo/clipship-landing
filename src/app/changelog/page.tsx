@@ -4,6 +4,22 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.2",
+    date: "June 4, 2026",
+    label: "Transcription setup fix",
+    summary:
+      "This update fixes a clean-install transcription setup bug where ClipShip could report that the Whisper model was missing even after setup.",
+    changes: [
+      "Fixed the transcription model mismatch so the app transcribes with the same Whisper model that onboarding downloads and verifies.",
+      "Fixed Whisper model checks and downloads so they respect the user's selected model storage folder.",
+      "Fixed the Settings local-model download button so it downloads local clip-finding AI models instead of calling the transcription-engine downloader.",
+    ],
+    notes: [
+      "If ClipShip still says the transcription model is missing after updating, open Settings and download the transcription engine once.",
+      "Local AI CPU/GPU mode controls the clip-selection AI. Whisper transcription still chooses its own safest device automatically.",
+    ],
+  },
+  {
     version: "1.0.1",
     date: "June 4, 2026",
     label: "Stability update",
