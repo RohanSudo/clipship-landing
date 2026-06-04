@@ -1096,6 +1096,7 @@ export default function Home() {
                 <li><Link href="/blog/best-ai-video-clip-generators-2026" className="text-sm text-zinc-300 hover:text-white transition-colors">Best AI video clip generators 2026 →</Link></li>
                 <li><Link href="/blog/how-to-make-clips-from-talking-head-videos" className="text-sm text-zinc-300 hover:text-white transition-colors">How to make clips from talking-head videos →</Link></li>
                 <li><Link href="/blog/best-free-video-editing-software-youtubers-2026" className="text-sm text-zinc-300 hover:text-white transition-colors">Best free video editing software 2026 →</Link></li>
+                <li><Link href="/changelog" className="text-sm text-zinc-300 hover:text-white transition-colors">ClipShip changelog →</Link></li>
               </ul>
             </FadeIn>
           </div>
@@ -1204,6 +1205,7 @@ export default function Home() {
                 <li><Link href="/blog/best-ai-video-clip-generators-2026" className="text-sm text-zinc-500 hover:text-white transition-colors">Best AI clip generators</Link></li>
                 <li><Link href="/blog/how-to-make-clips-from-talking-head-videos" className="text-sm text-zinc-500 hover:text-white transition-colors">How to make clips</Link></li>
                 <li><Link href="/blog/best-free-video-editing-software-youtubers-2026" className="text-sm text-zinc-500 hover:text-white transition-colors">Best free editors</Link></li>
+                <li><Link href="/changelog" className="text-sm text-zinc-500 hover:text-white transition-colors">Changelog</Link></li>
               </ul>
             </div>
           </div>
@@ -1214,6 +1216,7 @@ export default function Home() {
             <div className="flex items-center gap-5">
               <Link href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy</Link>
               <Link href="/terms" className="hover:text-zinc-400 transition-colors">Terms</Link>
+              <Link href="/changelog" className="hover:text-zinc-400 transition-colors">Changelog</Link>
             </div>
           </div>
         </div>

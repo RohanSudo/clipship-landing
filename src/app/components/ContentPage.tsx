@@ -163,6 +163,7 @@ export default function ContentPage({
         <div className="max-w-5xl mx-auto flex items-center justify-between text-xs text-zinc-500">
           <span>&copy; ClipShip 2026</span>
           <div className="flex gap-5">
+            <Link href="/changelog" className="hover:text-zinc-300 transition-colors">Changelog</Link>
             <Link href="/privacy" className="hover:text-zinc-300 transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-zinc-300 transition-colors">Terms</Link>
           </div>
