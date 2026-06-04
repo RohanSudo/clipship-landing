@@ -4,19 +4,21 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
-    version: "1.0.2",
+    version: "1.0.3",
     date: "June 4, 2026",
-    label: "Transcription setup fix",
+    label: "Transcription and GPU mode fix",
     summary:
-      "This update fixes a clean-install transcription setup bug where ClipShip could report that the Whisper model was missing even after setup.",
+      "This update fixes clean-install transcription setup and makes the GPU/CPU setting apply consistently to local processing.",
     changes: [
       "Fixed the transcription model mismatch so the app transcribes with the same Whisper model that onboarding downloads and verifies.",
       "Fixed Whisper model checks and downloads so they respect the user's selected model storage folder.",
       "Fixed the Settings local-model download button so it downloads local clip-finding AI models instead of calling the transcription-engine downloader.",
+      "Fixed the processing pipeline so the selected local processing device is passed to Whisper transcription instead of always using Auto.",
+      "Changed forced GPU mode so transcription fails with a clear CUDA error instead of silently falling back to CPU.",
     ],
     notes: [
       "If ClipShip still says the transcription model is missing after updating, open Settings and download the transcription engine once.",
-      "Local AI CPU/GPU mode controls the clip-selection AI. Whisper transcription still chooses its own safest device automatically.",
+      "Auto mode can still choose the safest available device. GPU mode now means GPU is required.",
     ],
   },
   {
