@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.4",
+    date: "June 6, 2026",
+    label: "RTX 50-series GPU compatibility build",
+    summary:
+      "This update adds a separate Blackwell CUDA runtime path for RTX 50-series GPUs and improves GPU runtime diagnostics.",
+    changes: [
+      "Added RTX 50-series / Blackwell GPU detection so ClipShip downloads a newer CUDA runtime pack instead of reusing the older legacy CUDA stack.",
+      "Kept RTX 20/30/40-series cards on the existing legacy CUDA runtime path so older supported GPUs do not receive an unnecessary runtime change.",
+      "Separated the Blackwell CUDA files into their own local folder to avoid stale DLLs from the legacy runtime mixing with the newer runtime.",
+      "Updated transcription and local AI startup logs to include GPU name, runtime flavor, and runtime version.",
+      "Improved runtime-pack handling so downloadable CUDA zips stay outside the Windows installer bundle.",
+    ],
+    notes: [
+      "RTX 50-series support depends on the installed NVIDIA driver and the external CUDA pack downloaded from ClipShip's CDN.",
+      "If you are testing on an RTX 50-series card, open Settings and set Local processing device to GPU before starting the run.",
+      "If it still fails, email hello@clipship.co with the crash report so the exact GPU/runtime error can be inspected.",
+    ],
+  },
+  {
     version: "1.0.3",
     date: "June 4, 2026",
     label: "Transcription and GPU mode fix",
