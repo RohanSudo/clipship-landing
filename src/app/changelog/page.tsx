@@ -4,6 +4,24 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.5",
+    date: "June 6, 2026",
+    label: "Caption export fix",
+    summary:
+      "This update fixes exports that failed after clip processing completed because the caption renderer was missing on clean Windows installs.",
+    changes: [
+      "Bundled the local caption-rendering runtime into the Windows installer instead of depending on a globally installed HyperFrames command.",
+      "Bundled the headless browser runtime used for animated caption overlays during export.",
+      "Changed the export path so ClipShip prefers its bundled renderer first and only falls back to global commands on development machines.",
+      "Improved the missing-runtime error message so future packaging issues are easier to diagnose.",
+    ],
+    notes: [
+      "This is the fix for exports that failed with HyperFrames CLI not found after processing clips successfully.",
+      "No manual npm install or command-line setup is required on your PC.",
+      "The installer is larger in this version because the caption export renderer now ships with ClipShip.",
+    ],
+  },
+  {
     version: "1.0.4",
     date: "June 6, 2026",
     label: "RTX 50-series GPU compatibility build",
