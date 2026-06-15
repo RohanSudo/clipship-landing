@@ -603,10 +603,10 @@ export default function Home() {
       {/* ── Nav ── */}
       <nav className="fixed top-0 w-full z-40 backdrop-blur-xl bg-[#09090b]/90 border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
+          <Link href="/" aria-label="ClipShip home" className="flex items-center gap-2.5 group">
             <LogoIcon className="w-6 h-6" />
-            <span className="font-semibold text-white tracking-tight text-sm">ClipShip</span>
-          </div>
+            <span className="font-semibold text-white tracking-tight text-sm transition-colors group-hover:text-violet-300">ClipShip</span>
+          </Link>
           <div className="flex items-center gap-3">
             <a
               href="#pricing"
