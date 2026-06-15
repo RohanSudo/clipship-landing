@@ -31,6 +31,12 @@ function trackDownloadClick(source: string) {
   window.clarity?.("event", "download_click");
 }
 
+function scrollToHomepageTop(event: React.MouseEvent<HTMLAnchorElement>) {
+  event.preventDefault();
+  window.history.replaceState(null, "", "/");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function DownloadButton({
   source,
   className,
@@ -603,10 +609,10 @@ export default function Home() {
       {/* ── Nav ── */}
       <nav className="fixed top-0 w-full z-40 backdrop-blur-xl bg-[#09090b]/90 border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <Link href="/" aria-label="ClipShip home" className="flex items-center gap-2.5 group">
+          <a href="/" onClick={scrollToHomepageTop} aria-label="ClipShip home" className="flex items-center gap-2.5 group">
             <LogoIcon className="w-6 h-6" />
             <span className="font-semibold text-white tracking-tight text-sm transition-colors group-hover:text-violet-300">ClipShip</span>
-          </Link>
+          </a>
           <div className="flex items-center gap-3">
             <a
               href="#pricing"
