@@ -3,14 +3,14 @@ import ContentPage from "../components/ContentPage";
 import { AnswerBox, ClusterLinks, ProofFigure } from "../components/SeoBlocks";
 
 export const metadata: Metadata = {
-  title: "YouTube to Shorts Clip Maker for Talking-Head Videos | ClipShip",
+  title: "Long Video to Shorts AI Clip Maker | ClipShip",
   description:
-    "Turn long YouTube videos and talking-head recordings into YouTube Shorts, Reels, and TikToks. ClipShip finds clips, reframes vertically, and adds captions.",
+    "Turn long YouTube videos and talking-head recordings into Shorts, Reels, and TikToks. ClipShip finds clips, reframes vertically, and adds captions.",
   alternates: {
     canonical: "https://clipship.co/youtube-to-shorts-clip-maker",
   },
   openGraph: {
-    title: "YouTube to Shorts Clip Maker for Talking-Head Videos | ClipShip",
+    title: "Long Video to Shorts AI Clip Maker | ClipShip",
     description:
       "Repurpose long YouTube videos into short-form clips with local AI on Windows.",
     url: "https://clipship.co/youtube-to-shorts-clip-maker",
@@ -91,11 +91,11 @@ const howToSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "YouTube to Shorts Clip Maker for Talking-Head Videos",
+  headline: "Long Video to Shorts AI Clip Maker",
   description:
     "How to repurpose YouTube videos and talking-head recordings into vertical short-form clips with ClipShip.",
   datePublished: "2026-05-21",
-  dateModified: "2026-05-27",
+  dateModified: "2026-07-02",
   author: {
     "@type": "Organization",
     name: "ClipShip",
@@ -120,7 +120,7 @@ export default function YouTubeToShortsClipMakerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ContentPage
-        title="YouTube to Shorts clip maker for talking-head videos"
+        title="Long video to Shorts AI clip maker"
         description="Repurpose long YouTube videos into short-form clips without manually hunting through the timeline."
         badge="YouTube to Shorts"
       >
@@ -153,6 +153,17 @@ export default function YouTubeToShortsClipMakerPage() {
           <li><strong>Style captions.</strong> Pick or customize caption styles before export.</li>
           <li><strong>Export vertical clips.</strong> Save 9:16 clips for Shorts, Reels, TikTok, or LinkedIn.</li>
         </ol>
+
+        <h2>Long video to Shorts AI works best when the video is spoken</h2>
+        <p>
+          ClipShip is strongest when the source video has clear speech: a podcast answer, a teaching section, a
+          coaching explanation, a webinar example, or a solo commentary segment. The AI can use the transcript to
+          find complete ideas instead of only looking for random visual cuts.
+        </p>
+        <p>
+          This is different from text-to-video generators. ClipShip does not invent a new AI video from a prompt. It
+          finds short-form moments inside footage you already recorded.
+        </p>
 
         <h2>What kinds of YouTube videos work best?</h2>
         <p>

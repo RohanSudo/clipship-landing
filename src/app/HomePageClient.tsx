@@ -1090,8 +1090,10 @@ export default function Home() {
             <FadeIn delay={0.15}>
               <h3 className="text-xs font-semibold uppercase tracking-widest text-emerald-400 mb-4">Search by need</h3>
               <ul className="space-y-2.5">
-                <li><Link href="/local-ai-video-clip-generator" className="text-sm text-zinc-300 hover:text-white transition-colors">Local AI clip generator</Link></li>
+                <li><Link href="/local-ai-video-clip-generator" className="text-sm text-zinc-300 hover:text-white transition-colors">Local AI video clipper</Link></li>
                 <li><Link href="/no-upload-opusclip-alternative" className="text-sm text-zinc-300 hover:text-white transition-colors">No-upload OpusClip alternative</Link></li>
+                <li><Link href="/ai-video-clipper-without-credits" className="text-sm text-zinc-300 hover:text-white transition-colors">AI clipper without credits</Link></li>
+                <li><Link href="/no-upload-podcast-clipper-windows" className="text-sm text-zinc-300 hover:text-white transition-colors">No-upload podcast clipper</Link></li>
                 <li><Link href="/youtube-to-shorts-clip-maker" className="text-sm text-zinc-300 hover:text-white transition-colors">YouTube to Shorts clip maker</Link></li>
               </ul>
             </FadeIn>
@@ -1198,8 +1200,10 @@ export default function Home() {
             <div>
               <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4">Use cases</h4>
               <ul className="space-y-2.5">
-                <li><Link href="/local-ai-video-clip-generator" className="text-sm text-zinc-500 hover:text-white transition-colors">Local AI clip generator</Link></li>
+                <li><Link href="/local-ai-video-clip-generator" className="text-sm text-zinc-500 hover:text-white transition-colors">Local AI video clipper</Link></li>
                 <li><Link href="/no-upload-opusclip-alternative" className="text-sm text-zinc-500 hover:text-white transition-colors">No-upload OpusClip alternative</Link></li>
+                <li><Link href="/ai-video-clipper-without-credits" className="text-sm text-zinc-500 hover:text-white transition-colors">AI clipper without credits</Link></li>
+                <li><Link href="/no-upload-podcast-clipper-windows" className="text-sm text-zinc-500 hover:text-white transition-colors">No-upload podcast clipper</Link></li>
                 <li><Link href="/youtube-to-shorts-clip-maker" className="text-sm text-zinc-500 hover:text-white transition-colors">YouTube to Shorts maker</Link></li>
               </ul>
             </div>

@@ -68,12 +68,22 @@ const clusterLinks = [
   {
     href: "/no-upload-opusclip-alternative",
     title: "No-upload OpusClip alternative",
-    detail: "The main comparison page for creators who want OpusClip-style clipping without uploading source footage.",
+    detail: "The main comparison page for creators who want OpusClip-style clipping without uploading private footage.",
   },
   {
     href: "/local-ai-video-clip-generator",
-    title: "Local AI video clip generator",
-    detail: "A focused explanation of ClipShip's local Windows workflow and when local AI is the right fit.",
+    title: "Local AI video clipper for Windows",
+    detail: "A focused explanation of ClipShip's local Windows workflow and when local AI clipping is the right fit.",
+  },
+  {
+    href: "/ai-video-clipper-without-credits",
+    title: "AI video clipper without credits",
+    detail: "Why local processing avoids monthly credit anxiety and per-minute cloud billing.",
+  },
+  {
+    href: "/no-upload-podcast-clipper-windows",
+    title: "No-upload podcast clipper for Windows",
+    detail: "A practical workflow for turning long podcasts, interviews, and webinars into clips without upload queues.",
   },
   {
     href: "/youtube-to-shorts-clip-maker",
