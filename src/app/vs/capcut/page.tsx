@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "ClipShip vs CapCut (2026): AI Clip Generator vs Editor",
   description:
     "ClipShip auto-repurposes long recordings into ready-to-post clips. CapCut is a general-purpose timeline editor. Different tools, here's which one fits your workflow.",
+  alternates: {
+    canonical: "https://clipship.co/vs/capcut",
+  },
 };
 
 const data: ComparisonData = {

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "ClipShip vs Gling (2026): Clip Generator vs Silence Remover",
   description:
     "ClipShip repurposes long recordings into short-form clips for Reels, Shorts, and TikTok. Gling removes silences for Premiere/Resolve. Different jobs, here's which one you actually need.",
+  alternates: {
+    canonical: "https://clipship.co/vs/gling",
+  },
 };
 
 const data: ComparisonData = {

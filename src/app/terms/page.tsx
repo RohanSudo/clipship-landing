@@ -4,6 +4,9 @@ import ContentPage from "../components/ContentPage";
 export const metadata: Metadata = {
   title: "Terms of Service - ClipShip",
   description: "ClipShip terms of service. Fair usage, licensing, and what you agree to when using ClipShip.",
+  alternates: {
+    canonical: "https://clipship.co/terms",
+  },
 };
 
 export default function Terms() {

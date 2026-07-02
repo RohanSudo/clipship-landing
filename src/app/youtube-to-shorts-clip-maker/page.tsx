@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "Repurpose long YouTube videos into short-form clips with local AI on Windows.",
     url: "https://clipship.co/youtube-to-shorts-clip-maker",
     type: "article",
+    images: [
+      {
+        url: "https://clipship.co/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "ClipShip YouTube to Shorts clip maker",
+      },
+    ],
   },
 };
 

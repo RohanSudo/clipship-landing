@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "Find the best moments from long videos, add captions, and export short-form clips locally on your PC.",
     url: "https://clipship.co/local-ai-video-clip-generator",
     type: "article",
+    images: [
+      {
+        url: "https://clipship.co/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "ClipShip local AI video clip generator for Windows",
+      },
+    ],
   },
 };
 

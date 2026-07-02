@@ -15,6 +15,14 @@ export const metadata: Metadata = {
       "ClipShip is a local Windows alternative to OpusClip for creators who want AI clips without uploading source videos.",
     url: "https://clipship.co/no-upload-opusclip-alternative",
     type: "article",
+    images: [
+      {
+        url: "https://clipship.co/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "ClipShip no-upload OpusClip alternative for Windows",
+      },
+    ],
   },
 };
 

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "ClipShip for Coaches: Clips From Every Coaching Call",
   description:
     "Turn coaching sessions, webinars, and keynotes into social clips without uploading client recordings. Local AI clip generator with AI clip suggestions and 99-language transcription.",
+  alternates: {
+    canonical: "https://clipship.co/for/coaches",
+  },
 };
 
 const data: AudienceData = {

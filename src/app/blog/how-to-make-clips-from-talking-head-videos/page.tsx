@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "How to Make Clips From Talking-Head Videos (2026)",
   description:
     "Step-by-step guide to repurposing talking-head recordings into short-form clips. Manual methods, AI clip generators, and tips for finding the best Reels, Shorts, and TikToks.",
+  alternates: {
+    canonical: "https://clipship.co/blog/how-to-make-clips-from-talking-head-videos",
+  },
 };
 
 export default function HowToMakeClips() {

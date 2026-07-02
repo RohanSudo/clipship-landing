@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "ClipShip vs Descript (2026): Clip Generator vs Text Editor",
   description:
     "ClipShip repurposes long recordings into vertical short-form clips. Descript is a text-based long-form editor with AI assists. Different jobs, here's which one you need.",
+  alternates: {
+    canonical: "https://clipship.co/vs/descript",
+  },
 };
 
 const data: ComparisonData = {

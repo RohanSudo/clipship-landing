@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "ClipShip vs HeyGen Highlights: HeyGen Alternative (2026)",
   description:
     "Local HeyGen Instant Highlights alternative. Both repurpose long videos into short-form clips. HeyGen has stronger search control and translation; ClipShip runs on your PC, one-time price.",
+  alternates: {
+    canonical: "https://clipship.co/vs/heygen",
+  },
 };
 
 const data: ComparisonData = {

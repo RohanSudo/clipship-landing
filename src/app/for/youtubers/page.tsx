@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "ClipShip for YouTubers: Auto Shorts From Long Uploads",
   description:
     "Turn every long YouTube upload into 10–15 vertical Shorts, Reels, and TikToks automatically. Local AI clip generator with AI clip suggestions, runs on your PC.",
+  alternates: {
+    canonical: "https://clipship.co/for/youtubers",
+  },
 };
 
 const data: AudienceData = {

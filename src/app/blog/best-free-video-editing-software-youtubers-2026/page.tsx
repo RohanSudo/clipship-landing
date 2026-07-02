@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Best Free Video Editing Software for YouTubers (2026)",
   description:
     "The best free video tools for YouTube creators in 2026. From full timeline editors to AI clip generators. Honest reviews with pricing and limitations.",
+  alternates: {
+    canonical: "https://clipship.co/blog/best-free-video-editing-software-youtubers-2026",
+  },
 };
 
 export default function BestFreeEditors() {

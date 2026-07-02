@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "ClipShip vs OpusClip (2026): Local OpusClip Alternative",
   description:
     "Compare ClipShip and OpusClip for AI video repurposing. ClipShip is a local Windows alternative with no-upload local files, one-time pricing, captions, and vertical exports.",
+  alternates: {
+    canonical: "https://clipship.co/vs/opus-clip",
+  },
 };
 
 const data: ComparisonData = {

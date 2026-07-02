@@ -4,6 +4,9 @@ import ContentPage from "../components/ContentPage";
 export const metadata: Metadata = {
   title: "Privacy Policy - ClipShip",
   description: "ClipShip privacy policy. Your videos stay on your computer. We do not collect or transmit your content.",
+  alternates: {
+    canonical: "https://clipship.co/privacy",
+  },
 };
 
 export default function Privacy() {

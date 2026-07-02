@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Best AI Video Clip Generators 2026 (OpusClip, HeyGen, More)",
   description:
     "Best AI clip generators in 2026 compared. OpusClip, HeyGen Instant Highlights, ClipShip, Descript, CapCut. Pricing, features, and honest recommendations.",
+  alternates: {
+    canonical: "https://clipship.co/blog/best-ai-video-clip-generators-2026",
+  },
 };
 
 export default function BestClipGenerators() {

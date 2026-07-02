@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "ClipShip for Course Creators: Promo Clips From Lessons",
   description:
     "Turn every course lesson into a week of promo clips. Local AI finds the best moments, formats them for social. Your unreleased lesson IP never leaves your PC.",
+  alternates: {
+    canonical: "https://clipship.co/for/course-creators",
+  },
 };
 
 const data: AudienceData = {

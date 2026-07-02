@@ -9,7 +9,7 @@
 - **Phase:** Public v1.0.0 launch completed 2026-05-20/21. Site is in public download/pricing mode, not waitlist mode.
 - **Download entrypoint:** `https://api.clipship.co/download/windows`.
 - **Launch signal:** Weak activation so far. D1 download tracking is more reliable than GA4 download_click.
-- **SEO/AIO state:** Three focused local/no-upload SEO pages are live. Cluster was strengthened and deployed on 2026-05-27 in commit `c869a30`.
+- **SEO/AIO state:** Three focused local/no-upload SEO pages are live. Cluster was strengthened and deployed on 2026-05-27 in commit `c869a30`. Technical SEO cleanup on 2026-07-02 fixed www/non-www duplication, canonical coverage, SEO-page OG images, and noindexed OAuth utility routes.
 
 ## SEO/AIO cluster status
 
@@ -40,6 +40,18 @@ Validation/deploy on 2026-05-27:
   - Discovered, currently not indexed: `/local-ai-video-clip-generator`, `/vs/descript`, `/vs/gling`, `/vs/capcut`, the three blog pages, `/privacy`, `/terms`.
   - Crawled, currently not indexed: `/youtube-to-shorts-clip-maker`.
   These are not robots/noindex/canonical failures. They are Google quality/priority indexing states.
+
+2026-07-02 technical SEO cleanup:
+- Found `https://www.clipship.co/` returned 200 instead of redirecting. Added a permanent host redirect from `www.clipship.co/:path*` to `https://clipship.co/:path*` in `next.config.ts`.
+- Moved the homepage client UI into `src/app/HomePageClient.tsx` so `src/app/page.tsx` can export server metadata with a self-referencing canonical.
+- Added self-referencing canonicals to all sitemap pages that were missing them: comparison pages, audience pages, blog pages, privacy, and terms.
+- Added explicit Open Graph image metadata to the three focused SEO pages so their page-specific OG title/description does not drop the preview image.
+- Added `src/app/oauth/layout.tsx` with `noindex,nofollow` for TikTok/Instagram OAuth callback helper pages.
+- Local verification on `http://localhost:3001/`: `www` host returns 308, public pages emit self-canonicals, focused SEO pages emit OG images, OAuth pages emit `noindex,nofollow`.
+- `npm run build` passed. Full `npm run lint` still fails on pre-existing React lint issues in homepage animation/OAuth/legal pages; do not treat lint as clean until those are separately fixed.
+- Live GSC URL Inspection on 2026-07-02 showed `/no-upload-opusclip-alternative`, `/local-ai-video-clip-generator`, `/youtube-to-shorts-clip-maker`, and `/vs/opus-clip` are all `Submitted and indexed`, robots allowed, indexing allowed, fetch successful. Sitemap summary still showed 0 indexed, but URL Inspection is the page-specific source of truth.
+- GSC performance for 2026-06-01 to 2026-07-01 showed almost no query demand: only `audioship`, `clipship`, and `clip and ship` surfaced, all with 0 clicks. This means the main SEO problem is not indexing failure; it is lack of narrow query surface and authority.
+- LastSend comparison for the same window showed traffic came from very specific intent pages and queries around `dead man's switch`, `posthumous message`, and related terms. For ClipShip, the next SEO work should find similarly weird, specific creator-video queries instead of broad `best AI video editor` pages.
 
 IndexNow:
 - Key file: `public/b7d4d3b0cf594c4fa5e37cc4b7c0b62a.txt`
