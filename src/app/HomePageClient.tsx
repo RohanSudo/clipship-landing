@@ -10,26 +10,7 @@ declare global {
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
-
-const DOWNLOAD_BASE_URL = "https://api.clipship.co/download/windows";
-
-function downloadHref(source: string) {
-  const params = new URLSearchParams({
-    utm_source: source,
-    utm_medium: "website",
-    utm_campaign: "public-launch",
-  });
-  return `${DOWNLOAD_BASE_URL}?${params.toString()}`;
-}
-
-function trackDownloadClick(source: string) {
-  window.gtag?.("event", "download_click", {
-    event_category: "download",
-    event_label: source,
-    source,
-  });
-  window.clarity?.("event", "download_click");
-}
+import DownloadLink from "./components/DownloadLink";
 
 function scrollToHomepageTop(event: React.MouseEvent<HTMLAnchorElement>) {
   event.preventDefault();
@@ -47,9 +28,9 @@ function DownloadButton({
   children: React.ReactNode;
 }) {
   return (
-    <a href={downloadHref(source)} onClick={() => trackDownloadClick(source)} className={className}>
+    <DownloadLink source={source} className={className}>
       {children}
-    </a>
+    </DownloadLink>
   );
 }
 

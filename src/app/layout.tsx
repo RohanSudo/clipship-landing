@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
+import AttributionCapture from "./components/AttributionCapture";
 import "./globals.css";
 
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-K0DSFVRC50";
@@ -113,6 +114,7 @@ export default function RootLayout({
         <script id="schema-markup" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
       <body className="min-h-full flex flex-col">
+        <AttributionCapture />
         {gaMeasurementId && (
           <>
             <Script

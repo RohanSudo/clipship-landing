@@ -30,7 +30,8 @@ export default function Privacy() {
 
       <p><strong>When using clipship.co (this website):</strong></p>
       <ul>
-        <li>If you download ClipShip, we record a download click with UTM/referrer data, country, browser user agent, and a daily hashed IP signal. We do not store raw IP addresses in the download table.</li>
+        <li>If you download ClipShip, we record a download click with the clicked button, landing page path, current page path, UTM parameters, external referrer host, country, browser user agent, and hashed IP signals. We do not store raw IP addresses in the download table.</li>
+        <li>When a new account is created shortly after a download from the same daily hashed IP signal, we may attach that download source to the signup record so we can understand which pages and channels are actually producing users.</li>
         <li>If you sign up for updates or email support, we collect the email address and message details you provide.</li>
         <li>We use Microsoft Clarity for anonymous website analytics (page views, scroll depth). No personal data is shared.</li>
         <li>We may use Google Analytics 4 for aggregate website and download-click analytics.</li>
