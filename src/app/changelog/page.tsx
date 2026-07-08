@@ -4,6 +4,24 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.6",
+    date: "July 7, 2026",
+    label: "AI analysis recovery fix",
+    summary:
+      "This update improves the AI clip-selection step when a local model returns malformed or overlapping clip candidates.",
+    changes: [
+      "Added recovery for overlapping AI-selected segments inside the same clip instead of failing the whole run.",
+      "Added a compact JSON retry when the AI returns malformed or truncated clip data.",
+      "Improved validation so ClipShip can keep a usable imperfect clip instead of returning zero clips after analysis.",
+      "Fixed Sentry diagnostics so local AI errors are tagged as local instead of being mislabeled as Gemini.",
+    ],
+    notes: [
+      "This fix targets analysis failures where the app said AI returned clips but all were dropped during validation.",
+      "The app still keeps strict validation first. The recovery path only runs when strict validation would otherwise leave the user with no clips.",
+      "If AI analysis still fails, email hello@clipship.co with the crash report so the exact transcript/model behavior can be inspected.",
+    ],
+  },
+  {
     version: "1.0.5",
     date: "June 6, 2026",
     label: "Caption export fix",
