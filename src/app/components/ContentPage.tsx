@@ -145,7 +145,7 @@ export default function ContentPage({
                   Try ClipShip for free
                 </h2>
                 <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
-                  Repurpose long videos into ready-to-post clips. Local AI, no cloud, no subscription. A one-time price for unlimited clips.
+                  Repurpose long videos into ready-to-post clips. Local AI, no cloud, no usage credits. Choose monthly or one-time Pro.
                 </p>
                 <DownloadLink
                   source="content-bottom"

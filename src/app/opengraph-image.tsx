@@ -126,7 +126,7 @@ export default async function Image() {
               color: "transparent",
             }}
           >
-            No cloud. No subscription.
+            No cloud. No usage credits.
           </div>
         </div>
       </div>

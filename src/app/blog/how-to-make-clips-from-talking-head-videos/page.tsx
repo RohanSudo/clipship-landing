@@ -87,7 +87,7 @@ export default function HowToMakeClips() {
         <div className="grid sm:grid-cols-3 gap-4 mb-8">
           <RecommendationCard
             condition="ClipShip"
-            recommendation="Local, one-time price. Paste a YouTube link or import your own file. AI clip suggestions, face tracking, 99-language transcription. Unlimited on the free tier."
+            recommendation="Local processing with no usage credits. Paste a YouTube link or import your own file. AI clip suggestions, face tracking, and 99-language transcription."
             highlighted
           />
           <RecommendationCard

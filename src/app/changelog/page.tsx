@@ -4,6 +4,27 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.7",
+    date: "July 22, 2026",
+    label: "Monthly Pro plan and billing choices",
+    summary:
+      "This update adds a $5 founding monthly plan alongside the existing $99 lifetime license, with the same Pro features on either plan.",
+    changes: [
+      "Added a $5-per-month founding Pro plan for the first 50 paid subscribers. Founding subscribers keep that price while their subscription remains continuously active.",
+      "Kept the $99 one-time lifetime license as a separate option with no recurring charge.",
+      "Changed the in-app Upgrade action to show a monthly-versus-lifetime plan chooser before opening checkout.",
+      "Added billing details in Settings so monthly subscribers can see their plan state and open the secure billing portal to manage or cancel their subscription.",
+      "Added a switch-to-lifetime option for monthly subscribers. The monthly subscription is cancelled after the lifetime payment succeeds.",
+      "Improved the post-checkout license refresh so newly activated Pro access and additional device slots appear without relying on stale app state.",
+    ],
+    notes: [
+      "Monthly and lifetime licenses unlock the same Pro features: watermark-free 1080p exports and custom caption styles, with one active device included.",
+      "Existing lifetime licenses are unchanged. No current lifetime customer is moved to a subscription.",
+      "The $5 founding rate is retained only while the subscription remains active. Cancelling and joining again later may mean paying the then-current monthly price.",
+      "ClipShip still processes videos locally on your PC. The new subscription option changes billing, not where your videos or AI processing run.",
+    ],
+  },
+  {
     version: "1.0.6",
     date: "July 7, 2026",
     label: "AI analysis recovery fix",

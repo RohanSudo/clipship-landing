@@ -4,7 +4,7 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs OpusClip (2026): Local OpusClip Alternative",
   description:
-    "Compare ClipShip and OpusClip for AI video repurposing. ClipShip is a local Windows alternative with no-upload local files, one-time pricing, captions, and vertical exports.",
+    "Compare ClipShip and OpusClip for AI video repurposing. ClipShip is a local Windows alternative with no-upload local files, no usage credits, captions, and vertical exports.",
   alternates: {
     canonical: "https://clipship.co/vs/opus-clip",
   },
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 const data: ComparisonData = {
   competitor: "OpusClip",
   competitorTagline:
-    "OpusClip is the best-known cloud clip generator. ClipShip targets the same long-video-to-short-clips job from a Windows desktop app, with local processing for local files and one-time pricing.",
+    "OpusClip is the best-known cloud clip generator. ClipShip targets the same long-video-to-short-clips job from a Windows desktop app, with local processing and no usage credits.",
   verdict:
-    "OpusClip is a mature cloud clip generator with subscriptions and scheduling. ClipShip is the local alternative for creators who want no-upload local files, unlimited processing, and a one-time price.",
+    "OpusClip is a mature cloud clip generator with subscriptions and scheduling. ClipShip is the local alternative for creators who want no-upload local files, unlimited processing, and monthly or one-time Pro.",
   verdictDetail:
     "If you want cloud convenience, a polished dashboard, and built-in social scheduling, OpusClip is stronger. If you want the core clip-generation workflow on your PC without sending private recordings to a cloud editor, ClipShip is the better fit.",
   features: [
@@ -39,9 +39,9 @@ const data: ComparisonData = {
         "OpusClip requires uploading recordings to its servers. ClipShip processes local files on your Windows PC, which is better for coaching calls, course content, client work, internal recordings, and other private footage.",
     },
     {
-      title: "One-time price instead of another subscription",
+      title: "Monthly or one-time Pro, without clip credits",
       detail:
-        "ClipShip has a free tier and a $99 one-time Pro license. That is a cleaner model for creators who process videos repeatedly and do not want monthly credits.",
+        "ClipShip has a free tier, a $5 monthly founding plan, and a $99 one-time Pro license. Neither Pro option meters local processing with clip credits.",
     },
     {
       title: "Your exported clips stay with you",
@@ -51,7 +51,7 @@ const data: ComparisonData = {
     {
       title: "Good fit for batch repurposing",
       detail:
-        "If you have a backlog of recorded videos, local processing plus one-time pricing is easier to justify than a credit-metered workflow.",
+        "If you have a backlog of recorded videos, unlimited local processing is easier to use than a credit-metered workflow.",
     },
   ],
   competitorWins: [
@@ -68,12 +68,12 @@ const data: ComparisonData = {
   ],
   whoShouldUse: {
     clipship:
-      "You want unlimited local processing, care about privacy, and do not want another monthly subscription. This is especially relevant for coaching calls, consulting recordings, course material, client videos, and large batches of talking-head content.",
+      "You want unlimited local processing, care about privacy, and want the option to subscribe cheaply or buy once. This is especially relevant for coaching calls, consulting recordings, course material, client videos, and large batches of talking-head content.",
     competitor:
       "You want a polished browser dashboard with integrated social scheduling, and the monthly fee plus cloud upload workflow are acceptable.",
   },
   bottomLine:
-    "OpusClip is the stronger cloud product. ClipShip is the sharper local alternative. If your priority is no-upload local files, one-time pricing, and keeping the clip workflow on your own Windows PC, ClipShip is the cleaner choice.",
+    "OpusClip is the stronger cloud product. ClipShip is the sharper local alternative. If your priority is no-upload local files, no usage credits, and keeping the clip workflow on your own Windows PC, ClipShip is the cleaner choice.",
 };
 
 export default function VsOpusClip() {

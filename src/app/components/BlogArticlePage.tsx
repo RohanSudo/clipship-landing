@@ -309,7 +309,7 @@ export default function BlogArticlePage({
                   Try ClipShip for free
                 </h2>
                 <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
-                  Repurpose long videos into ready-to-post clips. Local AI, no cloud, one-time price.
+                  Repurpose long videos into ready-to-post clips. Local AI, no cloud, monthly or one-time Pro.
                 </p>
                 <DownloadLink
                   source="blog-bottom"

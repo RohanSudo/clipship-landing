@@ -37,6 +37,18 @@ const structuredData = [
       },
       {
         "@type": "Offer",
+        price: "5",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "5",
+          priceCurrency: "USD",
+          billingDuration: "P1M",
+        },
+        description: "ClipShip Pro founding subscription is $5 per month for the first 50 paid subscribers. The rate remains while the subscription stays active.",
+      },
+      {
+        "@type": "Offer",
         price: "99",
         priceCurrency: "USD",
         description: "ClipShip Pro is $99 one-time for one device. Includes no watermark, 1080p exports, and custom caption styles.",
@@ -87,14 +99,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "ClipShip | Local AI Video Repurposing. Long videos in, clips out.",
     description:
-      "Local alternative to OpusClip and HeyGen Instant Highlights. Repurpose long recordings into ready-to-post clips for Reels, Shorts, and TikTok. One-time price.",
+      "Local alternative to OpusClip and HeyGen Instant Highlights. Repurpose long recordings into ready-to-post clips for Reels, Shorts, and TikTok. Monthly or one-time Pro.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "ClipShip | Local AI Video Repurposing. Long videos in, clips out.",
     description:
-      "Local alternative to OpusClip and HeyGen Instant Highlights. Repurpose long recordings into ready-to-post clips for Reels, Shorts, and TikTok. One-time price.",
+      "Local alternative to OpusClip and HeyGen Instant Highlights. Repurpose long recordings into ready-to-post clips for Reels, Shorts, and TikTok. Monthly or one-time Pro.",
   },
 };
 

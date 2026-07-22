@@ -6,9 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated20260522 = new Date("2026-05-22T00:00:00.000Z");
   const updated20260521 = new Date("2026-05-21T00:00:00.000Z");
   const updated20260520 = new Date("2026-05-20T00:00:00.000Z");
-  const updated20260604 = new Date("2026-06-04T00:00:00.000Z");
   const updated20260702 = new Date("2026-07-02T00:00:00.000Z");
   const updated20260707 = new Date("2026-07-07T00:00:00.000Z");
+  const updated20260722 = new Date("2026-07-22T00:00:00.000Z");
 
   return [
     // Main pages
@@ -26,9 +26,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // High-intent SEO pages around ClipShip's local/no-upload differentiator
     { url: `${baseUrl}/local-ai-video-clip-generator`, lastModified: updated20260702, changeFrequency: "monthly", priority: 0.95 },
     { url: `${baseUrl}/no-upload-opusclip-alternative`, lastModified: updated20260702, changeFrequency: "monthly", priority: 0.95 },
-    { url: `${baseUrl}/youtube-to-shorts-clip-maker`, lastModified: updated20260702, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/ai-video-clipper-without-credits`, lastModified: updated20260702, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${baseUrl}/no-upload-podcast-clipper-windows`, lastModified: updated20260702, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/youtube-to-shorts-clip-maker`, lastModified: updated20260722, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/opusclip-alternative-free-no-watermark`, lastModified: updated20260722, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/podcast-to-shorts-ai`, lastModified: updated20260722, changeFrequency: "monthly", priority: 0.9 },
 
     // Audience pages
     { url: `${baseUrl}/for/youtubers`, lastModified: updated20260522, changeFrequency: "monthly", priority: 0.8 },

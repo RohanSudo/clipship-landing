@@ -48,9 +48,9 @@ const data: ComparisonData = {
         "Gling only supports English. ClipShip transcribes and captions in 99 languages.",
     },
     {
-      title: "One-time price",
+      title: "No usage credits, with a lifetime option",
       detail:
-        "Gling bills monthly with hour-based caps. ClipShip is paid once, used forever, no limits.",
+        "Gling bills monthly with hour-based caps. ClipShip starts at $5/month for founding subscribers and also offers a $99 lifetime option without usage credits.",
     },
   ],
   competitorWins: [
@@ -67,7 +67,7 @@ const data: ComparisonData = {
   ],
   whoShouldUse: {
     clipship:
-      "You want short-form clips from your long recordings—vertical, captioned, ready to post. Especially if you care about privacy, work in languages other than English, or don’t want a monthly subscription.",
+      "You want short-form clips from your long recordings—vertical, captioned, ready to post. Especially if you care about privacy, work in languages other than English, or want a lifetime option.",
     competitor:
       "You want silence removal as a step inside your Premiere/Resolve/Final Cut workflow. You want an AI-assisted timeline cleanup, not short clips.",
   },

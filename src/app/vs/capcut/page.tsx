@@ -44,9 +44,9 @@ const data: ComparisonData = {
         "CapCut is owned by ByteDance. Their cloud features process your footage through their servers. ClipShip keeps everything on your PC—necessary for sensitive content.",
     },
     {
-      title: "One-time price, no subscription",
+      title: "No usage credits, with a lifetime option",
       detail:
-        "CapCut Pro is $20/mo. ClipShip is paid once. After five months of CapCut you’ve spent more than ClipShip costs for life.",
+        "CapCut Pro is $20/mo. ClipShip starts at $5/month for founding subscribers and also offers a $99 lifetime option without usage credits.",
     },
     {
       title: "No learning curve",
@@ -73,7 +73,7 @@ const data: ComparisonData = {
   ],
   whoShouldUse: {
     clipship:
-      "You record talking-head content (YouTube, podcasts, courses, coaching) and want the clip extraction automated. You value privacy and don’t want another subscription.",
+      "You record talking-head content and want clip extraction automated. You value privacy, no usage credits, and the option to subscribe cheaply or buy once.",
     competitor:
       "You create diverse content types, enjoy hands-on editing, want access to templates and effects, and are OK with cloud processing through ByteDance.",
   },

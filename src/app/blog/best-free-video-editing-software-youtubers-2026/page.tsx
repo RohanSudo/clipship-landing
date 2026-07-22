@@ -154,7 +154,7 @@ export default function BestFreeEditors() {
           If you only post long-form YouTube videos, you want a traditional editor like DaVinci Resolve.
           If you also need short-form clips for Shorts, Reels, and TikTok (and you should—that&apos;s where
           new audiences find you), you need a separate tool for that job. ClipShip does that job on
-          your PC with no subscription and no upload wait.
+          your PC with no usage credits and no upload wait.
         </Paragraph>
       </Section>
     </BlogArticlePage>

@@ -4,7 +4,7 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs HeyGen Highlights: HeyGen Alternative (2026)",
   description:
-    "Local HeyGen Instant Highlights alternative. Both repurpose long videos into short-form clips. HeyGen has stronger search control and translation; ClipShip runs on your PC, one-time price.",
+    "Local HeyGen Instant Highlights alternative. Both repurpose long videos into short-form clips. HeyGen has stronger search control and translation; ClipShip runs on your PC without usage credits.",
   alternates: {
     canonical: "https://clipship.co/vs/heygen",
   },
@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 const data: ComparisonData = {
   competitor: "HeyGen Highlights",
   competitorTagline:
-    "HeyGen Instant Highlights V2 repurposes long videos into short-form clips in the cloud. Its stronger extras are search control and translation. ClipShip focuses on local AI clip suggestions on your PC, with a one-time price.",
+    "HeyGen Instant Highlights V2 repurposes long videos into short-form clips in the cloud. Its stronger extras are search control and translation. ClipShip focuses on local AI clip suggestions on your PC without usage credits.",
   verdict:
     "HeyGen Instant Highlights V2 is a cloud clip generator. ClipShip is the local alternative for AI clip suggestions, face tracking, multi-speaker handling, and captions.",
   verdictDetail:
-    "The split is simple: HeyGen charges per-month and processes on their servers. ClipShip is a one-time price and processes on your PC. Same job, different trust model.",
+    "The split is simple: HeyGen processes on its servers with monthly credits. ClipShip processes on your PC and offers monthly or one-time Pro without clip credits.",
   features: [
     { feature: "AI clip suggestions", clipship: "yes", competitor: "yes" },
     { feature: "Prompt-based clip search", clipship: "no", competitor: "yes" },
@@ -38,9 +38,9 @@ const data: ComparisonData = {
         "HeyGen processes every clip on their servers. For coaching calls, course recordings, consulting sessions, and anything with sensitive material, that’s a non-starter. ClipShip runs entirely on your machine.",
     },
     {
-      title: "One-time price vs subscription",
+      title: "No clip credits, with a lifetime option",
       detail:
-        "HeyGen’s plans run $24/mo and up, billed monthly with credit caps. Four months of HeyGen roughly equals the entire lifetime price of ClipShip. After that, ClipShip is free to keep using forever.",
+        "HeyGen’s plans run $24/mo and up with credit caps. ClipShip starts at $5/month for founding subscribers and also offers a $99 lifetime option without clip credits.",
     },
     {
       title: "No credits, no caps",
@@ -72,12 +72,12 @@ const data: ComparisonData = {
   ],
   whoShouldUse: {
     clipship:
-      "You care about privacy, you don’t want a subscription, and you want to clip unlimited recordings on your own machine. Especially if your content is sensitive (coaching, consulting, course material) or you’re travelling without reliable internet.",
+      "You care about privacy, want to clip unlimited recordings on your own machine, and prefer a low monthly price or a lifetime option. Especially if your content is sensitive or you travel without reliable internet.",
     competitor:
       "You need to translate clips into 175+ languages as part of the clip flow, you want 4K upscaling built in, or you’re already using HeyGen for AI avatars and want everything in one cloud workspace.",
   },
   bottomLine:
-    "HeyGen Instant Highlights V2 and ClipShip do the same core job. If cloud + subscription + translation is a fit for you, HeyGen is a strong choice. If local + one-time + privacy is what you want, ClipShip is the cleaner buy.",
+    "HeyGen Instant Highlights V2 and ClipShip do the same core job. If cloud processing and translation are a fit, HeyGen is strong. If local processing, no usage credits, and payment choice matter more, ClipShip is the cleaner buy.",
 };
 
 export default function VsHeyGen() {

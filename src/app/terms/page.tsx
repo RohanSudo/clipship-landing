@@ -134,8 +134,8 @@ export default function Terms() {
 
       <h2>Refunds</h2>
       <p>
-        ClipShip is a one-time purchase. We want you to be happy with it, so if it&apos;s not working
-        out for you, here&apos;s how refunds work.
+        ClipShip Pro is available as a monthly subscription or a one-time purchase. We want you to
+        be happy with it, so if it&apos;s not working out for you, here&apos;s how refunds work.
       </p>
       <p>
         <strong>Refund window.</strong> You can request a refund within 7 days of your purchase.

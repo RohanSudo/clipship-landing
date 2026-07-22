@@ -202,7 +202,7 @@ export default function LocalAiVideoClipGeneratorPage() {
             </tr>
             <tr>
               <td>What is the pricing model?</td>
-              <td>Free tier plus one-time Pro license.</td>
+              <td>Free tier plus monthly or one-time Pro.</td>
               <td>Usually subscription and credit based.</td>
             </tr>
             <tr>
@@ -226,7 +226,7 @@ export default function LocalAiVideoClipGeneratorPage() {
         <ul>
           <li>You make talking-head videos, podcasts, lessons, webinars, interviews, or coaching content.</li>
           <li>You want a no-upload workflow for private or client recordings.</li>
-          <li>You do not want a monthly subscription or credit limit for every video.</li>
+          <li>You do not want usage credits or per-video limits.</li>
           <li>You want captions, vertical formatting, and clip suggestions without manually editing every section.</li>
         </ul>
 

@@ -3,24 +3,24 @@ import ContentPage from "../components/ContentPage";
 import { AnswerBox, ClusterLinks, ProofFigure } from "../components/SeoBlocks";
 
 export const metadata: Metadata = {
-  title: "No-Upload Podcast Clipper for Windows | ClipShip",
+  title: "Podcast to Shorts AI for Windows | ClipShip",
   description:
-    "ClipShip is a no-upload podcast clipper for Windows. Turn long podcasts, interviews, and webinars into Shorts, Reels, and TikToks locally.",
+    "Turn a video podcast into Shorts, Reels, and TikToks with ClipShip. AI finds clips, reframes speakers, and adds captions locally on Windows.",
   alternates: {
-    canonical: "https://clipship.co/no-upload-podcast-clipper-windows",
+    canonical: "https://clipship.co/podcast-to-shorts-ai",
   },
   openGraph: {
-    title: "No-Upload Podcast Clipper for Windows | ClipShip",
+    title: "Podcast to Shorts AI for Windows | ClipShip",
     description:
-      "Turn podcast recordings into short clips without uploading the full source video to a cloud editor.",
-    url: "https://clipship.co/no-upload-podcast-clipper-windows",
+      "Turn podcast recordings into short vertical clips with local AI on Windows, without uploading the full source video.",
+    url: "https://clipship.co/podcast-to-shorts-ai",
     type: "article",
     images: [
       {
         url: "https://clipship.co/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "ClipShip no-upload podcast clipper for Windows",
+        alt: "ClipShip podcast to Shorts AI workflow on Windows",
       },
     ],
   },
@@ -32,10 +32,10 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What is a no-upload podcast clipper?",
+      name: "How do I turn a podcast into Shorts with AI?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A no-upload podcast clipper is software that finds short clips from a long podcast recording without requiring the full source video to be uploaded to a cloud editor first.",
+        text: "Import a video podcast into ClipShip, let AI identify standalone moments, review the suggested clips, then export them vertically with captions for YouTube Shorts, Instagram Reels, or TikTok.",
       },
     },
     {
@@ -60,17 +60,17 @@ const faqSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "No-Upload Podcast Clipper for Windows",
+  headline: "Podcast to Shorts AI for Windows",
   description:
-    "How ClipShip helps Windows creators turn podcast recordings, interviews, and webinars into short clips without uploading source footage.",
+    "How ClipShip turns video podcasts, interviews, and webinars into vertical short clips with local AI on Windows.",
   datePublished: "2026-07-02",
-  dateModified: "2026-07-02",
+  dateModified: "2026-07-22",
   author: {
     "@type": "Organization",
     name: "ClipShip",
     url: "https://clipship.co",
   },
-  mainEntityOfPage: "https://clipship.co/no-upload-podcast-clipper-windows",
+  mainEntityOfPage: "https://clipship.co/podcast-to-shorts-ai",
 };
 
 export default function NoUploadPodcastClipperWindowsPage() {
@@ -85,11 +85,11 @@ export default function NoUploadPodcastClipperWindowsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ContentPage
-        title="No-upload podcast clipper for Windows"
-        description="Turn long podcast recordings into short-form clips without waiting for the full source video to upload."
-        badge="Podcast clipper"
+        title="Podcast to Shorts AI for Windows"
+        description="Turn long video podcasts, interviews, and webinars into captioned vertical clips for Shorts, Reels, and TikTok."
+        badge="Podcast to Shorts"
       >
-        <AnswerBox title="ClipShip clips podcast videos without uploading the local source file.">
+        <AnswerBox title="ClipShip turns video podcasts into Shorts with AI.">
           <p>
             ClipShip is a Windows podcast clipper for long spoken recordings. Drop in a podcast episode, interview,
             webinar, or coaching video, let the app find short-form moments, then review and export vertical clips
@@ -109,6 +109,12 @@ export default function NoUploadPodcastClipperWindowsPage() {
           priority
           caption="Podcast clipping is mostly a review problem: find the promising moments first, then decide which clips are worth posting."
         />
+
+        <h2>How podcast to Shorts AI works</h2>
+        <p>
+          A podcast-to-Shorts AI workflow combines transcript analysis, clip selection, vertical reframing, and
+          captions. ClipShip handles those steps in one Windows desktop app, then leaves the final choice to you.
+        </p>
 
         <h2>Why podcast uploads are painful</h2>
         <p>
@@ -195,7 +201,7 @@ export default function NoUploadPodcastClipperWindowsPage() {
           vertical reframing, captions, and export.
         </p>
 
-        <ClusterLinks current="/no-upload-podcast-clipper-windows" />
+        <ClusterLinks current="/podcast-to-shorts-ai" />
 
         <h2>FAQ</h2>
         <h3>Can ClipShip turn a podcast into Shorts?</h3>

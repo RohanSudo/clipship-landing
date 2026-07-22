@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
         destination: "https://clipship.co/:path*",
         permanent: true,
       },
+      {
+        source: "/ai-video-clipper-without-credits",
+        destination: "/opusclip-alternative-free-no-watermark",
+        permanent: true,
+      },
+      {
+        source: "/no-upload-podcast-clipper-windows",
+        destination: "/podcast-to-shorts-ai",
+        permanent: true,
+      },
     ];
   },
 };

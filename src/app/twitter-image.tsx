@@ -62,7 +62,7 @@ export default async function TwitterImage() {
         <div style={{ position: "absolute", bottom: 40, display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{ fontSize: 18, color: "#71717a" }}>clipship.co</div>
           <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#3f3f46" }} />
-          <div style={{ fontSize: 18, color: "#7c3aed" }}>No cloud. No subscription.</div>
+          <div style={{ fontSize: 18, color: "#7c3aed" }}>No cloud. No usage credits.</div>
         </div>
       </div>
     ),

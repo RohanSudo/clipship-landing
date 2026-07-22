@@ -3,14 +3,14 @@ import ContentPage from "../components/ContentPage";
 import { AnswerBox, ClusterLinks, ProofFigure } from "../components/SeoBlocks";
 
 export const metadata: Metadata = {
-  title: "Long Video to Shorts AI Clip Maker | ClipShip",
+  title: "Long Video to Shorts AI Generator for Windows | ClipShip",
   description:
-    "Turn long YouTube videos and talking-head recordings into Shorts, Reels, and TikToks. ClipShip finds clips, reframes vertically, and adds captions.",
+    "Turn a long video into Shorts with AI on Windows. Import a YouTube video or local recording, find clips, reframe vertically, and add captions.",
   alternates: {
     canonical: "https://clipship.co/youtube-to-shorts-clip-maker",
   },
   openGraph: {
-    title: "Long Video to Shorts AI Clip Maker | ClipShip",
+    title: "Long Video to Shorts AI Generator for Windows | ClipShip",
     description:
       "Repurpose long YouTube videos into short-form clips with local AI on Windows.",
     url: "https://clipship.co/youtube-to-shorts-clip-maker",
@@ -91,11 +91,11 @@ const howToSchema = {
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "Long Video to Shorts AI Clip Maker",
+  headline: "Long Video to Shorts AI Generator for Windows",
   description:
     "How to repurpose YouTube videos and talking-head recordings into vertical short-form clips with ClipShip.",
   datePublished: "2026-05-21",
-  dateModified: "2026-07-02",
+  dateModified: "2026-07-22",
   author: {
     "@type": "Organization",
     name: "ClipShip",
@@ -120,11 +120,11 @@ export default function YouTubeToShortsClipMakerPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ContentPage
-        title="Long video to Shorts AI clip maker"
-        description="Repurpose long YouTube videos into short-form clips without manually hunting through the timeline."
-        badge="YouTube to Shorts"
+        title="Long video to Shorts AI generator for Windows"
+        description="Turn long YouTube videos and local talking-head recordings into short-form clips without manually hunting through the timeline."
+        badge="Long video to Shorts"
       >
-        <AnswerBox title="ClipShip helps turn long YouTube-style videos into vertical clips.">
+        <AnswerBox title="ClipShip turns long videos into vertical Shorts with AI.">
           <p>
             Paste a YouTube link or import a local video, let ClipShip find candidate moments, review the clips,
             and export vertical videos with captions for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn.
@@ -144,7 +144,7 @@ export default function YouTubeToShortsClipMakerPage() {
           caption="Instead of scrubbing the full timeline manually, ClipShip gives you candidate clips to review."
         />
 
-        <h2>How to turn a YouTube video into Shorts</h2>
+        <h2>How to turn a long video into Shorts with AI</h2>
         <ol>
           <li><strong>Paste the YouTube link or import the file.</strong> ClipShip starts from the full recording.</li>
           <li><strong>Transcribe the recording.</strong> The app creates a timed transcript for clip selection and captions.</li>

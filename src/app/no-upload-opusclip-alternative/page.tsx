@@ -5,7 +5,7 @@ import { AnswerBox, ClusterLinks, ProofFigure } from "../components/SeoBlocks";
 export const metadata: Metadata = {
   title: "No-Upload OpusClip Alternative for Windows | ClipShip",
   description:
-    "ClipShip is a no-upload OpusClip alternative for Windows creators who want local AI clipping, no monthly credits, and one-time Pro pricing.",
+    "ClipShip is a no-upload OpusClip alternative for Windows creators who want local AI clipping, no monthly credits, and monthly or one-time Pro.",
   alternates: {
     canonical: "https://clipship.co/no-upload-opusclip-alternative",
   },
@@ -43,7 +43,7 @@ const faqSchema = {
       name: "What makes ClipShip different from OpusClip?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The main difference is where processing happens. OpusClip processes videos in the cloud after upload, while ClipShip processes local files on the user's Windows PC. ClipShip also uses a free tier and one-time Pro license rather than a monthly subscription.",
+        text: "The main difference is where processing happens. OpusClip processes videos in the cloud after upload, while ClipShip processes local files on the user's Windows PC. ClipShip has a free tier and lets users choose monthly or one-time Pro without metered clip credits.",
       },
     },
     {
@@ -67,7 +67,7 @@ const faqSchema = {
       name: "Does ClipShip replace OpusClip completely?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Not for every user. ClipShip replaces the core clip-generation workflow for users who want local processing and one-time pricing. It does not currently match OpusClip's mature cloud dashboard and built-in social scheduling.",
+        text: "Not for every user. ClipShip replaces the core clip-generation workflow for users who want local processing and no monthly clip credits. It does not currently match OpusClip's mature cloud dashboard and built-in social scheduling.",
       },
     },
   ],
@@ -113,7 +113,7 @@ export default function NoUploadOpusClipAlternativePage() {
           </p>
           <p>
             The tradeoff is simple: OpusClip is more mature for cloud dashboards and scheduling. ClipShip is better
-            if privacy, no upload queues, no monthly credits, and a one-time price matter more.
+            if privacy, no upload queues, no monthly credits, and a monthly-or-lifetime choice matter more.
           </p>
         </AnswerBox>
 
@@ -165,7 +165,7 @@ export default function NoUploadOpusClipAlternativePage() {
             </tr>
             <tr>
               <td>How is it priced?</td>
-              <td>Free tier plus $99 one-time Pro license.</td>
+              <td>Free tier, $5/month founding Pro, or $99 one-time Pro.</td>
               <td>Subscription and credit based.</td>
             </tr>
             <tr>
@@ -175,7 +175,7 @@ export default function NoUploadOpusClipAlternativePage() {
             </tr>
             <tr>
               <td>Best reason to choose it</td>
-              <td>Privacy, local control, no upload queue, one-time price.</td>
+              <td>Privacy, local control, no upload queue, no usage credits.</td>
               <td>Cloud convenience, mature UI, built-in scheduling.</td>
             </tr>
           </tbody>
@@ -236,7 +236,7 @@ export default function NoUploadOpusClipAlternativePage() {
         <ul>
           <li>You make talking-head videos, podcasts, webinars, lessons, coaching clips, or solo commentary.</li>
           <li>You want OpusClip-style clip generation without uploading private source footage.</li>
-          <li>You dislike monthly subscriptions and credit limits for repeated clip generation.</li>
+          <li>You dislike usage credits and want the option to buy Pro once instead of subscribing.</li>
           <li>You are on Windows and are comfortable installing a desktop app.</li>
         </ul>
 
@@ -244,15 +244,14 @@ export default function NoUploadOpusClipAlternativePage() {
         <p>
           Choose OpusClip if you want everything in the browser, you mainly clip public YouTube videos, you need a
           mature social scheduling workflow, or your computer is too weak for local video processing. ClipShip is
-          not trying to beat OpusClip on cloud polish. It is trying to solve the private, local, one-time-price
+          not trying to beat OpusClip on cloud polish. It is trying to solve the private, local, no-usage-credit
           version of the same job.
         </p>
 
         <h2>Pricing difference</h2>
         <p>
-          ClipShip has a free tier and a $99 one-time Pro license. The free tier supports unlimited local processing
-          with 720p watermarked exports. Pro removes the watermark, enables 1080p exports, and unlocks custom saved
-          caption styles.
+          ClipShip has a free tier, a $5 monthly founding plan for the first 50 paid subscribers, and a $99 one-time
+          Pro license. Pro removes the watermark, enables 1080p exports, and unlocks custom saved caption styles.
         </p>
 
         <p>
@@ -277,8 +276,8 @@ export default function NoUploadOpusClipAlternativePage() {
         <h2>FAQ</h2>
         <h3>Is ClipShip cheaper than OpusClip?</h3>
         <p>
-          ClipShip has a free tier and a $99 one-time Pro license. OpusClip is subscription based. If you need the
-          tool for more than a few months, the one-time model can become cheaper.
+          ClipShip has a free tier, a $5 monthly founding plan for the first 50 paid subscribers, and a $99 one-time
+          Pro license. If you need the tool for more than a few months, the one-time option can become cheaper.
         </p>
 
         <h3>Does ClipShip work with YouTube links?</h3>

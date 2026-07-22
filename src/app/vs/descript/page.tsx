@@ -44,9 +44,9 @@ const data: ComparisonData = {
         "Descript processes everything through their cloud. For sensitive content—coaching, consulting, course material—that’s a risk. ClipShip runs entirely on your PC.",
     },
     {
-      title: "One-time price, no subscription",
+      title: "No usage credits, with a lifetime option",
       detail:
-        "Descript plans run $24–$65/mo with hour caps. ClipShip is paid once, used forever. Four months of Descript roughly equals a lifetime license.",
+        "Descript plans run $24–$65/mo with hour caps. ClipShip starts at $5/month for founding subscribers and also offers a $99 lifetime option without usage credits.",
     },
     {
       title: "No caps on processing",
@@ -73,7 +73,7 @@ const data: ComparisonData = {
   ],
   whoShouldUse: {
     clipship:
-      "You record long-form talking-head content (podcasts, webinars, interviews) and want the best 30–90 second clips auto-extracted for short-form platforms. Especially if you care about privacy or don’t want another subscription.",
+      "You record long-form talking-head content and want the best 30–90 second clips auto-extracted for short-form platforms. Especially if you care about privacy, no usage credits, or a lifetime option.",
     competitor:
       "You need to edit long-form content in a text-based editor, collaborate with a team, or use features like AI eye contact and built-in screen recording.",
   },

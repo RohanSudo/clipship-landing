@@ -67,7 +67,7 @@ const homepageFaqJsonLd = {
       name: "Is ClipShip a subscription?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. ClipShip Pro is a one-time $99 purchase for one device. There are no monthly fees, usage caps, or per-video charges.",
+        text: "ClipShip Pro is available either as a $5 monthly founding plan for the first 50 subscribers or as a $99 one-time purchase. Both options unlock the same Pro features with no usage caps or per-video charges.",
       },
     },
     {
@@ -107,7 +107,7 @@ const homepageFaqJsonLd = {
       name: "Why is ClipShip a desktop app instead of a web app?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ClipShip is a desktop app so your source video does not need to be uploaded to a cloud server. Local processing improves privacy, removes upload wait time, avoids bandwidth limits, and supports a one-time price.",
+        text: "ClipShip is a desktop app so your source video does not need to be uploaded to a cloud server. Local processing improves privacy, removes upload wait time, avoids bandwidth limits, and removes usage credits from both Pro payment options.",
       },
     },
     {
@@ -653,7 +653,7 @@ export default function Home() {
                 Vertical-formatted, captioned, face-tracked, ready for Reels, Shorts, and TikTok.
               </p>
               <p className="text-lg text-zinc-200 font-medium mt-4">
-                Runs on your PC. No cloud. One-time price.
+                Runs on your PC. No cloud. No usage credits.
               </p>
             </div>
           </FadeIn>
@@ -764,7 +764,7 @@ export default function Home() {
               Built for the same job. Different trade-offs.
             </h2>
             <p className="text-zinc-400 text-center mb-16 max-w-lg mx-auto">
-              Automatic clip discovery, face tracking, multi-speaker handling, word-level captions. No cloud. No upload limits. No monthly fee.
+              Automatic clip discovery, face tracking, multi-speaker handling, word-level captions. No cloud. No upload limits. No usage credits.
             </p>
           </FadeIn>
 
@@ -853,7 +853,7 @@ export default function Home() {
                   </thead>
                   <tbody className="text-zinc-400">
                     {[
-                      ["Pricing", "$29/mo subscription", "$24+/mo subscription", "$99 one-time"],
+                      ["Pricing", "$29/mo subscription", "$24+/mo subscription", "$5/mo or $99 once"],
                       ["Best for", "Fast cloud clipping", "Avatar + translation workflows", "Private local clipping"],
                       ["Processing", "Cloud upload", "Cloud upload", "Your PC (offline)"],
                       ["Privacy", "Your footage on their servers", "Your footage on their servers", "Never leaves your machine"],
@@ -885,16 +885,16 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <FadeIn>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-              Start free. Upgrade once when you are ready.
+              Start free. Choose how you pay for Pro.
             </h2>
             <p className="text-zinc-400 text-center mb-14 max-w-xl mx-auto">
-              New installs get a 7-day Pro trial first. After that, the free tier stays usable, and Pro is a one-time upgrade.
+              New installs get a 7-day Pro trial. After that, keep the free tier, subscribe monthly, or buy Pro once.
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-3 gap-5">
             <FadeIn delay={0.05}>
-              <div className="rounded-2xl bg-[#18181b]/60 border border-white/5 p-8 h-full">
+              <div className="rounded-lg bg-[#18181b]/60 border border-white/5 p-7 h-full">
                 <p className="text-sm font-semibold text-zinc-500 mb-3">Free</p>
                 <div className="flex items-baseline gap-2 mb-5">
                   <span className="text-4xl font-bold text-white">$0</span>
@@ -909,22 +909,49 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={0.12}>
-              <div className="rounded-2xl bg-violet-500/[0.07] border border-violet-500/25 p-8 h-full shadow-[0_0_50px_-20px_rgba(124,58,237,0.8)]">
-                <p className="text-sm font-semibold text-violet-300 mb-3">Pro</p>
+            <FadeIn delay={0.1}>
+              <div className="flex h-full flex-col rounded-lg bg-violet-500/[0.07] border border-violet-500/30 p-7">
+                <div className="flex min-h-7 items-center justify-between gap-3 mb-3">
+                  <p className="text-sm font-semibold text-violet-300">Pro monthly</p>
+                  <span className="rounded-full bg-violet-500/15 px-2.5 py-1 text-[11px] font-semibold text-violet-200">First 50 subscribers</span>
+                </div>
                 <div className="flex items-baseline gap-2 mb-5">
-                  <span className="text-4xl font-bold text-white">$99</span>
-                  <span className="text-zinc-400">one-time, one device</span>
+                  <span className="text-4xl font-bold text-white">$5</span>
+                  <span className="text-zinc-400">per month</span>
                 </div>
                 <ul className="space-y-3 text-sm text-zinc-200 mb-8">
                   <li>No watermark</li>
                   <li>1080p exports</li>
                   <li>Custom styled captions</li>
-                  <li>Use your own saved caption styles across projects</li>
+                  <li>Keep the $5 rate while your subscription remains active</li>
                 </ul>
                 <DownloadButton
-                  source="pricing"
-                  className="inline-flex w-full justify-center px-7 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all"
+                  source="pricing-monthly"
+                  className="mt-auto inline-flex w-full justify-center px-7 py-3.5 rounded-lg font-semibold text-sm text-white bg-violet-600 hover:bg-violet-500 transition-colors"
+                >
+                  Download for Windows
+                </DownloadButton>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.15}>
+              <div className="flex h-full flex-col rounded-lg bg-[#18181b]/60 border border-white/10 p-7">
+                <div className="flex min-h-7 items-center mb-3">
+                  <p className="text-sm font-semibold text-zinc-300">Pro lifetime</p>
+                </div>
+                <div className="flex items-baseline gap-2 mb-5">
+                  <span className="text-4xl font-bold text-white">$99</span>
+                  <span className="text-zinc-400">one time</span>
+                </div>
+                <ul className="space-y-3 text-sm text-zinc-200 mb-8">
+                  <li>No watermark</li>
+                  <li>1080p exports</li>
+                  <li>Custom styled captions</li>
+                  <li>No recurring charge</li>
+                </ul>
+                <DownloadButton
+                  source="pricing-lifetime"
+                  className="mt-auto inline-flex w-full justify-center px-7 py-3.5 rounded-lg font-semibold text-sm text-white bg-zinc-800 hover:bg-zinc-700 border border-white/10 transition-colors"
                 >
                   Download for Windows
                 </DownloadButton>
@@ -999,7 +1026,7 @@ export default function Home() {
             />
             <FAQItem
               q="Is ClipShip a subscription?"
-              a={<p>No. One payment, lifetime use. You get all future updates for free as long as you keep using ClipShip. There are no monthly fees, no usage caps, no per-video charges.</p>}
+              a={<p>You choose. Pro is available for $5 per month to the first 50 paid subscribers, or as a $99 one-time purchase. Both unlock the same features with no usage caps or per-video charges. Founding subscribers keep the $5 rate for as long as their subscription remains active.</p>}
             />
             <FAQItem
               q="Is there a free trial?"
@@ -1025,7 +1052,7 @@ export default function Home() {
             />
             <FAQItem
               q="Why is ClipShip a desktop app and not a web app?"
-              a={<p>So your video files don&apos;t have to leave your computer. A web app would mean uploading every video to our servers, which is exactly the thing competitors do and exactly the thing I wanted to avoid. Local processing means privacy, no upload time, no monthly server costs to pass on to you, and no bandwidth limits.</p>}
+              a={<p>So your video files don&apos;t have to leave your computer. A web app would mean uploading every video to our servers, which is exactly the thing competitors do and exactly the thing I wanted to avoid. Local processing means privacy, no upload time, no usage credits, and no bandwidth limits.</p>}
             />
             <FAQItem
               q="What if I have a bug or feature request?"
@@ -1073,8 +1100,8 @@ export default function Home() {
               <ul className="space-y-2.5">
                 <li><Link href="/local-ai-video-clip-generator" className="text-sm text-zinc-300 hover:text-white transition-colors">Local AI video clipper</Link></li>
                 <li><Link href="/no-upload-opusclip-alternative" className="text-sm text-zinc-300 hover:text-white transition-colors">No-upload OpusClip alternative</Link></li>
-                <li><Link href="/ai-video-clipper-without-credits" className="text-sm text-zinc-300 hover:text-white transition-colors">AI clipper without credits</Link></li>
-                <li><Link href="/no-upload-podcast-clipper-windows" className="text-sm text-zinc-300 hover:text-white transition-colors">No-upload podcast clipper</Link></li>
+                <li><Link href="/opusclip-alternative-free-no-watermark" className="text-sm text-zinc-300 hover:text-white transition-colors">Free OpusClip alternative trial</Link></li>
+                <li><Link href="/podcast-to-shorts-ai" className="text-sm text-zinc-300 hover:text-white transition-colors">Podcast to Shorts AI</Link></li>
                 <li><Link href="/youtube-to-shorts-clip-maker" className="text-sm text-zinc-300 hover:text-white transition-colors">YouTube to Shorts clip maker</Link></li>
               </ul>
             </FadeIn>
@@ -1100,7 +1127,7 @@ export default function Home() {
               Start clipping your long videos.
             </h2>
             <p className="text-zinc-400 mb-8">
-              Download ClipShip for Windows. Try Pro for 7 days, then keep using the free tier or upgrade for $99 one-time.
+              Download ClipShip for Windows. Try Pro for 7 days, then keep using the free tier, subscribe for $5 per month, or buy Pro once for $99.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
@@ -1128,7 +1155,7 @@ export default function Home() {
                 <span className="font-semibold text-white text-sm">ClipShip</span>
               </div>
               <p className="text-sm text-zinc-500 leading-relaxed max-w-xs">
-                Local AI video repurposing. Long videos in, ready-to-post clips out. Runs on your PC, one-time price.
+                Local AI video repurposing. Long videos in, ready-to-post clips out. Runs on your PC with monthly or lifetime Pro.
               </p>
               <div className="flex items-center gap-3 mt-5">
                 <a href="https://x.com/ClipShipApp" target="_blank" rel="noopener noreferrer" aria-label="Follow ClipShip on X" className="text-zinc-600 hover:text-zinc-300 transition-colors">
@@ -1183,8 +1210,8 @@ export default function Home() {
               <ul className="space-y-2.5">
                 <li><Link href="/local-ai-video-clip-generator" className="text-sm text-zinc-500 hover:text-white transition-colors">Local AI video clipper</Link></li>
                 <li><Link href="/no-upload-opusclip-alternative" className="text-sm text-zinc-500 hover:text-white transition-colors">No-upload OpusClip alternative</Link></li>
-                <li><Link href="/ai-video-clipper-without-credits" className="text-sm text-zinc-500 hover:text-white transition-colors">AI clipper without credits</Link></li>
-                <li><Link href="/no-upload-podcast-clipper-windows" className="text-sm text-zinc-500 hover:text-white transition-colors">No-upload podcast clipper</Link></li>
+                <li><Link href="/opusclip-alternative-free-no-watermark" className="text-sm text-zinc-500 hover:text-white transition-colors">Free OpusClip alternative trial</Link></li>
+                <li><Link href="/podcast-to-shorts-ai" className="text-sm text-zinc-500 hover:text-white transition-colors">Podcast to Shorts AI</Link></li>
                 <li><Link href="/youtube-to-shorts-clip-maker" className="text-sm text-zinc-500 hover:text-white transition-colors">YouTube to Shorts maker</Link></li>
               </ul>
             </div>

@@ -2,7 +2,7 @@
 
 > ClipShip is a local-first Windows desktop app that turns long talking-head recordings into short-form clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn.
 
-Last updated: 2026-07-02
+Last updated: 2026-07-22
 
 ## Core facts
 
@@ -12,14 +12,14 @@ Last updated: 2026-07-02
 - Primary audience: YouTubers, course creators, coaches, consultants, podcasters, and solo creators
 - Main workflow: import a long video or paste a YouTube link, let local AI identify clip-worthy moments, review clips, apply captions, export vertical short-form videos
 - Privacy model: video files, transcripts, and rendered clips stay on the user's computer during processing
-- Pricing: free tier available, 7-day Pro trial, Pro is $99 one-time for one device
+- Pricing: free tier available, 7-day Pro trial, $5/month founding Pro for the first 50 paid subscribers, or $99 one-time Pro for one device
 - Pro features: no watermark, 1080p exports, custom styled captions, saved caption styles
 - Free tier: unlimited local processing, 720p exports with ClipShip watermark
 - Extra device slot: available inside the app for Pro users
 
 ## Differentiation
 
-ClipShip is different from cloud clip generators because it runs on the user's PC instead of uploading footage to a server. This makes it useful for creators who care about privacy, want unlimited local processing, or do not want a monthly subscription.
+ClipShip is different from cloud clip generators because it runs on the user's PC instead of uploading footage to a server. This makes it useful for creators who care about privacy, want unlimited local processing without usage credits, and prefer a choice between monthly or lifetime Pro.
 
 ClipShip is not a full video editor. It is a video repurposing tool built for talking-head content, podcasts, interviews, webinars, coaching calls, course lessons, and similar long-form recordings.
 
@@ -38,9 +38,9 @@ ClipShip is not a full video editor. It is a video repurposing tool built for ta
 - Best free video editing software for YouTubers: https://clipship.co/blog/best-free-video-editing-software-youtubers-2026
 - Local AI video clip generator: https://clipship.co/local-ai-video-clip-generator
 - No-upload OpusClip alternative: https://clipship.co/no-upload-opusclip-alternative
-- YouTube to Shorts clip maker: https://clipship.co/youtube-to-shorts-clip-maker
-- AI video clipper without credits: https://clipship.co/ai-video-clipper-without-credits
-- No-upload podcast clipper for Windows: https://clipship.co/no-upload-podcast-clipper-windows
+- Long video to Shorts AI generator: https://clipship.co/youtube-to-shorts-clip-maker
+- OpusClip alternative free no-watermark trial: https://clipship.co/opusclip-alternative-free-no-watermark
+- Podcast to Shorts AI for Windows: https://clipship.co/podcast-to-shorts-ai
 
 ## Competitor context
 
@@ -66,7 +66,7 @@ ClipShip is best for YouTubers, podcasters, coaches, course creators, consultant
 
 ### How is ClipShip different from OpusClip?
 
-ClipShip processes videos locally on a Windows PC, while OpusClip processes uploaded videos in the cloud. ClipShip is better for creators who care about privacy, no-upload workflows, unlimited local processing, and one-time pricing. OpusClip is stronger for cloud convenience and social scheduling.
+ClipShip processes videos locally on a Windows PC, while OpusClip processes uploaded videos in the cloud. ClipShip is better for creators who care about privacy, no-upload workflows, unlimited local processing, and a monthly-or-lifetime Pro choice. OpusClip is stronger for cloud convenience and social scheduling.
 
 ### What is the best no-upload OpusClip alternative?
 
@@ -76,13 +76,13 @@ ClipShip is a no-upload OpusClip alternative for Windows creators who want AI cl
 
 A local AI video clipper analyzes long recordings on the user's computer instead of requiring the full source video to be uploaded to a cloud editor. ClipShip does this on Windows for talking-head videos, podcasts, interviews, webinars, course lessons, and coaching content.
 
-### What is an AI video clipper without credits?
+### Is ClipShip a free OpusClip alternative without a watermark?
 
-An AI video clipper without credits lets users process videos without spending a monthly pool of clip, minute, or generation credits. ClipShip Pro does not meter local clipping with monthly credits because the heavy video work runs on the user's Windows PC.
+ClipShip gives new installs a 7-day Pro trial with no watermark, 1080p exports, and no credit card. After the trial, the forever-free tier remains usable with 720p watermarked exports, or the user can upgrade to Pro. Local processing is not metered with per-video credits.
 
-### What is a no-upload podcast clipper?
+### Can ClipShip turn a podcast into Shorts with AI?
 
-A no-upload podcast clipper finds short clips from a long podcast recording without requiring the full source video to be uploaded to a cloud editor first. ClipShip is a Windows no-upload podcast clipper for video podcasts, interviews, webinars, course lessons, and coaching recordings.
+Yes. ClipShip imports a video podcast, interview, webinar, or other spoken recording, uses AI to identify standalone moments, reframes speakers vertically, adds captions, and exports clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn. Local source files remain on the Windows PC during processing.
 
 ### Can ClipShip turn YouTube videos into Shorts?
 

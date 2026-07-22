@@ -76,14 +76,14 @@ const clusterLinks = [
     detail: "A focused explanation of ClipShip's local Windows workflow and when local AI clipping is the right fit.",
   },
   {
-    href: "/ai-video-clipper-without-credits",
-    title: "AI video clipper without credits",
-    detail: "Why local processing avoids monthly credit anxiety and per-minute cloud billing.",
+    href: "/opusclip-alternative-free-no-watermark",
+    title: "OpusClip alternative with a free no-watermark trial",
+    detail: "An honest breakdown of ClipShip's 7-day Pro trial, forever-free tier, watermark, and export limits.",
   },
   {
-    href: "/no-upload-podcast-clipper-windows",
-    title: "No-upload podcast clipper for Windows",
-    detail: "A practical workflow for turning long podcasts, interviews, and webinars into clips without upload queues.",
+    href: "/podcast-to-shorts-ai",
+    title: "Podcast to Shorts AI for Windows",
+    detail: "A practical workflow for turning long podcasts, interviews, and webinars into vertical clips with local AI.",
   },
   {
     href: "/youtube-to-shorts-clip-maker",
