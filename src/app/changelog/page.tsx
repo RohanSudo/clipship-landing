@@ -4,6 +4,23 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.8",
+    date: "July 22, 2026",
+    label: "Safer account setup and upgrades",
+    summary:
+      "This update makes account and license state clearer before an upgrade, preventing a payment from being started before ClipShip can attach it to the correct account.",
+    changes: [
+      "Returns incomplete accounts to the signup flow instead of leaving Settings on an unknown plan status.",
+      "Shows the account setup error directly in Settings so the next required step is clear.",
+      "Hides upgrade actions until account setup and license verification are complete.",
+      "Prevents checkout from starting when the signed-in account does not yet exist in ClipShip's license database.",
+      "Reconciles older accounts safely when Firebase identity details have changed but the verified email uniquely matches the existing ClipShip account.",
+    ],
+    notes: [
+      "No payment or license data is changed by installing this update.",
+    ],
+  },
+  {
     version: "1.0.7",
     date: "July 22, 2026",
     label: "Monthly Pro plan and billing choices",
