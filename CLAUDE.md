@@ -9,7 +9,7 @@
 - **Phase:** Public v1.0.0 launch completed 2026-05-20/21. Site is in public download/pricing mode, not waitlist mode.
 - **Download entrypoint:** `https://api.clipship.co/download/windows`.
 - **Launch signal:** Weak activation so far. D1 download tracking is more reliable than GA4 download_click.
-- **SEO/AIO state:** Three focused local/no-upload SEO pages are live. Cluster was strengthened and deployed on 2026-05-27 in commit `c869a30`. Technical SEO cleanup on 2026-07-02 fixed www/non-www duplication, canonical coverage, SEO-page OG images, and noindexed OAuth utility routes.
+- **SEO/AIO state:** The original local/no-upload pages are indexed. A tighter keyword pass deployed on 2026-07-22 added focused free/no-watermark OpusClip and podcast-to-Shorts pages, refreshed comparison/content pages, and resubmitted discovery signals.
 
 ## SEO/AIO cluster status
 
@@ -18,6 +18,20 @@ Live high-intent pages:
 - `/local-ai-video-clip-generator`
 - `/youtube-to-shorts-clip-maker`
 - `/vs/opus-clip`
+- `/opusclip-alternative-free-no-watermark`
+- `/podcast-to-shorts-ai`
+
+2026-07-22 update:
+- Added the public $5-per-month founding Pro option for the first 50 paid subscribers alongside the $99 lifetime purchase. Both unlock the same Pro features.
+- Added changelog entry and anchor `/changelog#v1.0.7`, which is the destination opened by the desktop updater's What's New link.
+- Replaced `/ai-video-clipper-without-credits` with `/opusclip-alternative-free-no-watermark` and `/no-upload-podcast-clipper-windows` with `/podcast-to-shorts-ai`; both retired URLs permanently redirect to their replacement.
+- Strengthened titles, descriptions, comparison copy, internal links, structured data, proof sections, and `llms.txt` around ClipShip's real wedge: local processing, no upload, no usage credits, Windows, and monthly-or-lifetime Pro.
+- Production verification passed: canonical HTTPS URLs return 200, `www` and HTTP redirect, both retired routes return 308, the sitemap and robots file return 200, the Open Graph image returns 200, and an invented URL returns 404.
+- Resubmitted `https://clipship.co/sitemap.xml` through the Search Console API. Google downloaded it immediately with 0 errors and 0 warnings.
+- Search Console URL Inspection confirmed the homepage, original three focused pages, `/vs/opus-clip`, and the talking-head guide are indexed with successful mobile crawls and matching canonicals.
+- Manually requested indexing through Search Console for the two new pages and recrawls for the homepage, original three focused pages, and `/vs/opus-clip`. All seven requests returned `Indexing requested` and entered Google's priority crawl queue.
+- Submitted all 20 sitemap URLs to IndexNow using the existing live key. IndexNow returned HTTP 200.
+- GSC baseline for 2026-06-25 through 2026-07-22: 35 page-level impressions and 2 clicks, versus 23 impressions and 0 clicks in the preceding 28-day window. This is still extremely low volume. The remaining SEO constraint is query demand/authority, not a robots, canonical, sitemap, or page-fetch failure.
 
 2026-05-27 update:
 - Added proof visuals from the ClipShip promo asset set under `public/seo/`.
@@ -60,7 +74,7 @@ IndexNow:
 
 ## What this site does
 
-- Communicates ClipShip's positioning (OpusClip alternative, local processing, one-time lifetime purchase)
+- Communicates ClipShip's positioning (OpusClip alternative, local processing, monthly or lifetime Pro)
 - Sends visitors to the Windows download
 - Shows product positioning / pricing / FAQ
 
