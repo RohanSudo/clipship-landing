@@ -7,13 +7,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated20260521 = new Date("2026-05-21T00:00:00.000Z");
   const updated20260520 = new Date("2026-05-20T00:00:00.000Z");
   const updated20260702 = new Date("2026-07-02T00:00:00.000Z");
-  const updated20260707 = new Date("2026-07-07T00:00:00.000Z");
   const updated20260722 = new Date("2026-07-22T00:00:00.000Z");
+  const updated20260724 = new Date("2026-07-24T00:00:00.000Z");
 
   return [
     // Main pages
     { url: baseUrl, lastModified: updated20260522, changeFrequency: "weekly", priority: 1.0 },
-    { url: `${baseUrl}/changelog`, lastModified: updated20260707, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${baseUrl}/changelog`, lastModified: updated20260724, changeFrequency: "monthly", priority: 0.5 },
 
     // Comparison pages (primary: direct clip-generator competitors)
     { url: `${baseUrl}/vs/opus-clip`, lastModified: updated20260527, changeFrequency: "monthly", priority: 0.9 },

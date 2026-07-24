@@ -4,6 +4,24 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.9",
+    date: "July 24, 2026",
+    label: "Account and checkout protection",
+    summary:
+      "This update closes an account-state gap that could let an incomplete signup enter ClipShip before the product account was created.",
+    changes: [
+      "Allows only verified trial, free, or active license states to enter the application.",
+      "Blocks unknown or incomplete account states instead of treating them as usable licenses.",
+      "Prevents the Pro plan chooser from opening until the ClipShip account and license have been verified.",
+      "Returns incomplete accounts to signup if checkout discovers that the product account is missing.",
+      "Fixes the required-update action so it opens the built-in updater even when that version was previously skipped.",
+    ],
+    notes: [
+      "The checkout backend already prevented incomplete accounts from being charged. This release also prevents those accounts from reaching checkout in the first place.",
+      "No payment, subscription, or existing license data is changed by installing this update.",
+    ],
+  },
+  {
     version: "1.0.8",
     date: "July 22, 2026",
     label: "Safer account setup and upgrades",
@@ -168,7 +186,7 @@ export default function Changelog() {
       badge="Product updates"
     >
       <p>
-        ClipShip updates are shipped through the desktop app's built-in updater. When an update is
+        ClipShip updates are shipped through the desktop app&apos;s built-in updater. When an update is
         available, the app shows an update prompt with a link back to this page.
       </p>
 
