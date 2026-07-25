@@ -4,6 +4,26 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.10",
+    date: "July 25, 2026",
+    label: "Twitch and Kick video imports",
+    summary:
+      "This update expands link imports beyond YouTube while making the supported video sources and limitations explicit.",
+    changes: [
+      "Added imports for Twitch VODs and clips.",
+      "Added imports for Kick clips.",
+      "Replaced the YouTube-only link option with one video-link importer that identifies the supported platform automatically.",
+      "Added clear YouTube, Twitch, and Kick source labels beside the link field.",
+      "Rejects live streams, unsupported websites, lookalike domains, and non-video profile or channel pages before downloading.",
+      "Updated and pinned the bundled video downloader to the tested 2026.07.04 release with checksum verification.",
+    ],
+    notes: [
+      "Supported links are YouTube videos and Shorts, Twitch VODs and clips, and Kick clips.",
+      "Kick VOD imports are temporarily unavailable because Kick's current VOD metadata endpoint is not working with the downloader.",
+      "Only import videos you own or have permission to use.",
+    ],
+  },
+  {
     version: "1.0.9",
     date: "July 24, 2026",
     label: "Account and checkout protection",
