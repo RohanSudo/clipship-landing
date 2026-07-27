@@ -4,6 +4,27 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.11",
+    date: "July 27, 2026",
+    label: "More clips and editable headlines",
+    summary:
+      "This update gives you direct control over how many clips ClipShip looks for and adds export-ready headlines that stay editable per clip.",
+    changes: [
+      "Added Auto, up to 5, up to 10, up to 15, and up to 20 clip targets before processing.",
+      "Made Auto scale the target to the source video's duration instead of using one fixed count for every video.",
+      "Improved larger runs by analyzing the transcript in smaller reliable batches, retrying malformed AI responses per batch, and balancing picks across the full video.",
+      "Added an option to start every generated clip with an AI-generated headline based on its clip title.",
+      "Added independent headline text, visibility, style, position, size, text color, and accent color controls for every clip.",
+      "Added Bold, Clean, and Boxed headline styles plus an Apply appearance to all clips action that keeps each clip's own text and visibility setting.",
+      "Added headline rendering to final exports with matching live preview placement.",
+    ],
+    notes: [
+      "Clip targets are maximums. ClipShip can return fewer when the source does not contain enough distinct usable moments.",
+      "Choosing more clips increases local AI analysis and rendering time, especially on CPU-only systems.",
+      "Headlines are stored separately from captions, so they can be used even when animated captions are turned off.",
+    ],
+  },
+  {
     version: "1.0.10",
     date: "July 25, 2026",
     label: "Twitch and Kick video imports",
