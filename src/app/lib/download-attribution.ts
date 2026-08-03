@@ -130,3 +130,27 @@ export function trackDownloadClick(ctaSource: string) {
   });
   window.clarity?.("event", "download_click");
 }
+
+export function platformInterestPayload() {
+  const firstTouch = captureAttribution();
+  return {
+    source: firstTouch?.utmSource || firstTouch?.referrerHost || "direct",
+    landingPath: firstTouch?.landingPath || currentPath(),
+    currentPath: currentPath(),
+    referrerHost: firstTouch?.referrerHost || externalReferrerHost(),
+  };
+}
+
+export function trackPlatformInterest(platform: string, ctaSource: string) {
+  if (typeof window === "undefined") return;
+  const payload = platformInterestPayload();
+  window.gtag?.("event", "platform_interest", {
+    event_category: "platform_demand",
+    event_label: platform,
+    platform,
+    cta_source: ctaSource,
+    traffic_source: payload.source,
+    landing_path: payload.landingPath,
+  });
+  window.clarity?.("event", `platform_interest_${platform}`);
+}

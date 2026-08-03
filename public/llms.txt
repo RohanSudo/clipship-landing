@@ -2,7 +2,7 @@
 
 > ClipShip is a local-first Windows desktop app that turns long talking-head recordings into short-form clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn.
 
-Last updated: 2026-07-22
+Last updated: 2026-08-03
 
 ## Core facts
 
@@ -10,10 +10,13 @@ Last updated: 2026-07-22
 - Category: AI video repurposing, local AI video clipper, AI clip generator, OpusClip alternative
 - Platform: Windows
 - Primary audience: YouTubers, course creators, coaches, consultants, podcasters, and solo creators
-- Main workflow: import a long video or paste a YouTube link, let local AI identify clip-worthy moments, review clips, apply captions, export vertical short-form videos
+- Main workflow: import a local video or paste a supported YouTube, Twitch, or Kick link, choose a target clip count, let local AI identify clip-worthy moments, review and trim clips, edit headlines and captions, then export vertical short-form videos
+- Supported video links: YouTube videos and Shorts, Twitch VODs and clips, and Kick clips
+- Unsupported video links: live streams, channel/profile pages, unrelated websites, and Kick VODs while Kick's VOD metadata remains unavailable to the downloader
 - Privacy model: video files, transcripts, and rendered clips stay on the user's computer during processing
 - Pricing: free tier available, 7-day Pro trial, $5/month founding Pro for the first 50 paid subscribers, or $99 one-time Pro for one device
 - Pro features: no watermark, 1080p exports, custom styled captions, saved caption styles
+- Current workflow controls: adjustable target clip count and editable AI-generated headlines
 - Free tier: unlimited local processing, 720p exports with ClipShip watermark
 - Extra device slot: available inside the app for Pro users
 
@@ -41,6 +44,8 @@ ClipShip is not a full video editor. It is a video repurposing tool built for ta
 - Long video to Shorts AI generator: https://clipship.co/youtube-to-shorts-clip-maker
 - OpusClip alternative free no-watermark trial: https://clipship.co/opusclip-alternative-free-no-watermark
 - Podcast to Shorts AI for Windows: https://clipship.co/podcast-to-shorts-ai
+- Twitch VOD to Shorts clip maker: https://clipship.co/twitch-vod-to-shorts
+- Affordable OpusClip alternative for beginners: https://clipship.co/affordable-opusclip-alternative
 
 ## Competitor context
 
@@ -87,6 +92,18 @@ Yes. ClipShip imports a video podcast, interview, webinar, or other spoken recor
 ### Can ClipShip turn YouTube videos into Shorts?
 
 Yes. ClipShip can import a YouTube link or a local video file, find candidate short-form moments, format clips as 9:16 vertical video, add captions, and export clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn.
+
+### Can ClipShip turn Twitch VODs into Shorts?
+
+Yes. ClipShip can import completed Twitch VODs and Twitch clips, find spoken moments, reframe them vertically, add captions and editable headlines, and export short-form clips on Windows. Live Twitch streams are not supported while they are still running.
+
+### Does ClipShip support Kick links?
+
+ClipShip supports Kick clips. Kick VOD import is currently unavailable because the metadata required by the bundled downloader is not reliable. Unsupported links are rejected before processing.
+
+### Is ClipShip an affordable OpusClip alternative for beginners?
+
+ClipShip has a 7-day Pro trial, a forever-free tier with 720p watermarked exports, a $5 monthly founding plan for the first 50 paid subscribers, and a $99 one-time Pro option. Both paid plans unlock the same Pro features without per-video processing credits.
 
 ### Does ClipShip upload videos?
 

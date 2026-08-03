@@ -217,9 +217,9 @@ export default function NoUploadOpusClipAlternativePage() {
               <td>These still need internet. They are separate from uploading source footage.</td>
             </tr>
             <tr>
-              <td>YouTube link import</td>
+              <td>Supported video-link import</td>
               <td>Partial</td>
-              <td>A YouTube link requires internet, but the imported file can then be processed in the app.</td>
+              <td>YouTube videos and Shorts, Twitch VODs and clips, and Kick clips require internet to fetch. The imported file can then be processed in the app.</td>
             </tr>
           </tbody>
         </table>
@@ -282,8 +282,9 @@ export default function NoUploadOpusClipAlternativePage() {
 
         <h3>Does ClipShip work with YouTube links?</h3>
         <p>
-          Yes. ClipShip supports local video import and YouTube link import. YouTube link import needs internet,
-          while local files can be processed without uploading the source footage to ClipShip&apos;s servers.
+          Yes. ClipShip supports local video import plus YouTube videos and Shorts, Twitch VODs and clips, and Kick
+          clips. Link import needs internet, while local files can be processed without uploading the source footage
+          to ClipShip&apos;s servers.
         </p>
 
         <h3>Is ClipShip a full video editor?</h3>

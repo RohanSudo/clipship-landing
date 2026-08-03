@@ -10,10 +10,11 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": "https://clipship.co/#software",
     name: "ClipShip",
     applicationCategory: "MultimediaApplication",
     applicationSubCategory: "AI video clip generator",
-    operatingSystem: "Windows",
+    operatingSystem: "Windows 10, Windows 11",
     url: "https://clipship.co",
     downloadUrl: "https://api.clipship.co/download/windows",
     image: "https://clipship.co/opengraph-image",
@@ -21,7 +22,11 @@ const structuredData = [
       "ClipShip is a local AI video clip generator for Windows. It turns long talking-head recordings into ready-to-post clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn while keeping source footage on the user's computer.",
     featureList: [
       "Local AI clip selection",
-      "YouTube link import",
+      "YouTube video and Shorts link import",
+      "Twitch VOD and clip link import",
+      "Kick clip link import",
+      "Adjustable clip count",
+      "Editable AI-generated clip headlines",
       "Word-level captions",
       "Custom styled captions",
       "Face-tracking vertical reframe",
@@ -56,13 +61,17 @@ const structuredData = [
     ],
     author: {
       "@type": "Organization",
+      "@id": "https://clipship.co/#organization",
       name: "ClipShip",
       url: "https://clipship.co",
     },
+    brand: { "@id": "https://clipship.co/#organization" },
+    isAccessibleForFree: true,
   },
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://clipship.co/#organization",
     name: "ClipShip",
     url: "https://clipship.co",
     logo: "https://clipship.co/icon.svg",
@@ -74,10 +83,13 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://clipship.co/#website",
     name: "ClipShip",
     url: "https://clipship.co",
     description:
       "Official website for ClipShip, a local AI video clip generator and no-upload OpusClip alternative for Windows.",
+    publisher: { "@id": "https://clipship.co/#organization" },
+    about: { "@id": "https://clipship.co/#software" },
   },
 ];
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <ContentPage title="Privacy Policy" description="Last updated: May 2026" badge="Legal">
+    <ContentPage title="Privacy Policy" description="Last updated: August 2026" badge="Legal">
       <h2>The short version</h2>
       <p>
         ClipShip processes your videos entirely on your computer. Your footage, audio, and transcripts
@@ -26,12 +26,14 @@ export default function Privacy() {
         <li>If you opt in to anonymous analytics, we collect: app version, OS, basic usage counts (videos processed). No content, no identifying information.</li>
         <li>If you use the "Connect your AI account" option, your API key is stored in your operating system's secure keychain (Windows Credential Manager / macOS Keychain / Linux Secret Service). The key is sent directly from your computer to the AI provider (OpenAI, Claude, Gemini, Groq, or OpenRouter). We never see, collect, or transmit your key.</li>
         <li>For purchase verification and license activation, we collect your email address, a non-reversible hardware fingerprint (used to enforce one license per device), and the device hostname (so you can identify which machine to sign out when switching devices).</li>
+        <li>After your first successful export, ClipShip may ask once how you found the app. If you answer, we store the selected source, the optional text you provide, your account ID, and app version. Skipping the question stores nothing on our server.</li>
       </ul>
 
       <p><strong>When using clipship.co (this website):</strong></p>
       <ul>
         <li>If you download ClipShip, we record a download click with the clicked button, landing page path, current page path, UTM parameters, external referrer host, country, browser user agent, and hashed IP signals. We do not store raw IP addresses in the download table.</li>
         <li>When a new account is created shortly after a download from the same daily hashed IP signal, we may attach that download source to the signup record so we can understand which pages and channels are actually producing users.</li>
+        <li>Mac visitors may choose to record interest in a future macOS version. We store the requested platform, page and referral source, country, region, timezone, browser user agent, and a one-day hashed IP signal. We do not store a raw IP address or require an email for this signal.</li>
         <li>If you sign up for updates or email support, we collect the email address and message details you provide.</li>
         <li>We use Microsoft Clarity for anonymous website analytics (page views, scroll depth). No personal data is shared.</li>
         <li>We may use Google Analytics 4 for aggregate website and download-click analytics.</li>

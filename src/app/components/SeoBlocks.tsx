@@ -91,6 +91,16 @@ const clusterLinks = [
     detail: "A practical page for turning YouTube and talking-head videos into vertical clips.",
   },
   {
+    href: "/twitch-vod-to-shorts",
+    title: "Twitch VOD to Shorts clip maker",
+    detail: "Import a Twitch VOD or clip, find spoken highlights locally, and export vertical clips on Windows.",
+  },
+  {
+    href: "/affordable-opusclip-alternative",
+    title: "Affordable OpusClip alternative for beginners",
+    detail: "A pricing-focused guide to ClipShip's free tier, $5 founding plan, and $99 lifetime option.",
+  },
+  {
     href: "/vs/opus-clip",
     title: "ClipShip vs OpusClip",
     detail: "The full side-by-side comparison between ClipShip and the best-known cloud clip generator.",

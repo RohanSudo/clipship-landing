@@ -9,10 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated20260702 = new Date("2026-07-02T00:00:00.000Z");
   const updated20260722 = new Date("2026-07-22T00:00:00.000Z");
   const updated20260725 = new Date("2026-07-25T00:00:00.000Z");
+  const updated20260803 = new Date("2026-08-03T00:00:00.000Z");
 
   return [
     // Main pages
-    { url: baseUrl, lastModified: updated20260522, changeFrequency: "weekly", priority: 1.0 },
+    { url: baseUrl, lastModified: updated20260803, changeFrequency: "weekly", priority: 1.0 },
     { url: `${baseUrl}/changelog`, lastModified: updated20260725, changeFrequency: "monthly", priority: 0.5 },
 
     // Comparison pages (primary: direct clip-generator competitors)
@@ -29,6 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/youtube-to-shorts-clip-maker`, lastModified: updated20260722, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/opusclip-alternative-free-no-watermark`, lastModified: updated20260722, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/podcast-to-shorts-ai`, lastModified: updated20260722, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/twitch-vod-to-shorts`, lastModified: updated20260803, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/affordable-opusclip-alternative`, lastModified: updated20260803, changeFrequency: "monthly", priority: 0.9 },
 
     // Audience pages
     { url: `${baseUrl}/for/youtubers`, lastModified: updated20260522, changeFrequency: "monthly", priority: 0.8 },

@@ -11,6 +11,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 import DownloadLink from "./components/DownloadLink";
+import MacInterest from "./components/MacInterest";
 
 function scrollToHomepageTop(event: React.MouseEvent<HTMLAnchorElement>) {
   event.preventDefault();
@@ -659,17 +660,20 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="flex items-center justify-center">
-              <DownloadButton
-                source="hero"
-                className="group inline-flex w-full max-w-[310px] sm:w-auto items-center justify-center gap-3 rounded-xl border border-white/15 bg-white px-5 py-3.5 text-left text-zinc-950 shadow-[0_18px_50px_-22px_rgba(255,255,255,0.65)] transition-all hover:-translate-y-0.5 hover:bg-zinc-100 hover:shadow-[0_24px_60px_-26px_rgba(255,255,255,0.8)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-400"
-              >
-                <WindowsIcon className="h-6 w-6 text-[#0078D4]" />
-                <span className="flex flex-col leading-none">
-                  <span className="text-base font-semibold tracking-normal">Download for Windows</span>
-                  <span className="mt-1 text-xs font-medium text-zinc-500">Windows 10 and 11</span>
-                </span>
-              </DownloadButton>
+            <div>
+              <div className="flex items-center justify-center">
+                <DownloadButton
+                  source="hero"
+                  className="group inline-flex w-full max-w-[310px] sm:w-auto items-center justify-center gap-3 rounded-xl border border-white/15 bg-white px-5 py-3.5 text-left text-zinc-950 shadow-[0_18px_50px_-22px_rgba(255,255,255,0.65)] transition-all hover:-translate-y-0.5 hover:bg-zinc-100 hover:shadow-[0_24px_60px_-26px_rgba(255,255,255,0.8)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-400"
+                >
+                  <WindowsIcon className="h-6 w-6 text-[#0078D4]" />
+                  <span className="flex flex-col leading-none">
+                    <span className="text-base font-semibold tracking-normal">Download for Windows</span>
+                    <span className="mt-1 text-xs font-medium text-zinc-500">Windows 10 and 11</span>
+                  </span>
+                </DownloadButton>
+              </div>
+              <MacInterest source="hero" />
             </div>
           </FadeIn>
         </div>
@@ -728,7 +732,7 @@ export default function Home() {
               {
                 num: "1",
                 title: "Import your recording",
-                desc: "Drop in a talking-head video, podcast, course lesson, webinar, or interview.",
+                desc: "Drop in a local file or paste a supported YouTube, Twitch, or Kick video link.",
               },
               {
                 num: "2",
@@ -804,6 +808,16 @@ export default function Home() {
               icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
               title="99 Languages"
               desc="Transcription and captions in 99 languages out of the box. Most clip generators cap at 20 languages."
+            />
+            <FeatureCard
+              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h10M4 18h7" /></svg>}
+              title="Choose How Many Clips"
+              desc="Set a target clip count when you want a wider shortlist from long debates, podcasts, interviews, or streams."
+            />
+            <FeatureCard
+              icon={<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M8 12h8M10 18h4" /></svg>}
+              title="Editable AI Headlines"
+              desc="Generate a headline for each clip, edit the wording, and apply the same headline style across the full batch."
             />
           </motion.div>
         </div>
@@ -1103,6 +1117,8 @@ export default function Home() {
                 <li><Link href="/opusclip-alternative-free-no-watermark" className="text-sm text-zinc-300 hover:text-white transition-colors">Free OpusClip alternative trial</Link></li>
                 <li><Link href="/podcast-to-shorts-ai" className="text-sm text-zinc-300 hover:text-white transition-colors">Podcast to Shorts AI</Link></li>
                 <li><Link href="/youtube-to-shorts-clip-maker" className="text-sm text-zinc-300 hover:text-white transition-colors">YouTube to Shorts clip maker</Link></li>
+                <li><Link href="/twitch-vod-to-shorts" className="text-sm text-zinc-300 hover:text-white transition-colors">Twitch VOD to Shorts</Link></li>
+                <li><Link href="/affordable-opusclip-alternative" className="text-sm text-zinc-300 hover:text-white transition-colors">Affordable OpusClip alternative</Link></li>
               </ul>
             </FadeIn>
 
@@ -1131,13 +1147,16 @@ export default function Home() {
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <div className="flex justify-center">
-              <DownloadButton
-                source="bottom-cta"
-                className="px-8 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all"
-              >
-                Download for Windows
-              </DownloadButton>
+            <div>
+              <div className="flex justify-center">
+                <DownloadButton
+                  source="bottom-cta"
+                  className="px-8 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all"
+                >
+                  Download for Windows
+                </DownloadButton>
+              </div>
+              <MacInterest source="bottom-cta" />
             </div>
           </FadeIn>
         </div>

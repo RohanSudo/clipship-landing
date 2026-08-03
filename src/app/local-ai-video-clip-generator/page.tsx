@@ -136,7 +136,7 @@ export default function LocalAiVideoClipGeneratorPage() {
           <tbody>
             <tr>
               <td>Import</td>
-              <td>Open a local recording or paste a YouTube link.</td>
+              <td>Open a local recording or paste a supported YouTube, Twitch, or Kick link.</td>
               <td>Start from the same long videos you already record.</td>
             </tr>
             <tr>
