@@ -30,6 +30,11 @@ Live high-intent pages:
 - Added the page to `sitemap.ts`, `llms.txt`, homepage resources, the broader clip-generator article, and the reusable internal-link cluster.
 - `npm run build` passed and generated the route statically. Targeted ESLint passed for the new and directly related SEO files. Full lint still reports the previously documented homepage, OAuth, and legal-page issues.
 - Browser checks passed at 1280x720 and 390x844. The mobile page has no body-level horizontal overflow; the comparison table scrolls inside its own container.
+- Pushed code commit `fef3a2b`; Vercel deployment `GBCQXTUiBy5wp7cnFY3Ex5VvbHiF` completed successfully and the live page returned the new content.
+- Production checks passed for HTTP 200, title, self-canonical, sitemap inclusion, `llms.txt` inclusion, robots availability, and a real 404 for an invented URL.
+- Resubmitted `https://clipship.co/sitemap.xml` through the Search Console API; Google returned HTTP 204. URL Inspection initially reported the new page as unknown, which is expected for a new URL.
+- Requested indexing for the new page through the authenticated Search Console UI. Google confirmed `Indexing requested` and added it to the priority crawl queue.
+- Submitted the 10 changed or newly linked URLs to IndexNow. IndexNow returned HTTP 200.
 
 2026-07-22 update:
 - Added the public $5-per-month founding Pro option for the first 50 paid subscribers alongside the $99 lifetime purchase. Both unlock the same Pro features.
