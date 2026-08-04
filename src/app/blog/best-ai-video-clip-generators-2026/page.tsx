@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import BlogArticlePage, {
   Section,
   Paragraph,
@@ -29,6 +30,15 @@ export default function BestClipGenerators() {
           finds the best 30&ndash;90 second moments. It then formats those moments as vertical clips ready for
           TikTok, Instagram Reels, and YouTube Shorts. The AI handles the cutting, captioning, face tracking,
           and reformatting.
+        </Paragraph>
+        <Paragraph>
+          If keeping source footage off cloud editing servers is your main requirement, see the focused{" "}
+          <Link
+            href="/blog/best-local-opusclip-alternatives-2026"
+            className="font-medium text-violet-300 underline decoration-violet-500/40 underline-offset-4 hover:text-violet-200"
+          >
+            comparison of local OpusClip alternatives
+          </Link>.
         </Paragraph>
       </Section>
 

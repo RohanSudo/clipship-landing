@@ -1126,6 +1126,7 @@ export default function Home() {
               <h3 className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">Read</h3>
               <ul className="space-y-2.5">
                 <li><Link href="/blog/best-ai-video-clip-generators-2026" className="text-sm text-zinc-300 hover:text-white transition-colors">Best AI video clip generators 2026 →</Link></li>
+                <li><Link href="/blog/best-local-opusclip-alternatives-2026" className="text-sm text-zinc-300 hover:text-white transition-colors">Best local OpusClip alternatives →</Link></li>
                 <li><Link href="/blog/how-to-make-clips-from-talking-head-videos" className="text-sm text-zinc-300 hover:text-white transition-colors">How to make clips from talking-head videos →</Link></li>
                 <li><Link href="/blog/best-free-video-editing-software-youtubers-2026" className="text-sm text-zinc-300 hover:text-white transition-colors">Best free video editing software 2026 →</Link></li>
                 <li><Link href="/changelog" className="text-sm text-zinc-300 hover:text-white transition-colors">ClipShip changelog →</Link></li>
@@ -1240,6 +1241,7 @@ export default function Home() {
               <h4 className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-4">Read</h4>
               <ul className="space-y-2.5">
                 <li><Link href="/blog/best-ai-video-clip-generators-2026" className="text-sm text-zinc-500 hover:text-white transition-colors">Best AI clip generators</Link></li>
+                <li><Link href="/blog/best-local-opusclip-alternatives-2026" className="text-sm text-zinc-500 hover:text-white transition-colors">Best local OpusClip alternatives</Link></li>
                 <li><Link href="/blog/how-to-make-clips-from-talking-head-videos" className="text-sm text-zinc-500 hover:text-white transition-colors">How to make clips</Link></li>
                 <li><Link href="/blog/best-free-video-editing-software-youtubers-2026" className="text-sm text-zinc-500 hover:text-white transition-colors">Best free editors</Link></li>
                 <li><Link href="/changelog" className="text-sm text-zinc-500 hover:text-white transition-colors">Changelog</Link></li>

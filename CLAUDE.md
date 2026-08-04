@@ -10,6 +10,7 @@
 - **Download entrypoint:** `https://api.clipship.co/download/windows`.
 - **Launch signal:** Weak activation so far. D1 download tracking is more reliable than GA4 download_click.
 - **SEO/AIO state:** The original local/no-upload pages are indexed. A tighter keyword pass deployed on 2026-07-22 added focused free/no-watermark OpusClip and podcast-to-Shorts pages, refreshed comparison/content pages, and resubmitted discovery signals.
+- **Latest SEO page:** `/blog/best-local-opusclip-alternatives-2026` added on 2026-08-04 as a narrow, source-checked local/no-upload comparison page.
 
 ## SEO/AIO cluster status
 
@@ -20,6 +21,15 @@ Live high-intent pages:
 - `/vs/opus-clip`
 - `/opusclip-alternative-free-no-watermark`
 - `/podcast-to-shorts-ai`
+- `/blog/best-local-opusclip-alternatives-2026`
+
+2026-08-04 update:
+- Added a source-checked comparison of ClipShip, ReClipStudio, Clippie, Blinklip, and LocalClip for local OpusClip-alternative intent.
+- The page discloses that ClipShip publishes it, distinguishes local video processing from fully offline AI, credits competitors where they are stronger, and links directly to every official product source.
+- Added Article, BreadcrumbList, and visible FAQ structured data; canonical, Open Graph, and Twitter metadata; one ClipShip proof asset; and direct-answer copy for search and AI answer engines.
+- Added the page to `sitemap.ts`, `llms.txt`, homepage resources, the broader clip-generator article, and the reusable internal-link cluster.
+- `npm run build` passed and generated the route statically. Targeted ESLint passed for the new and directly related SEO files. Full lint still reports the previously documented homepage, OAuth, and legal-page issues.
+- Browser checks passed at 1280x720 and 390x844. The mobile page has no body-level horizontal overflow; the comparison table scrolls inside its own container.
 
 2026-07-22 update:
 - Added the public $5-per-month founding Pro option for the first 50 paid subscribers alongside the $99 lifetime purchase. Both unlock the same Pro features.

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated20260722 = new Date("2026-07-22T00:00:00.000Z");
   const updated20260725 = new Date("2026-07-25T00:00:00.000Z");
   const updated20260803 = new Date("2026-08-03T00:00:00.000Z");
+  const updated20260804 = new Date("2026-08-04T00:00:00.000Z");
 
   return [
     // Main pages
@@ -42,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/best-ai-video-clip-generators-2026`, lastModified: updated20260520, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/blog/how-to-make-clips-from-talking-head-videos`, lastModified: updated20260520, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/blog/best-free-video-editing-software-youtubers-2026`, lastModified: updated20260520, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/blog/best-local-opusclip-alternatives-2026`, lastModified: updated20260804, changeFrequency: "monthly", priority: 0.8 },
 
     // Legal / trust pages
     { url: `${baseUrl}/privacy`, lastModified: updated20260521, changeFrequency: "yearly", priority: 0.4 },

@@ -66,6 +66,11 @@ export function ProofFigure({
 
 const clusterLinks = [
   {
+    href: "/blog/best-local-opusclip-alternatives-2026",
+    title: "Best local OpusClip alternatives in 2026",
+    detail: "A source-checked comparison of five desktop AI clipping tools by platform, privacy boundary, pricing, and workflow.",
+  },
+  {
     href: "/no-upload-opusclip-alternative",
     title: "No-upload OpusClip alternative",
     detail: "The main comparison page for creators who want OpusClip-style clipping without uploading private footage.",
