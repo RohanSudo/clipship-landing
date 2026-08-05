@@ -11,7 +11,13 @@ export default function MacInterest({ source }: { source: string }) {
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
-    setIsMac(userAgent.includes("macintosh") || userAgent.includes("mac os x"));
+    // iPhone and iPad user agents contain "like Mac OS X". Exclude them so
+    // mobile visitors do not pollute macOS demand data.
+    const isAppleMobile = /iphone|ipad|ipod/.test(userAgent)
+      || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isMacDesktop = /macintosh|mac os x/.test(userAgent)
+      || navigator.platform.toLowerCase().includes("mac");
+    setIsMac(!isAppleMobile && isMacDesktop);
     try {
       if (localStorage.getItem(STORAGE_KEY) === "saved") setStatus("saved");
     } catch {
@@ -53,7 +59,7 @@ export default function MacInterest({ source }: { source: string }) {
             type="button"
             onClick={recordInterest}
             disabled={status === "saving"}
-            className="font-medium text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-white disabled:cursor-wait disabled:opacity-60"
+            className="cursor-pointer font-medium text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-white disabled:cursor-wait disabled:opacity-60"
           >
             {status === "saving" ? "Recording..." : status === "error" ? "Try again" : "Tell me you want a macOS version"}
           </button>
