@@ -3,13 +3,13 @@ import ContentPage from "../components/ContentPage";
 import { AnswerBox, ClusterLinks, ProofFigure } from "../components/SeoBlocks";
 
 export const metadata: Metadata = {
-  title: "How ClipShip Works: Clips, Headlines, Hooks, and Captions",
+  title: "How ClipShip Works: Reframing, Headlines, Captions, and Export",
   description:
-    "A visual guide to importing a long video, finding clips, editing on-video headlines, understanding spoken openings and post captions, and exporting in ClipShip.",
+    "A visual guide to importing a long video, finding clips, using Smart Reframe, editing headlines and captions, and exporting or posting from ClipShip.",
   alternates: { canonical: "https://clipship.co/how-clipship-works" },
   openGraph: {
     title: "How ClipShip Works",
-    description: "A visual guide to ClipShip's local AI clipping workflow and review controls.",
+    description: "A visual guide to ClipShip's local AI clipping workflow, review controls, Smart Reframe, headlines, captions, and export.",
     url: "https://clipship.co/how-clipship-works",
     type: "article",
     images: [{
@@ -30,8 +30,8 @@ const howToSchema = {
     { "@type": "HowToStep", name: "Import a video", text: "Choose a local video or paste a supported YouTube, Twitch, or Kick link." },
     { "@type": "HowToStep", name: "Choose the clip brief", text: "Set the content genre, target clip length, target clip count, and caption style." },
     { "@type": "HowToStep", name: "Run local AI", text: "ClipShip transcribes the video, identifies clip-worthy moments, and creates reviewable vertical clips." },
-    { "@type": "HowToStep", name: "Review each clip", text: "Adjust trim points, reframing, word-level captions, and the optional on-video headline." },
-    { "@type": "HowToStep", name: "Export", text: "Export one clip or a selected batch to the computer." },
+    { "@type": "HowToStep", name: "Review each clip", text: "Adjust trim points, choose Smart Reframe or Full frame, edit word-level captions, and customize the optional on-video headline." },
+    { "@type": "HowToStep", name: "Export or post", text: "Export one clip or a selected batch to the computer, or render and post a clip to a connected YouTube account." },
   ],
 };
 
@@ -85,7 +85,7 @@ export default function HowClipShipWorksPage() {
         <h2>4. Review the generated clips</h2>
         <p>
           The review screen is where you make the output yours. Play each clip, move the in and out points,
-          choose smart reframing or full frame, edit caption words, and turn the optional headline on or off.
+          choose Smart Reframe or Full frame, edit caption words, and turn the optional on-video headline on or off.
         </p>
         <ProofFigure
           src="/seo/clipship-headline-editor.png"
@@ -94,6 +94,35 @@ export default function HowClipShipWorksPage() {
           height={800}
           caption="The headline is the large title rendered on the video. It is separate from subtitles and from the text used when posting."
         />
+
+        <h2>What do the review controls change?</h2>
+        <table>
+          <thead>
+            <tr><th>Control</th><th>What it changes</th><th>Important detail</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Set In / Set Out</td>
+              <td>Moves the beginning or end of the active clip to the current playhead position.</td>
+              <td>It changes only that clip. Preview the new boundaries before exporting.</td>
+            </tr>
+            <tr>
+              <td>Smart Reframe</td>
+              <td>Follows a clearly detected speaker while creating a vertical clip. Graphics or sections without a reliable face use a blurred full-frame background.</td>
+              <td>After changing the reframe mode, use the re-render button to rebuild that clip&apos;s video.</td>
+            </tr>
+            <tr>
+              <td>Full frame</td>
+              <td>Keeps the entire source frame visible and fills the unused vertical space with a blurred background.</td>
+              <td>Use it when automatic face framing removes something important from the original shot.</td>
+            </tr>
+            <tr>
+              <td>Apply appearance to all clips</td>
+              <td>Copies the active headline&apos;s style, position, size, text color, and outline or box color across the batch.</td>
+              <td>It does not copy the headline wording or turn headlines on or off for other clips.</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2>What do headline, spoken opening, post caption, and captions mean?</h2>
         <table>
@@ -124,17 +153,23 @@ export default function HowClipShipWorksPage() {
           </tbody>
         </table>
 
-        <h2>What does “Generate 3 options” do?</h2>
+        <h2>What does &ldquo;Generate 3 options&rdquo; do?</h2>
         <p>
           It creates three alternative packaging ideas for the current clip: direct, curiosity, and bold. Each
           option contains a replacement headline and post caption. It does not alter the spoken opening or the
           clip boundaries, and nothing changes until you choose an option.
         </p>
 
-        <h2>5. Export one clip or a batch</h2>
+        <h2>5. Export or post the finished clips</h2>
         <p>
-          Export the active clip or select several clips for batch export. ClipShip renders your trim, framing,
-          headline, and caption choices into the finished files saved on your computer.
+          Choose 720p or 1080p, then export the active clip or select several clips for batch export. ClipShip
+          renders your trim, reframing, on-video headline, and caption choices into the files saved on your
+          computer. The progress window shows which clip and render stage is currently running.
+        </p>
+        <p>
+          A connected YouTube account can receive the active clip directly from the review screen. ClipShip must
+          render the finished video before uploading it, so direct posting includes both render time and upload
+          time. Exporting locally stops after the render, which is why it usually finishes sooner.
         </p>
 
         <ClusterLinks current="/how-clipship-works" />
