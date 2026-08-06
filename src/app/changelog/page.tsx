@@ -4,6 +4,32 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.12",
+    date: "August 6, 2026",
+    label: "ClipShip for macOS and safer offline access",
+    summary:
+      "This update brings ClipShip to Apple Silicon Macs, strengthens license verification, and fixes the model, export, project, and progress issues found during Mac testing.",
+    changes: [
+      "Added the first public Apple Silicon macOS build for macOS 15 and newer, distributed as a signed and Apple-notarized drag-to-Applications DMG.",
+      "Added native Mac transcription through MLX and local clip analysis through llama.cpp Metal, with unified-memory checks before processing.",
+      "Added signed automatic updates for macOS through the same ClipShip update channel used by Windows.",
+      "Made the Whisper onboarding download use ClipShip's managed model cache with visible checking, downloading, verifying, ready, and error states.",
+      "Fixed custom caption styles in final Mac exports, Command-V in text and API-key fields, stale pipeline reuse after changing AI mode, and unsaved-project prompts.",
+      "Added truthful transcription, analysis, render, export, and YouTube-upload stage feedback, plus consistent bulk-export counts.",
+      "Improved cancellation and failure reporting so intentional stops are not reported as crashes and provider-key errors remain understandable.",
+      "Added editable spoken openings, short on-video headlines, and post captions with Direct, Curiosity, and Bold alternatives grounded in the transcript.",
+      "Added optional privacy-safe product milestones that exclude account identity, file names, video content, transcripts, captions, prompts, and API keys.",
+      "Changed paid Pro and Pro trial access to require a successful online license check at least once every 24 hours, including while the app remains open.",
+    ],
+    notes: [
+      "The free trial still lasts seven calendar days. The 24-hour rule is the maximum time Pro or trial features can continue without a successful online verification.",
+      "When the seven-day trial ends, ClipShip continues on the Free plan after the next successful license check. Free accounts retain a seven-day offline window.",
+      "The Mac release supports Apple Silicon only. Intel Macs are not supported in this release.",
+      "The first model download and online features still require internet. Local AI mode continues to process the source video, transcript, captions, and exports on the device.",
+      "Windows receives the shared workflow, diagnostics, and licensing fixes. Its existing CUDA and CPU processing architecture is unchanged.",
+    ],
+  },
+  {
     version: "1.0.11",
     date: "July 27, 2026",
     label: "More clips and editable headlines",
@@ -213,7 +239,7 @@ const releases = [
 export const metadata: Metadata = {
   title: "ClipShip Changelog - What's New",
   description:
-    "ClipShip release notes and product updates. See what's new in each Windows desktop app update.",
+    "ClipShip release notes and product updates. See what's new in each desktop app update.",
   alternates: {
     canonical: "/changelog",
   },
