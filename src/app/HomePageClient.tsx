@@ -612,36 +612,30 @@ export default function Home() {
         </div>
 
         <div className="max-w-3xl mx-auto text-center relative">
-          <FadeIn delay={0.1}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-8 mt-8">
-              Long videos in.
-              <br />
-              <span className="gradient-text">Repurposed clips out.</span>
-            </h1>
-          </FadeIn>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-8 mt-8">
+            Long videos in.
+            <br />
+            <span className="gradient-text">Repurposed clips out.</span>
+          </h1>
 
-          <FadeIn delay={0.2}>
-            <div className="max-w-lg mx-auto mb-10 space-y-3">
-              <p className="text-lg text-zinc-400 leading-relaxed">
-                Drop a 90-minute recording in. AI finds the 10-15 clips hiding inside it.
-              </p>
-              <p className="text-lg text-zinc-400 leading-relaxed">
-                Vertical-formatted, captioned, face-tracked, ready for Reels, Shorts, and TikTok.
-              </p>
-              <p className="text-lg text-zinc-200 font-medium mt-4">
-                Runs on your PC. No cloud. No usage credits.
-              </p>
-            </div>
-          </FadeIn>
+          <div className="max-w-lg mx-auto mb-10 space-y-3">
+            <p className="text-lg text-zinc-400 leading-relaxed">
+              Drop a 90-minute recording in. AI finds the 10-15 clips hiding inside it.
+            </p>
+            <p className="text-lg text-zinc-400 leading-relaxed">
+              Vertical-formatted, captioned, face-tracked, ready for Reels, Shorts, and TikTok.
+            </p>
+            <p className="text-lg text-zinc-200 font-medium mt-4">
+              Runs on your PC. No cloud. No usage credits.
+            </p>
+          </div>
 
-          <FadeIn delay={0.3}>
-            <div>
-              <PlatformDownloadButtons source="hero" variant="hero" />
-              <p className="mt-3 text-sm text-zinc-500">
-                Both downloads include the 7-day Pro trial. <Link href="/mac" className="font-medium text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-white">Read the macOS requirements</Link>.
-              </p>
-            </div>
-          </FadeIn>
+          <div>
+            <PlatformDownloadButtons source="hero" variant="hero" />
+            <p className="mt-3 text-sm text-zinc-500">
+              Both downloads include the 7-day Pro trial. <Link href="/mac" className="font-medium text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-white">Read the macOS requirements</Link>.
+            </p>
+          </div>
         </div>
       </section>
 
