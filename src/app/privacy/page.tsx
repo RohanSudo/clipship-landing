@@ -34,11 +34,11 @@ export default function Privacy() {
       <p><strong>When using clipship.co (this website):</strong></p>
       <ul>
         <li>If you download ClipShip, we record a download click with the clicked button, landing page path, current page path, UTM parameters, external referrer host, country, browser user agent, and hashed IP signals. We do not store raw IP addresses in the download table.</li>
-        <li>When a new account is created shortly after a download from the same daily hashed IP signal, we may attach that download source to the signup record so we can understand which pages and channels are actually producing users.</li>
-        <li>Mac visitors may choose to record interest in a future macOS version. We store the requested platform, page and referral source, country, region, timezone, browser user agent, and a one-day hashed IP signal. We do not store a raw IP address or require an email for this signal.</li>
+        <li>When a new account is created shortly after a download from the same daily hashed IP signal, we may attach that download source, approximate country, region, and timezone to the signup record so we can understand which pages, channels, and broad geographic markets are producing users. This location is estimated from network metadata and may be inaccurate. We do not store the raw IP address.</li>
+        <li>Mac visitors may choose to record interest in a future macOS version. We store the requested platform, page and referral source, approximate country, region, timezone, browser user agent, and a one-day hashed IP signal. We do not store a raw IP address or require an email for this signal.</li>
         <li>If you sign up for updates or email support, we collect the email address and message details you provide.</li>
-        <li>We use Microsoft Clarity for anonymous website analytics (page views, scroll depth). No personal data is shared.</li>
-        <li>We may use Google Analytics 4 for aggregate website and download-click analytics.</li>
+        <li>We use Microsoft Clarity for website interaction analytics such as page views, scroll depth, and aggregated session behavior. Clarity receives ordinary browser, device, and network metadata under Microsoft&apos;s privacy terms. We do not send it your ClipShip account ID, source videos, transcripts, captions, or API keys.</li>
+        <li>We use Google Analytics 4 for aggregate website and download-click analytics. We do not send it your source videos, transcripts, captions, or API keys.</li>
       </ul>
 
       <h2>Connected social media accounts (YouTube, Instagram, TikTok)</h2>
@@ -172,7 +172,8 @@ export default function Privacy() {
       <ul>
         <li>Email (account, newsletter, or purchaser): to send product updates, license keys, and support replies. Never sold to third parties.</li>
         <li>Hardware fingerprint: to enforce one license per device per the licensing terms you agreed to at purchase.</li>
-        <li>Anonymous analytics (opt-in): to understand which features matter most. Aggregate only.</li>
+        <li>Anonymous in-app analytics (opt-in): to understand which features matter most. Aggregate only.</li>
+        <li>Website attribution and approximate geography: to understand which pages, referral sources, operating systems, and broad markets lead to downloads and account creation.</li>
       </ul>
 
       <h2>Third-party services we use</h2>
@@ -182,8 +183,8 @@ export default function Privacy() {
         <li><strong>Firebase Auth</strong> (account sign-in, by Google)</li>
         <li><strong>Resend</strong> (transactional email delivery)</li>
         <li><strong>Dodo Payments</strong> (payment processing)</li>
-        <li><strong>Microsoft Clarity</strong> (website analytics, anonymous)</li>
-        <li><strong>Google Analytics 4</strong> (aggregate website analytics, if enabled)</li>
+        <li><strong>Microsoft Clarity</strong> (website interaction and session analytics)</li>
+        <li><strong>Google Analytics 4</strong> (aggregate website and download analytics)</li>
       </ul>
       <p>None of these services have access to your video content, editing data, or social-media OAuth tokens.</p>
 
