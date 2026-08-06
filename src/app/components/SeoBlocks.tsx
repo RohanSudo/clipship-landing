@@ -66,6 +66,16 @@ export function ProofFigure({
 
 const clusterLinks = [
   {
+    href: "/how-clipship-works",
+    title: "How ClipShip works",
+    detail: "A visual guide to importing, clip selection, headlines, spoken openings, post captions, review, and export.",
+  },
+  {
+    href: "/mac",
+    title: "ClipShip for macOS",
+    detail: "The current Apple Silicon private-QA status, local AI architecture, privacy boundary, and release plan.",
+  },
+  {
     href: "/blog/best-local-opusclip-alternatives-2026",
     title: "Best local OpusClip alternatives in 2026",
     detail: "A source-checked comparison of five desktop AI clipping tools by platform, privacy boundary, pricing, and workflow.",

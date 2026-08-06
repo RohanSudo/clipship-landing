@@ -11,11 +11,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated20260725 = new Date("2026-07-25T00:00:00.000Z");
   const updated20260803 = new Date("2026-08-03T00:00:00.000Z");
   const updated20260804 = new Date("2026-08-04T00:00:00.000Z");
+  const updated20260806 = new Date("2026-08-06T00:00:00.000Z");
 
   return [
     // Main pages
     { url: baseUrl, lastModified: updated20260803, changeFrequency: "weekly", priority: 1.0 },
     { url: `${baseUrl}/changelog`, lastModified: updated20260725, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${baseUrl}/how-clipship-works`, lastModified: updated20260806, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/mac`, lastModified: updated20260806, changeFrequency: "weekly", priority: 0.95 },
 
     // Comparison pages (primary: direct clip-generator competitors)
     { url: `${baseUrl}/vs/opus-clip`, lastModified: updated20260527, changeFrequency: "monthly", priority: 0.9 },

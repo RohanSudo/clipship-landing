@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import DownloadLink from "./DownloadLink";
 
 function LogoIcon({ className = "w-7 h-7" }: { className?: string }) {
@@ -23,25 +21,12 @@ function LogoIcon({ className = "w-7 h-7" }: { className?: string }) {
 function FadeIn({
   children,
   className = "",
-  delay = 0,
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
 }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-      animate={isInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : {}}
-      transition={{ duration: 0.6, delay, type: "spring", stiffness: 200, damping: 24 }}
-      className={className}
-    >
-      {children}
-    </motion.div>
-  );
+  return <div className={className}>{children}</div>;
 }
 
 export default function ContentPage({
@@ -49,12 +34,25 @@ export default function ContentPage({
   title,
   description,
   badge,
+  cta,
 }: {
   children: React.ReactNode;
   title: string;
   description?: string;
   badge?: string;
+  cta?: {
+    title: string;
+    description: string;
+    label: string;
+    href?: string;
+  };
 }) {
+  const resolvedCta = cta ?? {
+    title: "Try ClipShip for free",
+    description: "Repurpose long videos into ready-to-post clips. Local AI, no cloud, no usage credits. Choose monthly or one-time Pro.",
+    label: "Download for Windows",
+  };
+
   return (
     <div className="min-h-screen bg-[#09090b] text-zinc-100 relative overflow-hidden">
       {/* Ambient glows */}
@@ -77,7 +75,7 @@ export default function ContentPage({
             source="content-nav"
             className="text-sm font-semibold px-5 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_20px_rgba(124,58,237,0.3)] active:scale-95"
           >
-            Download
+            Download for Windows
           </DownloadLink>
         </div>
       </nav>
@@ -142,17 +140,26 @@ export default function ContentPage({
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,58,237,0.1),transparent_70%)]" />
               <div className="relative">
                 <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                  Try ClipShip for free
+                  {resolvedCta.title}
                 </h2>
                 <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
-                  Repurpose long videos into ready-to-post clips. Local AI, no cloud, no usage credits. Choose monthly or one-time Pro.
+                  {resolvedCta.description}
                 </p>
-                <DownloadLink
-                  source="content-bottom"
-                  className="inline-block text-sm font-semibold px-8 py-3.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_24px_rgba(124,58,237,0.35)] active:scale-95"
-                >
-                  Download for Windows
-                </DownloadLink>
+                {resolvedCta.href ? (
+                  <Link
+                    href={resolvedCta.href}
+                    className="inline-block rounded-lg bg-violet-600 px-8 py-3.5 text-sm font-semibold text-white transition-all hover:bg-violet-500 hover:shadow-[0_0_24px_rgba(124,58,237,0.35)] active:scale-95"
+                  >
+                    {resolvedCta.label}
+                  </Link>
+                ) : (
+                  <DownloadLink
+                    source="content-bottom"
+                    className="inline-block text-sm font-semibold px-8 py-3.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_24px_rgba(124,58,237,0.35)] active:scale-95"
+                  >
+                    {resolvedCta.label}
+                  </DownloadLink>
+                )}
               </div>
             </div>
           </div>

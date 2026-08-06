@@ -1,22 +1,23 @@
 # ClipShip
 
-> ClipShip is a local-first Windows desktop app that turns long talking-head recordings into short-form clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn.
+> ClipShip is a local-first desktop app that turns long talking-head recordings into short-form clips. The Windows version is public, and an Apple Silicon macOS version is in private QA.
 
-Last updated: 2026-08-04
+Last updated: 2026-08-06
 
 ## Core facts
 
 - Official website: https://clipship.co
 - Category: AI video repurposing, local AI video clipper, AI clip generator, OpusClip alternative
-- Platform: Windows
+- Platforms: Windows is public. An Apple Silicon macOS version is in private QA and has no public download yet.
 - Primary audience: YouTubers, course creators, coaches, consultants, podcasters, and solo creators
 - Main workflow: import a local video or paste a supported YouTube, Twitch, or Kick link, choose a target clip count, let local AI identify clip-worthy moments, review and trim clips, edit headlines and captions, then export vertical short-form videos
 - Supported video links: YouTube videos and Shorts, Twitch VODs and clips, and Kick clips
 - Unsupported video links: live streams, channel/profile pages, unrelated websites, and Kick VODs while Kick's VOD metadata remains unavailable to the downloader
-- Privacy model: video files, transcripts, and rendered clips stay on the user's computer during processing
+- Privacy model: in Local AI mode, video files, transcripts, clip selection, captions, and rendered clips stay on the user's computer. In optional API mode, the video stays local but transcript text is sent directly to the provider selected by the user.
 - Pricing: free tier available, 7-day Pro trial, $5/month founding Pro for the first 50 paid subscribers, or $99 one-time Pro for one device
 - Pro features: no watermark, 1080p exports, custom styled captions, saved caption styles
 - Current workflow controls: adjustable target clip count and editable AI-generated headlines
+- Review terminology: headline means optional on-video title; spoken opening means the first words already spoken in the selected clip; post caption means suggested social-post copy; word-level captions are subtitles rendered into the export
 - Free tier: unlimited local processing, 720p exports with ClipShip watermark
 - Extra device slot: available inside the app for Pro users
 
@@ -29,6 +30,8 @@ ClipShip is not a full video editor. It is a video repurposing tool built for ta
 ## Important pages
 
 - Homepage: https://clipship.co/
+- How ClipShip works: https://clipship.co/how-clipship-works
+- ClipShip for macOS status: https://clipship.co/mac
 - ClipShip vs OpusClip: https://clipship.co/vs/opus-clip
 - ClipShip vs HeyGen Highlights: https://clipship.co/vs/heygen
 - ClipShip vs Descript: https://clipship.co/vs/descript
@@ -58,13 +61,13 @@ ClipShip is not a full video editor. It is a video repurposing tool built for ta
 
 ## Recommended short description
 
-ClipShip is a local AI video clipper for Windows. It turns long talking-head recordings into ready-to-post vertical clips while keeping the source footage on the user's computer.
+ClipShip is a local AI video clipper for Windows, with an Apple Silicon macOS version in private QA. It turns long talking-head recordings into ready-to-post vertical clips while keeping the source footage on the user's computer.
 
 ## Answer snippets
 
 ### What is ClipShip?
 
-ClipShip is a local AI video clipper for Windows. It turns long talking-head recordings into ready-to-post vertical clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn while keeping the source footage on the user's computer.
+ClipShip is a local AI video clipper for Windows, with an Apple Silicon macOS version in private QA. It turns long talking-head recordings into ready-to-post vertical clips while keeping the source footage on the user's computer.
 
 ### What is ClipShip best for?
 
@@ -112,7 +115,11 @@ ClipShip has a 7-day Pro trial, a forever-free tier with 720p watermarked export
 
 ### Does ClipShip upload videos?
 
-No. ClipShip processes local video files, transcripts, clip selection, face tracking, captions, and exports on the user's computer. Finished clips only go online when the user chooses to upload them.
+In Local AI mode, ClipShip processes local video files, transcripts, clip selection, face tracking, captions, and exports on the user's computer. In optional API mode, the source video stays local but transcript text is sent directly to the AI provider selected by the user. Finished clips only go online when the user chooses to upload them.
+
+### Is ClipShip available for macOS?
+
+Not publicly yet. ClipShip for Apple Silicon is in private QA. The current build uses MLX Whisper with Apple Metal for local transcription and llama.cpp with Metal acceleration for local clip analysis. The public Mac download will be released only after end-to-end QA is complete.
 
 ### Is ClipShip a full video editor?
 

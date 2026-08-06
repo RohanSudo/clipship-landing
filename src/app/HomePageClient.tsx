@@ -674,6 +674,11 @@ export default function Home() {
                 </DownloadButton>
               </div>
               <MacInterest source="hero" />
+              <p className="mt-3 text-sm text-zinc-500">
+                <Link href="/mac" className="font-medium text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-white">
+                  macOS edition is now in private QA
+                </Link>
+              </p>
             </div>
           </FadeIn>
         </div>
@@ -1119,6 +1124,7 @@ export default function Home() {
                 <li><Link href="/youtube-to-shorts-clip-maker" className="text-sm text-zinc-300 hover:text-white transition-colors">YouTube to Shorts clip maker</Link></li>
                 <li><Link href="/twitch-vod-to-shorts" className="text-sm text-zinc-300 hover:text-white transition-colors">Twitch VOD to Shorts</Link></li>
                 <li><Link href="/affordable-opusclip-alternative" className="text-sm text-zinc-300 hover:text-white transition-colors">Affordable OpusClip alternative</Link></li>
+                <li><Link href="/mac" className="text-sm text-zinc-300 hover:text-white transition-colors">ClipShip for macOS</Link></li>
               </ul>
             </FadeIn>
 
@@ -1130,6 +1136,7 @@ export default function Home() {
                 <li><Link href="/blog/how-to-make-clips-from-talking-head-videos" className="text-sm text-zinc-300 hover:text-white transition-colors">How to make clips from talking-head videos →</Link></li>
                 <li><Link href="/blog/best-free-video-editing-software-youtubers-2026" className="text-sm text-zinc-300 hover:text-white transition-colors">Best free video editing software 2026 →</Link></li>
                 <li><Link href="/changelog" className="text-sm text-zinc-300 hover:text-white transition-colors">ClipShip changelog →</Link></li>
+                <li><Link href="/how-clipship-works" className="text-sm text-zinc-300 hover:text-white transition-colors">How ClipShip works →</Link></li>
               </ul>
             </FadeIn>
           </div>

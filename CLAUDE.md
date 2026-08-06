@@ -87,6 +87,27 @@ IndexNow:
 - Key URL: `https://clipship.co/b7d4d3b0cf594c4fa5e37cc4b7c0b62a.txt`
 - Use this to submit fresh ClipShip URLs to IndexNow/Bing after deploy.
 
+## 2026-08-06 Mac discovery and product guidance
+
+- Added `/mac` as a crawlable, truthful Apple Silicon status page. It says the
+  build is in private QA and does not expose a public Mac download.
+- Added `/how-clipship-works` with real product screenshots and plain-language
+  definitions for headline, spoken opening, post caption, and word-level
+  captions.
+- Added both pages to the sitemap, homepage resources, internal SEO cluster,
+  and `llms.txt` answer snippets.
+- Corrected the privacy boundary across the site: source video remains local;
+  Local AI keeps transcript processing local; optional API mode sends
+  transcript text directly to the provider selected by the user.
+- Documented the new opt-in anonymous product milestones and the fields that
+  are never collected.
+- Removed the shared content-page viewport animation after responsive QA found
+  it could leave mobile page content invisible. Desktop and 390px mobile
+  previews show no horizontal overflow.
+- Production build passes. Full repository lint still has the pre-existing
+  homepage and legal-page issues documented above; new pages are not the source
+  of those failures.
+
 ## What this site does
 
 - Communicates ClipShip's positioning (OpusClip alternative, local processing, monthly or lifetime Pro)

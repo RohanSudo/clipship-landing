@@ -5,8 +5,8 @@ import { platformInterestPayload, trackPlatformInterest } from "../lib/download-
 
 const STORAGE_KEY = "clipship_macos_interest_v1";
 
-export default function MacInterest({ source }: { source: string }) {
-  const [isMac, setIsMac] = useState(false);
+export default function MacInterest({ source, alwaysShow = false }: { source: string; alwaysShow?: boolean }) {
+  const [isMac, setIsMac] = useState(alwaysShow);
   const [status, setStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
 
   useEffect(() => {
@@ -17,13 +17,13 @@ export default function MacInterest({ source }: { source: string }) {
       || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
     const isMacDesktop = /macintosh|mac os x/.test(userAgent)
       || navigator.platform.toLowerCase().includes("mac");
-    setIsMac(!isAppleMobile && isMacDesktop);
+    setIsMac(alwaysShow || (!isAppleMobile && isMacDesktop));
     try {
       if (localStorage.getItem(STORAGE_KEY) === "saved") setStatus("saved");
     } catch {
       // Interest can still be recorded when browser storage is disabled.
     }
-  }, []);
+  }, [alwaysShow]);
 
   if (!isMac) return null;
 
@@ -54,14 +54,14 @@ export default function MacInterest({ source }: { source: string }) {
         "macOS interest recorded. Thank you."
       ) : (
         <>
-          Using a Mac?{" "}
+          Want the public macOS release?{" "}
           <button
             type="button"
             onClick={recordInterest}
             disabled={status === "saving"}
             className="cursor-pointer font-medium text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-white disabled:cursor-wait disabled:opacity-60"
           >
-            {status === "saving" ? "Recording..." : status === "error" ? "Try again" : "Tell me you want a macOS version"}
+            {status === "saving" ? "Recording..." : status === "error" ? "Try again" : "Record my interest"}
           </button>
         </>
       )}

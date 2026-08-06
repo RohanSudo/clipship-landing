@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Terms() {
   return (
-    <ContentPage title="Terms of Service" description="Last updated: May 2026" badge="Legal">
+    <ContentPage title="Terms of Service" description="Last updated: August 2026" badge="Legal">
       <h2>Agreement</h2>
       <p>
         By downloading, installing, or using ClipShip, you agree to these terms. If you do not agree,
@@ -53,9 +53,10 @@ export default function Terms() {
 
       <h2>Internet use and what data we collect</h2>
       <p>
-        ClipShip does its video work entirely on your computer. Your videos, transcripts, clips,
-        captions, and edits never leave your machine and we never see them. The processing is local
-        because that&apos;s the whole point of the product.
+        ClipShip keeps source videos, clips, captions, edits, and rendering on your computer. In Local
+        AI mode, transcript analysis also stays on the device. If you deliberately choose a third-party
+        AI provider, transcript text is sent directly to that provider with your own API key. It does
+        not pass through ClipShip&apos;s servers.
       </p>
       <p>
         ClipShip does communicate with our server in a small number of cases, all related to license

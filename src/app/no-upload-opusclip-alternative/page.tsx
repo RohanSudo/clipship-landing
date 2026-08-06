@@ -183,8 +183,9 @@ export default function NoUploadOpusClipAlternativePage() {
 
         <h2>What stays local in ClipShip?</h2>
         <p>
-          For local files, the working video stays on your machine. ClipShip reads the file, creates the transcript,
-          finds candidate clips, builds captions, tracks faces, and renders finished clips locally.
+          For local files, the working video stays on your machine. In Local AI mode, ClipShip creates the transcript,
+          finds candidate clips, builds captions, tracks faces, and renders finished clips locally. In optional API
+          mode, only transcript text is sent directly to the provider you select; the source video remains local.
         </p>
 
         <table>
@@ -203,8 +204,8 @@ export default function NoUploadOpusClipAlternativePage() {
             </tr>
             <tr>
               <td>Transcript and clip selection</td>
-              <td>Yes</td>
-              <td>Generated as part of the desktop app workflow.</td>
+              <td>Local AI mode</td>
+              <td>Optional API mode sends transcript text directly to the selected provider.</td>
             </tr>
             <tr>
               <td>Captions and export rendering</td>

@@ -14,8 +14,10 @@ export default function Privacy() {
     <ContentPage title="Privacy Policy" description="Last updated: August 2026" badge="Legal">
       <h2>The short version</h2>
       <p>
-        ClipShip processes your videos entirely on your computer. Your footage, audio, and transcripts
-        never leave your machine. We do not upload, store, or access your content.
+        In Local AI mode, ClipShip processes your video, audio, transcript, clip selection, captions,
+        and exports on your computer. In optional API mode, the video still stays local, but transcript
+        text is sent directly to the AI provider you select. ClipShip never uploads, stores, or accesses
+        your source video on its servers.
       </p>
 
       <h2>What ClipShip collects</h2>
@@ -23,7 +25,7 @@ export default function Privacy() {
       <ul>
         <li>No video or audio content is transmitted anywhere</li>
         <li>No transcripts are sent to our servers</li>
-        <li>If you opt in to anonymous analytics, we collect: app version, OS, basic usage counts (videos processed). No content, no identifying information.</li>
+        <li>If you opt in to anonymous analytics, we collect a fixed set of product milestones, such as video imported, transcription completed, clips generated, or export failed, plus OS, app version, AI mode, broad duration and clip-count ranges, and failure stage. We do not store your account ID, email, file path, video name, transcript, captions, prompt, or API key with these events.</li>
         <li>If you use the "Connect your AI account" option, your API key is stored in your operating system's secure keychain (Windows Credential Manager / macOS Keychain / Linux Secret Service). The key is sent directly from your computer to the AI provider (OpenAI, Claude, Gemini, Groq, or OpenRouter). We never see, collect, or transmit your key.</li>
         <li>For purchase verification and license activation, we collect your email address, a non-reversible hardware fingerprint (used to enforce one license per device), and the device hostname (so you can identify which machine to sign out when switching devices).</li>
         <li>After your first successful export, ClipShip may ask once how you found the app. If you answer, we store the selected source, the optional text you provide, your account ID, and app version. Skipping the question stores nothing on our server.</li>
@@ -138,10 +140,10 @@ export default function Privacy() {
           or logged by ClipShip&apos;s servers under any circumstance.
         </li>
         <li>
-          <strong>Data minimization.</strong> Your videos, audio, transcripts, and editing data
-          are processed entirely on your own computer and are never uploaded to our servers. The
-          less sensitive data we collect, the less is at risk; we deliberately minimize our
-          server-side footprint.
+          <strong>Data minimization.</strong> Your source video, audio, captions, rendered clips,
+          and editing data are never uploaded to our servers. Local AI mode also keeps the transcript
+          on the device. Optional API mode sends transcript text directly to the provider you choose.
+          The less sensitive data we collect, the less is at risk; we deliberately minimize our server-side footprint.
         </li>
         <li>
           <strong>Network protection.</strong> Our API endpoints sit behind Cloudflare&apos;s
