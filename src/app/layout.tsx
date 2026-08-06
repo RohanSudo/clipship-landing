@@ -14,12 +14,16 @@ const structuredData = [
     name: "ClipShip",
     applicationCategory: "MultimediaApplication",
     applicationSubCategory: "AI video clip generator",
-    operatingSystem: "Windows 10, Windows 11",
+    operatingSystem: "Windows 10, Windows 11, macOS 15 or newer on Apple Silicon",
     url: "https://clipship.co",
-    downloadUrl: "https://api.clipship.co/download/windows",
+    downloadUrl: [
+      "https://api.clipship.co/download/windows",
+      "https://api.clipship.co/download/macos",
+    ],
+    softwareVersion: "1.0.12",
     image: "https://clipship.co/opengraph-image",
     description:
-      "ClipShip is a local AI video clip generator for Windows. It turns long talking-head recordings into ready-to-post clips for YouTube Shorts, Instagram Reels, TikTok, and LinkedIn while keeping source footage on the user's computer.",
+      "ClipShip is a local AI video clip generator for Windows and Apple Silicon Mac. It turns long talking-head recordings into ready-to-post clips while keeping source footage on the user's computer.",
     featureList: [
       "Local AI clip selection",
       "YouTube video and Shorts link import",
@@ -87,7 +91,7 @@ const structuredData = [
     name: "ClipShip",
     url: "https://clipship.co",
     description:
-      "Official website for ClipShip, a local AI video clip generator and no-upload OpusClip alternative for Windows.",
+      "Official website for ClipShip, a local AI video clip generator and no-upload OpusClip alternative for Windows and Apple Silicon Mac.",
     publisher: { "@id": "https://clipship.co/#organization" },
     about: { "@id": "https://clipship.co/#software" },
   },
@@ -107,7 +111,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://clipship.co"),
   title: "ClipShip: Local AI Video Repurposing | OpusClip Alternative",
   description:
-    "Repurpose long talking-head recordings into 10-15 ready-to-post clips for Reels, Shorts, and TikTok. Runs locally on your PC. OpusClip and HeyGen alternative.",
+    "Repurpose long talking-head recordings into ready-to-post clips for Reels, Shorts, and TikTok. Runs locally on Windows and Apple Silicon Mac.",
   openGraph: {
     title: "ClipShip | Local AI Video Repurposing. Long videos in, clips out.",
     description:

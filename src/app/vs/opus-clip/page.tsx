@@ -36,7 +36,7 @@ const data: ComparisonData = {
     {
       title: "Local files do not need to upload",
       detail:
-        "OpusClip requires uploading recordings to its servers. ClipShip processes local files on your Windows PC, which is better for coaching calls, course content, client work, internal recordings, and other private footage.",
+        "OpusClip requires uploading recordings to its servers. ClipShip processes local files on your Windows PC or Apple Silicon Mac, which is better for coaching calls, course content, client work, internal recordings, and other private footage.",
     },
     {
       title: "Monthly or one-time Pro, without clip credits",
@@ -73,7 +73,7 @@ const data: ComparisonData = {
       "You want a polished browser dashboard with integrated social scheduling, and the monthly fee plus cloud upload workflow are acceptable.",
   },
   bottomLine:
-    "OpusClip is the stronger cloud product. ClipShip is the sharper local alternative. If your priority is no-upload local files, no usage credits, and keeping the clip workflow on your own Windows PC, ClipShip is the cleaner choice.",
+    "OpusClip is the stronger cloud product. ClipShip is the sharper local alternative. If your priority is no-upload local files, no usage credits, and keeping the clip workflow on your own Windows PC or Apple Silicon Mac, ClipShip is the cleaner choice.",
 };
 
 export default function VsOpusClip() {

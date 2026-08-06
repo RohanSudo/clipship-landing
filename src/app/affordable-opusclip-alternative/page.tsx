@@ -41,7 +41,7 @@ const faqSchema = {
       name: "Is ClipShip a full replacement for OpusClip?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Not for everyone. ClipShip is strongest for Windows creators who want local processing and predictable pricing. OpusClip is stronger when browser access, cloud processing, and mature scheduling matter more.",
+        text: "Not for everyone. ClipShip is strongest for Windows and Apple Silicon Mac creators who want local processing and predictable pricing. OpusClip is stronger when browser access, cloud processing, and mature scheduling matter more.",
       },
     },
   ],
@@ -105,7 +105,7 @@ export default function AffordableOpusClipAlternativePage() {
           processes another video. That is why many cloud plans are based on monthly minutes or credits.
         </p>
         <p>
-          ClipShip runs that work on your Windows PC. Local processing is not metered by video minutes, so the paid
+          ClipShip runs that work on your Windows PC or Apple Silicon Mac. Local processing is not metered by video minutes, so the paid
           plans can unlock features without adding a new credit bill every month. The trade-off is that your own
           computer does the work and needs enough time and hardware for the source video.
         </p>
@@ -128,14 +128,14 @@ export default function AffordableOpusClipAlternativePage() {
         </ul>
         <p>
           You can also choose how many candidate clips to request from a long video and edit AI-generated headlines
-          before export. Those workflow controls are available in the current Windows app.
+          before export. Those workflow controls are available in the Windows and Apple Silicon Mac apps.
         </p>
 
         <h2>When OpusClip may still be the better choice</h2>
         <p>
-          Choose a cloud tool if you need to work from any browser, do not have a suitable Windows PC, want a mature
+          Choose a cloud tool if you need to work from any browser, do not have a suitable Windows PC or Apple Silicon Mac, want a mature
           social scheduling system, or prefer cloud rendering over local processing. ClipShip is the better fit when
-          privacy, no-upload local files, predictable cost, and Windows desktop processing matter more.
+          privacy, no-upload local files, predictable cost, and desktop processing matter more.
         </p>
 
         <ClusterLinks current="/affordable-opusclip-alternative" />

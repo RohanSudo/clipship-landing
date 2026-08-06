@@ -1,7 +1,12 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { buildDownloadUrl, downloadFallbackUrl, trackDownloadClick } from "../lib/download-attribution";
+import {
+  buildDownloadUrl,
+  downloadFallbackUrl,
+  trackDownloadClick,
+  type DownloadPlatform,
+} from "../lib/download-attribution";
 
 declare global {
   interface Window {
@@ -14,17 +19,19 @@ export default function DownloadLink({
   source,
   className,
   children,
+  platform = "windows",
 }: {
   source: string;
   className: string;
   children: ReactNode;
+  platform?: DownloadPlatform;
 }) {
   return (
     <a
-      href={downloadFallbackUrl(source)}
+      href={downloadFallbackUrl(source, platform)}
       onClick={(event) => {
-        event.currentTarget.href = buildDownloadUrl(source);
-        trackDownloadClick(source);
+        event.currentTarget.href = buildDownloadUrl(source, platform);
+        trackDownloadClick(source, platform);
       }}
       className={className}
     >

@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import ContentPage from "../components/ContentPage";
 import { AnswerBox, ClusterLinks, ProofFigure } from "../components/SeoBlocks";
 
 export const metadata: Metadata = {
-  title: "Local AI Video Clipper for Windows | ClipShip",
+  title: "Local AI Video Clipper for Windows and Mac | ClipShip",
   description:
-    "ClipShip is a local AI video clipper for Windows. Turn long talking-head recordings into Shorts, Reels, and TikToks without uploading your footage.",
+    "ClipShip is a local AI video clipper for Windows and Apple Silicon Mac. Turn long spoken videos into Shorts and Reels without uploading source footage.",
   alternates: {
     canonical: "https://clipship.co/local-ai-video-clip-generator",
   },
   openGraph: {
-    title: "Local AI Video Clipper for Windows | ClipShip",
+    title: "Local AI Video Clipper for Windows and Mac | ClipShip",
     description:
       "Find the best moments from long videos, add captions, and export short-form clips locally on your PC.",
     url: "https://clipship.co/local-ai-video-clip-generator",
@@ -43,7 +44,7 @@ const faqSchema = {
       name: "Does ClipShip upload my videos?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. For local video files, ClipShip processes video files, transcripts, clip selection, captions, face tracking, and rendering on the user's Windows PC. Finished clips only go online if the user chooses to upload them.",
+        text: "No. In Local AI mode, ClipShip processes video files, transcripts, clip selection, captions, face tracking, and rendering on the user's Windows PC or Apple Silicon Mac. Finished clips only go online if the user chooses to upload them.",
       },
     },
     {
@@ -170,7 +171,7 @@ export default function LocalAiVideoClipGeneratorPage() {
         </p>
         <p>
           That matters if your editing setup, recording workflow, or gaming and podcast hardware already lives on a
-          Windows PC. The goal is not to make you move your footage into another cloud dashboard. The goal is to
+          Windows PC or Apple Silicon Mac. The goal is not to make you move your footage into another cloud dashboard. The goal is to
           process the videos where they already are.
         </p>
 
@@ -192,7 +193,7 @@ export default function LocalAiVideoClipGeneratorPage() {
           <tbody>
             <tr>
               <td>Where does processing happen?</td>
-              <td>On your Windows PC for local files.</td>
+              <td>On your Windows PC or Apple Silicon Mac for local files.</td>
               <td>On the vendor&apos;s servers.</td>
             </tr>
             <tr>
@@ -233,8 +234,8 @@ export default function LocalAiVideoClipGeneratorPage() {
         <h2>When a cloud clip generator may be better</h2>
         <p>
           ClipShip is not the best choice if you need browser-based team collaboration, built-in social scheduling,
-          or a tool that works on macOS today. It is Windows-only right now and built for creators who are comfortable
-          installing a desktop app.
+          Intel Mac support, or Linux. It is a desktop app for Windows and Apple Silicon Mac, so your own computer
+          needs enough memory and processing time for the source video.
         </p>
 
         <h2>What local processing does not mean</h2>
@@ -263,7 +264,8 @@ export default function LocalAiVideoClipGeneratorPage() {
 
         <h3>Does ClipShip support macOS?</h3>
         <p>
-          Not yet. ClipShip is currently available for Windows only.
+          Yes. ClipShip supports Apple Silicon Macs running macOS 15 or newer. Intel Macs are not supported. See the
+          <Link href="/mac"> Mac download and requirements page</Link>.
         </p>
 
         <h3>Is ClipShip a full video editor?</h3>

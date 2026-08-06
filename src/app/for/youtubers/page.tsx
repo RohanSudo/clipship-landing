@@ -4,7 +4,7 @@ import AudiencePage, { type AudienceData } from "../../components/AudiencePage";
 export const metadata: Metadata = {
   title: "ClipShip for YouTubers: Auto Shorts From Long Uploads",
   description:
-    "Turn every long YouTube upload into 10–15 vertical Shorts, Reels, and TikToks automatically. Local AI clip generator with AI clip suggestions, runs on your PC.",
+    "Turn every long YouTube upload into vertical Shorts, Reels, and TikToks. Local AI clip generation for Windows and Apple Silicon Mac.",
   alternates: {
     canonical: "https://clipship.co/for/youtubers",
   },
@@ -63,7 +63,7 @@ const data: AudienceData = {
   whyLocal: {
     title: "Why local matters for YouTubers",
     detail:
-      "Cloud clip generators upload every minute of your footage to their servers. That means waiting for uploads on every recording, trusting them with unreleased content, and living with their credit caps. ClipShip runs on your PC. Processing starts instantly. No upload wait. No caps. No one else touches your footage. Works offline—batch clips on a plane, in a cafe, wherever you work.",
+      "Cloud clip generators upload every minute of your footage to their servers. That means waiting for uploads on every recording, trusting them with unreleased content, and living with their credit caps. ClipShip runs on your Windows PC or Apple Silicon Mac. Local files do not need an upload, and local processing is not metered with clip credits.",
   },
   builtFor:
     "ClipShip is built for the format YouTubers use most: one person talking to camera. The AI understands speech patterns, knows what hooks look like, and picks moments that stand on their own as clips. If your content is you sharing knowledge, telling stories, or teaching your audience, ClipShip turns your long uploads into a month of short-form content—automatically.",

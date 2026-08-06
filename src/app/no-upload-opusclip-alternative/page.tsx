@@ -3,9 +3,9 @@ import ContentPage from "../components/ContentPage";
 import { AnswerBox, ClusterLinks, ProofFigure } from "../components/SeoBlocks";
 
 export const metadata: Metadata = {
-  title: "No-Upload OpusClip Alternative for Windows | ClipShip",
+  title: "No-Upload OpusClip Alternative for Windows and Mac",
   description:
-    "ClipShip is a no-upload OpusClip alternative for Windows creators who want local AI clipping, no monthly credits, and monthly or one-time Pro.",
+    "ClipShip is a no-upload OpusClip alternative for Windows and Apple Silicon Mac with local AI clipping, no monthly credits, and flexible Pro pricing.",
   alternates: {
     canonical: "https://clipship.co/no-upload-opusclip-alternative",
   },
@@ -35,7 +35,7 @@ const faqSchema = {
       name: "Is ClipShip an OpusClip alternative?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. ClipShip is an OpusClip alternative for Windows creators who want AI clip extraction, vertical formatting, face tracking, and captions in a local desktop app instead of a cloud subscription.",
+        text: "Yes. ClipShip is an OpusClip alternative for Windows and Apple Silicon Mac creators who want AI clip extraction, vertical formatting, face tracking, and captions in a local desktop app instead of a cloud workflow.",
       },
     },
     {
@@ -43,7 +43,7 @@ const faqSchema = {
       name: "What makes ClipShip different from OpusClip?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The main difference is where processing happens. OpusClip processes videos in the cloud after upload, while ClipShip processes local files on the user's Windows PC. ClipShip has a free tier and lets users choose monthly or one-time Pro without metered clip credits.",
+        text: "The main difference is where processing happens. OpusClip processes videos in the cloud after upload, while ClipShip processes local files on the user's Windows PC or Apple Silicon Mac. ClipShip has a free tier and lets users choose monthly or one-time Pro without metered clip credits.",
       },
     },
     {
@@ -145,7 +145,7 @@ export default function NoUploadOpusClipAlternativePage() {
           <tbody>
             <tr>
               <td>Where does clip processing happen?</td>
-              <td>On your Windows PC for local files.</td>
+              <td>On your Windows PC or Apple Silicon Mac for local files.</td>
               <td>On OpusClip&apos;s cloud servers after upload.</td>
             </tr>
             <tr>
@@ -268,7 +268,7 @@ export default function NoUploadOpusClipAlternativePage() {
           just to find short clips?
         </p>
         <p>
-          ClipShip avoids that tradeoff for local files. The AI work runs on your Windows PC, so Pro users are not
+          ClipShip avoids that tradeoff for local files. The AI work runs on your Windows PC or Apple Silicon Mac, so Pro users are not
           counting clip credits or source-video minutes every time they want to process another recording.
         </p>
 

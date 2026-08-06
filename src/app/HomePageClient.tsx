@@ -10,29 +10,12 @@ declare global {
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
-import DownloadLink from "./components/DownloadLink";
-import MacInterest from "./components/MacInterest";
+import PlatformDownloadButtons from "./components/PlatformDownloadButtons";
 
 function scrollToHomepageTop(event: React.MouseEvent<HTMLAnchorElement>) {
   event.preventDefault();
   window.history.replaceState(null, "", "/");
   window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-function DownloadButton({
-  source,
-  className,
-  children,
-}: {
-  source: string;
-  className: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <DownloadLink source={source} className={className}>
-      {children}
-    </DownloadLink>
-  );
 }
 
 const homepageFaqJsonLd = {
@@ -44,7 +27,7 @@ const homepageFaqJsonLd = {
       name: "Will ClipShip run on my computer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ClipShip is Windows-only right now. It is tested on Windows 10 and 11. At least 16 GB RAM and an NVIDIA GPU are recommended for the smoothest experience, but CPU-only setups can run more slowly.",
+        text: "ClipShip supports Windows 10 and 11, plus Apple Silicon Macs running macOS 15 or newer. Windows users can choose NVIDIA GPU, CPU, or automatic processing. The Mac version uses Apple Metal and unified memory for local AI.",
       },
     },
     {
@@ -141,14 +124,6 @@ function LogoIcon({ className = "w-8 h-8" }: { className?: string }) {
         fill="url(#logo-grad)"
         opacity="0.9"
       />
-    </svg>
-  );
-}
-
-function WindowsIcon({ className = "w-5 h-5" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
-      <path d="M3 4.6 10.7 3.5v7.2H3V4.6Zm8.7-1.2L21 2v8.7h-9.3V3.4ZM3 12h7.7v7.3L3 18.2V12Zm8.7 0H21v9l-9.3-1.3V12Z" />
     </svg>
   );
 }
@@ -591,10 +566,10 @@ export default function Home() {
       {/* ── Nav ── */}
       <nav className="fixed top-0 w-full z-40 backdrop-blur-xl bg-[#09090b]/90 border-b border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-          <a href="/" onClick={scrollToHomepageTop} aria-label="ClipShip home" className="flex items-center gap-2.5 group">
+          <Link href="/" onClick={scrollToHomepageTop} aria-label="ClipShip home" className="flex items-center gap-2.5 group">
             <LogoIcon className="w-6 h-6" />
             <span className="font-semibold text-white tracking-tight text-sm transition-colors group-hover:text-violet-300">ClipShip</span>
-          </a>
+          </Link>
           <div className="flex items-center gap-3">
             <a
               href="#pricing"
@@ -602,12 +577,12 @@ export default function Home() {
             >
               Pricing
             </a>
-            <DownloadButton
-              source="nav"
-              className="text-sm px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-zinc-300 hover:text-white hover:border-violet-500/30 transition-all"
+            <a
+              href="#downloads"
+              className="rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm text-zinc-300 transition-colors hover:border-violet-500/30 hover:text-white"
             >
               Download
-            </DownloadButton>
+            </a>
           </div>
         </div>
       </nav>
@@ -661,23 +636,9 @@ export default function Home() {
 
           <FadeIn delay={0.3}>
             <div>
-              <div className="flex items-center justify-center">
-                <DownloadButton
-                  source="hero"
-                  className="group inline-flex w-full max-w-[310px] sm:w-auto items-center justify-center gap-3 rounded-xl border border-white/15 bg-white px-5 py-3.5 text-left text-zinc-950 shadow-[0_18px_50px_-22px_rgba(255,255,255,0.65)] transition-all hover:-translate-y-0.5 hover:bg-zinc-100 hover:shadow-[0_24px_60px_-26px_rgba(255,255,255,0.8)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-400"
-                >
-                  <WindowsIcon className="h-6 w-6 text-[#0078D4]" />
-                  <span className="flex flex-col leading-none">
-                    <span className="text-base font-semibold tracking-normal">Download for Windows</span>
-                    <span className="mt-1 text-xs font-medium text-zinc-500">Windows 10 and 11</span>
-                  </span>
-                </DownloadButton>
-              </div>
-              <MacInterest source="hero" />
+              <PlatformDownloadButtons source="hero" variant="hero" />
               <p className="mt-3 text-sm text-zinc-500">
-                <Link href="/mac" className="font-medium text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-white">
-                  macOS edition is now in private QA
-                </Link>
+                Both downloads include the 7-day Pro trial. <Link href="/mac" className="font-medium text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-white">Read the macOS requirements</Link>.
               </p>
             </div>
           </FadeIn>
@@ -944,12 +905,7 @@ export default function Home() {
                   <li>Custom styled captions</li>
                   <li>Keep the $5 rate while your subscription remains active</li>
                 </ul>
-                <DownloadButton
-                  source="pricing-monthly"
-                  className="mt-auto inline-flex w-full justify-center px-7 py-3.5 rounded-lg font-semibold text-sm text-white bg-violet-600 hover:bg-violet-500 transition-colors"
-                >
-                  Download for Windows
-                </DownloadButton>
+                <PlatformDownloadButtons source="pricing-monthly" variant="compact" className="mt-auto" />
               </div>
             </FadeIn>
 
@@ -968,12 +924,7 @@ export default function Home() {
                   <li>Custom styled captions</li>
                   <li>No recurring charge</li>
                 </ul>
-                <DownloadButton
-                  source="pricing-lifetime"
-                  className="mt-auto inline-flex w-full justify-center px-7 py-3.5 rounded-lg font-semibold text-sm text-white bg-zinc-800 hover:bg-zinc-700 border border-white/10 transition-colors"
-                >
-                  Download for Windows
-                </DownloadButton>
+                <PlatformDownloadButtons source="pricing-lifetime" variant="compact" className="mt-auto" />
               </div>
             </FadeIn>
           </div>
@@ -995,30 +946,30 @@ export default function Home() {
               q="Will ClipShip run on my computer?"
               a={
                 <>
-                  <p>ClipShip is Windows-only right now. Tested on Windows 10 and 11. macOS and Linux are not supported yet.</p>
-                  <p className="mt-2">We recommend at least 16 GB RAM and a NVIDIA GPU for the smoothest experience. ClipShip will run on CPU-only setups, but processing will be noticeably slower. You can run it on lower-spec machines too, but a 60-minute podcast might take 20 to 30 minutes to process instead of 5 to 10.</p>
+                  <p>ClipShip supports Windows 10 and 11, plus Apple Silicon Macs running macOS 15 or newer. Linux is not supported.</p>
+                  <p className="mt-2">On Windows, at least 16 GB RAM and an NVIDIA GPU are recommended for the smoothest experience, although CPU mode is available. On Mac, ClipShip uses Apple Metal and unified memory, then recommends a local model that fits the machine.</p>
                 </>
               }
             />
             <FAQItem
               q="Does my footage get uploaded anywhere?"
-              a={<p>No. ClipShip runs entirely on your computer. Your video files never leave your machine. Transcription, clip selection, captions, all of it happens locally. The only time anything goes online is when you choose to post a finished clip to YouTube or somewhere else, and that uses your own platform account.</p>}
+              a={<p>In Local AI mode, your video, transcript, clip selection, captions, and rendered exports stay on your computer. In optional API mode, the source video still stays local, but transcript text is sent directly to the AI provider selected by you. Finished clips only go online when you choose to post them.</p>}
             />
             <FAQItem
               q="Do I need an internet connection?"
               a={
                 <>
-                  <p>The actual video processing (transcription, clip finding, captions, face-tracking, rendering) happens entirely on your computer with zero internet calls. Your videos never leave your machine.</p>
+                  <p>In Local AI mode, transcription, clip finding, captions, face tracking, and rendering happen on your computer. Your videos never go to ClipShip&apos;s servers.</p>
                   <p className="mt-3">ClipShip does need internet for these specific things:</p>
                   <ul className="list-disc pl-5 mt-2 space-y-2 text-zinc-300">
-                    <li><strong className="text-white">First setup.</strong> Downloading the transcription engine, the local AI model, and the CUDA libraries on your first launch. After that&apos;s done, you can run everything offline.</li>
+                    <li><strong className="text-white">First setup.</strong> Downloading the transcription engine, the local AI model, and the CUDA libraries on your first launch. After that, local processing no longer depends on a cloud compute service.</li>
                     <li><strong className="text-white">Signing in.</strong> First time after install, ClipShip checks that you&apos;re a real licensed user with our server. This is anti-piracy, not a video upload. The check only sends your account email, a hardware fingerprint, and your license status. No video, no transcript, no clip content, ever.</li>
-                    <li><strong className="text-white">Daily license check.</strong> Once per day in the background, ClipShip pings the same anti-piracy endpoint to confirm your license is still valid. Same minimal data, no videos. If you&apos;re offline when this fires, ClipShip keeps working with the last cached verdict for up to 7 days, so going offline for a trip is fine.</li>
+                    <li><strong className="text-white">Daily license check.</strong> Trial and Pro access require one successful license verification inside each rolling 24-hour window. If that window expires while you are offline, reconnect and use Recheck. Free accounts can use the last verified verdict for up to 7 days.</li>
                     <li><strong className="text-white">Switching devices.</strong> Moving your license between your laptop and desktop requires internet so we can deactivate the old machine and activate the new one. Done from inside the app, no email needed.</li>
                     <li><strong className="text-white">Posting clips.</strong> Uploads to YouTube or wherever obviously need internet, and those uploads use your own platform account.</li>
                     <li><strong className="text-white">Using a cloud AI key instead of the local AI.</strong> If you choose OpenAI, Claude, Gemini, Groq, or OpenRouter as your AI provider, that AI call goes over the internet. The bundled local AI option needs zero internet for AI work.</li>
                   </ul>
-                  <p className="mt-3">So in normal use you can be offline for a week at a time and clip videos without issue. The &quot;always online&quot; feel from competitors comes from cloud processing; we don&apos;t have that.</p>
+                  <p className="mt-3">The source footage and local AI pipeline do not depend on cloud processing. The internet requirement is for setup, identity, licensing, optional API mode, updates, link imports, and publishing.</p>
                 </>
               }
             />
@@ -1151,21 +1102,11 @@ export default function Home() {
               Start clipping your long videos.
             </h2>
             <p className="text-zinc-400 mb-8">
-              Download ClipShip for Windows. Try Pro for 7 days, then keep using the free tier, subscribe for $5 per month, or buy Pro once for $99.
+              Download ClipShip for Windows or Apple Silicon Mac. Try Pro for 7 days, then keep using the free tier, subscribe for $5 per month, or buy Pro once for $99.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <div>
-              <div className="flex justify-center">
-                <DownloadButton
-                  source="bottom-cta"
-                  className="px-8 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-violet-600 to-cyan-600 hover:from-violet-500 hover:to-cyan-500 transition-all"
-                >
-                  Download for Windows
-                </DownloadButton>
-              </div>
-              <MacInterest source="bottom-cta" />
-            </div>
+            <PlatformDownloadButtons source="bottom-cta" />
           </FadeIn>
         </div>
       </section>
@@ -1182,7 +1123,7 @@ export default function Home() {
                 <span className="font-semibold text-white text-sm">ClipShip</span>
               </div>
               <p className="text-sm text-zinc-500 leading-relaxed max-w-xs">
-                Local AI video repurposing. Long videos in, ready-to-post clips out. Runs on your PC with monthly or lifetime Pro.
+                Local AI video repurposing. Long videos in, ready-to-post clips out. Runs on Windows and Apple Silicon Mac with monthly or lifetime Pro.
               </p>
               <div className="flex items-center gap-3 mt-5">
                 <a href="https://x.com/ClipShipApp" target="_blank" rel="noopener noreferrer" aria-label="Follow ClipShip on X" className="text-zinc-600 hover:text-zinc-300 transition-colors">

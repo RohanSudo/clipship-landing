@@ -2,7 +2,7 @@
 
 ## Product
 
-ClipShip is a local-first Windows desktop app that turns long spoken videos into short-form clips. It is a video repurposing tool, not a general timeline editor.
+ClipShip is a local-first desktop app for Windows and Apple Silicon Mac that turns long spoken videos into short-form clips. It is a video repurposing tool, not a general timeline editor.
 
 ## Audience
 
@@ -10,7 +10,7 @@ YouTubers, podcasters, course creators, coaches, consultants, clipping beginners
 
 ## Purpose
 
-Help a visitor quickly understand the local/no-upload workflow, confirm whether ClipShip fits their content and computer, and download the Windows app with accurate expectations.
+Help a visitor quickly understand the local/no-upload workflow, confirm whether ClipShip fits their content and computer, and choose the correct Windows or Apple Silicon macOS download with accurate expectations.
 
 ## Personality
 
@@ -23,7 +23,7 @@ Generic SaaS hype, fake dashboards, misleading compatibility claims, cloud-edito
 ## Design Principles
 
 1. Use real product proof and specific workflows.
-2. State Windows and local-processing constraints clearly.
+2. State Windows, Apple Silicon macOS, and local-processing constraints clearly.
 3. Make conversion paths direct without pressure or fake urgency.
 4. Keep comparison and SEO content factual and internally connected.
 5. Maintain accessible contrast, focus states, and responsive layouts.

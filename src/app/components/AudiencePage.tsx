@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import DownloadLink from "./DownloadLink";
+import PlatformDownloadButtons from "./PlatformDownloadButtons";
 
 function LogoIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
@@ -103,12 +103,12 @@ export default function AudiencePage({ data }: { data: AudienceData }) {
               ClipShip
             </span>
           </Link>
-          <DownloadLink
-            source="audience-nav"
+          <Link
+            href="/#downloads"
             className="text-sm font-semibold px-5 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_20px_rgba(124,58,237,0.3)] active:scale-95"
           >
             Download
-          </DownloadLink>
+          </Link>
         </div>
       </nav>
 
@@ -218,12 +218,7 @@ export default function AudiencePage({ data }: { data: AudienceData }) {
                 <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
                   Repurpose your long videos into ready-to-post clips. AI does the finding, formatting, and captioning. Runs on your PC.
                 </p>
-                <DownloadLink
-                  source="audience-bottom"
-                  className="inline-block text-sm font-semibold px-8 py-3.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_24px_rgba(124,58,237,0.35)] active:scale-95"
-                >
-                  Download for Windows
-                </DownloadLink>
+                <PlatformDownloadButtons source="audience-bottom" />
               </div>
             </div>
           </div>

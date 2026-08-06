@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import DownloadLink from "./DownloadLink";
+import PlatformDownloadButtons from "./PlatformDownloadButtons";
 
 function LogoIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
@@ -260,12 +260,12 @@ export default function BlogArticlePage({
               ClipShip
             </span>
           </Link>
-          <DownloadLink
-            source="blog-nav"
+          <Link
+            href="/#downloads"
             className="text-sm font-semibold px-5 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_20px_rgba(124,58,237,0.3)] active:scale-95"
           >
             Download
-          </DownloadLink>
+          </Link>
         </div>
       </nav>
 
@@ -311,12 +311,7 @@ export default function BlogArticlePage({
                 <p className="text-zinc-400 mb-8 max-w-lg mx-auto leading-relaxed">
                   Repurpose long videos into ready-to-post clips. Local AI, no cloud, monthly or one-time Pro.
                 </p>
-                <DownloadLink
-                  source="blog-bottom"
-                  className="inline-block text-sm font-semibold px-8 py-3.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_24px_rgba(124,58,237,0.35)] active:scale-95"
-                >
-                  Download for Windows
-                </DownloadLink>
+                <PlatformDownloadButtons source="blog-bottom" />
               </div>
             </div>
           </div>

@@ -301,7 +301,7 @@ export default function Changelog() {
 
       <h2>Latest download</h2>
       <p>
-        New installs can always download the latest Windows installer from{" "}
+        New installs can always choose the latest Windows or Apple Silicon macOS installer from{" "}
         <Link href="/">the ClipShip homepage</Link>.
       </p>
     </ContentPage>

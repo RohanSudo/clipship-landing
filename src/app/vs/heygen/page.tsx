@@ -4,7 +4,7 @@ import ComparisonPage, { type ComparisonData } from "../../components/Comparison
 export const metadata: Metadata = {
   title: "ClipShip vs HeyGen Highlights: HeyGen Alternative (2026)",
   description:
-    "Local HeyGen Instant Highlights alternative. Both repurpose long videos into short-form clips. HeyGen has stronger search control and translation; ClipShip runs on your PC without usage credits.",
+    "Local HeyGen Instant Highlights alternative. HeyGen has stronger search control and translation; ClipShip runs on Windows and Apple Silicon Mac without usage credits.",
   alternates: {
     canonical: "https://clipship.co/vs/heygen",
   },

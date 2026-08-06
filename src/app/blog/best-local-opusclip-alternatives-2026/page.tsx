@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: pageUrl,
     type: "article",
     publishedTime: "2026-08-04T00:00:00.000Z",
-    modifiedTime: "2026-08-04T00:00:00.000Z",
+    modifiedTime: "2026-08-06T00:00:00.000Z",
     images: [
       {
         url: "https://clipship.co/opengraph-image",
@@ -51,7 +51,7 @@ const articleSchema = {
   description:
     "A source-checked comparison of five desktop AI clipping tools that offer local or on-device video processing.",
   datePublished: "2026-08-04",
-  dateModified: "2026-08-04",
+  dateModified: "2026-08-06",
   author: {
     "@type": "Organization",
     name: "ClipShip",
@@ -102,7 +102,7 @@ const faqSchema = {
       name: "What is the best local OpusClip alternative for Windows?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ClipShip is the best fit for Windows creators who want a beginner-friendly local workflow, no metered processing credits, and a free, monthly, or lifetime plan. Clippie is cheaper as a one-time toolbox, while Blinklip is stronger for genre-specific clip discovery.",
+        text: "ClipShip is the best fit for Windows and Apple Silicon Mac creators who want a beginner-friendly local workflow, no metered processing credits, and a free, monthly, or lifetime plan. Clippie is cheaper as a one-time toolbox, while Blinklip is stronger for genre-specific clip discovery.",
       },
     },
     {
@@ -110,7 +110,7 @@ const faqSchema = {
       name: "Which local OpusClip alternatives support macOS?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ReClipStudio supports macOS, Windows, and Linux. LocalClip currently promotes a macOS desktop download. ClipShip, Clippie, and Blinklip are publicly available for Windows at the time of this comparison.",
+        text: "ClipShip supports Windows and Apple Silicon Macs running macOS 15 or newer. ReClipStudio supports Windows, macOS, and Linux. LocalClip also promotes a macOS desktop download. Clippie and Blinklip are Windows products at the time of this comparison.",
       },
     },
     {
@@ -150,7 +150,7 @@ export default function BestLocalOpusClipAlternativesPage() {
       >
         <AnswerBox title="The best option depends on your platform and workflow.">
           <p>
-            <strong>ClipShip</strong> is the best low-cost Windows choice for a guided local workflow.
+            <strong>ClipShip</strong> is the best low-cost Windows and Apple Silicon Mac choice for a guided local workflow.
             <strong> ReClipStudio</strong> is the strongest cross-platform option. <strong>Clippie</strong> is the
             cheapest paid Windows toolbox. <strong>Blinklip</strong> is built around finding different content
             angles. <strong>LocalClip</strong> is the clearest macOS-focused option in this group.
@@ -164,7 +164,7 @@ export default function BestLocalOpusClipAlternativesPage() {
 
         <Callout>
           <strong>Disclosure:</strong> this guide is published by ClipShip, one of the products compared below.
-          Product details and prices were checked against each company&apos;s official website on August 4, 2026.
+          Product details and prices were checked against each company&apos;s official website on August 6, 2026.
           I did not install and benchmark every competitor, so this is a source-checked buyer&apos;s guide rather
           than a lab test. Competitors are credited where their public offering is stronger.
         </Callout>
@@ -176,7 +176,7 @@ export default function BestLocalOpusClipAlternativesPage() {
           height={1920}
           orientation="portrait"
           priority
-          caption="ClipShip turns a long recording into reviewable clip suggestions before export. The public version is currently available for Windows."
+          caption="ClipShip turns a long recording into reviewable clip suggestions before export. The public app supports Windows and Apple Silicon Mac."
         />
 
         <Section title="Quick comparison">
@@ -186,7 +186,7 @@ export default function BestLocalOpusClipAlternativesPage() {
             rows={[
               {
                 feature: "ClipShip",
-                values: ["Windows", "Local mode; optional API mode", "Free / $5 monthly / $99 lifetime", "Simple local talking-head workflow"],
+                values: ["Windows, Apple Silicon macOS", "Local mode; optional API mode", "Free / $5 monthly / $99 lifetime", "Simple local talking-head workflow"],
               },
               {
                 feature: "ReClipStudio",
@@ -212,9 +212,9 @@ export default function BestLocalOpusClipAlternativesPage() {
           </Paragraph>
         </Section>
 
-        <Section title="1. ClipShip: best low-cost local option for Windows">
+        <Section title="1. ClipShip: best low-cost local option for Windows and Apple Silicon Mac">
           <Paragraph>
-            <Link href="/" className={sourceLinkClass}>ClipShip</Link> is a Windows desktop app for talking-head
+            <Link href="/" className={sourceLinkClass}>ClipShip</Link> is a desktop app for Windows and Apple Silicon Mac, built for talking-head
             videos, podcasts, interviews, webinars, course lessons, and similar spoken recordings. It transcribes
             the source, finds candidate moments, reframes speakers vertically, adds word-level captions, and exports
             finished clips from the PC.
@@ -225,9 +225,10 @@ export default function BestLocalOpusClipAlternativesPage() {
             option. Local processing is not metered with monthly video credits.
           </Paragraph>
           <Paragraph>
-            The compromise is platform support. The public release is Windows-only today. ClipShip also does not
-            have OpusClip&apos;s mature browser dashboard or built-in social scheduling. Choose it when private local
-            footage, a beginner-friendly workflow, and predictable cost matter more than cloud convenience.
+            The compromise is platform breadth. The Mac release requires Apple Silicon and macOS 15 or newer, Intel
+            Macs are unsupported, and Linux is unavailable. ClipShip also does not have OpusClip&apos;s mature browser
+            dashboard or built-in social scheduling. Choose it when private local footage, a guided workflow, and
+            predictable cost matter more than cloud convenience.
           </Paragraph>
         </Section>
 
@@ -306,8 +307,9 @@ export default function BestLocalOpusClipAlternativesPage() {
             this group, but it is also the clearest public choice here for someone who needs a Mac app today.
           </Paragraph>
           <Paragraph>
-            ClipShip&apos;s macOS version is still in development and is not a public download yet. Until that changes,
-            Mac users should evaluate LocalClip or ReClipStudio instead of installing a Windows-only product.
+            ClipShip now has a public Apple Silicon Mac release at a lower monthly and lifetime price. LocalClip
+            remains worth evaluating for its Mac-first focus, while ReClipStudio remains stronger when one license
+            must cover Windows, macOS, and Linux.
           </Paragraph>
         </Section>
 
@@ -327,7 +329,7 @@ export default function BestLocalOpusClipAlternativesPage() {
         <Section title="Which one should you choose?">
           <div className="grid gap-4 sm:grid-cols-2">
             <RecommendationCard
-              condition="You use Windows and want the simplest low-cost path"
+              condition="You use Windows or Apple Silicon Mac and want the simplest low-cost path"
               recommendation="Choose ClipShip. It is focused on spoken videos, has a forever-free tier, and offers both $5 monthly and $99 lifetime Pro."
               highlighted
             />
@@ -344,8 +346,8 @@ export default function BestLocalOpusClipAlternativesPage() {
               recommendation="Choose Blinklip. Its genre profiles are the most differentiated clip-discovery idea in this group."
             />
             <RecommendationCard
-              condition="You need a Mac download today"
-              recommendation="Evaluate LocalClip or ReClipStudio. ClipShip's public app is still Windows-only."
+              condition="You use an Apple Silicon Mac"
+              recommendation="Compare ClipShip's guided low-cost workflow with LocalClip's Mac-first product and ReClipStudio's broader cross-platform feature set."
             />
             <RecommendationCard
               condition="You want cloud scheduling and no local setup"
@@ -378,15 +380,16 @@ export default function BestLocalOpusClipAlternativesPage() {
 
           <h3 className="mb-3 text-xl font-bold text-white">What is the best local OpusClip alternative for Windows?</h3>
           <Paragraph>
-            ClipShip is the best fit for Windows creators who want a beginner-friendly local workflow, no metered
+            ClipShip is the best fit for Windows and Apple Silicon Mac creators who want a beginner-friendly local workflow, no metered
             processing credits, and free, monthly, or lifetime pricing. Clippie costs less as a paid lifetime tool,
             while Blinklip has stronger genre-specific discovery.
           </Paragraph>
 
           <h3 className="mb-3 text-xl font-bold text-white">Which options support macOS?</h3>
           <Paragraph>
-            ReClipStudio publicly supports macOS, Windows, and Linux. LocalClip currently promotes a macOS download.
-            ClipShip, Clippie, and Blinklip are publicly available for Windows at the time of writing.
+            ClipShip supports Apple Silicon Macs running macOS 15 or newer. ReClipStudio publicly supports macOS,
+            Windows, and Linux. LocalClip also promotes a macOS download. Clippie and Blinklip are Windows products
+            at the time of writing.
           </Paragraph>
 
           <h3 className="mb-3 text-xl font-bold text-white">Do local AI video clippers work completely offline?</h3>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import DownloadLink from "./DownloadLink";
+import PlatformDownloadButtons from "./PlatformDownloadButtons";
 
 function LogoIcon({ className = "w-7 h-7" }: { className?: string }) {
   return (
@@ -50,7 +50,7 @@ export default function ContentPage({
   const resolvedCta = cta ?? {
     title: "Try ClipShip for free",
     description: "Repurpose long videos into ready-to-post clips. Local AI, no cloud, no usage credits. Choose monthly or one-time Pro.",
-    label: "Download for Windows",
+    label: "Download ClipShip",
   };
 
   return (
@@ -71,12 +71,12 @@ export default function ContentPage({
               ClipShip
             </span>
           </Link>
-          <DownloadLink
-            source="content-nav"
+          <Link
+            href="/#downloads"
             className="text-sm font-semibold px-5 py-2.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_20px_rgba(124,58,237,0.3)] active:scale-95"
           >
-            Download for Windows
-          </DownloadLink>
+            Download
+          </Link>
         </div>
       </nav>
 
@@ -153,12 +153,7 @@ export default function ContentPage({
                     {resolvedCta.label}
                   </Link>
                 ) : (
-                  <DownloadLink
-                    source="content-bottom"
-                    className="inline-block text-sm font-semibold px-8 py-3.5 rounded-lg bg-violet-600 hover:bg-violet-500 transition-all hover:shadow-[0_0_24px_rgba(124,58,237,0.35)] active:scale-95"
-                  >
-                    {resolvedCta.label}
-                  </DownloadLink>
+                  <PlatformDownloadButtons source="content-bottom" />
                 )}
               </div>
             </div>

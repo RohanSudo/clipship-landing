@@ -1,6 +1,11 @@
 const ATTRIBUTION_KEY = "clipship_first_touch_attribution_v1";
 const ATTRIBUTION_MAX_AGE_MS = 90 * 24 * 60 * 60 * 1000;
-const DOWNLOAD_BASE_URL = "https://api.clipship.co/download/windows";
+export type DownloadPlatform = "windows" | "macos";
+
+const DOWNLOAD_BASE_URLS: Record<DownloadPlatform, string> = {
+  windows: "https://api.clipship.co/download/windows",
+  macos: "https://api.clipship.co/download/macos",
+};
 
 type AttributionRecord = {
   createdAt: number;
@@ -89,7 +94,7 @@ export function captureAttribution(): AttributionRecord | null {
   return record;
 }
 
-export function buildDownloadUrl(ctaSource: string): string {
+export function buildDownloadUrl(ctaSource: string, platform: DownloadPlatform = "windows"): string {
   const firstTouch = captureAttribution();
   const currentUtm = readCurrentUtm();
   const params = new URLSearchParams({
@@ -110,25 +115,26 @@ export function buildDownloadUrl(ctaSource: string): string {
   add("utm_term", firstTouch?.utmTerm || currentUtm.utmTerm);
   add("utm_content", firstTouch?.utmContent || currentUtm.utmContent);
 
-  return `${DOWNLOAD_BASE_URL}?${params.toString()}`;
+  return `${DOWNLOAD_BASE_URLS[platform]}?${params.toString()}`;
 }
 
-export function downloadFallbackUrl(ctaSource: string): string {
+export function downloadFallbackUrl(ctaSource: string, platform: DownloadPlatform = "windows"): string {
   const params = new URLSearchParams({ cta: clean(ctaSource, 120) });
-  return `${DOWNLOAD_BASE_URL}?${params.toString()}`;
+  return `${DOWNLOAD_BASE_URLS[platform]}?${params.toString()}`;
 }
 
-export function trackDownloadClick(ctaSource: string) {
+export function trackDownloadClick(ctaSource: string, platform: DownloadPlatform = "windows") {
   if (typeof window === "undefined") return;
   const firstTouch = captureAttribution();
   window.gtag?.("event", "download_click", {
     event_category: "download",
     event_label: ctaSource,
     cta_source: ctaSource,
+    platform,
     traffic_source: firstTouch?.utmSource || firstTouch?.referrerHost || "direct",
     landing_path: firstTouch?.landingPath || currentPath(),
   });
-  window.clarity?.("event", "download_click");
+  window.clarity?.("event", `download_click_${platform}`);
 }
 
 export function platformInterestPayload() {

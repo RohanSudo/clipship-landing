@@ -73,7 +73,7 @@ const clusterLinks = [
   {
     href: "/mac",
     title: "ClipShip for macOS",
-    detail: "The current Apple Silicon private-QA status, local AI architecture, privacy boundary, and release plan.",
+    detail: "Download the public Apple Silicon build and review its requirements, local AI architecture, installation, and privacy boundary.",
   },
   {
     href: "/blog/best-local-opusclip-alternatives-2026",
