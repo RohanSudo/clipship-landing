@@ -89,8 +89,9 @@ IndexNow:
 
 ## 2026-08-06 Mac discovery and product guidance
 
-- Added `/mac` as a crawlable, truthful Apple Silicon status page. It says the
-  build is in private QA and does not expose a public Mac download.
+- Published `/mac` as the crawlable Apple Silicon download page for ClipShip
+  1.0.12. It links to the tracked DMG route and states the macOS 15+, Apple
+  Silicon, unified-memory, local-processing, installation, and updater facts.
 - Added `/how-clipship-works` with real product screenshots and plain-language
   definitions for headline, spoken opening, post caption, and word-level
   captions.
@@ -107,11 +108,20 @@ IndexNow:
 - Production build passes. Full repository lint still has the pre-existing
   homepage and legal-page issues documented above; new pages are not the source
   of those failures.
+- Commit `4616cf0` was fast-forwarded to `main` and verified live. The homepage
+  and pricing cards expose separate Windows and macOS downloads; `/changelog`
+  contains 1.0.12; `/mac`, `robots.txt`, `sitemap.xml`, and `llms.txt` return
+  HTTP 200.
+- Search Console sitemap resubmission succeeded with zero warnings and errors.
+  URL Inspection showed the established cluster pages indexed with matching
+  canonicals. `/mac` was discovered but not crawled, so a priority indexing
+  request was submitted. IndexNow accepted the changed release URLs with HTTP
+  200.
 
 ## What this site does
 
 - Communicates ClipShip's positioning (OpusClip alternative, local processing, monthly or lifetime Pro)
-- Sends visitors to the Windows download
+- Sends visitors to tracked Windows and Apple Silicon macOS downloads
 - Shows product positioning / pricing / FAQ
 
 ## NOT a video editor
