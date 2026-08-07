@@ -20,10 +20,12 @@ export default function PlatformDownloadButtons({
   source,
   variant = "standard",
   className = "",
+  referralCode = "",
 }: {
   source: string;
   variant?: "hero" | "standard" | "compact";
   className?: string;
+  referralCode?: string;
 }) {
   const detailed = variant === "hero";
   const compact = variant === "compact";
@@ -42,7 +44,7 @@ export default function PlatformDownloadButtons({
       id={source === "hero" ? "downloads" : undefined}
       className={`grid w-full gap-3 sm:grid-cols-2 ${detailed ? "mx-auto max-w-[650px]" : "mx-auto max-w-lg"} ${className}`}
     >
-      <DownloadLink source={`${source}-windows`} platform="windows" className={windowsButtonClass}>
+      <DownloadLink source={`${source}-windows`} platform="windows" referralCode={referralCode} className={windowsButtonClass}>
         <WindowsMark />
         <span className={detailed ? "flex flex-col leading-none" : "leading-none"}>
           <span>{compact ? "Windows" : "Download for Windows"}</span>
@@ -52,6 +54,7 @@ export default function PlatformDownloadButtons({
       <DownloadLink
         source={`${source}-macos`}
         platform="macos"
+        referralCode={referralCode}
         className={macButtonClass}
       >
         <AppleMark />

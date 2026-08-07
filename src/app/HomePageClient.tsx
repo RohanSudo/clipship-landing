@@ -925,6 +925,44 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="relative z-10 border-y border-emerald-400/15 bg-emerald-400/[0.035] px-6 py-16">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="mb-3 text-sm font-semibold text-emerald-300">ClipShip referrals</p>
+              <h2 className="text-3xl font-bold text-white sm:text-4xl">Give 20%. Get 20%.</h2>
+              <p className="mt-4 max-w-xl leading-relaxed text-zinc-300">
+                Share your personal ClipShip link. Your friend gets 20% off the $99 lifetime license.
+                After their seven-day refund window, you earn 20% off lifetime too.
+              </p>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-3 sm:divide-x sm:divide-white/10">
+              <div className="sm:pr-6">
+                <p className="text-2xl font-bold text-white">20% off</p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">For the referred buyer&apos;s first lifetime purchase.</p>
+              </div>
+              <div className="sm:px-6">
+                <p className="text-2xl font-bold text-white">20% off</p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">For you, if you are on Free, Trial, or Monthly.</p>
+              </div>
+              <div className="sm:pl-6">
+                <p className="text-2xl font-bold text-white">Extra slot</p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">Already own Lifetime Pro? Get one permanent device slot instead.</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-9 flex flex-col gap-4 border-t border-white/10 pt-7 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-zinc-500">Up to three successful rewards per account. No self-referrals or shared-device referrals.</p>
+            <Link
+              href="/referral"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-emerald-400 px-5 py-2.5 text-sm font-semibold text-zinc-950 transition-colors hover:bg-emerald-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-300"
+            >
+              See how referrals work
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section id="faq" className="py-24 px-6 relative z-10">
         <div className="max-w-3xl mx-auto">
           <FadeIn>

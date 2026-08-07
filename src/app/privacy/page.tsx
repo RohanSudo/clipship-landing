@@ -29,6 +29,7 @@ export default function Privacy() {
         <li>If you use the "Connect your AI account" option, your API key is stored in your operating system's secure keychain (Windows Credential Manager / macOS Keychain / Linux Secret Service). The key is sent directly from your computer to the AI provider (OpenAI, Claude, Gemini, Groq, or OpenRouter). We never see, collect, or transmit your key.</li>
         <li>For purchase verification and license activation, we collect your email address, a non-reversible hardware fingerprint (used to enforce one license per device), and the device hostname (so you can identify which machine to sign out when switching devices).</li>
         <li>After your first successful export, ClipShip may ask once how you found the app. If you answer, we store the selected source, the optional text you provide, your account ID, and app version. Skipping the question stores nothing on our server.</li>
+        <li>If you use the referral program, we store your personal referral code, the accounts connected through it, referral status, reward status, and the minimum device-fingerprint comparison needed to prevent self-referrals and shared-device abuse. We do not expose either person&apos;s email address to the other.</li>
       </ul>
 
       <p><strong>When using clipship.co (this website):</strong></p>
@@ -174,6 +175,7 @@ export default function Privacy() {
         <li>Hardware fingerprint: to enforce one license per device per the licensing terms you agreed to at purchase.</li>
         <li>Anonymous in-app analytics (opt-in): to understand which features matter most. Aggregate only.</li>
         <li>Website attribution and approximate geography: to understand which pages, referral sources, operating systems, and broad markets lead to downloads and account creation.</li>
+        <li>Referral records: to attribute eligible lifetime purchases, apply one-time discounts, grant earned device slots, enforce the three-reward limit, and reverse pending rewards after refunds or disputes.</li>
       </ul>
 
       <h2>Third-party services we use</h2>

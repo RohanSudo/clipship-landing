@@ -20,7 +20,7 @@ const structuredData = [
       "https://api.clipship.co/download/windows",
       "https://api.clipship.co/download/macos",
     ],
-    softwareVersion: "1.0.12",
+    softwareVersion: "1.0.13",
     image: "https://clipship.co/opengraph-image",
     description:
       "ClipShip is a local AI video clip generator for Windows and Apple Silicon Mac. It turns long talking-head recordings into ready-to-post clips while keeping source footage on the user's computer.",

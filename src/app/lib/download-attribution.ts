@@ -94,7 +94,11 @@ export function captureAttribution(): AttributionRecord | null {
   return record;
 }
 
-export function buildDownloadUrl(ctaSource: string, platform: DownloadPlatform = "windows"): string {
+export function buildDownloadUrl(
+  ctaSource: string,
+  platform: DownloadPlatform = "windows",
+  referralCode = "",
+): string {
   const firstTouch = captureAttribution();
   const currentUtm = readCurrentUtm();
   const params = new URLSearchParams({
@@ -114,12 +118,19 @@ export function buildDownloadUrl(ctaSource: string, platform: DownloadPlatform =
   add("utm_campaign", firstTouch?.utmCampaign || currentUtm.utmCampaign);
   add("utm_term", firstTouch?.utmTerm || currentUtm.utmTerm);
   add("utm_content", firstTouch?.utmContent || currentUtm.utmContent);
+  add("ref", referralCode);
 
   return `${DOWNLOAD_BASE_URLS[platform]}?${params.toString()}`;
 }
 
-export function downloadFallbackUrl(ctaSource: string, platform: DownloadPlatform = "windows"): string {
+export function downloadFallbackUrl(
+  ctaSource: string,
+  platform: DownloadPlatform = "windows",
+  referralCode = "",
+): string {
   const params = new URLSearchParams({ cta: clean(ctaSource, 120) });
+  const cleanedReferralCode = clean(referralCode, 24).toUpperCase();
+  if (cleanedReferralCode) params.set("ref", cleanedReferralCode);
   return `${DOWNLOAD_BASE_URLS[platform]}?${params.toString()}`;
 }
 

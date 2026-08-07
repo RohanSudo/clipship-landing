@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated20260722 = new Date("2026-07-22T00:00:00.000Z");
   const updated20260803 = new Date("2026-08-03T00:00:00.000Z");
   const updated20260806 = new Date("2026-08-06T00:00:00.000Z");
+  const updated20260807 = new Date("2026-08-07T00:00:00.000Z");
 
   return [
     // Main pages
@@ -17,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/changelog`, lastModified: updated20260806, changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/how-clipship-works`, lastModified: updated20260806, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/mac`, lastModified: updated20260806, changeFrequency: "weekly", priority: 0.95 },
+    { url: `${baseUrl}/referral`, lastModified: updated20260807, changeFrequency: "monthly", priority: 0.6 },
 
     // Comparison pages (primary: direct clip-generator competitors)
     { url: `${baseUrl}/vs/opus-clip`, lastModified: updated20260527, changeFrequency: "monthly", priority: 0.9 },

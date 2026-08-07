@@ -68,8 +68,8 @@ export default function Terms() {
           app version, and your license status. It does not send any video, audio, or transcript data.</li>
         <li><strong>Daily license check.</strong> Once per day in the background, ClipShip re-confirms
           your license with the same endpoint, sending the same minimal data. If your computer is
-          offline when this happens, ClipShip continues to work using a locally cached verdict for up
-          to 7 days, then prompts you to reconnect.</li>
+          offline when this happens, Trial and Pro access can use the last verified verdict for up
+          to 24 hours, then prompts you to reconnect. Free accounts may use a cached verdict longer.</li>
         <li><strong>Switching devices.</strong> When you deactivate one device and activate another
           from inside the app, both calls go through our license server.</li>
         <li><strong>Auto-updates.</strong> ClipShip checks for new versions and downloads them from
@@ -160,6 +160,26 @@ export default function Terms() {
       <p>
         <strong>What happens after a refund.</strong> Your license downgrades to the free tier. You
         can keep ClipShip installed and use the free features. Pro features stop working immediately.
+      </p>
+
+      <h2>Referral program</h2>
+      <p>
+        Each eligible ClipShip account can receive a personal referral link. A new buyer who follows
+        that link can receive 20% off their first ClipShip Lifetime Pro purchase. Monthly subscriptions
+        and extra-device purchases are not discounted through referrals.
+      </p>
+      <p>
+        After the referred purchase passes its seven-day refund window, the referrer earns one reward.
+        Free, Trial, and Monthly users receive a single-use 20% discount toward Lifetime Pro. Existing
+        Lifetime Pro owners receive one permanent extra device slot instead. Rewards cannot be stacked,
+        transferred, exchanged for cash, or applied retroactively.
+      </p>
+      <p>
+        Referral rewards are limited to three successful referrals per account. Self-referrals,
+        referrals between accounts using the same device, repeat-account abuse, refunded purchases,
+        chargebacks, disputes, and other attempts to bypass the rules do not qualify. ClipShip may void
+        a pending reward or reverse a referral-granted device slot when the qualifying purchase is
+        refunded or disputed.
       </p>
 
       <h2>Limitation of liability</h2>
