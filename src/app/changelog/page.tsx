@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.14",
+    date: "August 7, 2026",
+    label: "Clearer Free and Pro feature boundaries",
+    summary:
+      "This update keeps ClipShip's original Free workflow intact while moving the newer workflow controls and publishing tools into Pro.",
+    changes: [
+      "Added clear Pro locks and upgrade actions for manual target clip counts, on-video headlines, and generated posting copy.",
+      "Kept automatic clip finding, built-in caption styles, editing and reframing, and 720p watermarked exports available on Free.",
+      "Added native entitlement checks so paid processing and export features cannot be unlocked by changing the interface alone.",
+      "Made Free processing fall back to automatic clip counts and made Free exports omit previously saved paid headline overlays.",
+      "Cleared paid export caches when an account's entitlement changes so an expired trial cannot reuse a prior Pro render.",
+    ],
+    notes: [
+      "The seven-day trial still includes every Pro feature.",
+      "Existing Pro subscribers and Lifetime Pro owners keep the same features and billing terms.",
+      "This release does not change prices, product IDs, subscriptions, referrals, device limits, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.13",
     date: "August 7, 2026",
     label: "Give 20%, get 20% referrals",

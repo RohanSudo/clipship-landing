@@ -2,7 +2,7 @@
 
 > ClipShip is a local-first desktop app for Windows and Apple Silicon Mac that turns long talking-head recordings into short-form clips without uploading source footage in Local AI mode.
 
-Last updated: 2026-08-06
+Last updated: 2026-08-07
 
 ## Core facts
 
@@ -16,8 +16,8 @@ Last updated: 2026-08-06
 - Privacy model: in Local AI mode, video files, transcripts, clip selection, captions, and rendered clips stay on the user's computer. In optional API mode, the video stays local but transcript text is sent directly to the provider selected by the user.
 - Pricing: free tier available, 7-day Pro trial, $5/month founding Pro for the first 50 paid subscribers, or $99 one-time Pro for one device
 - Referral program: a referred buyer gets 20% off a first lifetime purchase. After the seven-day refund window, a referrer who does not own Lifetime gets one 20% lifetime discount; later rewards are banked as device slots. Lifetime owners receive device slots directly. Monthly purchases are excluded.
-- Pro features: no watermark, 1080p exports, custom styled captions, saved caption styles
-- Current workflow controls: adjustable target clip count and editable AI-generated headlines
+- Pro features: no watermark, 1080p exports, custom styled and saved caption styles, manual target clip counts, editable on-video headlines, and generated posting copy
+- Current workflow controls: automatic clip count on Free; manual target clip count, editable AI-generated on-video headlines, and generated posting copy on Pro
 - Review terminology: headline means optional on-video title; spoken opening means the first words already spoken in the selected clip; post caption means suggested social-post copy; word-level captions are subtitles rendered into the export
 - Free tier: unlimited local processing, 720p exports with ClipShip watermark
 - Extra device slot: available inside the app for Pro users
