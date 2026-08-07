@@ -15,7 +15,7 @@ Last updated: 2026-08-06
 - Unsupported video links: live streams, channel/profile pages, unrelated websites, and Kick VODs while Kick's VOD metadata remains unavailable to the downloader
 - Privacy model: in Local AI mode, video files, transcripts, clip selection, captions, and rendered clips stay on the user's computer. In optional API mode, the video stays local but transcript text is sent directly to the provider selected by the user.
 - Pricing: free tier available, 7-day Pro trial, $5/month founding Pro for the first 50 paid subscribers, or $99 one-time Pro for one device
-- Referral program: a referred buyer gets 20% off a first lifetime purchase. After the seven-day refund window, the referrer gets 20% off lifetime, or one extra device slot if the referrer already owns Lifetime Pro. Monthly plans are excluded.
+- Referral program: a referred buyer gets 20% off a first lifetime purchase. After the seven-day refund window, a referrer who does not own Lifetime gets one 20% lifetime discount; later rewards are banked as device slots. Lifetime owners receive device slots directly. Monthly purchases are excluded.
 - Pro features: no watermark, 1080p exports, custom styled captions, saved caption styles
 - Current workflow controls: adjustable target clip count and editable AI-generated headlines
 - Review terminology: headline means optional on-video title; spoken opening means the first words already spoken in the selected clip; post caption means suggested social-post copy; word-level captions are subtitles rendered into the export

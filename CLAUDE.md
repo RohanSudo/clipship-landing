@@ -6,6 +6,9 @@
 - `/r/[code]` is a `noindex, nofollow` personal landing page. Its Windows and
   macOS downloads pass the code to the existing tracked Worker routes.
 - The homepage referral band appears immediately after pricing.
+- Referral allocation is one usable Lifetime discount maximum. A second and
+  third cleared reward are banked device slots and activate automatically after
+  the referrer owns Lifetime Pro. `/referral` is the customer claim guide.
 - Do not publish these claims ahead of desktop 1.0.13. The page says the
   personal link is available in ClipShip Settings, so landing and installers
   must be released together.

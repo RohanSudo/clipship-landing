@@ -933,7 +933,7 @@ export default function Home() {
               <h2 className="text-3xl font-bold text-white sm:text-4xl">Give 20%. Get 20%.</h2>
               <p className="mt-4 max-w-xl leading-relaxed text-zinc-300">
                 Share your personal ClipShip link. Your friend gets 20% off the $99 lifetime license.
-                After their seven-day refund window, you earn 20% off lifetime too.
+                After their seven-day refund window, your first reward is 20% off lifetime. Later rewards become device slots.
               </p>
             </div>
             <div className="grid gap-6 sm:grid-cols-3 sm:divide-x sm:divide-white/10">
@@ -947,7 +947,7 @@ export default function Home() {
               </div>
               <div className="sm:pl-6">
                 <p className="text-2xl font-bold text-white">Extra slot</p>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">Already own Lifetime Pro? Get one permanent device slot instead.</p>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">Already own Lifetime Pro, or earned another reward? Get a permanent device slot.</p>
               </div>
             </div>
           </div>

@@ -46,7 +46,8 @@ export default async function ReferralLanding({ params }: ReferralLandingProps) 
       <p>
         Finish account setup in ClipShip, then choose Lifetime Pro from the upgrade screen. The app
         validates this referral and sends you to a checkout with 20% already applied. The offer is
-        for a first lifetime purchase and cannot be combined with another discount.
+        for a first lifetime purchase and cannot be combined with another discount. You do not need
+        to enter a Dodo coupon code.
       </p>
       <p><strong>Referral code:</strong> {referralCode}</p>
     </ContentPage>

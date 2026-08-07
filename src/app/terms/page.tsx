@@ -170,9 +170,11 @@ export default function Terms() {
       </p>
       <p>
         After the referred purchase passes its seven-day refund window, the referrer earns one reward.
-        Free, Trial, and Monthly users receive a single-use 20% discount toward Lifetime Pro. Existing
-        Lifetime Pro owners receive one permanent extra device slot instead. Rewards cannot be stacked,
-        transferred, exchanged for cash, or applied retroactively.
+        A referrer who does not yet own Lifetime Pro can receive at most one single-use 20% discount
+        toward Lifetime Pro. Additional cleared rewards are banked as permanent device slots and activate
+        after the referrer buys Lifetime. Existing Lifetime Pro owners receive one permanent extra device
+        slot for each cleared reward. Rewards cannot be stacked, transferred, exchanged for cash, or
+        applied retroactively.
       </p>
       <p>
         Referral rewards are limited to three successful referrals per account. Self-referrals,

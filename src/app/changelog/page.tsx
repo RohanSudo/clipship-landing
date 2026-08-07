@@ -12,14 +12,14 @@ const releases = [
     changes: [
       "Added a personal referral code and shareable link in Settings.",
       "Added 20% off a first Lifetime Pro purchase for an eligible referred buyer.",
-      "Added a 20% Lifetime Pro discount for referrers on Free, Trial, or Monthly after the referred purchase clears its refund window.",
-      "Added one permanent extra device slot as the referral reward for existing Lifetime Pro owners.",
+      "Added one 20% Lifetime Pro discount for referrers on Free, Trial, or Monthly after the referred purchase clears its refund window.",
+      "Added banked permanent device slots for later rewards, which activate automatically after the referrer owns Lifetime Pro.",
       "Added referral status, successful-referral count, remaining rewards, and available-discount status in Settings.",
       "Added repeat-device signup risk records for internal review without blocking legitimate account access or purchases.",
     ],
     notes: [
       "Referral discounts apply only to the $99 lifetime license. The $5 monthly plan and extra-slot purchases are not discounted.",
-      "Rewards become available after the referred buyer's seven-day refund window and are limited to three successful referrals per account.",
+      "Rewards become available after the referred buyer's seven-day refund window and are limited to three successful referrals per account: at most one Lifetime discount, followed by device slots.",
       "Self-referrals, shared-device referrals, discount stacking, refunded payments, disputes, and chargebacks do not qualify.",
       "The signed Dodo webhook remains the only authority for activating Pro access and qualifying referral rewards.",
     ],
