@@ -225,7 +225,11 @@ function ClipFinderAnimation() {
 
   const bars = Array.from({ length: 80 }, (_, i) => {
     // Clip-worthy moments have higher amplitude (more energy in the speech)
-    const height = inClip(i) ? 14 + Math.random() * 22 : 6 + Math.random() * 16;
+    // Keep this deterministic. Math.random() produced different server and
+    // browser markup, forcing React to discard the server-rendered homepage
+    // during hydration and repaint the hero on slower devices.
+    const variation = ((i * 37 + 17) % 100) / 100;
+    const height = inClip(i) ? 14 + variation * 22 : 6 + variation * 16;
     return { height };
   });
 

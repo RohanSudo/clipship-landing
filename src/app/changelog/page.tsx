@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.15",
+    date: "August 11, 2026",
+    label: "Recovery and CPU stability",
+    summary:
+      "This update fixes two Windows failures found in production diagnostics and makes error reporting more accurate.",
+    changes: [
+      "Fixed recovered-session cleanup when Windows briefly keeps a project file open after a preview or process exits.",
+      "Changed the Discard action to show a useful retry message instead of producing an unhandled app error if a file remains locked.",
+      "Isolated explicit CPU transcription from optional NVIDIA CUDA runtime files that could crash the CPU process on some Windows systems.",
+      "Stopped provider rate limits and quota responses from being reported as ClipShip crashes while keeping the error visible in the app.",
+      "Completed privacy-safe export milestone tracking for people who opted into anonymous usage statistics.",
+    ],
+    notes: [
+      "The macOS build is updated to the same version so both signed updater channels remain aligned. Its Metal and MLX processing architecture is unchanged.",
+      "Anonymous product analytics still excludes account identity, file names, paths, source URLs, transcripts, prompts, API keys, clip text, and exported media.",
+      "This release does not change pricing, products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.14",
     date: "August 7, 2026",
     label: "Clearer Free and Pro feature boundaries",
