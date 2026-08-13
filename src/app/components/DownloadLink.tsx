@@ -21,18 +21,22 @@ export default function DownloadLink({
   children,
   platform = "windows",
   referralCode = "",
+  creatorCode = "",
+  creatorClickId = "",
 }: {
   source: string;
   className: string;
   children: ReactNode;
   platform?: DownloadPlatform;
   referralCode?: string;
+  creatorCode?: string;
+  creatorClickId?: string;
 }) {
   return (
     <a
-      href={downloadFallbackUrl(source, platform, referralCode)}
+      href={downloadFallbackUrl(source, platform, referralCode, creatorCode, creatorClickId)}
       onClick={(event) => {
-        event.currentTarget.href = buildDownloadUrl(source, platform, referralCode);
+        event.currentTarget.href = buildDownloadUrl(source, platform, referralCode, creatorCode, creatorClickId);
         trackDownloadClick(source, platform);
       }}
       className={className}

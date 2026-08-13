@@ -98,6 +98,8 @@ export function buildDownloadUrl(
   ctaSource: string,
   platform: DownloadPlatform = "windows",
   referralCode = "",
+  creatorCode = "",
+  creatorClickId = "",
 ): string {
   const firstTouch = captureAttribution();
   const currentUtm = readCurrentUtm();
@@ -119,6 +121,8 @@ export function buildDownloadUrl(
   add("utm_term", firstTouch?.utmTerm || currentUtm.utmTerm);
   add("utm_content", firstTouch?.utmContent || currentUtm.utmContent);
   add("ref", referralCode);
+  add("creator", creatorCode);
+  add("creator_click", creatorClickId);
 
   return `${DOWNLOAD_BASE_URLS[platform]}?${params.toString()}`;
 }
@@ -127,10 +131,16 @@ export function downloadFallbackUrl(
   ctaSource: string,
   platform: DownloadPlatform = "windows",
   referralCode = "",
+  creatorCode = "",
+  creatorClickId = "",
 ): string {
   const params = new URLSearchParams({ cta: clean(ctaSource, 120) });
   const cleanedReferralCode = clean(referralCode, 24).toUpperCase();
   if (cleanedReferralCode) params.set("ref", cleanedReferralCode);
+  const cleanedCreatorCode = clean(creatorCode, 24).toUpperCase();
+  const cleanedCreatorClickId = clean(creatorClickId, 64);
+  if (cleanedCreatorCode) params.set("creator", cleanedCreatorCode);
+  if (cleanedCreatorClickId) params.set("creator_click", cleanedCreatorClickId);
   return `${DOWNLOAD_BASE_URLS[platform]}?${params.toString()}`;
 }
 

@@ -26,10 +26,11 @@ export default function Privacy() {
         <li>No video or audio content is transmitted anywhere</li>
         <li>No transcripts are sent to our servers</li>
         <li>If you opt in to anonymous analytics, we collect a fixed set of product milestones, such as video imported, transcription completed, clips generated, or export failed, plus OS, app version, AI mode, broad duration and clip-count ranges, and failure stage. We do not store your account ID, email, file path, video name, transcript, captions, prompt, or API key with these events.</li>
-        <li>If you use the "Connect your AI account" option, your API key is stored in your operating system's secure keychain (Windows Credential Manager / macOS Keychain / Linux Secret Service). The key is sent directly from your computer to the AI provider (OpenAI, Claude, Gemini, Groq, or OpenRouter). We never see, collect, or transmit your key.</li>
+        <li>If you use the &quot;Connect your AI account&quot; option, your API key is stored in your operating system&apos;s secure keychain (Windows Credential Manager / macOS Keychain / Linux Secret Service). The key is sent directly from your computer to the AI provider (OpenAI, Claude, Gemini, Groq, or OpenRouter). We never see, collect, or transmit your key.</li>
         <li>For purchase verification and license activation, we collect your email address, a non-reversible hardware fingerprint (used to enforce one license per device), and the device hostname (so you can identify which machine to sign out when switching devices).</li>
         <li>After your first successful export, ClipShip may ask once how you found the app. If you answer, we store the selected source, the optional text you provide, your account ID, and app version. Skipping the question stores nothing on our server.</li>
         <li>If you use the referral program, we store your personal referral code, the accounts connected through it, referral status, reward status, and the minimum device-fingerprint comparison needed to prevent self-referrals and shared-device abuse. We do not expose either person&apos;s email address to the other.</li>
+        <li>If you arrive through an approved creator partner, we store the creator code, an anonymous click ID, the resulting ClipShip account attribution, and commission records created from verified Dodo payment webhooks. Creator dashboards show aggregate funnel counts and payment-ledger amounts, but never expose buyer names, emails, account IDs, device details, or payment information.</li>
       </ul>
 
       <p><strong>When using clipship.co (this website):</strong></p>
@@ -45,7 +46,7 @@ export default function Privacy() {
       <h2>Connected social media accounts (YouTube, Instagram, TikTok)</h2>
       <p>
         ClipShip lets you publish your edited clips directly to YouTube Shorts, Instagram Reels, and TikTok.
-        To enable this, you connect each platform via that platform's own OAuth flow. Here is exactly what
+        To enable this, you connect each platform via that platform&apos;s own OAuth flow. Here is exactly what
         we do with the data:
       </p>
 
@@ -62,14 +63,14 @@ export default function Privacy() {
 
       <h3>What we store</h3>
       <ul>
-        <li><strong>OAuth tokens</strong> (the credentials each platform issues to authorize ClipShip to post on your behalf): stored encrypted in your operating system's secure credential store on your computer. Tokens are NOT transmitted to our servers.</li>
-        <li><strong>Connected username/handle</strong>: stored locally so the app can show "Connected as @yourname". Not transmitted to our servers.</li>
+        <li><strong>OAuth tokens</strong> (the credentials each platform issues to authorize ClipShip to post on your behalf): stored encrypted in your operating system&apos;s secure credential store on your computer. Tokens are NOT transmitted to our servers.</li>
+        <li><strong>Connected username/handle</strong>: stored locally so the app can show &quot;Connected as @yourname&quot;. Not transmitted to our servers.</li>
       </ul>
 
       <h3>What we transmit, when, and to whom</h3>
       <p>
-        When you click "Post to YouTube" / "Post to Instagram" / "Post to TikTok", ClipShip on your computer
-        sends the video file, your caption, and your OAuth token directly to that platform's API. No data
+        When you click &quot;Post to YouTube&quot; / &quot;Post to Instagram&quot; / &quot;Post to TikTok&quot;, ClipShip on your computer
+        sends the video file, your caption, and your OAuth token directly to that platform&apos;s API. No data
         passes through our servers in this flow. Each post is initiated by an explicit user click — we never
         post automatically, on a schedule, or in the background.
       </p>
@@ -176,6 +177,7 @@ export default function Privacy() {
         <li>Anonymous in-app analytics (opt-in): to understand which features matter most. Aggregate only.</li>
         <li>Website attribution and approximate geography: to understand which pages, referral sources, operating systems, and broad markets lead to downloads and account creation.</li>
         <li>Referral records: to attribute eligible lifetime purchases, apply one-time discounts, grant earned device slots, enforce the three-reward limit, and reverse pending rewards after refunds or disputes.</li>
+        <li>Creator partner records: to attribute eligible downloads and accounts, calculate commission after verified payments, prevent self-referral or repeat-account abuse, and provide creators with an anonymized performance and payout ledger.</li>
       </ul>
 
       <h2>Third-party services we use</h2>
