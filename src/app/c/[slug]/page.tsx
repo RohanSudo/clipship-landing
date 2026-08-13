@@ -57,8 +57,9 @@ export default async function CreatorLanding({ params }: CreatorLandingProps) {
       <p>
         Download from this page and finish account setup in ClipShip. The creator code is linked to
         your first account automatically when the download can be matched unambiguously. If it cannot,
-        enter the code shown below during signup. Creating extra accounts on the same computer does not
-        restart the {creator.trialDays}-day Pro trial.
+        keep the code shown below. Creator offers will not be activated until the current ClipShip
+        installers also support entering that code during signup. Creating extra accounts on the same
+        computer does not restart the {creator.trialDays}-day Pro trial.
       </p>
       <p><strong>Creator code:</strong> {creator.code}</p>
     </ContentPage>
