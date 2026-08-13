@@ -4,6 +4,26 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.16",
+    date: "August 13, 2026",
+    label: "Safer Windows updates and AI provider repairs",
+    summary:
+      "This update prevents incomplete Windows reinstalls and repairs the provider failures found in recent production diagnostics.",
+    changes: [
+      "Changed the Windows installer to detect and close only stale ClipShip runtime processes before replacing bundled files.",
+      "Removed the installer Ignore path that could leave Python DLLs missing and make ClipShip fail to open after an update.",
+      "Added a release-blocking import check for the exact bundled transcription, local AI, SSL, database, vision, and media runtime components.",
+      "Reduced Groq request sizes for lower free-tier token limits and added bounded retry guidance for rate-limited requests.",
+      "Made local AI failures report the actual model or runtime loading problem instead of incorrectly saying that the server is unreachable.",
+      "Removed Gemini's unbundled Python SDK dependency, replaced retired Gemini 2.0 defaults, and migrated saved retired defaults to Gemini 3.1 Flash-Lite.",
+    ],
+    notes: [
+      "The locked-DLL installer failure affected Windows reinstalls and updates only. The macOS DMG does not use NSIS or Windows Python DLLs.",
+      "The shared Groq, Gemini, and local AI error repairs are included in both the Windows and macOS builds.",
+      "This release does not change the current $99 lifetime charge, Dodo products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.15",
     date: "August 11, 2026",
     label: "Recovery and CPU stability",

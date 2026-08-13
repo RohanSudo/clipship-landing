@@ -24,7 +24,7 @@ export default function ReferralPage() {
       <ol>
         <li>Open ClipShip Settings and copy your personal referral link.</li>
         <li>Your friend downloads ClipShip through that link and creates their account.</li>
-        <li>When they choose Lifetime Pro, ClipShip validates the referral and applies 20% off the $99 price automatically.</li>
+        <li>When they choose Lifetime Pro, ClipShip validates the referral and applies 20% off the current lifetime price automatically.</li>
         <li>Their signed payment starts a seven-day reward hold, matching ClipShip&apos;s refund window.</li>
         <li>After that hold, your reward appears automatically. You do not need to enter a Dodo coupon.</li>
       </ol>

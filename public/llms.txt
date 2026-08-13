@@ -14,7 +14,7 @@ Last updated: 2026-08-07
 - Supported video links: YouTube videos and Shorts, Twitch VODs and clips, and Kick clips
 - Unsupported video links: live streams, channel/profile pages, unrelated websites, and Kick VODs while Kick's VOD metadata remains unavailable to the downloader
 - Privacy model: in Local AI mode, video files, transcripts, clip selection, captions, and rendered clips stay on the user's computer. In optional API mode, the video stays local but transcript text is sent directly to the provider selected by the user.
-- Pricing: free tier available, 7-day Pro trial, $5/month founding Pro for the first 50 paid subscribers, or $99 one-time Pro for one device
+- Pricing: free tier available, 7-day Pro trial, $5/month founding Pro for the first 50 paid subscribers, or a $99 founder lifetime price for the first 100 lifetime customers, then $149
 - Referral program: a referred buyer gets 20% off a first lifetime purchase. After the seven-day refund window, a referrer who does not own Lifetime gets one 20% lifetime discount; later rewards are banked as device slots. Lifetime owners receive device slots directly. Monthly purchases are excluded.
 - Pro features: no watermark, 1080p exports, custom styled and saved caption styles, manual target clip counts, editable on-video headlines, and generated posting copy
 - Current workflow controls: automatic clip count on Free; manual target clip count, editable AI-generated on-video headlines, and generated posting copy on Pro
@@ -113,7 +113,7 @@ ClipShip supports Kick clips. Kick VOD import is currently unavailable because t
 
 ### Is ClipShip an affordable OpusClip alternative for beginners?
 
-ClipShip has a 7-day Pro trial, a forever-free tier with 720p watermarked exports, a $5 monthly founding plan for the first 50 paid subscribers, and a $99 one-time Pro option. Both paid plans unlock the same Pro features without per-video processing credits.
+ClipShip has a 7-day Pro trial, a forever-free tier with 720p watermarked exports, a $5 monthly founding plan for the first 50 paid subscribers, and a $99 founder lifetime price for the first 100 lifetime customers before it becomes $149. Both paid plans unlock the same Pro features without per-video processing credits.
 
 ### Does ClipShip upload videos?
 

@@ -165,7 +165,7 @@ export default function NoUploadOpusClipAlternativePage() {
             </tr>
             <tr>
               <td>How is it priced?</td>
-              <td>Free tier, $5/month founding Pro, or $99 one-time Pro.</td>
+              <td>Free tier, $5/month founding Pro, or $99 founder lifetime Pro for the first 100 lifetime customers, then $149.</td>
               <td>Subscription and credit based.</td>
             </tr>
             <tr>
@@ -251,8 +251,9 @@ export default function NoUploadOpusClipAlternativePage() {
 
         <h2>Pricing difference</h2>
         <p>
-          ClipShip has a free tier, a $5 monthly founding plan for the first 50 paid subscribers, and a $99 one-time
-          Pro license. Pro removes the watermark, enables 1080p exports, and unlocks custom saved caption styles.
+          ClipShip has a free tier, a $5 monthly founding plan for the first 50 paid subscribers, and a $99 founder lifetime
+          Pro license for the first 100 lifetime customers before it becomes $149. Pro removes the watermark, enables 1080p
+          exports, and unlocks custom saved caption styles.
         </p>
 
         <p>
@@ -277,8 +278,9 @@ export default function NoUploadOpusClipAlternativePage() {
         <h2>FAQ</h2>
         <h3>Is ClipShip cheaper than OpusClip?</h3>
         <p>
-          ClipShip has a free tier, a $5 monthly founding plan for the first 50 paid subscribers, and a $99 one-time
-          Pro license. If you need the tool for more than a few months, the one-time option can become cheaper.
+          ClipShip has a free tier, a $5 monthly founding plan for the first 50 paid subscribers, and a $99 founder lifetime
+          Pro license for the first 100 lifetime customers before it becomes $149. If you need the tool for more than a few
+          months, the one-time option can become cheaper.
         </p>
 
         <h3>Does ClipShip work with YouTube links?</h3>

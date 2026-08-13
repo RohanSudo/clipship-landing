@@ -41,7 +41,7 @@ const data: ComparisonData = {
     {
       title: "Monthly or one-time Pro, without clip credits",
       detail:
-        "ClipShip has a free tier, a $5 monthly founding plan, and a $99 one-time Pro license. Neither Pro option meters local processing with clip credits.",
+        "ClipShip has a free tier, a $5 monthly founding plan, and a $99 founder lifetime price for the first 100 lifetime customers before it becomes $149. Neither Pro option meters local processing with clip credits.",
     },
     {
       title: "Your exported clips stay with you",

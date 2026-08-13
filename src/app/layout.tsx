@@ -20,7 +20,7 @@ const structuredData = [
       "https://api.clipship.co/download/windows",
       "https://api.clipship.co/download/macos",
     ],
-    softwareVersion: "1.0.14",
+    softwareVersion: "1.0.16",
     image: "https://clipship.co/opengraph-image",
     description:
       "ClipShip is a local AI video clip generator for Windows and Apple Silicon Mac. It turns long talking-head recordings into ready-to-post clips while keeping source footage on the user's computer.",
@@ -60,7 +60,7 @@ const structuredData = [
         "@type": "Offer",
         price: "99",
         priceCurrency: "USD",
-        description: "ClipShip Pro is $99 one-time for one device. Includes no watermark, 1080p exports, and custom caption styles.",
+        description: "ClipShip Pro has a $99 founder lifetime price for the first 100 lifetime customers, then $149. Includes no watermark, 1080p exports, and custom caption styles.",
       },
     ],
     author: {

@@ -51,7 +51,7 @@ const homepageFaqJsonLd = {
       name: "Is ClipShip a subscription?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ClipShip Pro is available either as a $5 monthly founding plan for the first 50 subscribers or as a $99 one-time purchase. Both options unlock the same Pro features with no usage caps or per-video charges.",
+        text: "ClipShip Pro is available either as a $5 monthly founding plan for the first 50 subscribers or at the $99 founder lifetime price for the first 100 lifetime customers. The lifetime price then becomes $149. Both options unlock the same Pro features with no usage caps or per-video charges.",
       },
     },
     {
@@ -909,13 +909,15 @@ export default function Home() {
 
             <FadeIn delay={0.15}>
               <div className="flex h-full flex-col rounded-lg bg-[#18181b]/60 border border-white/10 p-7">
-                <div className="flex min-h-7 items-center mb-3">
+                <div className="flex min-h-7 items-center justify-between gap-3 mb-3">
                   <p className="text-sm font-semibold text-zinc-300">Pro lifetime</p>
+                  <span className="rounded-full bg-emerald-400/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-200">First 100 customers</span>
                 </div>
                 <div className="flex items-baseline gap-2 mb-5">
                   <span className="text-4xl font-bold text-white">$99</span>
                   <span className="text-zinc-400">one time</span>
                 </div>
+                <p className="-mt-3 mb-5 text-xs font-medium text-emerald-300">Founder price. Then $149.</p>
                 <ul className="space-y-3 text-sm text-zinc-200 mb-8">
                   <li>No watermark</li>
                   <li>1080p exports</li>
@@ -1032,7 +1034,7 @@ export default function Home() {
             />
             <FAQItem
               q="Is ClipShip a subscription?"
-              a={<p>You choose. Pro is available for $5 per month to the first 50 paid subscribers, or as a $99 one-time purchase. Both unlock the same features with no usage caps or per-video charges. Founding subscribers keep the $5 rate for as long as their subscription remains active.</p>}
+              a={<p>You choose. Pro is available for $5 per month to the first 50 paid subscribers, or at the $99 founder lifetime price for the first 100 lifetime customers. The lifetime price then becomes $149. Both unlock the same features with no usage caps or per-video charges. Founding subscribers keep the $5 rate for as long as their subscription remains active.</p>}
             />
             <FAQItem
               q="Is there a free trial?"
@@ -1138,7 +1140,7 @@ export default function Home() {
               Start clipping your long videos.
             </h2>
             <p className="text-zinc-400 mb-8">
-              Download ClipShip for Windows or Apple Silicon Mac. Try Pro for 7 days, then keep using the free tier, subscribe for $5 per month, or buy Pro once for $99.
+              Download ClipShip for Windows or Apple Silicon Mac. Try Pro for 7 days, then keep using the free tier, subscribe for $5 per month, or claim the $99 founder lifetime price while it is available.
             </p>
           </FadeIn>
           <FadeIn delay={0.1}>
