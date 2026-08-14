@@ -51,6 +51,7 @@ type Summary = {
     clickToPaidPercent: number;
     signupToPaidPercent: number;
   };
+  attribution: { automatic: number; offerCode: number };
   balances: Balance[];
   recentCommissions: Commission[];
   payouts: Payout[];
@@ -72,6 +73,7 @@ const PREVIEW_SUMMARY: Summary = {
     clickToPaidPercent: 3.26,
     signupToPaidPercent: 14.63,
   },
+  attribution: { automatic: 29, offerCode: 12 },
   balances: [{ currency: "USD", pending: 125, available: 2475, paid: 4950 }],
   recentCommissions: [
     {
@@ -358,6 +360,10 @@ function Dashboard({
             </div>
           ))}
         </section>
+        <p className="mt-4 text-sm text-zinc-500">
+          Account attribution: <span className="text-zinc-300">{summary.attribution.automatic} automatic link matches</span>
+          {" and "}<span className="text-zinc-300">{summary.attribution.offerCode} offer-code matches</span>.
+        </p>
 
         <section className="mt-10 overflow-hidden rounded-lg border border-white/15 bg-[#101014]">
           <div className="flex flex-col gap-6 border-b border-white/10 px-7 py-6 lg:flex-row lg:items-center lg:justify-between">

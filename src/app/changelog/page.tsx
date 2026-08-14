@@ -4,6 +4,26 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.17",
+    date: "August 14, 2026",
+    label: "Offer codes and creator attribution",
+    summary:
+      "This update adds a durable offer-code fallback for creator referrals and enforces ClipShip's founder lifetime allocation at checkout.",
+    changes: [
+      "Added one optional Offer code field during account setup for referral, creator-partner, and future promotional codes.",
+      "Added the same optional Offer code field before Pro checkout so attribution can be recovered even when a download and later signup happen on different networks.",
+      "Added a 14-day Pro trial for valid creator-partner offers while keeping the normal ClipShip trial at seven days.",
+      "Added automatic recent-link detection where the match is unambiguous, with the visible offer code as the reliable fallback.",
+      "Added automatic-link and offer-code attribution counts to the creator dashboard alongside verified clicks, accounts, conversions, and commission entries.",
+      "Enforced the $99 founder lifetime allocation atomically for the first 100 eligible lifetime purchases, then switched new lifetime checkouts to the $149 standard product.",
+    ],
+    notes: [
+      "The installer is identical for every customer and contains no buyer-specific or creator-specific data.",
+      "Creating another account on the same computer does not restart or extend a used trial.",
+      "Existing subscriptions, existing lifetime licenses, device limits, signed-webhook activation, and customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.16",
     date: "August 13, 2026",
     label: "Safer Windows updates and AI provider repairs",
