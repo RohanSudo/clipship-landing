@@ -27,15 +27,18 @@ export default function Terms() {
       <h2>Plans and free trial</h2>
       <p>
         ClipShip offers a free tier and a paid Pro tier. The free tier is always available at no
-        cost. Every new install gets a 7-day free trial of the Pro tier, no credit card required.
-        After the trial, ClipShip downgrades to the free tier automatically until you upgrade.
+        cost. An eligible new installation gets a 7-day free trial of the Pro tier, no credit card
+        required. A valid offer code from an approved ClipShip creator partner may extend that trial
+        to 14 days. After the trial, ClipShip downgrades to the free tier automatically until you
+        upgrade.
       </p>
       <p>
         <strong>The free trial is one per computer, not one per account.</strong> Trials are bound
         to your hardware fingerprint, so creating a new email account on the same machine does not
-        grant a fresh trial. This is the same per-device rule that applies to refunds, and exists
-        for the same reason: to keep the trial a real evaluation period rather than an
-        indefinite loop.
+        grant a fresh trial. An offer code changes the length of an eligible trial; it does not
+        create another trial on a device that has already used one. This is the same per-device
+        rule that applies to refunds, and exists for the same reason: to keep the trial a real
+        evaluation period rather than an indefinite loop.
       </p>
 
       <h2>License terms (Pro)</h2>
