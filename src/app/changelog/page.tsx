@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.18",
+    date: "August 15, 2026",
+    label: "Reliable transcription engine setup",
+    summary:
+      "This update makes the first transcription-engine download resilient to interrupted connections and shows a useful error when setup cannot continue.",
+    changes: [
+      "Added bounded retries and resumable downloads for temporary connection failures during transcription-engine setup.",
+      "Added a complete-file verification step so onboarding cannot continue with a partial or damaged transcription model.",
+      "Added clear inline recovery messages for network, TLS, storage, server, and bundled-runtime failures instead of returning to an unchanged setup screen.",
+      "Added privacy-safe failure categories to crash reporting so setup problems can be diagnosed without collecting file paths, model contents, or personal data.",
+      "Added a bundled-runtime check before downloading so an incomplete installation is identified immediately with the correct reinstall guidance.",
+    ],
+    notes: [
+      "Existing complete transcription models remain in place and are not downloaded again.",
+      "Windows continues to use Faster-Whisper and Apple Silicon Macs continue to use MLX Whisper; the recovery behavior is shared across both platforms.",
+      "This release does not change pricing, Dodo products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.17",
     date: "August 14, 2026",
     label: "Offer codes and creator attribution",
