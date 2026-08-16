@@ -4,6 +4,26 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.19",
+    date: "August 16, 2026",
+    label: "Safer 4K transcription and clearer clip setup",
+    summary:
+      "This update prevents local AI and transcription from competing for graphics memory, makes 4K sources safer to process, and adds clearer controls for the clips ClipShip should create.",
+    changes: [
+      "Changed transcription to work from a temporary 16 kHz mono audio file instead of decoding the original video container inside the transcription engine.",
+      "Added an exclusive transcription lock so the local language model is fully stopped before transcription starts and cannot reload until transcription finishes.",
+      "Added automatic CPU fallback when available NVIDIA graphics memory is too low for reliable transcription, with a clear warning when forced GPU mode cannot run safely.",
+      "Added a spoken-language selector so the transcription engine can use the correct language hint instead of relying only on automatic detection.",
+      "Added a real Smart Mix or Keep Full Frame choice to clip setup and carried that choice through analysis, review, and rendering.",
+      "Added cleanup for temporary transcription audio even when a run is cancelled or fails.",
+    ],
+    notes: [
+      "The source video remains on the computer. The temporary transcription audio is local and is removed after the run.",
+      "On Apple Silicon, ClipShip continues to use MLX Whisper and Metal. On Windows, GPU transcription remains available when the selected mode and available graphics memory can support it safely.",
+      "This release does not change pricing, Dodo products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.18",
     date: "August 15, 2026",
     label: "Reliable transcription engine setup",

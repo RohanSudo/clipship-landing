@@ -54,6 +54,30 @@ export default function HowClipShipWorksPage() {
           </p>
         </AnswerBox>
 
+        <section aria-labelledby="full-walkthrough" className="not-prose mt-12">
+          <div className="mb-5 max-w-2xl">
+            <h2 id="full-walkthrough" className="text-2xl font-bold text-white sm:text-3xl">
+              Watch the full walkthrough
+            </h2>
+            <p className="mt-3 text-base leading-7 text-zinc-400">
+              See the complete workflow, from importing a long video to reviewing and exporting the generated clips.
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-lg border border-white/10 bg-black shadow-[0_18px_60px_rgba(0,0,0,0.35)]">
+            <div className="aspect-video">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/ZN4l8g7oyMY"
+                title="How to use ClipShip: complete product walkthrough"
+                loading="lazy"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
+
         <h2>1. Import the source video</h2>
         <p>
           Choose a video on your computer or paste a supported YouTube video, YouTube Short, Twitch VOD,
