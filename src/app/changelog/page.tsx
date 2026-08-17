@@ -4,6 +4,26 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.20",
+    date: "August 17, 2026",
+    label: "Reliable language selection and AI clip recovery",
+    summary:
+      "This update keeps the selected spoken language attached to the project and recovers when a local AI model initially selects no clips.",
+    changes: [
+      "Kept the spoken-language selection stable when moving between clip setup and processing instead of allowing the screen to reset it silently.",
+      "Added a processing-stage language indicator so the selected transcription language is visible before captions are generated.",
+      "Added a fail-closed check that stops the run if the transcription engine reports a different forced language than the one requested.",
+      "Changed valid empty AI results so they are recognized as no clip selection instead of being reported as malformed JSON.",
+      "Added a focused second AI pass that selects the strongest available moment when the first pass returns no clips.",
+      "Added a clear recovery message when a video still produces no usable clips after both analysis passes.",
+    ],
+    notes: [
+      "Genre changes what kinds of moments ClipShip prioritizes. It does not change the spoken language used for transcription.",
+      "The source video, transcript, and AI analysis remain on the computer when Local AI is selected.",
+      "This release does not change pricing, Dodo products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.19",
     date: "August 16, 2026",
     label: "Safer 4K transcription and clearer clip setup",
