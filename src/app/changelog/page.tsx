@@ -4,6 +4,26 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.21",
+    date: "August 18, 2026",
+    label: "Safer processing recovery and clearer errors",
+    summary:
+      "This update stops stalled local AI analysis cleanly, recovers more usable clips from imperfect AI timestamps, and gives clearer storage and export errors.",
+    changes: [
+      "Stopped a local AI request after its 10-minute inference limit instead of retrying the same stalled request and making the run appear frozen.",
+      "Added one focused retry with stricter timestamp rules when every AI-selected clip fails validation.",
+      "Added a safe relaxed-validation recovery for imperfect but still usable clip segments instead of dropping the entire result immediately.",
+      "Verified that the selected storage folder is writable before starting multi-gigabyte model downloads, with clear permission and disk-space guidance when it is not.",
+      "Hardened Copy crash log so clipboard focus failures fall back safely and show a useful retry message instead of failing silently.",
+      "Added privacy-safe analysis and export diagnostics that include the failed stage, model, device, and error category while removing local file paths.",
+    ],
+    notes: [
+      "The source video, transcript, and AI analysis remain on the computer when Local AI is selected.",
+      "The added diagnostics do not include source video contents, transcript contents, model contents, or local filesystem paths.",
+      "This release does not change pricing, Dodo products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.20",
     date: "August 17, 2026",
     label: "Reliable language selection and AI clip recovery",
