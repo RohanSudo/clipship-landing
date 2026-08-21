@@ -4,6 +4,27 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.22",
+    date: "August 21, 2026",
+    label: "Reliable long-video imports and processing",
+    summary:
+      "This update repairs the failure paths that could leave long YouTube videos downloading or processing indefinitely, especially on Windows.",
+    changes: [
+      "Changed YouTube imports to prefer reliable HLS streams before direct DASH formats that can fail with HTTP 403 responses.",
+      "Passed ClipShip's bundled Node.js runtime to yt-dlp so JavaScript-based YouTube extraction does not depend on a separate system installation.",
+      "Added an eight-minute inactivity watchdog and a two-hour absolute limit so a stalled online import ends with a clear recovery message instead of running overnight.",
+      "Recovered a completed transcript when the native Windows transcription runtime fails only during GPU shutdown after already writing valid output.",
+      "Removed stale transcript output before every new run so a previous partial result can never be mistaken for the current transcription.",
+      "Removed the duplicate outer local-AI retry that could repeat an already timed-out analysis and make processing appear frozen for much longer.",
+      "Added privacy-safe failure categories for online import, transcription, and analysis diagnostics without collecting video URLs, transcript text, or local file paths.",
+    ],
+    notes: [
+      "The source video remains on the computer after an online import completes. Local AI keeps transcription and clip analysis on the computer.",
+      "A stalled import now fails visibly rather than continuing without progress, so it can be retried or reported with useful diagnostics.",
+      "This release does not change pricing, Dodo products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.21",
     date: "August 18, 2026",
     label: "Safer processing recovery and clearer errors",
