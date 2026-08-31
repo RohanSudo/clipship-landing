@@ -4,6 +4,26 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.23",
+    date: "August 31, 2026",
+    label: "Reliable local AI context and easier support",
+    summary:
+      "This update prevents long or multilingual transcripts from exceeding the loaded local AI model's real context window and makes it easier to send useful diagnostics when a run fails.",
+    changes: [
+      "Counted each local AI prompt with the exact tokenizer used by the model that is currently loaded instead of relying on an approximate character count.",
+      "Added model-aware transcript chunking that preserves room for the response and a focused retry, including long multilingual transcripts that use more tokens per character.",
+      "Added recursive re-chunking when a prepared request is still too large, so ClipShip can reduce the request safely instead of sending an impossible prompt to the inference engine.",
+      "Changed the local AI server to reject an oversized request before inference with a clear context-window error instead of allowing it to fail or stall inside the model runtime.",
+      "Added one Help & Support screen with FAQs, app and operating-system details, privacy-safe diagnostics, copy controls, and an email action.",
+      "Connected the footer Help button, Settings support action, native Report Bug menu, and crash recovery screen to the same support workflow.",
+    ],
+    notes: [
+      "The source video, transcript, and AI analysis remain on the computer when Local AI is selected.",
+      "Support diagnostics remove local paths and sensitive content, and the email opens in the customer's mail app for review before anything is sent.",
+      "This release does not change pricing, Dodo products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.22",
     date: "August 21, 2026",
     label: "Reliable long-video imports and processing",
