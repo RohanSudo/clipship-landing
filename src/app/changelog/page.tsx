@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.24",
+    date: "September 1, 2026",
+    label: "Reliable caption runtime checks and recovery",
+    summary:
+      "This update detects an incomplete local caption-rendering runtime before export and gives a clear recovery path instead of failing after a long render attempt.",
+    changes: [
+      "Added an export preflight that verifies the bundled Python, FFmpeg, FFprobe, Node.js, HyperFrames, and caption browser files are present and can start.",
+      "Added direct reinstall and Windows Security recovery guidance when an updater, interrupted install, or quarantine leaves one of those bundled components unavailable.",
+      "Kept projects and settings outside the reinstall path, so repairing the application does not remove saved ClipShip work.",
+      "Added a dedicated privacy-safe runtime-incomplete category to export diagnostics so this installation problem is no longer grouped with unknown export failures.",
+      "Strengthened the Windows release gate to unpack the finished installer and complete a real captioned export using only the runtime contained inside it.",
+    ],
+    notes: [
+      "The source video, transcript, and caption render remain on the computer.",
+      "Diagnostics identify the missing runtime component without including local file paths or source content.",
+      "This release does not change pricing, Dodo products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.23",
     date: "August 31, 2026",
     label: "Reliable local AI context and easier support",
