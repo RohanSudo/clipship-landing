@@ -4,6 +4,24 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.25",
+    date: "September 2, 2026",
+    label: "Reliable local AI handoff to transcription",
+    summary:
+      "This update fixes a Windows timing issue that could ask for an app restart while ClipShip was releasing the local AI model before transcription.",
+    changes: [
+      "Replaced the fixed local AI shutdown delay with a bounded check that waits until the model server has actually released its listener.",
+      "Added a safe fallback that force-stops only ClipShip's own tracked model process when graceful shutdown does not finish in time.",
+      "Applied the same confirmed shutdown behavior when restarting an unhealthy local AI server and when stopping it from the app.",
+      "Added regression coverage for immediate, delayed, and unsuccessful shutdown paths.",
+    ],
+    notes: [
+      "The source video, transcript, and local AI processing remain on the computer.",
+      "The shutdown path remains fail-closed if ClipShip cannot verify that the local AI listener was released.",
+      "This release does not change pricing, Dodo products, subscriptions, referrals, device limits, billing, or existing customer access.",
+    ],
+  },
+  {
     version: "1.0.24",
     date: "September 1, 2026",
     label: "Reliable caption runtime checks and recovery",
