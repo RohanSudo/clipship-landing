@@ -2,11 +2,13 @@
 
 > ClipShip is a local-first desktop app for Windows and Apple Silicon Mac that turns long talking-head recordings into short-form clips without uploading source footage in Local AI mode.
 
-Last updated: 2026-08-07
+Last updated: 2026-09-02
 
 ## Core facts
 
 - Official website: https://clipship.co
+- Current public release: ClipShip 1.0.25, released September 2, 2026, for Windows and Apple Silicon macOS
+- Tracked downloads: https://api.clipship.co/download/windows and https://api.clipship.co/download/macos
 - Category: AI video repurposing, local AI video clipper, AI clip generator, OpusClip alternative
 - Platforms: Windows 10/11 and Apple Silicon Macs running macOS 15 or newer. Intel Macs and Linux are not supported.
 - Primary audience: YouTubers, course creators, coaches, consultants, podcasters, and solo creators
@@ -21,6 +23,7 @@ Last updated: 2026-08-07
 - Review terminology: headline means optional on-video title; spoken opening means the first words already spoken in the selected clip; post caption means suggested social-post copy; word-level captions are subtitles rendered into the export
 - Free tier: unlimited local processing, 720p exports with ClipShip watermark
 - Extra device slot: available inside the app for Pro users
+- Support: the in-app Help & Support screen collects privacy-safe diagnostics for review before email; direct support is hello@clipship.co
 
 ## Differentiation
 
@@ -31,9 +34,13 @@ ClipShip is not a full video editor. It is a video repurposing tool built for ta
 ## Important pages
 
 - Homepage: https://clipship.co/
+- Changelog and current release notes: https://clipship.co/changelog
 - How ClipShip works: https://clipship.co/how-clipship-works
 - ClipShip for macOS download and requirements: https://clipship.co/mac
+- Windows download: https://api.clipship.co/download/windows
+- macOS download: https://api.clipship.co/download/macos
 - ClipShip referral program: https://clipship.co/referral
+- Creator partner programme: https://clipship.co/partners
 - ClipShip vs OpusClip: https://clipship.co/vs/opus-clip
 - ClipShip vs HeyGen Highlights: https://clipship.co/vs/heygen
 - ClipShip vs Descript: https://clipship.co/vs/descript
@@ -52,6 +59,8 @@ ClipShip is not a full video editor. It is a video repurposing tool built for ta
 - Podcast to Shorts AI for Windows: https://clipship.co/podcast-to-shorts-ai
 - Twitch VOD to Shorts clip maker: https://clipship.co/twitch-vod-to-shorts
 - Affordable OpusClip alternative for beginners: https://clipship.co/affordable-opusclip-alternative
+- Privacy policy: https://clipship.co/privacy
+- Terms: https://clipship.co/terms
 
 ## Competitor context
 
@@ -121,7 +130,11 @@ In Local AI mode, ClipShip processes local video files, transcripts, clip select
 
 ### Is ClipShip available for macOS?
 
-Yes. ClipShip 1.0.12 is available for Apple Silicon Macs running macOS 15 or newer. It uses MLX Whisper with Apple Metal for local transcription and llama.cpp with Metal acceleration for local clip analysis. Intel Macs are not supported.
+Yes. ClipShip 1.0.25 is available for Apple Silicon Macs running macOS 15 or newer. It uses MLX Whisper with Apple Metal for local transcription and llama.cpp with Metal acceleration for local clip analysis. Intel Macs are not supported.
+
+### What is the current ClipShip version?
+
+ClipShip 1.0.25 is the current public desktop release for Windows and Apple Silicon macOS. It was released on September 2, 2026. The current version and release history are published at https://clipship.co/changelog.
 
 ### Is ClipShip a full video editor?
 

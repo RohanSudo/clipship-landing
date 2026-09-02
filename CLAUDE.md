@@ -30,6 +30,12 @@
 
 ## SEO/AIO cluster status
 
+### `llms.txt` maintenance rule
+
+- `public/llms.txt` is a maintained product source, not a one-time SEO artifact.
+- Audit and update it in the same release or site change whenever ClipShip has a significant public change, including features, positioning or use cases, pricing or plans, referrals or partner programmes, supported platforms or requirements, supported imports, privacy or data handling, the current public version, download destinations, or important documentation URLs.
+- After every edit, run the production build, deploy the landing site, and verify `https://clipship.co/llms.txt` contains the new facts. Also confirm `robots.txt` still allows the intended search and answer-engine crawlers.
+
 Live high-intent pages:
 - `/no-upload-opusclip-alternative`
 - `/local-ai-video-clip-generator`
