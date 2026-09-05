@@ -1,5 +1,26 @@
 # ClipShip Landing Page
 
+## Uneed launch preparation - 2026-09-05
+
+- Approved homepage launch badge is live below the download buttons. It uses
+  Uneed's actual black image `https://www.uneed.best/EMBED3B.png` and links to
+  `https://www.uneed.best/tool/clipship`. The similarly named `EMBED3.png` is white.
+- Mac structured data and FAQ now name the current public version, 1.0.25.
+- Full lint and production build passed. Desktop and 390px mobile previews
+  passed; Instagram denial and TikTok missing-parameter pages were checked.
+  The old lint failures were fixed, including cleanup of OAuth status/redirect
+  timers. No desktop build or Windows session was needed.
+- Code commit `86e37a488683395d82342e31e1e32b06e7f72de7` is on remote main.
+  Vercel deployment `7qY3gc6HNqo44qZfrwtL6hMMYgcD` completed successfully.
+  Production homepage and `/mac` returned the intended new content.
+- `llms.txt` was audited, with no new product facts requiring a content edit.
+  Live plain text exactly matched source SHA-256
+  `90d7f3f7f053bbb97612d733a60c7a4a5f290c56d042411b72e9ddc672871268`.
+  Live `robots.txt` allows the intended search and answer-engine crawlers.
+- Uneed launch date: September 11, 2026. Review or remove the temporary
+  "Launching Soon" badge when the launch is live; no automatic badge job was
+  created. Newsletter/listing completion is tracked in the parent HANDOFF.md.
+
 ## Referral release (prepared 2026-08-07)
 
 - `/referral` explains the public lifetime referral terms.
