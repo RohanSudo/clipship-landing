@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.26",
+    date: "September 5, 2026",
+    label: "More reliable local AI startup",
+    summary:
+      "This update fixes a failure after transcription when the local AI model needs more time to load, and gives clearer recovery guidance when the model cannot start.",
+    changes: [
+      "Wait for the selected model to finish loading before counting transcript tokens or starting clip analysis.",
+      "Allow up to three minutes for model startup, with visible loading progress instead of a misleading title-writing message.",
+      "Stop promptly when the model reports a permanent loading failure, with specific guidance for missing files, an incomplete runtime, insufficient memory, or unavailable GPU support.",
+      "Keep failed or partially loaded models unavailable for requests, and preserve the failure category in sanitized support diagnostics.",
+      "Added regression tests for delayed startup, failed loading, interrupted connections, invalid token counts, and the startup deadline on both Windows and Linux.",
+    ],
+    notes: [
+      "Local AI still processes the source video and transcript on the computer. This update does not automatically switch processing to a cloud provider.",
+      "A model that cannot load now has a clear recovery path; this does not remove the model's hardware and memory requirements.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.25",
     date: "September 2, 2026",
     label: "Reliable local AI handoff to transcription",
