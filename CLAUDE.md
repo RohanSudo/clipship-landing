@@ -1,11 +1,30 @@
 # ClipShip Landing Page
 
+## 1.0.26 release - 2026-09-05
+
+- Public Windows and Apple Silicon Mac release is 1.0.26. Changelog, homepage
+  software metadata, Mac FAQ/schema and `public/llms.txt` were updated together.
+  The release fixes local-AI readiness handling and recovery diagnostics; do
+  not claim every underlying hardware/model-load failure has been eliminated.
+- Code commit `05285116d828da2e9abb6aef527f9dda5eb75dd8` is verified on remote
+  main. Vercel deployment `6283668649` succeeded for that exact source:
+  `https://clipship-landing-mrzcgn21d-rohansudos-projects.vercel.app`.
+- Lint, full production build and browser preview passed before deployment.
+  Live `/`, `/mac`, and `/changelog#v1.0.26` returned the new release content.
+  Live `llms.txt` is real plain text and matches source SHA-256
+  `eb72d5b09763ba040031f5f9c36527315a0b1b179433367fe2b0c78f08a1bf0a`.
+  `robots.txt` still allows the intended search and answer-engine crawlers.
+- Both tracked download routes resolve to 1.0.26. Pricing, referrals, license
+  access, newsletter scheduling and the approved black Uneed badge are unchanged.
+  Desktop test evidence and the expressly deferred physical Windows updater
+  test are in the parent `HANDOFF.md` and app `docs/RELEASING.md`.
+
 ## Uneed launch preparation - 2026-09-05
 
 - Approved homepage launch badge is live below the download buttons. It uses
   Uneed's actual black image `https://www.uneed.best/EMBED3B.png` and links to
   `https://www.uneed.best/tool/clipship`. The similarly named `EMBED3.png` is white.
-- Mac structured data and FAQ now name the current public version, 1.0.25.
+- Mac structured data and FAQ were corrected to the then-current 1.0.25.
 - Full lint and production build passed. Desktop and 390px mobile previews
   passed; Instagram denial and TikTok missing-parameter pages were checked.
   The old lint failures were fixed, including cleanup of OAuth status/redirect
