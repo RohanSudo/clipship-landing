@@ -189,7 +189,7 @@ export default function Terms() {
 
       <h2>Limitation of liability</h2>
       <p>
-        ClipShip is provided "as is." We are not responsible for any lost content, missed uploads,
+        ClipShip is provided &quot;as is.&quot; We are not responsible for any lost content, missed uploads,
         incorrect edits, or other issues arising from the use of the software. Always keep backups
         of your original recordings.
       </p>

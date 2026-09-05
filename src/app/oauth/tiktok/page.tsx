@@ -42,6 +42,8 @@ export default function TikTokOAuthBridgePage() {
   const [errorMsg, setErrorMsg] = useState<string>("");
 
   useEffect(() => {
+    let statusTimer: number | undefined;
+    let redirectTimer: number | undefined;
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
     const state = params.get("state");
@@ -49,29 +51,35 @@ export default function TikTokOAuthBridgePage() {
     const oauthErrorDesc = params.get("error_description");
 
     if (oauthError) {
-      setErrorMsg(`TikTok returned: ${oauthErrorDesc || oauthError}`);
-      setStatus("error");
-      return;
+      statusTimer = window.setTimeout(() => {
+        setErrorMsg(`TikTok returned: ${oauthErrorDesc || oauthError}`);
+        setStatus("error");
+      }, 0);
+    } else if (!code || !state) {
+      statusTimer = window.setTimeout(() => {
+        setErrorMsg("This URL is missing the auth code or state. If you opened it manually, that's expected.");
+        setStatus("error");
+      }, 0);
+    } else {
+      const decoded = decodeState(state);
+      if (!decoded) {
+        statusTimer = window.setTimeout(() => {
+          setErrorMsg("State parameter could not be decoded. Try connecting TikTok from ClipShip again.");
+          setStatus("error");
+        }, 0);
+      } else {
+        const target = `http://localhost:${decoded.port}/?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
+        statusTimer = window.setTimeout(() => setStatus("redirecting"), 0);
+        redirectTimer = window.setTimeout(() => {
+          window.location.replace(target);
+        }, 400);
+      }
     }
 
-    if (!code || !state) {
-      setErrorMsg("This URL is missing the auth code or state. If you opened it manually, that's expected.");
-      setStatus("error");
-      return;
-    }
-
-    const decoded = decodeState(state);
-    if (!decoded) {
-      setErrorMsg("State parameter could not be decoded. Try connecting TikTok from ClipShip again.");
-      setStatus("error");
-      return;
-    }
-
-    const target = `http://localhost:${decoded.port}/?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
-    setStatus("redirecting");
-    window.setTimeout(() => {
-      window.location.replace(target);
-    }, 400);
+    return () => {
+      if (statusTimer !== undefined) window.clearTimeout(statusTimer);
+      if (redirectTimer !== undefined) window.clearTimeout(redirectTimer);
+    };
   }, []);
 
   return (

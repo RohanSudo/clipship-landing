@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated20260803 = new Date("2026-08-03T00:00:00.000Z");
   const updated20260806 = new Date("2026-08-06T00:00:00.000Z");
   const updated20260807 = new Date("2026-08-07T00:00:00.000Z");
-  const updated20260831 = new Date("2026-08-31T00:00:00.000Z");
   const updated20260902 = new Date("2026-09-02T00:00:00.000Z");
 
   return [

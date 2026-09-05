@@ -9,7 +9,7 @@ declare global {
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { motion, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import PlatformDownloadButtons from "./components/PlatformDownloadButtons";
 
 function scrollToHomepageTop(event: React.MouseEvent<HTMLAnchorElement>) {
@@ -326,9 +326,6 @@ function AppMockup() {
     return () => clearInterval(interval);
   }, [isInView]);
 
-  const steps = ["Drop recording", "Finding clips...", "Applying style...", "Ready to post"];
-  const progress = [0, 35, 78, 100];
-
   return (
     <motion.div
       ref={ref}
@@ -639,6 +636,23 @@ export default function Home() {
             <p className="mt-3 text-sm text-zinc-500">
               Both downloads include the 7-day Pro trial. <Link href="/mac" className="font-medium text-zinc-300 underline decoration-zinc-700 underline-offset-4 transition-colors hover:text-white">Read the macOS requirements</Link>.
             </p>
+            <a
+              href="https://www.uneed.best/tool/clipship"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View ClipShip's upcoming launch on Uneed"
+              className="mt-6 inline-block rounded-md transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400"
+            >
+              {/* Uneed's official dark launch badge. */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://www.uneed.best/EMBED3B.png"
+                alt="Launching Soon on Uneed"
+                width={250}
+                height={65}
+                className="h-auto max-w-full"
+              />
+            </a>
           </div>
         </div>
       </section>

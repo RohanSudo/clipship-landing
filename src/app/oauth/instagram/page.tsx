@@ -47,6 +47,8 @@ export default function InstagramOAuthBridgePage() {
   const [errorMsg, setErrorMsg] = useState<string>("");
 
   useEffect(() => {
+    let statusTimer: number | undefined;
+    let redirectTimer: number | undefined;
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
     const state = params.get("state");
@@ -54,34 +56,40 @@ export default function InstagramOAuthBridgePage() {
     const oauthErrorDesc = params.get("error_description");
 
     if (oauthError) {
-      setErrorMsg(`Instagram returned: ${oauthErrorDesc || oauthError}`);
-      setStatus("error");
-      return;
+      statusTimer = window.setTimeout(() => {
+        setErrorMsg(`Instagram returned: ${oauthErrorDesc || oauthError}`);
+        setStatus("error");
+      }, 0);
+    } else if (!code || !state) {
+      statusTimer = window.setTimeout(() => {
+        setErrorMsg("This URL is missing the auth code or state. If you opened it manually, that's expected — only the live OAuth flow has these.");
+        setStatus("error");
+      }, 0);
+    } else {
+      const decoded = decodeState(state);
+      if (!decoded) {
+        statusTimer = window.setTimeout(() => {
+          setErrorMsg("State parameter could not be decoded. Try connecting Instagram from ClipShip again.");
+          setStatus("error");
+        }, 0);
+      } else {
+        // Build the localhost URL with the same code+state and redirect.
+        // Using window.location.replace so the bridge page isn't kept in
+        // browser history (user back-button doesn't return to a stale OAuth response).
+        const target = `http://localhost:${decoded.port}/?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
+        statusTimer = window.setTimeout(() => setStatus("redirecting"), 0);
+        // Small delay so the user sees the "Returning to ClipShip..." message
+        // and isn't surprised by the protocol switch from https to http localhost.
+        redirectTimer = window.setTimeout(() => {
+          window.location.replace(target);
+        }, 400);
+      }
     }
 
-    if (!code || !state) {
-      setErrorMsg("This URL is missing the auth code or state. If you opened it manually, that's expected — only the live OAuth flow has these.");
-      setStatus("error");
-      return;
-    }
-
-    const decoded = decodeState(state);
-    if (!decoded) {
-      setErrorMsg("State parameter could not be decoded. Try connecting Instagram from ClipShip again.");
-      setStatus("error");
-      return;
-    }
-
-    // Build the localhost URL with the same code+state and redirect.
-    // Using window.location.replace so the bridge page isn't kept in
-    // browser history (user back-button doesn't return to a stale OAuth response).
-    const target = `http://localhost:${decoded.port}/?code=${encodeURIComponent(code)}&state=${encodeURIComponent(state)}`;
-    setStatus("redirecting");
-    // Small delay so the user sees the "Returning to ClipShip..." message
-    // and isn't surprised by the protocol switch from https to http localhost.
-    window.setTimeout(() => {
-      window.location.replace(target);
-    }, 400);
+    return () => {
+      if (statusTimer !== undefined) window.clearTimeout(statusTimer);
+      if (redirectTimer !== undefined) window.clearTimeout(redirectTimer);
+    };
   }, []);
 
   return (
