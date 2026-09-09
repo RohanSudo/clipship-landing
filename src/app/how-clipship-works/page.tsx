@@ -197,6 +197,18 @@ export default function HowClipShipWorksPage() {
         </p>
 
         <ClusterLinks current="/how-clipship-works" />
+
+        <aside className="not-prose mt-12 border-t border-white/10 pt-6">
+          <a
+            href="https://rohanbuilds.com/newsletter?utm_source=clipship&utm_medium=referral&utm_campaign=newsletter"
+            className="inline-block rounded-sm py-1 text-base font-medium text-violet-300 underline decoration-violet-400/50 underline-offset-4 transition-colors hover:text-violet-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400"
+          >
+            Rohan Builds newsletter
+          </a>
+          <p className="mt-2 max-w-xl text-sm leading-6 text-zinc-400">
+            Useful tools, build notes, videos and subscriber discounts. From the person building this.
+          </p>
+        </aside>
       </ContentPage>
     </>
   );

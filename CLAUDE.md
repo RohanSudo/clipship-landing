@@ -1,5 +1,13 @@
 # ClipShip Landing Page
 
+## Newsletter placements prepared - 2026-09-09
+
+- Approved Rohan Builds homepage-footer and product-guide invitations are
+  implemented locally. Build, targeted lint, actual desktop/320px previews and
+  attributed destination navigation pass. No push, deployment, signup or email.
+- See `NEWSLETTER-PLACEMENTS-2026-09-09.md` for exact scope, evidence and release
+  boundary. Preserve the pre-existing untracked `public/email-assets/` work.
+
 ## 1.0.26 release - 2026-09-05
 
 - Public Windows and Apple Silicon Mac release is 1.0.26. Changelog, homepage

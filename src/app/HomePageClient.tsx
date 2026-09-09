@@ -1177,6 +1177,12 @@ export default function Home() {
               <p className="text-sm text-zinc-500 leading-relaxed max-w-xs">
                 Local AI video repurposing. Long videos in, ready-to-post clips out. Runs on Windows and Apple Silicon Mac with monthly or lifetime Pro.
               </p>
+              <a
+                href="https://rohanbuilds.com/newsletter?utm_source=clipship&utm_medium=referral&utm_campaign=newsletter"
+                className="mt-4 inline-block rounded-sm py-1 text-sm text-zinc-400 underline decoration-zinc-600 underline-offset-4 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400"
+              >
+                Rohan Builds newsletter
+              </a>
               <div className="flex items-center gap-3 mt-5">
                 <a href="https://x.com/ClipShipApp" target="_blank" rel="noopener noreferrer" aria-label="Follow ClipShip on X" className="text-zinc-600 hover:text-zinc-300 transition-colors">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
