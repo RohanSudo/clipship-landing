@@ -318,6 +318,7 @@ export default function ComparisonPage({
         <div className="max-w-6xl mx-auto flex items-center justify-between text-xs text-zinc-500">
           <span>&copy; ClipShip 2026</span>
           <div className="flex gap-5">
+            <a href="/support" className="hover:text-zinc-300 transition-colors">Support</a>
             <Link href="/privacy" className="hover:text-zinc-300 transition-colors">Privacy</Link>
             <Link href="/terms" className="hover:text-zinc-300 transition-colors">Terms</Link>
           </div>

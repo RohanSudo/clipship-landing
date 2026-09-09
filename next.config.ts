@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Multiple root layouts need an independent document for unmatched URLs.
+  experimental: { globalNotFound: true },
   async redirects() {
     return [
       {

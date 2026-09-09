@@ -1067,8 +1067,8 @@ export default function Home() {
               q="Do you store my email or any personal data?"
               a={
                 <>
-                  <p>To run the license check, ClipShip stores: your email, a Firebase user ID, a hardware fingerprint (hashed identifier for your computer), and your purchase status. That&apos;s it. We don&apos;t see your videos, your transcripts, your clip contents, or anything else.</p>
-                  <p className="mt-2">If you ever want all of this deleted, email hello@clipship.co and we&apos;ll wipe it within 24 hours.</p>
+                  <p>License checks use your email, account ID, device information, and purchase status. If you contact support, we also receive the message and any diagnostic details you choose to share. Your source footage stays on your computer in Local AI mode.</p>
+                  <p className="mt-2">The <Link href="/privacy" className="text-violet-300 underline underline-offset-4">privacy policy</Link> explains analytics, optional services, and how to request deletion.</p>
                 </>
               }
             />
@@ -1078,7 +1078,7 @@ export default function Home() {
             />
             <FAQItem
               q="What if I have a bug or feature request?"
-              a={<p>Email hello@clipship.co. I read every message myself. Genuinely. Bug reports get prioritised, feature requests get added to the roadmap. There&apos;s no support ticket system, just my inbox.</p>}
+              a={<p>Visit <a href="/support" className="text-violet-300 underline underline-offset-4">ClipShip support</a> for help with a problem, your license, or a feature request. You can also email hello@clipship.co. If you include diagnostics, review them and remove anything private before sending.</p>}
             />
           </div>
         </div>
@@ -1244,6 +1244,7 @@ export default function Home() {
           <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-600">
             <p>&copy; {new Date().getFullYear()} ClipShip. All rights reserved.</p>
             <div className="flex items-center gap-5">
+              <a href="/support" className="hover:text-zinc-400 transition-colors">Support</a>
               <Link href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy</Link>
               <Link href="/terms" className="hover:text-zinc-400 transition-colors">Terms</Link>
               <Link href="/changelog" className="hover:text-zinc-400 transition-colors">Changelog</Link>

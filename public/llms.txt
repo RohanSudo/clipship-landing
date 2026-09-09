@@ -2,7 +2,7 @@
 
 > ClipShip is a local-first desktop app for Windows and Apple Silicon Mac that turns long talking-head recordings into short-form clips without uploading source footage in Local AI mode.
 
-Last updated: 2026-09-05
+Last updated: 2026-09-09
 
 ## Core facts
 
@@ -24,7 +24,7 @@ Last updated: 2026-09-05
 - Review terminology: headline means optional on-video title; spoken opening means the first words already spoken in the selected clip; post caption means suggested social-post copy; word-level captions are subtitles rendered into the export
 - Free tier: unlimited local processing, 720p exports with ClipShip watermark
 - Extra device slot: available inside the app for Pro users
-- Support: the in-app Help & Support screen collects privacy-safe diagnostics for review before email; direct support is hello@clipship.co
+- Support: https://clipship.co/support provides contact and troubleshooting guidance. Direct support is hello@clipship.co. The in-app Help & Support screen prepares a diagnostic report with sensitive-data filtering for the user to review before email. Sharing diagnostics is optional. Opening an email draft does not send it or confirm a ticket was created.
 
 ## Differentiation
 
@@ -36,6 +36,7 @@ ClipShip is not a full video editor. It is a video repurposing tool built for ta
 
 - Homepage: https://clipship.co/
 - Changelog and current release notes: https://clipship.co/changelog
+- Help and support: https://clipship.co/support
 - How ClipShip works: https://clipship.co/how-clipship-works
 - ClipShip for macOS download and requirements: https://clipship.co/mac
 - Windows download: https://api.clipship.co/download/windows

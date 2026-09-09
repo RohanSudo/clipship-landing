@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import ContentPage from "../components/ContentPage";
+import { supportIntakeConfig } from "@/lib/support-intake-config";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - ClipShip",
-  description: "ClipShip privacy policy. Your videos stay on your computer. We do not collect or transmit your content.",
+  description: "How ClipShip handles local video processing, accounts, analytics, and information you choose to share with support.",
   alternates: {
     canonical: "https://clipship.co/privacy",
   },
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <ContentPage title="Privacy Policy" description="Last updated: August 2026" badge="Legal">
+    <ContentPage title="Privacy Policy" description="Last updated: September 9, 2026" badge="Legal">
       <h2>The short version</h2>
       <p>
         In Local AI mode, ClipShip processes your video, audio, transcript, clip selection, captions,
@@ -42,6 +43,32 @@ export default function Privacy() {
         <li>We use Microsoft Clarity for website interaction analytics such as page views, scroll depth, and aggregated session behavior. Clarity receives ordinary browser, device, and network metadata under Microsoft&apos;s privacy terms. We do not send it your ClipShip account ID, source videos, transcripts, captions, or API keys.</li>
         <li>We use Google Analytics 4 for aggregate website and download-click analytics. We do not send it your source videos, transcripts, captions, or API keys.</li>
       </ul>
+
+      <h2>When you contact support</h2>
+      <p>
+        We receive the email address, message, and any diagnostic information you choose to send
+        so we can investigate and reply. Diagnostics are optional. The desktop app filters known
+        sensitive details from its support report, but you should review it and remove anything
+        private before sharing. Do not send passwords, API keys, license keys, full card numbers,
+        source footage, transcripts, or unedited logs.
+      </p>
+      <p>
+        The support page does not read your clipboard, app data, or local files. Google Analytics,
+        Microsoft Clarity, and download attribution do not run on that page. Opening an email draft
+        does not send a message: you review and send it through your own email service. Asking for
+        support does not subscribe you to marketing or a newsletter.
+      </p>
+      {supportIntakeConfig() && <p>
+        If you submit the website support form, Brand Jet Media processes the email address and
+        message you provide using Atlassian Jira Service Management to investigate and reply.
+        Cloudflare hosts the intake service and uses Turnstile to check for abuse. The intake service
+        stores a request reference and keyed hashes for duplicate prevention and rate limits, rather
+        than a second copy of your message. Your browser also keeps an opaque pending-request
+        identifier, but not your email or message, to prevent an accidental duplicate after refresh.
+        Support information is not published on this website.
+        Do not include attachments or raw diagnostic logs in the form. Contact hello@clipship.co
+        for questions or a support-data deletion request.
+      </p>}
 
       <h2>Connected social media accounts (YouTube, Instagram, TikTok)</h2>
       <p>
@@ -189,6 +216,7 @@ export default function Privacy() {
         <li><strong>Dodo Payments</strong> (payment processing)</li>
         <li><strong>Microsoft Clarity</strong> (website interaction and session analytics)</li>
         <li><strong>Google Analytics 4</strong> (aggregate website and download analytics)</li>
+        {supportIntakeConfig() && <li><strong>Atlassian Jira Service Management</strong> (website support requests and replies)</li>}
       </ul>
       <p>None of these services have access to your video content, editing data, or social-media OAuth tokens.</p>
 

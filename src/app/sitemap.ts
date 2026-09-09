@@ -12,10 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const updated20260806 = new Date("2026-08-06T00:00:00.000Z");
   const updated20260807 = new Date("2026-08-07T00:00:00.000Z");
   const updated20260902 = new Date("2026-09-02T00:00:00.000Z");
+  const updated20260909 = new Date("2026-09-09T00:00:00.000Z");
 
   return [
     // Main pages
-    { url: baseUrl, lastModified: updated20260902, changeFrequency: "weekly", priority: 1.0 },
+    { url: baseUrl, lastModified: updated20260909, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${baseUrl}/support`, lastModified: updated20260909, changeFrequency: "monthly", priority: 0.6 },
     { url: `${baseUrl}/changelog`, lastModified: updated20260902, changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/how-clipship-works`, lastModified: updated20260806, changeFrequency: "monthly", priority: 0.9 },
     { url: `${baseUrl}/mac`, lastModified: updated20260806, changeFrequency: "weekly", priority: 0.95 },
@@ -50,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/best-local-opusclip-alternatives-2026`, lastModified: updated20260806, changeFrequency: "monthly", priority: 0.8 },
 
     // Legal / trust pages
-    { url: `${baseUrl}/privacy`, lastModified: updated20260521, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${baseUrl}/privacy`, lastModified: updated20260909, changeFrequency: "yearly", priority: 0.4 },
     { url: `${baseUrl}/terms`, lastModified: updated20260521, changeFrequency: "yearly", priority: 0.4 },
   ];
 }

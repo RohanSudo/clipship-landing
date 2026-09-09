@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Geist, Geist_Mono } from "next/font/google";
+import { geistSans, geistMono } from "../fonts";
 import AttributionCapture from "./components/AttributionCapture";
-import "./globals.css";
+import "../globals.css";
 
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-K0DSFVRC50";
 
@@ -97,18 +97,9 @@ const structuredData = [
   },
 ];
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://clipship.co"),
+  icons: { icon: "/icon.svg", shortcut: "/favicon.ico" },
   title: "ClipShip: Local AI Video Repurposing | OpusClip Alternative",
   description:
     "Repurpose long talking-head recordings into ready-to-post clips for Reels, Shorts, and TikTok. Runs locally on Windows and Apple Silicon Mac.",
@@ -117,9 +108,11 @@ export const metadata: Metadata = {
     description:
       "Local alternative to OpusClip and HeyGen Instant Highlights. Repurpose long recordings into ready-to-post clips for Reels, Shorts, and TikTok. Monthly or one-time Pro.",
     type: "website",
+    images: ["https://clipship.co/opengraph-image"],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["https://clipship.co/twitter-image"],
     title: "ClipShip | Local AI Video Repurposing. Long videos in, clips out.",
     description:
       "Local alternative to OpusClip and HeyGen Instant Highlights. Repurpose long recordings into ready-to-post clips for Reels, Shorts, and TikTok. Monthly or one-time Pro.",
