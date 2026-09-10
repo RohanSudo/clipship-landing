@@ -1,5 +1,88 @@
 # ClipShip public support integration
 
+## September 10: default-off founder acceptance preparation
+
+Support Control supplied the dedicated ClipShip public Turnstile site key. It
+is now the website's tested default site key, while the form remains absent
+unless `CLIPSHIP_SUPPORT_INTAKE_ENABLED` is exactly `true`. An explicit invalid
+site-key override fails closed. The public key is not a secret; no Turnstile
+secret, Jira credential or backend key is present in this repository.
+
+The exact pre-creation response `403 {"error":"reporter_not_allowed"}` now
+shows a generic controlled-test message and the existing ClipShip support email.
+It does not name founder accounts or the allowlist. Because Support Control
+returns this before a claim or Jira action, a first-attempt response is treated
+as a definite rejection: its matching local marker is removed and the form can
+be edited. An unknown 403 remains uncertain and retains duplicate protection.
+
+Local preparation only: no push, Vercel deployment, backend deployment, form
+activation, production request, Jira ticket or email occurred. Public mode is
+not proposed or authorized.
+
+Verification for this preparation: 11 focused configuration/pending/response
+tests pass; lint and the production build pass. A temporary enabled local build
+rendered the form with the exact dedicated site key and no GA/Clarity. The final
+default-off build passed the 27-page HTTP smoke check with no form or Turnstile
+on `/support`, the email fallback present, and unchanged `llms.txt` hash
+`317158fba68e8bec9b778784546e20a9a8ad460c8407be779393f8ecb3f7de5a`.
+
+### Bounded production-origin founder acceptance proposal
+
+This is a proposal for a separately authorized test window, not an executed
+rollout. Keep the API in `founder_acceptance`; do not change it to `public`.
+Before any production change, the action packet must name the exact reviewed
+40-character backend and landing Git SHAs; deploy only those revisions. The
+window is capped at 20 minutes from the first production change. If Rohan is
+interrupted at a Turnstile or other user-only step, or the cap is reached,
+rollback immediately rather than leaving the founder form enabled.
+
+1. Support Control deploys one reviewed backend revision on
+   `support-api.brandjetmedia.com` with source mode `founder_acceptance`, matching
+   runtime mode, all existing safety flags/bindings/credentials verified, and
+   only the two documented founder recipient addresses allowed.
+2. Deploy one exact reviewed landing commit with
+   `CLIPSHIP_SUPPORT_INTAKE_ENABLED=true`. The committed dedicated public key is
+   used unless the same exact key is explicitly configured as an override.
+   Verify `https://clipship.co/support` from a fresh private window: the form and
+   Turnstile load, while GA/Clarity remain absent and email fallback remains.
+3. Rohan completes the production-origin Turnstile challenge himself. First use
+   the founder-controlled but non-allowlisted address
+   `rohankumarvg+clipship-intake-rejection@gmail.com`, subject
+   `ClipShip support founder rejection check 2026-09-10`, and details
+   `Controlled rejection check. Do not create a Jira request.` Leave optional
+   fields blank. Submit once. Require the generic controlled-test UI message,
+   editable form, no local pending marker, and no claim/Jira request/receipt.
+4. In a new private window, use the allowed address `rohankumarvg@gmail.com`,
+   subject `ClipShip support founder acceptance 2026-09-10`, and details
+   `Controlled founder acceptance from the production ClipShip support page. No customer data.`
+   Leave optional fields blank and submit once. Do not retry a created result.
+   If the result is 202/network/unknown, preserve its exact submission ID/body
+   and follow the existing reconciliation protocol before any deliberate retry.
+5. Acceptance requires the browser's exact created reference to match the D1
+   claim and one private ClipShip Jira request, correct request type/route/
+   reporter/body rendering, no exposed customer history, and the actual branded
+   receipt in Inbox or Spam. After separate content-bound send approval, reply
+   only inside that exact branded receipt email thread whose reference matches
+   the created request, with the literal body `Founder acceptance reply check
+   received. No customer action is required.` Verify one message attaches to
+   that same existing Jira request; do not create a new email thread. Record
+   request/message IDs privately, not in Git. A successful API response alone
+   is insufficient.
+6. Roll back immediately after evidence capture. First set the landing enable
+   flag false or remove it and deploy; verify the production support page has no
+   form or Turnstile and retains the email fallback. Then set backend runtime
+   `INTAKE_ENABLED=false` and `INTAKE_MODE=disabled`. Verify a bounded POST from
+   the production origin returns 503 before provider/database/Jira work and no
+   additional claim, ticket or mail appears. If urgent containment is needed,
+   disable the backend first, then hide the form. Preserve unresolved markers
+   and claims; never delete them or force a new request as rollback.
+
+The test fails and rolls back if the challenge cannot bind to the production
+hostname/action/cData, a disallowed address reaches a claim/Jira/mail step, the
+allowed request cannot be reconciled end to end, analytics appears on support,
+receipt/isolation evidence is missing, or any result is ambiguous. Public intake
+still requires a separate source/runtime mode review and explicit approval.
+
 
 ## September 10: bounded local recovery integration
 
@@ -115,10 +198,11 @@ This record is not a claim that public ticket intake or a support form works.
 - No GA, Clarity or download attribution mounts on support. Browser checks cover
   direct/query-bearing support, homepage arrival, back/forward, 390px/1280px,
   keyboard skip link, canonical metadata, email fallback and no public Jira URL.
-- The candidate form is **off by default**. Activation requires
-  `CLIPSHIP_SUPPORT_INTAKE_ENABLED=true` and the public widget sitekey in
-  `CLIPSHIP_SUPPORT_TURNSTILE_SITE_KEY`, plus a new verified build/deployment.
-  No values or credentials have been configured in production for this task.
+- The candidate form is **off by default**. The dedicated public widget site key
+  is committed and tested; an optional `CLIPSHIP_SUPPORT_TURNSTILE_SITE_KEY`
+  override must pass validation. Activation still requires the exact
+  `CLIPSHIP_SUPPORT_INTAKE_ENABLED=true` gate plus a new verified build/deployment.
+  No secret, credential or production activation was configured by this task.
 - Draft contract owner: Support Control `intake/`. Direct HTTPS JSON POST to
   `https://support-api.brandjetmedia.com/v1/support/requests`, product `clipship`,
   exact ClipShip origins, credentials omitted, no proxy, no automatic diagnostics
@@ -138,7 +222,7 @@ This record is not a claim that public ticket intake or a support form works.
 - Local screenshots: ignored `output/playwright/support-desktop.png`,
   `support-mobile.png`, `support-form-fixture-mobile.png`.
 - Repeat checks: `npm run lint`, `npm run build`,
-  `node --experimental-strip-types --test tests/support-response.test.mjs`,
+  `node --experimental-strip-types --test tests/support-response.test.mjs tests/support-pending.test.mjs tests/support-intake-config.test.mjs`,
   `node tests/support-page-smoke.mjs`. Public-only smoke checks accept
   `SUPPORT_CHECK_BASE=https://clipship.co` after deployment.
 

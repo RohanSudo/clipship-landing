@@ -16,6 +16,7 @@ export function interpretSupportResponse(status: number, body: unknown): Support
   if (status === 413 && value.error === "payload_too_large") return { kind: "rejected", message: "The message is too large to send. Shorten it before trying again, or email support." };
   if (status === 408 && value.error === "request_timeout") return { kind: "rejected", message: "The message upload timed out. Check your connection before trying again, or email support." };
   if (status === 415 && value.error === "invalid_request") return { kind: "rejected", message: "The request format was not accepted. Please email hello@clipship.co for help." };
+  if (status === 403 && value.error === "reporter_not_allowed") return { kind: "rejected", message: "The support form is currently limited to a controlled test. Please email hello@clipship.co for help." };
   if (status === 403 && value.error === "verification_failed") return { kind: "rejected", message: "The security check could not be verified. Complete a new check, then try again." };
   if (status === 429 && value.error === "rate_limited") return { kind: "rejected", message: "Support submissions are temporarily limited. Wait before trying again, or email hello@clipship.co." };
   return { kind: "uncertain", message: "We could not confirm the result. Keep this page open. You can check the same submission again or email support; do not start another request for this issue." };
