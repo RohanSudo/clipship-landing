@@ -1,5 +1,23 @@
 # ClipShip Landing Page
 
+## 1.0.27 support release - 2026-09-10
+
+- Public Windows and Apple Silicon Mac release is 1.0.27. The changelog,
+  homepage/Mac software metadata and `public/llms.txt` describe the direct live
+  support-page link from the installed Help & Support screen.
+- Release source `50004e6406d0bc0ce28d19f95da22df1583d1c6d` is verified on
+  remote main. Vercel production deployment `6373906431` succeeded for that
+  exact source. Lint, production build and zero-vulnerability production audit
+  passed before deployment.
+- Live `/`, `/mac`, `/changelog`, and `llms.txt` contain 1.0.27. Live plain-text
+  `llms.txt` matches source SHA-256
+  `eaab061042302b9b8f6744570009fc1a65498091b51b5bde792fd06211e1b520`;
+  intended crawler allowances remain present.
+- The live updater manifest and tracked download routes now point to 1.0.27.
+  Exact installer, updater, signing, public-byte and installed-Mac evidence is
+  in the app repo `docs/RELEASING.md`. The physical Windows updater gate is
+  pending a fresh `PC free` window, so 1.0.26 rollback objects remain retained.
+
 ## Newsletter placements prepared - 2026-09-09
 
 - Approved Rohan Builds homepage-footer and product-guide invitations are
