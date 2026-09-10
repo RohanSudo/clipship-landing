@@ -12,7 +12,7 @@ test("accepted but unconfirmed does not become a success", () => {
   assert.equal(interpretSupportResponse(202, { status: "created", reference, receipt: "not_verified" }).kind, "uncertain");
 });
 test("only known pre-creation rejections permit editing; ambiguous errors preserve the request", () => {
-  for (const [status, error] of [[400, "invalid_request"], [400, "sensitive_content"], [403, "verification_failed"], [429, "rate_limited"]]) assert.equal(interpretSupportResponse(status, { error }).kind, "rejected");
+  for (const [status, error] of [[400, "invalid_request"], [400, "sensitive_content"], [403, "verification_failed"], [408, "request_timeout"], [413, "payload_too_large"], [415, "invalid_request"], [429, "rate_limited"]]) assert.equal(interpretSupportResponse(status, { error }).kind, "rejected");
   for (const status of [409, 500, 502, 503, 504]) assert.equal(interpretSupportResponse(status, { error: "anything" }).kind, "uncertain");
   assert.equal(interpretSupportResponse(403, { error: "internal credentials or account details" }).kind, "uncertain");
 });

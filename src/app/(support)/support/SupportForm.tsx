@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { interpretSupportResponse } from "@/lib/support-response";
+import { dismissConfirmedPending, parsePendingMarker, removeMatchingPending, writeMatchingPending, pendingSupportKey as pendingKey, type PendingMarker } from "@/lib/support-pending";
 
 type Turnstile = {
   render: (element: HTMLElement, options: Record<string, unknown>) => string;
@@ -12,8 +13,6 @@ type Turnstile = {
 declare global { interface Window { turnstile?: Turnstile } }
 type Payload = { schemaVersion: 1; product: "clipship"; email: string; subject: string; details: string; appVersion: string; platform: string; consent: true };
 type Attempt = { key: string; payload: Payload; uncertain: boolean };
-const pendingKey = "clipship_pending_support_v1";
-type PendingMarker = { key: string; reference?: string };
 const inputClass = "mt-2 w-full rounded-lg border border-zinc-600 bg-zinc-950 px-3 py-2.5 text-base text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400 disabled:text-zinc-400";
 
 export default function SupportForm({ endpoint, siteKey }: { endpoint: string; siteKey: string }) {
@@ -31,15 +30,16 @@ export default function SupportForm({ endpoint, siteKey }: { endpoint: string; s
   const [message, setMessage] = useState("");
   const [storageReady, setStorageReady] = useState(false);
   const [recovery, setRecovery] = useState<PendingMarker | null>(null);
+  const [operatorAcknowledged, setOperatorAcknowledged] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
     const restore = () => {
       try {
         const raw = localStorage.getItem(pendingKey);
         if (raw && !attempt.current) {
-          const saved = JSON.parse(raw) as PendingMarker;
-          if (typeof saved.key !== "string" || !/^\d{13}\.[0-9a-f-]{36}$/.test(saved.key)) throw new Error("Invalid marker");
-          setRecovery({ key: saved.key, reference: typeof saved.reference === "string" && /^SC-[0-9a-f-]{36}$/.test(saved.reference) ? saved.reference : undefined });
+          setRecovery(parsePendingMarker(raw));
+          setOperatorAcknowledged(false);
         }
         setStorageReady(true);
       } catch { setMessage("This browser cannot safely keep a pending-request marker. Please email hello@clipship.co instead."); }
@@ -50,7 +50,23 @@ export default function SupportForm({ endpoint, siteKey }: { endpoint: string; s
   }, []);
 
   function savePending(marker: PendingMarker) {
-    localStorage.setItem(pendingKey, JSON.stringify(marker));
+    if (!writeMatchingPending(localStorage, marker)) throw new Error("Another request is pending");
+  }
+
+  function dismissPending() {
+    const marker = recovery ?? (attempt.current?.uncertain ? { key: attempt.current.key } : null);
+    if (busy || !marker) return;
+    try {
+      dismissConfirmedPending(localStorage, marker.key, operatorAcknowledged);
+      attempt.current = null;
+      form.current?.reset();
+      setRecovery(null); setLocked(false); setReference(""); setOperatorAcknowledged(false);
+      setMessage("The local pending marker was dismissed. No ticket or server record was changed. Continue the existing ticket, or send a new request only if support instructed you to do so.");
+      statusBox.current?.focus();
+    } catch {
+      setOperatorAcknowledged(false);
+      setMessage("The pending marker could not be dismissed safely. It may have changed in another tab. Please email support with the reference shown; do not start another request.");
+    }
   }
 
   useEffect(() => {
@@ -78,8 +94,9 @@ export default function SupportForm({ endpoint, siteKey }: { endpoint: string; s
     const current = attempt.current;
     try {
       const other = localStorage.getItem(pendingKey);
-      if (other && JSON.parse(other).key !== current.key) {
-        setRecovery(JSON.parse(other));
+      if (other && parsePendingMarker(other).key !== current.key) {
+        setRecovery(parsePendingMarker(other));
+        setOperatorAcknowledged(false);
         return;
       }
       savePending({ key: current.key, ...(reference ? { reference } : {}) });
@@ -100,7 +117,7 @@ export default function SupportForm({ endpoint, siteKey }: { endpoint: string; s
       });
       const outcome = interpretSupportResponse(result.status, await result.json());
       if (outcome.kind === "created") {
-        localStorage.removeItem(pendingKey);
+        removeMatchingPending(localStorage, current.key);
         setCreated(true); setReference(outcome.reference);
         setMessage("Your support request was created. An email confirmation has not been verified. Keep the reference below for follow-up.");
       } else if (outcome.kind === "unconfirmed") {
@@ -109,7 +126,7 @@ export default function SupportForm({ endpoint, siteKey }: { endpoint: string; s
         setMessage("We received a submission attempt, but could not confirm that a ticket was created. Keep this reference. Check the same submission again or email support; do not start a duplicate request.");
       } else {
         if (outcome.kind === "uncertain") current.uncertain = true;
-        if (!current.uncertain) { localStorage.removeItem(pendingKey); attempt.current = null; setLocked(false); }
+        if (!current.uncertain) { removeMatchingPending(localStorage, current.key); attempt.current = null; setLocked(false); }
         setMessage(outcome.message);
       }
     } catch {
@@ -123,7 +140,7 @@ export default function SupportForm({ endpoint, siteKey }: { endpoint: string; s
   }
 
   return (
-    <form onSubmit={submit} aria-label="ClipShip support request" className="mt-6 space-y-5">
+    <form ref={form} onSubmit={submit} aria-label="ClipShip support request" aria-busy={busy} className="mt-6 space-y-5">
       <fieldset disabled={locked || busy || !storageReady || !!recovery} className="space-y-5">
         <legend className="sr-only">Your support request</legend>
         <label className="block text-sm font-medium">Your email<input name="email" type="email" autoComplete="email" required minLength={3} maxLength={254} className={inputClass} /></label>
@@ -145,6 +162,12 @@ export default function SupportForm({ endpoint, siteKey }: { endpoint: string; s
         {locked && !created && !reference && attempt.current && <p className="break-all">Submission ID: <strong>{attempt.current.key}</strong></p>}
         {recovery && <><p>An earlier submission is still unconfirmed. To avoid creating another ticket, new submissions are paused in this browser. Email hello@clipship.co with the reference below so support can check it.</p><p className="break-all">{recovery.reference ? "Reference" : "Submission ID"}: <strong>{recovery.reference ?? recovery.key}</strong></p></>}
       </div>
+      {(recovery || (locked && !created && attempt.current?.uncertain)) && !busy && <section aria-labelledby="support-recovery-title" className="space-y-3 rounded-lg border border-zinc-600 p-4">
+        <h3 id="support-recovery-title" className="font-semibold">After support has checked this request</h3>
+        <p id="support-recovery-help" className="text-sm leading-relaxed text-zinc-300">Contact hello@clipship.co with the reference or submission ID above first. Only dismiss this marker after support confirms the existing ticket or tells you a new attempt is appropriate. This does not cancel, close, or delete a ticket.</p>
+        <label className="flex items-start gap-3 text-sm leading-relaxed"><input type="checkbox" checked={operatorAcknowledged} onChange={event => setOperatorAcknowledged(event.target.checked)} aria-describedby="support-recovery-help" className="mt-1 size-4 shrink-0 accent-violet-500" />Support has checked this submission and told me how to proceed.</label>
+        <button type="button" onClick={dismissPending} disabled={!operatorAcknowledged} aria-describedby="support-recovery-help" className="min-h-11 rounded-lg border border-zinc-500 px-4 py-2 text-sm font-semibold hover:border-violet-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 disabled:cursor-not-allowed disabled:opacity-50">Support confirmed this request</button>
+      </section>}
       {!created && <button type="submit" disabled={busy || !token || !storageReady || !!recovery} className="min-h-11 rounded-lg bg-violet-600 px-5 py-3 font-semibold text-white hover:bg-violet-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 disabled:cursor-not-allowed disabled:opacity-50">{busy ? "Sending…" : locked ? "Check the same submission" : "Send support request"}</button>}
       <p className="text-sm leading-relaxed text-zinc-400">Your draft email and message are not saved to browser storage. We save only an opaque pending-request identifier to prevent accidental duplicates after a refresh. Keep this page open if the result is unconfirmed. You can always use the email option below.</p>
     </form>

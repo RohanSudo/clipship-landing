@@ -1,5 +1,37 @@
 # ClipShip public support integration
 
+## September 10: bounded local recovery integration
+
+Support Control resumed local work only. Reviewed final `INTAKE.md` at
+`b2746fe01f0a211d1bd5932d866b8ad24d4fd604`. No deployment, credential setup,
+activation, live ticket/mail test, native build or PC work is authorized here.
+
+- Added explicit customer acknowledgment followed by “Support confirmed this
+  request” dismissal after support communicates its disposition. Only the
+  matching local marker is removed; draft is reset, focus returns to status,
+  and no server request, ticket closure/deletion or server authorization claim
+  occurs. The UI cannot independently verify an operator conversation.
+- Marker parsing accepts exact opaque UUIDv4 keys/references only. Delayed
+  responses check the matching key before automatic write/removal so they do
+  not overwrite or clear a different current request's marker.
+- Added specific first-attempt 408/413/415 guidance per final contract while
+  preserving the lock/key after any earlier uncertain result.
+- Local verification: 7 unit tests, lint and production build pass. Independent
+  reviewer reran 7/7 and found no remaining blocker in this narrow patch.
+  Browser fixture verifies disabled dismissal before acknowledgment, keyboard
+  activation, focus restoration, refresh recovery, local-marker-only removal,
+  390/1280px layouts and zero API calls during dismissal.
+- Intake remains OFF by default. `llms.txt` audited: no public fact or availability
+  changed by this local recovery patch, so September 9 candidate text is retained.
+- Local implementation is ready for the support owner's activation review, not
+  a public-ready/live-service claim. Remaining gates belong to Support Control:
+  approved infrastructure/credentials/caps, native receipt/privacy/isolation,
+  operator reconciliation readback, real CS ticket/email acceptance and explicit
+  website deployment/activation authority. Do not push main; Vercel auto-deploys.
+
+The older stop checkpoint below records the previous night, not today's local
+resumption. Its no-publication boundary remains in force.
+
 ## STOP checkpoint: September 9, 2026
 
 Rohan requested sleep/pack-up. Origin explicitly instructed no further
