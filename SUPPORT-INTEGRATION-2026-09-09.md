@@ -1,22 +1,5 @@
 # ClipShip public support integration
 
-## STOP checkpoint: September 10, 2026
-
-Rohan requested sleep and immediate pack-up. Work is paused, not completed or
-published. Verified local code checkpoint is `f87a9869370a44a2d1e2e4b2ac21772f291cf92a`;
-its seven tests, lint, build and bounded browser checks are recorded below.
-Ports 4186 and 4187 have no listening preview server at shutdown. Reviewer is
-finished; no further tests, builds, deployment, activation or PC work will run.
-
-The latest Support Control request is NOT implemented: prepare its supplied
-public Turnstile site key in default-off config, add exact 403
-`reporter_not_allowed` handling, and return a bounded production-origin founder
-test/rollback proposal. Resume with the current `../support-control/INTAKE.md`
-founder-acceptance contract, implement those small changes, test and review.
-No push/deployment/activation was authorized by that request. Keep the form off;
-do not claim live ticket or receipt acceptance. Main pushes trigger Vercel, so
-this checkpoint stays local. Preserve unrelated newsletter edits.
-
 
 ## September 10: bounded local recovery integration
 
