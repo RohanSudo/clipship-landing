@@ -4,6 +4,23 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.27",
+    date: "September 10, 2026",
+    label: "Direct access to ClipShip support",
+    summary:
+      "This update connects the desktop Help & Support screen to ClipShip's live support page, so a customer can open the current help form without leaving the app to search for it.",
+    changes: [
+      "Added an Open support page action to the existing Help & Support screen.",
+      "Open the verified https://clipship.co/support destination in the system browser.",
+      "Kept the existing privacy-safe diagnostics copy action, FAQ link, and email option available in the same support screen.",
+    ],
+    notes: [
+      "Opening the support page does not send a message; the customer reviews and submits the form themselves.",
+      "ClipShip's diagnostic report continues to remove local paths and sensitive content before it can be copied.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.26",
     date: "September 5, 2026",
     label: "More reliable local AI startup",
