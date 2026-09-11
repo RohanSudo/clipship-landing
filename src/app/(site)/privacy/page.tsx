@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <ContentPage title="Privacy Policy" description="Last updated: September 9, 2026" badge="Legal">
+    <ContentPage title="Privacy Policy" description="Last updated: September 11, 2026" badge="Legal">
       <h2>The short version</h2>
       <p>
         In Local AI mode, ClipShip processes your video, audio, transcript, clip selection, captions,
@@ -27,10 +27,12 @@ export default function Privacy() {
         <li>No video or audio content is transmitted anywhere</li>
         <li>No transcripts are sent to our servers</li>
         <li>If you opt in to anonymous analytics, we collect a fixed set of product milestones, such as video imported, transcription completed, clips generated, or export failed, plus OS, app version, AI mode, broad duration and clip-count ranges, and failure stage. We do not store your account ID, email, file path, video name, transcript, captions, prompt, or API key with these events.</li>
+        <li>For paid accounts, we keep a separate, account-linked operational record of successful license checks and a limited set of authenticated workflow milestones, such as processing started, clips generated, and export completed. These records may include payment ID, a non-reversible device fingerprint, OS, app version, source type, and broad duration or clip-count ranges. They are used only for billing support, refund review, fraud prevention, and payment-dispute evidence, and are automatically deleted after 400 days. They never include media, filenames, file paths, titles, source URLs, transcripts, captions, prompts, API keys, or generated content.</li>
         <li>If you use the &quot;Connect your AI account&quot; option, your API key is stored in your operating system&apos;s secure keychain (Windows Credential Manager / macOS Keychain / Linux Secret Service). The key is sent directly from your computer to the AI provider (OpenAI, Claude, Gemini, Groq, or OpenRouter). We never see, collect, or transmit your key.</li>
         <li>For purchase verification and license activation, we collect your email address, a non-reversible hardware fingerprint (used to enforce one license per device), and the device hostname (so you can identify which machine to sign out when switching devices).</li>
         <li>After your first successful export, ClipShip may ask once how you found the app. If you answer, we store the selected source, the optional text you provide, your account ID, and app version. Skipping the question stores nothing on our server.</li>
         <li>If you use the referral program, we store your personal referral code, the accounts connected through it, referral status, reward status, and the minimum device-fingerprint comparison needed to prevent self-referrals and shared-device abuse. We do not expose either person&apos;s email address to the other.</li>
+        <li>If a refund or payment dispute is opened, we keep a billing case containing the request and purchase dates, the reason and evidence you provide, the decision and its timeline, relevant account/device risk signals, and the status of any connected referral reward. Opening a case temporarily holds an unused connected referral reward. A denied refund, won dispute, or cancelled dispute releases the hold, while a completed refund or lost or accepted dispute voids the reward under the referral terms.</li>
         <li>If you arrive through an approved creator partner, we store the creator offer code, an anonymous click ID, the resulting ClipShip account attribution, and commission records created from verified Dodo payment webhooks. Creator dashboards show aggregate funnel counts and payment-ledger amounts, but never expose buyer names, emails, account IDs, device details, or payment information.</li>
       </ul>
 
@@ -202,6 +204,7 @@ export default function Privacy() {
         <li>Email (account, newsletter, or purchaser): to send product updates, license keys, and support replies. Never sold to third parties.</li>
         <li>Hardware fingerprint: to enforce one license per device per the licensing terms you agreed to at purchase.</li>
         <li>Anonymous in-app analytics (opt-in): to understand which features matter most. Aggregate only.</li>
+        <li>Paid-account operational evidence: to support billing questions, evaluate refund requests, prevent refund/referral abuse, and answer payment disputes with a privacy-minimized record of service access and successful milestones.</li>
         <li>Website attribution and approximate geography: to understand which pages, referral sources, operating systems, and broad markets lead to downloads and account creation.</li>
         <li>Referral records: to attribute eligible lifetime purchases, apply one-time discounts, grant earned device slots, enforce the three-reward limit, and reverse pending rewards after refunds or disputes.</li>
         <li>Creator partner records: to attribute eligible downloads and accounts, calculate commission after verified payments, prevent self-referral or repeat-account abuse, and provide creators with an anonymized performance and payout ledger.</li>
@@ -223,7 +226,9 @@ export default function Privacy() {
       <h2>Your rights and data deletion</h2>
       <p>
         You can request deletion of your account data (email, license records, device fingerprint, hardware metadata) at any time by emailing
-        {" "}<a href="mailto:hello@clipship.co">hello@clipship.co</a>. We will delete your data within 30 days of receiving the request.
+        {" "}<a href="mailto:hello@clipship.co">hello@clipship.co</a>. We will respond within 30 days. Limited billing, refund, fraud-prevention,
+        and dispute records may be retained for the stated 400-day evidence period or longer when required by law, an active payment dispute,
+        or accounting obligations; they are restricted to those purposes and are not used for marketing.
       </p>
       <p>
         Since the desktop app processes video content entirely locally and stores OAuth tokens on your own computer,

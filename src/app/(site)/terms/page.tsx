@@ -161,6 +161,14 @@ export default function Terms() {
         your card in 3 to 5 business days via Dodo Payments (our payment processor).
       </p>
       <p>
+        <strong>Review and evidence.</strong> Requests outside the seven-day window are exceptions,
+        not automatic refunds. We may ask for the specific reason, the date and method of an earlier
+        contact attempt, and available screenshots or delivery errors. We may compare this with the
+        processor-confirmed purchase record and privacy-minimized account, device, license-check,
+        successful-workflow, prior-refund, and referral records described in the Privacy Policy.
+        A shared device or approximate region is a review signal, not proof of fraud by itself.
+      </p>
+      <p>
         <strong>What happens after a refund.</strong> Your license downgrades to the free tier. You
         can keep ClipShip installed and use the free features. Pro features stop working immediately.
       </p>
@@ -185,6 +193,12 @@ export default function Terms() {
         chargebacks, disputes, and other attempts to bypass the rules do not qualify. ClipShip may void
         a pending reward or reverse a referral-granted device slot when the qualifying purchase is
         refunded or disputed.
+      </p>
+      <p>
+        An unused referral reward may be placed on a temporary hold while a connected refund request
+        or payment dispute is open. A denied refund, won dispute, or cancelled dispute releases that
+        hold. A completed refund or lost or accepted dispute voids the connected reward. This prevents
+        a reward from being redeemed while the purchase that created it is still under formal review.
       </p>
 
       <h2>Limitation of liability</h2>
