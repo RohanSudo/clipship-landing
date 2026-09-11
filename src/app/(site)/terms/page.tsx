@@ -151,6 +151,7 @@ export default function Terms() {
         <strong>One refund per device.</strong> We only offer one refund per computer, ever. This is
         a strict rule. If you&apos;ve already received a refund on this computer, even under a
         different email address, you won&apos;t be eligible for another refund on the same machine.
+        This remains true if you later purchase ClipShip again on that device.
         We track this by hardware fingerprint, not by email or account, so creating a new account on
         the same computer does not reset eligibility.
       </p>
@@ -167,6 +168,8 @@ export default function Terms() {
         processor-confirmed purchase record and privacy-minimized account, device, license-check,
         successful-workflow, prior-refund, and referral records described in the Privacy Policy.
         A shared device or approximate region is a review signal, not proof of fraud by itself.
+        If a connected referral reward has already been used, we may refuse an out-of-window
+        exception because that reward cannot be recovered automatically.
       </p>
       <p>
         <strong>What happens after a refund.</strong> Your license downgrades to the free tier. You
