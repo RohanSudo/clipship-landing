@@ -1,5 +1,29 @@
 # ClipShip Landing Page
 
+## 1.0.30 short-source guidance release - 2026-09-12
+
+- ClipShip 1.0.30 is public for Windows x64 and Apple Silicon Mac. The release
+  replaces the generic AI-analysis failure for sources with insufficient spoken
+  material with duration-specific guidance and a direct recovery action.
+- Exact release-content source `4cac328eebae023bc457ddd933264cb2882a3e15` is on
+  remote main and its Vercel production deployment succeeded. Live `/`, `/mac`,
+  `/changelog`, `/llms.txt` and `/robots.txt` return the intended 1.0.30
+  content. Live `llms.txt` is plain text and matches source SHA-256
+  `1b73aadf584ae9eea92ab3f3b503de460fe9a68cc0a6e79fc6420aacd6c69260`.
+- The public updater manifest and tracked backend download routes point to the
+  exact updater-signed 1.0.30 artifacts. D1 reports
+  `latest_version=1.0.30` and retains `min_required_version=0.1.0`.
+- Physical updater gates passed on both platforms. Windows updated from 1.0.29
+  and then completed short-source guidance plus a full Qwen generation/export
+  regression. Mac updated from notarized 1.0.28, relaunched as 1.0.30 and
+  passed strict signing, Gatekeeper, stapler and no-repeat updater checks.
+- Post-gate cleanup removed all 1.0.28/1.0.29 public objects and temporary
+  hosted/local build artifacts. R2 now retains only 1.0.30 plus the manifest.
+  Exact release, hash, notarization and test evidence is in the app repository
+  `docs/RELEASING.md`.
+- This release does not change pricing, subscriptions, referrals, device
+  limits, customer access or ClipShip's local-processing privacy boundary.
+
 ## 1.0.28 transcription runtime release - 2026-09-12
 
 - ClipShip 1.0.28 is public for Windows x64 and Apple Silicon Mac. The changelog
