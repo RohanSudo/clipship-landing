@@ -2,13 +2,23 @@
 
 ## 1.0.28 transcription runtime release - 2026-09-12
 
-- Release copy is prepared for ClipShip 1.0.28. The public changelog explains
-  the Windows transcription runtime repair, while homepage/Mac software
-  metadata and `public/llms.txt` agree on the cross-platform version.
-- This source is not a claim that 1.0.28 is live. Deploy it only after both
-  signed installer artifacts exist and before switching the updater manifest.
+- ClipShip 1.0.28 is public for Windows x64 and Apple Silicon Mac. The changelog
+  explains the Windows transcription runtime repair, while homepage/Mac
+  software metadata and `public/llms.txt` agree on the cross-platform version.
+- Exact landing source `3735091576373c570d7b596309441d930368e53f` is on remote
+  main and Vercel production deployment `6407330765` succeeded. Live `/`,
+  `/mac`, `/changelog`, and `llms.txt` return the intended 1.0.28 content.
+  Live `llms.txt` matches source SHA-256
+  `dba690d79c1ea07b75fe2a9d80723b5933eecc72946f712efeff45794d1c5d9f`.
+- The public updater manifest and tracked backend download routes now point to
+  the exact signed 1.0.28 artifacts. Installer, signature, notarization,
+  finished-runtime, model and public-byte evidence is recorded in the app
+  repository `docs/RELEASING.md`.
 - The release does not change pricing, subscriptions, referrals, device
   limits, customer access, or ClipShip's local-processing privacy boundary.
+- Installed-app updater/relaunch checks are pending: Mac requires action-time
+  approval to overwrite the current app, and Windows requires a fresh
+  `PC free` window. Older rollback objects remain retained until both pass.
 
 ## 1.0.27 support release - 2026-09-10
 
