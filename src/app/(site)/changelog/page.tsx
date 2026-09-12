@@ -4,6 +4,24 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.29",
+    date: "September 12, 2026",
+    label: "Clear guidance for videos that are too short",
+    summary:
+      "This update stops local clip analysis early when a source does not contain enough spoken material for the selected clip length, instead of asking the AI to invent a result from too little context.",
+    changes: [
+      "Checks the amount of transcribed speech before local AI clip analysis begins.",
+      "Shows a clear upload-longer-video message when there is not enough spoken material to make a reliable clip.",
+      "Suggests the Short setting when a source is too brief for Medium clips, and Medium or Short when it is too brief for Long clips.",
+      "Treats this expected validation result separately from genuine AI failures, reducing misleading error reports.",
+    ],
+    notes: [
+      "The minimum spoken material is 20 seconds for Short or Auto, 35 seconds for Medium, and 55 seconds for Long.",
+      "Local AI processing and source video files remain on the computer.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.28",
     date: "September 12, 2026",
     label: "Reliable transcription on clean Windows installs",
