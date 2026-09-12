@@ -7,8 +7,8 @@ Last updated: 2026-09-12
 ## Core facts
 
 - Official website: https://clipship.co
-- Current public release: ClipShip 1.0.29, released September 12, 2026, for Windows and Apple Silicon macOS
-- Latest reliability update: ClipShip checks the amount of transcribed speech before local AI clip analysis. Sources with too little spoken material stop with clear guidance instead of producing unreliable clip suggestions. The minimum is 20 seconds of speech for Short or Auto, 35 seconds for Medium, and 55 seconds for Long.
+- Current public release: ClipShip 1.0.30, released September 12, 2026, for Windows and Apple Silicon macOS
+- Latest reliability update: ClipShip checks the amount of transcribed speech before local AI clip analysis. Sources with too little spoken material get a dedicated guidance screen instead of the generic AI failure panel. The minimum is 20 seconds of speech for Short or Auto, 35 seconds for Medium, and 55 seconds for Long.
 - Support access: the desktop Help & Support screen opens https://clipship.co/support in the system browser while retaining the privacy-safe diagnostics, FAQ, and email options.
 - Tracked downloads: https://api.clipship.co/download/windows and https://api.clipship.co/download/macos
 - Category: AI video repurposing, local AI video clipper, AI clip generator, OpusClip alternative
@@ -135,11 +135,11 @@ In Local AI mode, ClipShip processes local video files, transcripts, clip select
 
 ### Is ClipShip available for macOS?
 
-Yes. ClipShip 1.0.29 is available for Apple Silicon Macs running macOS 15 or newer. It uses MLX Whisper with Apple Metal for local transcription and llama.cpp with Metal acceleration for local clip analysis. Intel Macs are not supported.
+Yes. ClipShip 1.0.30 is available for Apple Silicon Macs running macOS 15 or newer. It uses MLX Whisper with Apple Metal for local transcription and llama.cpp with Metal acceleration for local clip analysis. Intel Macs are not supported.
 
 ### What is the current ClipShip version?
 
-ClipShip 1.0.29 is the current public desktop release for Windows and Apple Silicon macOS. It was released on September 12, 2026. The current version and release history are published at https://clipship.co/changelog.
+ClipShip 1.0.30 is the current public desktop release for Windows and Apple Silicon macOS. It was released on September 12, 2026. The current version and release history are published at https://clipship.co/changelog.
 
 ### Is ClipShip a full video editor?
 

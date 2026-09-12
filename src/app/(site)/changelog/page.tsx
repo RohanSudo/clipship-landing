@@ -4,6 +4,24 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.30",
+    date: "September 12, 2026",
+    label: "Short videos now get guidance, not a crash report",
+    summary:
+      "This follow-up makes the short-source check behave like normal guidance throughout the app, without opening the generic AI failure panel.",
+    changes: [
+      "Shows a dedicated Not enough spoken content message when the selected clip length cannot be created reliably.",
+      "Provides one clear action to choose another source or a shorter clip length.",
+      "Keeps expected short-source validation out of the crash-report panel, Sentry error reporting, and processing-failure analytics.",
+      "Keeps unexpected AI, provider, and runtime failures on the existing diagnostic and support path.",
+    ],
+    notes: [
+      "The spoken-material thresholds introduced in 1.0.29 are unchanged: 20 seconds for Short or Auto, 35 seconds for Medium, and 55 seconds for Long.",
+      "Local AI processing and source video files remain on the computer.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.29",
     date: "September 12, 2026",
     label: "Clear guidance for videos that are too short",
@@ -13,7 +31,7 @@ const releases = [
       "Checks the amount of transcribed speech before local AI clip analysis begins.",
       "Shows a clear upload-longer-video message when there is not enough spoken material to make a reliable clip.",
       "Suggests the Short setting when a source is too brief for Medium clips, and Medium or Short when it is too brief for Long clips.",
-      "Treats this expected validation result separately from genuine AI failures, reducing misleading error reports.",
+      "Keeps this expected validation result out of Sentry while preserving genuine AI failure reporting.",
     ],
     notes: [
       "The minimum spoken material is 20 seconds for Short or Auto, 35 seconds for Medium, and 55 seconds for Long.",
