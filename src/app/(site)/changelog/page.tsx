@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.28",
+    date: "September 12, 2026",
+    label: "Reliable transcription on clean Windows installs",
+    summary:
+      "This update fixes a Windows setup gap that could stop transcription before it started on computers without the Microsoft C++ runtime already installed.",
+    changes: [
+      "Bundled the required Microsoft C++ runtime directly with ClipShip's Windows transcription engine.",
+      "Added an immediate startup check for the packaged transcription runtime before ClipShip begins extracting audio.",
+      "Added clear reinstall guidance when Windows Security, an interrupted update, or a damaged install leaves the local transcription runtime incomplete.",
+      "Strengthened the Windows release test to prove the finished installer loads ClipShip's own runtime files instead of relying on software already present on the build machine.",
+      "Preserved structured, privacy-safe dependency failures in local diagnostics so support reports identify the correct recovery path.",
+    ],
+    notes: [
+      "This repair is for Windows transcription startup; macOS remains supported in the same 1.0.28 release.",
+      "Local AI processing and source video files remain on the computer.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.27",
     date: "September 10, 2026",
     label: "Direct access to ClipShip support",

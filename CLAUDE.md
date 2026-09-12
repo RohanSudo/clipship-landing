@@ -1,5 +1,15 @@
 # ClipShip Landing Page
 
+## 1.0.28 transcription runtime release - 2026-09-12
+
+- Release copy is prepared for ClipShip 1.0.28. The public changelog explains
+  the Windows transcription runtime repair, while homepage/Mac software
+  metadata and `public/llms.txt` agree on the cross-platform version.
+- This source is not a claim that 1.0.28 is live. Deploy it only after both
+  signed installer artifacts exist and before switching the updater manifest.
+- The release does not change pricing, subscriptions, referrals, device
+  limits, customer access, or ClipShip's local-processing privacy boundary.
+
 ## 1.0.27 support release - 2026-09-10
 
 - Public Windows and Apple Silicon Mac release is 1.0.27. The changelog,
