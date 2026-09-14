@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.31",
+    date: "September 14, 2026",
+    label: "Clearer recovery when Windows processing fails",
+    summary:
+      "This update preserves the real reason when transcription or rendering cannot continue, so ClipShip can show the right recovery guidance instead of collapsing different failures into one generic AI error.",
+    changes: [
+      "Carries privacy-safe reason codes from Windows transcription and clip rendering into the app's error and support flow.",
+      "Distinguishes missing runtimes, permissions, storage, memory, GPU, source-file, caption-renderer, and timeout failures without exposing local paths or media content.",
+      "Retries a temporarily unavailable caption-runtime startup once before asking the customer to repair the installation.",
+      "Preserves both the beginning and end of long sanitized diagnostics so the useful failure detail is not cut off.",
+      "Stops reporting a successfully recovered transcription as a new Sentry issue while retaining it as diagnostic context.",
+    ],
+    notes: [
+      "The Windows release completed a physical import, NVIDIA CUDA transcription, Qwen 2.5 7B analysis, face-tracked render, review, and disk export test before publication.",
+      "Local AI processing and source video files remain on the computer.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.30",
     date: "September 12, 2026",
     label: "Short videos now get guidance, not a crash report",
