@@ -4,6 +4,26 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.32",
+    date: "September 15, 2026",
+    label: "More reliable AI analysis and model setup",
+    summary:
+      "This update repairs three failure paths seen in real customer diagnostics: incomplete Gemini responses, a local AI model that cannot load on the GPU, and an interrupted transcription-model setup.",
+    changes: [
+      "Requests schema-validated JSON from Gemini, provides a larger bounded response allowance, and uses minimal thinking for supported Gemini 3 models so clip results are less likely to end mid-response.",
+      "Retries an invalid AI response once with a genuinely smaller one-clip response before showing clear provider guidance.",
+      "Falls back to CPU once when Local AI is set to Auto and the model cannot load on the GPU because of a CUDA, allocation, or graphics-memory failure.",
+      "Resumes a transcription-model download when the provider reports completion but required files are still missing.",
+      "Separates provider-output, local-model, import, transcription setup, and export failures into stable privacy-safe diagnostic groups.",
+      "Stops model-generated text from being copied into normal diagnostic logs or Sentry error titles.",
+    ],
+    notes: [
+      "Explicit GPU mode still fails instead of silently changing devices, and damaged model files do not trigger an unrelated CPU fallback.",
+      "Local AI processing and source video files remain on the computer. Optional API mode still sends transcript text directly to the provider selected by the customer.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.31",
     date: "September 14, 2026",
     label: "Clearer recovery when Windows processing fails",
