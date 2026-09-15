@@ -4,6 +4,26 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.33",
+    date: "September 15, 2026",
+    label: "Reliable caption exports and clearer link-import errors",
+    summary:
+      "This update repairs a Windows export failure where the caption renderer could return an unfinished overlay file, and it makes supported-link import failures more useful without exposing private source details.",
+    changes: [
+      "Validates every rendered caption overlay as a real readable video before the final export begins.",
+      "Waits for a successful render to finish writing its MOV metadata and retries once into a separate temporary file when validation still fails.",
+      "Stops the export safely instead of passing an incomplete caption overlay into the final FFmpeg composite.",
+      "Groups the same export cause into one Sentry issue across Clip Editor and Ship so repeated attempts do not create duplicate issue groups.",
+      "Separates private, sign-in, regional, rate-limit, unavailable-source, and network failures for YouTube, Twitch, and Kick imports while keeping URLs, titles, and local paths out of Sentry.",
+      "Extends the finished Windows installer test from a short sample to a 22.5-second captioned export matching the customer failure duration.",
+    ],
+    notes: [
+      "The export recovery is bounded: ClipShip waits briefly for finalization and performs at most one fresh caption-render retry.",
+      "Local AI processing and source video files remain on the computer. Optional API mode still sends transcript text directly to the provider selected by the customer.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.32",
     date: "September 15, 2026",
     label: "More reliable AI analysis and model setup",
