@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.34",
+    date: "September 16, 2026",
+    label: "Reliable Windows processing setup",
+    summary:
+      "This update fixes a Windows first-launch timing issue that could incorrectly report that Python was missing even though ClipShip's local processing runtime was installed.",
+    changes: [
+      "Rechecks the installed ClipShip runtime whenever a processing command needs it instead of relying only on the first startup probe.",
+      "Recovers automatically when Windows finishes making the bundled runtime available shortly after ClipShip opens.",
+      "Shows clear repair guidance when Windows Security or an incomplete installation has actually removed a required runtime file.",
+      "Groups related setup failures by their underlying cause so support alerts no longer split the same problem across model checking and downloading.",
+      "Extends the finished Windows installer check to prove that the installed app itself can discover its bundled runtime.",
+    ],
+    notes: [
+      "This is a Windows reliability fix. macOS is included at the same version so updates remain consistent across platforms.",
+      "Local AI processing and source video files remain on the computer. Optional API mode still sends transcript text directly to the provider selected by the customer.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.33",
     date: "September 15, 2026",
     label: "Reliable caption exports and clearer link-import errors",
