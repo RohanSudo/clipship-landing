@@ -4,6 +4,27 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.36",
+    date: "September 22, 2026",
+    label: "Clearer setup and steadier processing",
+    summary:
+      "This update fixes an API-key setup loop and local AI model-selection mistakes, and improves handling of longer AI analysis and online imports.",
+    changes: [
+      "Completes API-key setup without sending you back through local AI hardware setup when no local AI model is installed.",
+      "Uses the local AI model you selected instead of silently loading a different installed model.",
+      "Gives active API analysis enough time for a provider retry while retaining a safety limit for jobs that stop making progress.",
+      "Keeps online import progress readable when a video title contains characters Windows cannot decode.",
+      "Shows the transcription model download size when available and asks before downloading it, including in API mode.",
+      "Preserves clearer, privacy-safe failure details for transcription and export support cases.",
+    ],
+    notes: [
+      "An API key covers clip analysis, not the local transcription model. The transcription model may still need a one-time download.",
+      "Network interruptions, unavailable source links, provider outages, and damaged video files can still cause a job to fail; this release does not claim to eliminate those external failures.",
+      "Local source video stays on your computer. Optional API mode sends transcript text directly to the AI provider you select.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.35",
     date: "September 19, 2026",
     label: "More reliable local processing and AI recovery",
