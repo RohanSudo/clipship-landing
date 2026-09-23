@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.37",
+    date: "September 23, 2026",
+    label: "More reliable first-time setup",
+    summary:
+      "This update tightens the checks that happen before ClipShip opens Create, so an incomplete API-key or transcription setup does not send you back to the hardware scan without a clear reason.",
+    changes: [
+      "Checks that a saved API key can be read back before marking API setup complete.",
+      "Checks the required transcription model before opening Create and returns to its setup step if a download is still needed.",
+      "Keeps your completed setup intact when secure key storage is temporarily unreadable, instead of silently restarting onboarding.",
+      "Shows a retryable error if ClipShip cannot save your setup progress.",
+      "Takes you to the missing setup step if hardware detection fails and you choose to continue.",
+    ],
+    notes: [
+      "An API key covers clip analysis, not transcription. The transcription model may still need a one-time download.",
+      "A failed download or unavailable AI provider can still interrupt setup or processing; the app will now make the setup failure clearer.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.36",
     date: "September 22, 2026",
     label: "Clearer setup and steadier processing",
