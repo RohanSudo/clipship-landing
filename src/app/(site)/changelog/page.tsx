@@ -4,6 +4,24 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.38",
+    date: "September 24, 2026",
+    label: "Clearer answers when processing fails",
+    summary:
+      "This update makes recurring processing failures easier to diagnose without sending video titles, file paths, or transcript text in crash reports. It also prevents a caption-render timeout from triggering another long wait.",
+    changes: [
+      "Separates known local AI startup and API-provider failures into clearer, privacy-safe support categories.",
+      "Records the last safe stage of an online import or transcription failure so support can see where a job stopped.",
+      "Keeps video titles, local paths, and raw provider output out of new import and export crash reports.",
+      "Stops a timed-out caption renderer without repeating another ten-minute attempt.",
+    ],
+    notes: [
+      "This release improves diagnosis and bounds one timeout. It does not claim that every underlying AI, network, transcription, or caption-render failure is fixed. If a job still fails on 1.0.38, please contact support with the app version and what you were doing.",
+      "Your source video stays on your computer. Optional API mode sends transcript text directly to the AI provider you select.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.37",
     date: "September 23, 2026",
     label: "More reliable first-time setup",
