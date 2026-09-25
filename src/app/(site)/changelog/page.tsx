@@ -4,6 +4,28 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.39",
+    date: "September 25, 2026",
+    label: "Local AI and import reliability fixes",
+    summary:
+      "This update fixes the causes behind several recurring processing failures, including a bug that stopped the Qwen 2.5 1.5B model from analyzing videos at all.",
+    changes: [
+      "Fixes Qwen 2.5 1.5B, the model recommended for lighter computers, which failed to start clip analysis since 1.0.36.",
+      "Lets local AI analysis keep running on slower CPU-only computers while it is still making progress, instead of stopping at a fixed 10 or 20 minute limit.",
+      "Frees the local AI model reliably before transcription starts, so a retry after a long analysis no longer fails immediately.",
+      "Checks downloaded AI model files for damage and asks you to download a damaged model again instead of showing a generic load error.",
+      "Retries once on the CPU when GPU transcription crashes in Automatic mode.",
+      "Retries a YouTube, Twitch, or Kick import after 90 seconds of silence while reading the video details, instead of waiting 8 minutes.",
+      "Stops a caption render only when it has genuinely stopped making progress, closes its background browser processes, and retries once with lower memory use.",
+      "Shows a short, plain explanation when a clip export fails.",
+    ],
+    notes: [
+      "Crash reports now include the technical cause of a failure with file paths, names, emails, links, clip titles, and transcript text removed, plus a random install ID that is not linked to your account. This lets us fix problems we previously could not see.",
+      "Your source video stays on your computer. Optional API mode sends transcript text directly to the AI provider you select.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.38",
     date: "September 24, 2026",
     label: "Clearer answers when processing fails",

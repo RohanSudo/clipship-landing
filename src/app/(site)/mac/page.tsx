@@ -44,7 +44,7 @@ const softwareSchema = {
   downloadUrl,
   description:
     "ClipShip is a local AI video clipper for Apple Silicon Macs that turns long spoken videos into captioned vertical clips while keeping source footage on the Mac.",
-  softwareVersion: "1.0.38",
+  softwareVersion: "1.0.39",
   processorRequirements: "Apple Silicon (M1 or newer)",
   memoryRequirements: "16 GB unified memory recommended",
   isAccessibleForFree: true,
