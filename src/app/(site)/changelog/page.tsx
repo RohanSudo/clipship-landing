@@ -4,6 +4,25 @@ import ContentPage from "../components/ContentPage";
 
 const releases = [
   {
+    version: "1.0.40",
+    date: "September 26, 2026",
+    label: "YouTube imports and local AI on more PCs",
+    summary:
+      "This update fixes the main reason YouTube, Twitch, and Kick imports were stopped as stuck, and fixes local AI failing to start on Windows PCs that were missing a Microsoft system file.",
+    changes: [
+      "Fixes online imports being stopped as stuck while they were still downloading. Slow connections now finish, and the import shows real download progress.",
+      "Fixes local AI failing to start on some Windows PCs because a required Microsoft runtime file was not included with ClipShip.",
+      "Explains clearly when a video has no audio track instead of failing transcription.",
+      "If you chose GPU mode and your graphics driver fails, ClipShip now tells you to switch to Automatic so it can use the CPU.",
+      "Closing an unsaved project no longer shows an error when Windows is still holding one of its files.",
+    ],
+    notes: [
+      "Before release, this version was tested end to end on real videos: GPU and CPU-only processing, clip rendering, captioned export, and a slow YouTube download.",
+      "Your source video stays on your computer. Optional API mode sends transcript text directly to the AI provider you select.",
+      "Pricing, subscriptions, referrals, device limits, and existing customer access are unchanged.",
+    ],
+  },
+  {
     version: "1.0.39",
     date: "September 25, 2026",
     label: "Local AI and import reliability fixes",
