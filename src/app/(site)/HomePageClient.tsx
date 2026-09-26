@@ -99,7 +99,7 @@ const homepageFaqJsonLd = {
       name: "What is your refund policy?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "ClipShip has a 7-day money-back guarantee, limited to one refund per device. Email hello@clipship.co within 7 days of purchase to request a refund.",
+        text: "ClipShip has a 7-day money-back guarantee on your first payment (your first monthly payment or your Lifetime purchase), limited to one refund per device. Monthly renewals are not refundable, but you can cancel anytime. Email hello@clipship.co within 7 days of your first payment to request a refund.",
       },
     },
   ],
@@ -1041,7 +1041,7 @@ export default function Home() {
               a={
                 <>
                   <p>7-day money-back guarantee, one refund per device.</p>
-                  <p className="mt-2">Email hello@clipship.co within 7 days of purchase and we&apos;ll refund you. The refund usually hits your card in 3 to 5 business days.</p>
+                  <p className="mt-2">Email hello@clipship.co within 7 days of your first payment and we&apos;ll refund you. Monthly renewals aren&apos;t refundable, but you can cancel anytime. The refund usually hits your card in 3 to 5 business days.</p>
                   <p className="mt-2">The &quot;one refund per device&quot; rule is strict. If you&apos;ve already been refunded on a specific computer under any email, that computer is permanently ineligible for another refund. This stops abuse of the refund window. Buying again from the same computer is still allowed, just not refunding again.</p>
                 </>
               }

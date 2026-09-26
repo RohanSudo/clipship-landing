@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function Terms() {
   return (
-    <ContentPage title="Terms of Service" description="Last updated: August 2026" badge="Legal">
+    <ContentPage title="Terms of Service" description="Last updated: September 26, 2026" badge="Legal">
       <h2>Agreement</h2>
       <p>
         By downloading, installing, or using ClipShip, you agree to these terms. If you do not agree,
@@ -142,8 +142,10 @@ export default function Terms() {
         be happy with it, so if it&apos;s not working out for you, here&apos;s how refunds work.
       </p>
       <p>
-        <strong>Refund window.</strong> You can request a refund within 7 days of your purchase.
-        After 7 days, we don&apos;t issue refunds except in unusual circumstances. If you&apos;re
+        <strong>Refund window.</strong> You can request a refund within 7 days of your first
+        payment: your first monthly payment, or your one-time Lifetime purchase. Monthly renewal
+        payments are not refundable, but you can cancel anytime and you won&apos;t be charged again.
+        After the 7-day window, we don&apos;t issue refunds except in unusual circumstances. If you&apos;re
         past the window and something genuinely went wrong, email
         <a href="mailto:hello@clipship.co"> hello@clipship.co</a> and we&apos;ll take a look.
       </p>
